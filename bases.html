@@ -79,7 +79,8 @@
     const zone = document.getElementById('fiches');
     let bases;
     try {
-      bases = await chargerDonnees('donnees/bases.json');
+      const d = await chargerDonnees('donnees/bases.json');
+      bases = Array.isArray(d) ? d : d.fiches || [];
     } catch (e) {
       zone.innerHTML = '<p class="message-erreur">Les fiches n\'ont pas pu être chargées. Recharge la page.</p>';
       return;

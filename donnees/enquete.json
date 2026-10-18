@@ -1,0 +1,50 @@
+{
+  "chiffres": [
+    {
+      "valeur": 14,
+      "unite": " %",
+      "misEnAvant": true,
+      "texte": "regardent la B12 et le fer sur l'étiquette. C'est pourtant l'enjeu principal d'une alimentation végétarienne."
+    },
+    {
+      "valeur": 56,
+      "unite": " %",
+      "misEnAvant": false,
+      "texte": "citent le prix comme premier frein."
+    },
+    {
+      "valeur": 30,
+      "unite": " %",
+      "misEnAvant": false,
+      "texte": "pensent que le quinoa contient du blé."
+    },
+    {
+      "valeur": 75,
+      "unite": " %",
+      "misEnAvant": false,
+      "texte": "trouvent qu'un outil comme celui-ci est utile."
+    }
+  ],
+  "bandeau": [
+    {
+      "chiffre": "8 sur 10",
+      "texte": "aiment le goût"
+    },
+    {
+      "chiffre": "12 %",
+      "texte": "les trouvent « naturels »"
+    },
+    {
+      "chiffre": "52 %",
+      "texte": "se méfient des industriels"
+    },
+    {
+      "chiffre": "56 %",
+      "texte": "citent le prix comme frein"
+    },
+    {
+      "chiffre": "14 %",
+      "texte": "regardent la B12 et le fer"
+    }
+  ]
+}

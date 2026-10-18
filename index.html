@@ -257,30 +257,30 @@
   </div>
 </footer>
 
-<script src="donnees/enquete.js"></script>
+<script src="js/commun.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/animations.js"></script>
 <script>
-  /* Chiffres de l'enquête : modifiables dans donnees/enquete.js */
-  (function () {
-    const E = window.ENQUETE;
-    if (!E) return;
-    const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  /* Chiffres de l'enquête : modifiables dans donnees/enquete.json (Pages CMS) */
+  (async function () {
+    let E;
+    try { E = await chargerDonnees('donnees/enquete.json'); } catch (e) { return; }
     const bandeau = document.getElementById('bandeau-enquete');
     if (bandeau && E.bandeau && E.bandeau.length) {
-      const items = E.bandeau.map((b) => '<span><em>' + esc(b.chiffre) + '</em> ' + esc(b.texte) + '</span>').join('');
+      const items = E.bandeau.map((b) => '<span><em>' + echapper(b.chiffre) + '</em> ' + echapper(b.texte) + '</span>').join('');
       bandeau.innerHTML = items + items;
+      window.dispatchEvent(new Event('resize'));
     }
     const chiffres = document.getElementById('chiffres-enquete');
     if (chiffres && E.chiffres && E.chiffres.length) {
       chiffres.innerHTML = E.chiffres.map((c, i) =>
         '<div class="chiffre-carte revele' + (c.misEnAvant ? ' mis-en-avant' : '') + '" style="--i:' + i + '">' +
-        '<strong data-compteur="' + Number(c.valeur) + '" data-suffixe="' + esc(c.unite || '') + '">' + esc(c.valeur) + esc(c.unite || '') + '</strong>' +
-        '<p>' + esc(c.texte) + '</p></div>').join('');
+        '<strong data-compteur="' + Number(c.valeur) + '" data-suffixe="' + echapper(c.unite || '') + '">' + echapper(c.valeur) + echapper(c.unite || '') + '</strong>' +
+        '<p>' + echapper(c.texte) + '</p></div>').join('');
+      animerPage(chiffres);
     }
   })();
 </script>
-<script src="js/commun.js"></script>
-<script src="js/vendor/lenis.min.js"></script>
-<script src="js/animations.js"></script>
 <script>
   (function () {
     const zones = document.querySelectorAll('#etiquette-interactive .zone');

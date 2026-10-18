@@ -82,7 +82,8 @@
     const MOTS = { 1: 'faible', 2: 'moyen', 3: 'élevé' };
     let etudes;
     try {
-      etudes = await chargerDonnees('donnees/etudes.json');
+      const d = await chargerDonnees('donnees/etudes.json');
+      etudes = Array.isArray(d) ? d : d.fiches || [];
     } catch (e) {
       zone.innerHTML = '<p class="message-erreur">Les fiches n\'ont pas pu être chargées. Recharge la page.</p>';
       return;

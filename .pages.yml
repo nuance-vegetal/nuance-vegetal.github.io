@@ -1,0 +1,204 @@
+# Configuration de Pages CMS (https://pagescms.org) : les formulaires pour modifier le site sans code.
+
+media:
+  input: images
+  output: images
+  categories: [image]
+
+content:
+  - name: etudes
+    label: Ce que disent les études
+    type: file
+    path: donnees/etudes.json
+    fields:
+      - name: fiches
+        label: Fiches
+        type: object
+        list: true
+        fields:
+          - name: question
+            label: Question
+            type: string
+            required: true
+          - name: brouillon
+            label: Brouillon (affiche « à valider » sur le site)
+            type: boolean
+            default: true
+          - name: reponse
+            label: Réponse courte
+            type: text
+          - name: points
+            label: Points clés
+            type: string
+            list: true
+          - name: conseil
+            label: Conseil pratique
+            type: text
+          - name: niveau
+            label: Niveau de preuve (1 faible, 2 moyen, 3 élevé)
+            type: number
+            options:
+              min: 1
+              max: 3
+          - name: sources
+            label: Sources
+            type: object
+            list: true
+            fields:
+              - name: texte
+                label: Référence
+                type: text
+              - name: url
+                label: Lien (facultatif)
+                type: string
+
+  - name: bases
+    label: C'est fait avec quoi ? (les bases)
+    type: file
+    path: donnees/bases.json
+    fields:
+      - name: fiches
+        label: Fiches
+        type: object
+        list: true
+        fields:
+          - name: nom
+            label: Nom
+            type: string
+            required: true
+          - name: base
+            label: Base (sert aux filtres)
+            type: select
+            options:
+              values: [Soja, Blé, Champignon, Pois, Autre]
+          - name: image
+            label: Photo
+            type: image
+          - name: image_description
+            label: Description de la photo (pour les personnes aveugles)
+            type: string
+          - name: description
+            label: Description
+            type: text
+          - name: proteines
+            label: Protéines
+            type: string
+          - name: allergenes
+            label: Allergènes
+            type: string
+            list: true
+          - name: enquete
+            label: Résultat de l'enquête (encart bleu)
+            type: string
+          - name: sources
+            label: Sources
+            type: string
+
+  - name: enquete
+    label: Chiffres de l'enquête (accueil)
+    type: file
+    path: donnees/enquete.json
+    fields:
+      - name: chiffres
+        label: Cartes de chiffres
+        type: object
+        list: true
+        fields:
+          - name: valeur
+            label: Nombre
+            type: number
+          - name: unite
+            label: Après le nombre (par exemple « % »)
+            type: string
+          - name: misEnAvant
+            label: Grande carte verte
+            type: boolean
+          - name: texte
+            label: Texte
+            type: text
+      - name: bandeau
+        label: Bandeau qui défile
+        type: object
+        list: true
+        fields:
+          - name: chiffre
+            label: Chiffre (en vert)
+            type: string
+          - name: texte
+            label: Texte
+            type: string
+
+  - name: reglages
+    label: Seuils du décodeur et infos du scan
+    type: file
+    path: donnees/reglages.json
+    fields:
+      - name: proteines
+        label: Protéines (% de l'énergie)
+        type: object
+        fields:
+          - name: vertMin
+            label: Vert « Riche » à partir de (%)
+            type: number
+          - name: orangeMin
+            label: Orange « Source » à partir de (%)
+            type: number
+          - name: reference
+            label: Référence
+            type: string
+      - name: sel
+        label: Sel (g pour 100 g)
+        type: object
+        fields:
+          - name: vertMax
+            label: Vert « Faible » jusqu'à (g)
+            type: number
+          - name: orangeMax
+            label: Orange « Moyen » jusqu'à (g), rouge au-dessus
+            type: number
+          - name: reference
+            label: Référence
+            type: string
+      - name: satures
+        label: Graisses saturées (g pour 100 g)
+        type: object
+        fields:
+          - name: vertMax
+            label: Vert « Faible » jusqu'à (g)
+            type: number
+          - name: orangeMax
+            label: Orange « Moyen » jusqu'à (g), rouge au-dessus
+            type: number
+          - name: reference
+            label: Référence
+            type: string
+      - name: portionGrammes
+        label: Portion utilisée pour le sel (g)
+        type: number
+      - name: selRepereJour
+        label: Repère de sel par jour (g)
+        type: number
+      - name: scanInfos
+        label: Infos affichées après un scan
+        type: select
+        options:
+          multiple: true
+          values:
+            - value: b12
+              label: Vitamine B12
+            - value: fer
+              label: Fer
+            - value: gluten
+              label: Gluten
+            - value: lait
+              label: Lait (lactose)
+            - value: autresAllergenes
+              label: Autres allergènes
+            - value: vegan
+              label: Végan
+            - value: huilePalme
+              label: Huile de palme
+            - value: additifs
+              label: Additifs
+            - value: bio
+              label: Bio

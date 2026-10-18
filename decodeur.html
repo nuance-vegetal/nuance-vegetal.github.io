@@ -157,8 +157,12 @@
 <script src="js/animations.js"></script>
 <script src="js/scanner.js"></script>
 <script>
-  (function () {
-    const C = window.CONFIG;
+  (async function () {
+    let C;
+    try { C = await chargerReglages(); } catch (e) {
+      document.getElementById('scan-statut').innerHTML = '<div class="carte message-erreur">Les réglages n\'ont pas pu être chargés. Recharge la page.</div>';
+      return;
+    }
     const $ = (id) => document.getElementById(id);
     const feu = (id, couleur, mot) => majPastille($(id), couleur, mot);
 

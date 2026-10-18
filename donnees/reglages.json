@@ -1,0 +1,30 @@
+{
+  "proteines": {
+    "vertMin": 20,
+    "orangeMin": 12,
+    "reference": "Règlement (CE) n° 1924/2006"
+  },
+  "sel": {
+    "vertMax": 0.3,
+    "orangeMax": 1.5,
+    "reference": "Food Standards Agency (UK)"
+  },
+  "satures": {
+    "vertMax": 1.5,
+    "orangeMax": 5,
+    "reference": "Food Standards Agency (UK)"
+  },
+  "portionGrammes": 150,
+  "selRepereJour": 6,
+  "scanInfos": [
+    "b12",
+    "fer",
+    "gluten",
+    "lait",
+    "autresAllergenes",
+    "vegan",
+    "huilePalme",
+    "additifs",
+    "bio"
+  ]
+}

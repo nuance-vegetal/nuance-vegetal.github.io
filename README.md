@@ -14,7 +14,9 @@ Il apprend à lire l'étiquette d'une alternative végétale à la viande en 5 c
 | `etudes.html` | Ce que disent les études (données : `donnees/etudes.json`) |
 | `fiche-frigo.html` | Fiche frigo imprimable |
 
-Seuils du décodeur : `js/config.js`. Modifier les contenus : voir [NOTICE.md](NOTICE.md).
+En ligne : https://nuance-vegetal.github.io (GitHub Pages, dépôt `nuance-vegetal/nuance-vegetal.github.io`).
+
+Contenus et réglages : `donnees/*.json` (fiches Études et Bases, chiffres de l'enquête, seuils du décodeur et infos du scan), modifiables avec Pages CMS (`.pages.yml`). Voir [NOTICE.md](NOTICE.md).
 
 ## Scan de code-barres
 
@@ -46,7 +48,7 @@ Puis ouvrir http://localhost:5180.
 
 ## Mise en ligne
 
-Aucun build : il suffit de publier le dossier tel quel (GitHub Pages, Netlify…).
+Aucun build : GitHub Pages publie la branche `main` telle quelle. Chaque commit (y compris ceux de Pages CMS) met le site à jour en une minute environ.
 
 ## Vie privée
 
