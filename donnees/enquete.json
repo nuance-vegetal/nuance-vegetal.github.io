@@ -3,26 +3,26 @@
     {
       "valeur": 14,
       "unite": " %",
-      "misEnAvant": true,
-      "texte": "regardent la B12 et le fer sur l'étiquette. C'est pourtant l'enjeu principal d'une alimentation végétarienne."
+      "texte": "regardent la B12 et le fer sur l'étiquette. C'est pourtant l'enjeu principal d'une alimentation végétarienne.",
+      "misEnAvant": true
     },
     {
       "valeur": 56,
       "unite": " %",
-      "misEnAvant": false,
-      "texte": "citent le prix comme premier frein."
+      "texte": "citent le prix comme premier frein.",
+      "misEnAvant": false
     },
     {
       "valeur": 30,
       "unite": " %",
-      "misEnAvant": false,
-      "texte": "pensent que le quinoa contient du blé."
+      "texte": "pensent que le quinoa contient du blé.",
+      "misEnAvant": false
     },
     {
       "valeur": 75,
       "unite": " %",
-      "misEnAvant": false,
-      "texte": "trouvent qu'un outil comme celui-ci est utile."
+      "texte": "trouvent qu'un outil comme celui-ci est utile.",
+      "misEnAvant": false
     }
   ],
   "bandeau": [
@@ -44,7 +44,7 @@
     },
     {
       "chiffre": "14 %",
-      "texte": "regardent la B12 et le fer"
+      "texte": "regardent la B12 et le fer u"
     }
   ]
 }
