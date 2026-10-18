@@ -1,4 +1,5 @@
 # Configuration de Pages CMS (https://pagescms.org) : les formulaires pour modifier le site sans code.
+# Chaque « Save » met le site à jour en une minute environ.
 
 media:
   input: images
@@ -6,199 +7,259 @@ media:
   categories: [image]
 
 content:
+
+  # ---------------------------------------------------------------- Études
   - name: etudes
-    label: Ce que disent les études
+    label: "Études : questions et réponses"
     type: file
     path: donnees/etudes.json
+    format: json
     fields:
       - name: fiches
-        label: Fiches
+        label: "Les fiches (une par question)"
+        description: "Clique sur une fiche pour l'ouvrir. « Add an entry » en bas pour en ajouter une. Glisse les fiches pour changer leur ordre sur le site."
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{index}. {question}"
         fields:
           - name: question
-            label: Question
+            label: "Question"
+            description: "La question telle qu'elle s'affiche, par exemple : Le soja est-il mauvais pour les hormones ?"
             type: string
             required: true
-          - name: brouillon
-            label: Brouillon (affiche « à valider » sur le site)
-            type: boolean
-            default: true
           - name: reponse
-            label: Réponse courte
+            label: "Réponse courte"
+            description: "Une ou deux phrases, en gras sur le site."
             type: text
+            required: true
           - name: points
-            label: Points clés
+            label: "Points clés"
+            description: "Une phrase par point. « Add an entry » pour ajouter un point."
             type: string
             list: true
           - name: conseil
-            label: Conseil pratique
+            label: "Conseil pratique"
+            description: "Affiché dans l'encadré bleu. Laisse vide s'il n'y en a pas."
             type: text
           - name: niveau
-            label: Niveau de preuve (1 faible, 2 moyen, 3 élevé)
+            label: "Niveau de preuve"
+            description: "1 = faible · 2 = moyen · 3 = élevé"
             type: number
             options:
               min: 1
               max: 3
           - name: sources
-            label: Sources
+            label: "Sources"
+            description: "Une source par ligne. Le lien est facultatif (DOI ou adresse du site)."
             type: object
-            list: true
+            list:
+              collapsible:
+                collapsed: false
+                summary: "{texte}"
             fields:
               - name: texte
-                label: Référence
+                label: "Référence"
+                description: "Auteur (année). Titre. Revue."
                 type: text
               - name: url
-                label: Lien (facultatif)
+                label: "Lien (facultatif)"
+                description: "Par exemple https://doi.org/10.3390/nu8120754"
                 type: string
+          - name: brouillon
+            label: "Brouillon"
+            description: "Coché : le site affiche « Brouillon à valider ». Décoche quand le texte est validé."
+            type: boolean
+            default: true
 
+  # ---------------------------------------------------------------- Bases
   - name: bases
-    label: C'est fait avec quoi ? (les bases)
+    label: "C'est fait avec quoi ? (tofu, seitan…)"
     type: file
     path: donnees/bases.json
+    format: json
     fields:
       - name: fiches
-        label: Fiches
+        label: "Les fiches (une par base)"
+        description: "Clique sur une fiche pour l'ouvrir. Glisse les fiches pour changer leur ordre sur le site."
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{nom} · {base}"
         fields:
           - name: nom
-            label: Nom
+            label: "Nom"
+            description: "Par exemple : Tofu"
             type: string
             required: true
           - name: base
-            label: Base (sert aux filtres)
+            label: "Famille (pour les boutons de filtre)"
             type: select
+            required: true
             options:
               values: [Soja, Blé, Champignon, Pois, Autre]
-          - name: image
-            label: Photo
-            type: image
-          - name: image_description
-            label: Description de la photo (pour les personnes aveugles)
-            type: string
           - name: description
-            label: Description
+            label: "Description"
+            description: "Une ou deux phrases simples : de quoi c'est fait."
             type: text
           - name: proteines
-            label: Protéines
+            label: "Protéines"
+            description: "Par exemple : ≈ 12 à 15 g pour 100 g"
             type: string
           - name: allergenes
-            label: Allergènes
+            label: "Allergènes"
+            description: "Un allergène par ligne."
             type: string
             list: true
           - name: enquete
-            label: Résultat de l'enquête (encart bleu)
+            label: "Résultat de l'enquête"
+            description: "Affiché dans l'encadré bleu, par exemple : 30 % des répondants pensent qu'il contient du blé."
             type: string
           - name: sources
-            label: Sources
+            label: "Sources"
+            type: string
+          - name: image
+            label: "Photo"
+            description: "Format paysage, la plus légère possible (moins de 200 Ko)."
+            type: image
+          - name: image_description
+            label: "Description de la photo"
+            description: "Ce qu'on voit sur la photo, en quelques mots. Elle est lue aux personnes aveugles."
             type: string
 
+  # ---------------------------------------------------------------- Enquête
   - name: enquete
-    label: Chiffres de l'enquête (accueil)
+    label: "Chiffres de l'enquête (page d'accueil)"
     type: file
     path: donnees/enquete.json
+    format: json
     fields:
       - name: chiffres
-        label: Cartes de chiffres
+        label: "Cartes « ce que l'enquête a révélé »"
+        description: "Les grands chiffres qui comptent quand on fait défiler la page."
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{valeur}{unite} {texte}"
         fields:
           - name: valeur
-            label: Nombre
+            label: "Nombre"
+            description: "Seulement le nombre, par exemple 14"
             type: number
+            required: true
           - name: unite
-            label: Après le nombre (par exemple « % »)
+            label: "Après le nombre"
+            description: "Par exemple « %», avec un espace avant le %. Laisse vide s'il n'y a rien après le nombre."
             type: string
-          - name: misEnAvant
-            label: Grande carte verte
-            type: boolean
           - name: texte
-            label: Texte
+            label: "Phrase"
             type: text
+            required: true
+          - name: misEnAvant
+            label: "Grande carte verte"
+            description: "Cocher pour une seule carte : la plus importante."
+            type: boolean
       - name: bandeau
-        label: Bandeau qui défile
+        label: "Bandeau qui défile sous le titre"
         type: object
-        list: true
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{chiffre} {texte}"
         fields:
           - name: chiffre
-            label: Chiffre (en vert)
+            label: "Chiffre (en vert)"
+            description: "Par exemple : 8 sur 10 ou 52 %"
             type: string
+            required: true
           - name: texte
-            label: Texte
+            label: "Suite de la phrase"
+            description: "Par exemple : aiment le goût"
             type: string
+            required: true
 
+  # ---------------------------------------------------------------- Réglages
   - name: reglages
-    label: Seuils du décodeur et infos du scan
+    label: "Réglages : seuils du décodeur et scan"
     type: file
     path: donnees/reglages.json
+    format: json
     fields:
       - name: proteines
-        label: Protéines (% de l'énergie)
+        label: "Protéines (part de l'énergie, en %)"
+        description: "À modifier seulement après validation dans la revue de littérature."
         type: object
         fields:
           - name: vertMin
-            label: Vert « Riche » à partir de (%)
+            label: "Vert « Riche » à partir de… %"
             type: number
           - name: orangeMin
-            label: Orange « Source » à partir de (%)
+            label: "Orange « Source » à partir de… % (en dessous : rouge « Faible »)"
             type: number
           - name: reference
-            label: Référence
+            label: "Référence affichée"
             type: string
       - name: sel
-        label: Sel (g pour 100 g)
+        label: "Sel (grammes pour 100 g)"
+        description: "Nombres à virgule : tape un point, par exemple 0.3"
         type: object
         fields:
           - name: vertMax
-            label: Vert « Faible » jusqu'à (g)
+            label: "Vert « Faible » jusqu'à… g"
             type: number
           - name: orangeMax
-            label: Orange « Moyen » jusqu'à (g), rouge au-dessus
+            label: "Orange « Moyen » jusqu'à… g (au-dessus : rouge « Élevé »)"
             type: number
           - name: reference
-            label: Référence
+            label: "Référence affichée"
             type: string
       - name: satures
-        label: Graisses saturées (g pour 100 g)
+        label: "Graisses saturées (grammes pour 100 g)"
+        description: "Nombres à virgule : tape un point, par exemple 1.5"
         type: object
         fields:
           - name: vertMax
-            label: Vert « Faible » jusqu'à (g)
+            label: "Vert « Faible » jusqu'à… g"
             type: number
           - name: orangeMax
-            label: Orange « Moyen » jusqu'à (g), rouge au-dessus
+            label: "Orange « Moyen » jusqu'à… g (au-dessus : rouge « Élevé »)"
             type: number
           - name: reference
-            label: Référence
+            label: "Référence affichée"
             type: string
       - name: portionGrammes
-        label: Portion utilisée pour le sel (g)
+        label: "Taille d'une portion (g)"
+        description: "Sert à calculer le sel par portion."
         type: number
       - name: selRepereJour
-        label: Repère de sel par jour (g)
+        label: "Repère de sel par jour (g)"
+        description: "6 = apport de référence européen · l'OMS conseille moins de 5."
         type: number
       - name: scanInfos
-        label: Infos affichées après un scan
+        label: "Infos affichées après un scan"
+        description: "Coche ce qui doit apparaître sous le produit scanné."
         type: select
         options:
           multiple: true
           values:
-            - value: b12
-              label: Vitamine B12
-            - value: fer
-              label: Fer
-            - value: gluten
-              label: Gluten
-            - value: lait
-              label: Lait (lactose)
-            - value: autresAllergenes
-              label: Autres allergènes
-            - value: vegan
-              label: Végan
-            - value: huilePalme
-              label: Huile de palme
-            - value: additifs
-              label: Additifs
-            - value: bio
-              label: Bio
+            - name: b12
+              label: "Vitamine B12"
+            - name: fer
+              label: "Fer"
+            - name: gluten
+              label: "Gluten"
+            - name: lait
+              label: "Lait (lactose)"
+            - name: autresAllergenes
+              label: "Autres allergènes"
+            - name: vegan
+              label: "Végan"
+            - name: huilePalme
+              label: "Huile de palme"
+            - name: additifs
+              label: "Additifs"
+            - name: bio
+              label: "Bio"
