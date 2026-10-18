@@ -1,98 +1,58 @@
-# Notice — modifier le site sans le développeur
+# Notice — modifier le site Nuance végétal sans le développeur
 
-Cette notice explique comment changer les fiches **Études**, les fiches **Bases** et les **seuils** du décodeur.
-Tu n'as besoin que d'un éditeur de texte (Bloc-notes, ou directement sur GitHub avec le bouton crayon).
+Le site se modifie avec **Pages CMS** : des formulaires en ligne, comme sur n'importe quel site. Tu ne touches jamais au code et tu ne peux rien casser par erreur.
+
+Adresse du site : https://nuance-vegetal.github.io
 
 ---
 
-## 1. Les fiches « Ce que disent les études »
+## Une seule fois au début
 
-Fichier : `donnees/etudes.json`
+1. Crée un compte gratuit sur **https://github.com/signup** (garde bien ton identifiant et ton mot de passe).
+2. Envoie ton identifiant GitHub à Alex : il t'ajoute à l'organisation « nuance-vegetal ».
+3. Tu reçois une invitation par e-mail : clique sur **Join nuance-vegetal**.
 
-Chaque fiche ressemble à ceci :
+## Modifier un texte
 
-```json
-{
-  "question": "Le soja est-il mauvais pour les hormones ?",
-  "brouillon": true,
-  "reponse": "La réponse courte, en une ou deux phrases.",
-  "points": [
-    "Premier point clé.",
-    "Deuxième point clé."
-  ],
-  "conseil": "Le conseil pratique.",
-  "niveau": 2,
-  "sources": [
-    { "texte": "Auteur (année). Titre. Revue.", "url": "https://doi.org/..." }
-  ]
-}
-```
+1. Va sur **https://app.pagescms.org** et clique sur **Sign in with GitHub**.
+2. Choisis le projet **nuance-vegetal.github.io**.
+3. À gauche, choisis ce que tu veux modifier :
+   - **Ce que disent les études** : les fiches question / réponse ;
+   - **C'est fait avec quoi ?** : les fiches tofu, tempeh, seitan…
+   - **Chiffres de l'enquête** : les cartes et le bandeau de l'accueil ;
+   - **Seuils du décodeur et infos du scan** : les feux vert / orange / rouge et les lignes affichées après un scan.
+4. Change le texte dans les cases.
+5. Clique sur **Save** (en haut à droite).
+6. Attends environ **une minute**, puis recharge le site : ta modification est en ligne.
 
-| Champ | À quoi il sert |
-|---|---|
-| `question` | Le titre de la fiche (ce qu'on touche pour l'ouvrir) |
-| `brouillon` | `true` affiche « Brouillon à valider ». Mets `false` quand le texte est validé |
-| `reponse` | La réponse courte, en gras |
-| `points` | Les points clés, un par ligne entre guillemets |
-| `conseil` | Le conseil pratique (encart bleu) |
-| `niveau` | Niveau de preuve : `1` faible, `2` moyen, `3` élevé |
-| `sources` | Une ou plusieurs sources. `url` peut être vide : `""` |
+### Ajouter, supprimer ou déplacer une fiche
 
-**Ajouter une fiche** : copie une fiche entière, de `{` à `}`, colle-la après la dernière, et ajoute une **virgule** entre les deux `}` et `{`.
+- **Ajouter** : en bas de la liste, bouton **Add an entry** (ou « + »).
+- **Supprimer** : l'icône poubelle à côté de la fiche.
+- **Déplacer** : attrape la fiche par la poignée et glisse-la.
 
-## 2. Les fiches « C'est fait avec quoi ? »
+### Changer une photo (fiches « C'est fait avec quoi ? »)
 
-Fichier : `donnees/bases.json`
+Dans le champ **Photo**, clique sur l'image puis **Upload** pour envoyer une nouvelle photo. Choisis une photo en format paysage, la plus légère possible (moins de 200 Ko si tu peux). Remplis aussi la case « Description de la photo » : elle est lue aux personnes aveugles.
 
-```json
-{
-  "nom": "Tofu",
-  "base": "Soja",
-  "image": "images/tofu.webp",
-  "image_description": "Bloc de tofu garni d'oignons verts",
-  "description": "Une phrase simple.",
-  "proteines": "≈ 12 à 15 g pour 100 g",
-  "allergenes": ["Soja"],
-  "enquete": "XX % de bonnes réponses",
-  "sources": "Auteur (année)"
-}
-```
+## Bon à savoir
 
-- `base` doit être exactement l'une de ces valeurs pour que les filtres marchent : `Soja`, `Blé`, `Champignon`, `Pois`, `Autre`.
-- `image` : la photo de la fiche, rangée dans le dossier `images/` (format paysage, idéalement en `.webp` et moins de 120 Ko). `image_description` décrit la photo pour les personnes aveugles.
-- `enquete` : le texte de l'encart bleu (résultat de l'enquête).
+- **Brouillon** : sur une fiche Études, la case « Brouillon » affiche « Brouillon à valider » sur le site. Décoche-la quand le texte est validé.
+- **Niveau de preuve** : 1 = faible, 2 = moyen, 3 = élevé.
+- **Seuils** : pour les nombres à virgule, tape un **point** (1.5) ; le site affiche ensuite une virgule (1,5).
+- **Infos du scan** : coche ou décoche les lignes à afficher après un scan (B12, fer, gluten, lait, végan…).
+- **Erreur ?** Tout est gardé dans l'historique : Alex peut revenir à la version d'avant à tout moment.
 
-## 3. Les chiffres de l'enquête (accueil)
+## Ce qui ne se modifie pas (encore) avec les formulaires
 
-Fichier : `donnees/enquete.js`
+Les textes de l'accueil, les 5 commentaires de l'étiquette décortiquée et les listes de la fiche frigo sont dans les pages elles-mêmes : envoie les nouveaux textes à Alex. Les passages entre crochets `[à compléter]` sont ceux qui restent à rédiger.
 
-Il contient les cartes de chiffres (`chiffres`) et le bandeau qui défile (`bandeau`). Change seulement les nombres et les textes entre guillemets, puis enregistre : l'accueil se met à jour tout seul.
+D'autres chiffres de l'enquête sont écrits dans les textes et ne suivent pas les cartes de l'accueil : l'intro de la page Études (52 %), la fiche Études sur la B12 (14 %) et les encarts « résultat de l'enquête » des fiches Bases.
 
-D'autres chiffres de l'enquête sont écrits directement dans les textes : l'intro de la page Études (52 %), la fiche Études sur la B12 (14 %) et les champs `enquete` du fichier `donnees/bases.json`.
+---
 
-## 4. Les seuils du décodeur
+## Pour le développeur
 
-Fichier : `js/config.js`
-
-Seuls les **chiffres** sont à changer. Le décimal s'écrit avec un **point** dans ce fichier (`1.5`, pas `1,5`) ; le site l'affiche ensuite avec une virgule.
-Un changement ici met à jour le décodeur **et** la fiche frigo.
-
-### Les infos affichées après un scan
-
-Toujours dans `js/config.js`, la liste `scanInfos` choisit les lignes affichées après un scan et leur ordre : `b12`, `fer`, `gluten`, `lait`, `autresAllergenes`, `vegan`, `huilePalme`, `additifs`, `bio`. Pour masquer une info, supprime sa ligne (avec sa virgule).
-
-Ces infos viennent d'Open Food Facts, une base remplie par des bénévoles : « non signalé » ne veut jamais dire « absent ». Pour la mention végan, le site distingue « végan (label) », quand le produit porte un logo, et « végan d'après les ingrédients », une déduction moins sûre.
-
-## 5. Les pièges à éviter
-
-1. Garde les **guillemets droits** `"` autour des textes (pas « » ni “ ”) — à l'intérieur d'un texte, les « » sont permis.
-2. Une **virgule** entre deux fiches, mais **pas** après la dernière.
-3. Pour mettre un guillemet droit dans un texte, écris `\"`.
-4. En cas de doute, colle le contenu du fichier sur <https://jsonlint.com> : il te dit où est l'erreur.
-
-Si une page affiche « Les fiches n'ont pas pu être chargées », c'est presque toujours une virgule ou un guillemet oublié.
-
-## 6. Les autres textes
-
-Les textes de l'accueil, de l'étiquette décortiquée et de la fiche frigo sont directement dans les fichiers `.html`.
-Les passages entre crochets `[à compléter]` sont à rédiger ; on peut les remplacer en gardant tout ce qui est entre `<` et `>`.
+- Données : `donnees/*.json` ; formulaires : `.pages.yml` ; chargement des réglages : `js/config.js`.
+- Chaque « Save » dans Pages CMS crée un commit sur `main` ; GitHub Pages republie le site en une minute environ.
+- Sans Pages CMS, les mêmes fichiers se modifient sur github.com (icône crayon). Attention alors aux guillemets droits `"` et aux virgules entre les éléments ; https://jsonlint.com vérifie un fichier.
