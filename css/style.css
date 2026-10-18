@@ -1043,7 +1043,8 @@ html.lenis, html.lenis body { height: auto; }
 .formulaire-etiquette { margin-top: 26px; }
 .separateur { display: flex; align-items: center; gap: 12px; color: var(--texte-2); font-size: 14px; margin-bottom: 14px; }
 .separateur::before, .separateur::after { content: ""; flex: 1; height: 1px; background: var(--contour); }
-.titre-formulaire { font-size: 26px; margin: 0 0 6px; }
+.titre-formulaire { font-family: var(--police-titre); font-weight: 800; font-size: 20px; letter-spacing: -.02em; margin: 0 0 4px; }
+.titre-formulaire span { color: var(--principal); }
 .etape {
   display: inline-grid; place-items: center; width: 24px; height: 24px; margin-right: 8px; border-radius: 8px;
   background: var(--sauge-clair); color: var(--principal-survol); font: 800 13px var(--police-titre); vertical-align: 1px;
