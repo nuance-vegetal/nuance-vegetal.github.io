@@ -34,7 +34,6 @@
   --police-accent: 'Instrument Serif', Georgia, serif;
 }
 
-@view-transition { navigation: auto; }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -108,7 +107,6 @@ a:hover { color: var(--principal-survol); }
   backdrop-filter: saturate(1.4) blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color .3s, box-shadow .3s;
-  view-transition-name: barre;
 }
 .barre.defile { border-bottom-color: var(--contour); box-shadow: 0 8px 24px -20px rgba(70, 52, 20, .5); }
 .barre-int {
@@ -605,7 +603,6 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
 .pied {
   margin-top: 72px;
   background: var(--principal-survol); color: #E7EFE7;
-  view-transition-name: pied;
 }
 .pied-int { max-width: 1100px; margin: 0 auto; padding: 32px 16px 36px; font-size: 14px; }
 .pied .marque { color: var(--carte); margin-bottom: 10px; }
@@ -707,15 +704,6 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
 }
 .titre-anime.visible .mot-int { transform: none; }
 
-/* Photos qui se dévoilent + parallaxe */
-.devoile { clip-path: inset(12% 10% 12% 10% round 28px); transition: clip-path 1.4s var(--courbe); }
-.devoile.visible { clip-path: inset(0 round 28px); }
-.lien-photo .devoile { clip-path: inset(10% round 16px); }
-.lien-photo .devoile.visible { clip-path: inset(0 round 16px); }
-.devoile img { transform: scale(1.25); transition: transform 1.6s var(--courbe); }
-.devoile.visible img { transform: scale(1); }
-.parallaxe img { will-change: transform; transition: none; transform: scale(1.18); }
-
 /* Barre de progression */
 .progression {
   position: fixed; left: 0; right: 0; top: 0; height: 3px; z-index: 60;
@@ -730,7 +718,7 @@ html.lenis, html.lenis body { height: auto; }
 .lenis [data-lenis-prevent] { overscroll-behavior: contain; }
 
 /* Bandeau piloté par le scroll */
-.defilant.pilote .defilant-piste { animation: none; will-change: transform; }
+.js .defilant-piste { animation: none; will-change: transform; }
 
 /* Sticker qui tourne */
 .sticker {
@@ -813,16 +801,58 @@ html.lenis, html.lenis body { height: auto; }
   .sticker { width: 132px; height: 132px; left: -40px; top: -30px; }
 }
 
+/* ============ Entrées : une seule règle pour tout le site ============
+   Tout ce qui s'anime est caché dès le premier affichage (classe .js posée dans <head>),
+   puis révélé : en cascade au chargement pour le haut de page, au défilement pour le reste. */
+
+/* Titres : révélés mot par mot (animations.js) */
+.js main h1, .js main h2 { opacity: 0; }
+.js main .titre-anime, .js .fiche-frigo h2 { opacity: 1; }
+
+/* Haut de page : cascade au chargement */
+.js .accroche > :not(h1) { opacity: 0; transform: translateY(16px); transition: opacity .9s var(--courbe), transform .9s var(--courbe); }
+.js .charge .accroche > :not(h1) { opacity: 1; transform: none; }
+.js .charge .accroche > :nth-child(1) { transition-delay: .05s; }
+.js .charge .accroche > :nth-child(3) { transition-delay: .45s; }
+.js .charge .accroche > :nth-child(4) { transition-delay: .55s; }
+.js .charge .accroche > :nth-child(5) { transition-delay: .65s; }
+
+/* Photos : se dévoilent quand elles arrivent à l'écran */
+.js .accroche-visuel .photo, .js .bandeau .photo, .js .bloc-assiette .photo, .js .lien-photo .photo {
+  clip-path: inset(10% 8% 10% 8% round 28px); transition: clip-path 1.3s var(--courbe);
+}
+.js .accroche-visuel .photo.visible, .js .bandeau .photo.visible, .js .bloc-assiette .photo.visible, .js .lien-photo .photo.visible { clip-path: inset(0 round 28px); }
+.js .lien-photo .photo { clip-path: inset(10% round 16px); }
+.js .lien-photo .photo.visible { clip-path: inset(0 round 16px); }
+.js .lien-photo .photo img { transform: scale(1.2); transition: transform 1.4s var(--courbe); }
+.js .lien-photo .photo.visible img { transform: none; }
+.js .lien-photo:hover .photo.visible img { transform: scale(1.05); }
+.js .accroche-visuel .photo img, .js .bandeau .photo img, .js .bloc-assiette .photo img { transform: scale(1.18); will-change: transform; }
+
+/* Pastilles flottantes et sticker de l'accueil : arrivent après la photo */
+.js .flottant, .js .sticker { opacity: 0; scale: .85; transition: opacity .6s var(--courbe), scale .6s var(--courbe); }
+.js .accroche-visuel:has(.photo.visible) .flottant,
+.js .accroche-visuel:has(.photo.visible) .sticker { opacity: 1; scale: 1; }
+.js .accroche-visuel:has(.photo.visible) .sticker { transition-delay: .5s; }
+.js .accroche-visuel:has(.photo.visible) .f2 { transition-delay: .65s; }
+.js .accroche-visuel:has(.photo.visible) .f1 { transition-delay: .8s; }
+.js .accroche-visuel:has(.photo.visible) .f3 { transition-delay: .95s; }
+
+/* Cartes empilées : simple fondu (leur taille est gérée au défilement) */
+.js .pile li { opacity: 0; transition: opacity .8s var(--courbe); }
+.js .pile li.visible { opacity: 1; }
+
 /* ---------- Mouvement réduit ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
-  .js .revele { opacity: 1; transform: none; }
+  .js .revele, .js main h1, .js main h2, .js .accroche > *, .js .flottant, .js .sticker, .js .pile li { opacity: 1; transform: none; scale: 1; }
+  .js .photo, .js .photo.visible { clip-path: none; }
+  .js .photo img { transform: none; }
   .defilant-piste { animation: none; }
   .sticker svg { animation: none; }
   .manifeste { min-height: 0; }
   .manifeste-int { position: static; min-height: 0; }
   .mot-m { opacity: 1; }
-  @view-transition { navigation: none; }
 }
 
 /* ---------- Impression ---------- */

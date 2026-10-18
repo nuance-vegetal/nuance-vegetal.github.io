@@ -7,11 +7,11 @@
   <meta name="description" content="Tofu, tempeh, seitan, Quorn, pois, quinoa : de quoi sont faits les simili, leurs protéines et leurs allergènes.">
   <meta name="theme-color" content="#F6EFE3">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
-  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.body||!document.body.classList.contains('charge'))document.documentElement.classList.remove('js')},3000)</script>
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261019c">
+  <link rel="stylesheet" href="css/style.css?v=20261019d">
 </head>
 <body class="page-secondaire">
 
@@ -44,7 +44,7 @@
       <p class="intro">La moitié des répondants ne sait pas de quoi est fait le Quorn. Voici les bases les plus courantes, sans jargon.</p>
     </section>
 
-    <div class="filtres" role="group" aria-label="Filtrer par base">
+    <div class="filtres revele" role="group" aria-label="Filtrer par base">
       <button type="button" data-filtre="Tout" aria-pressed="true">Tout</button>
       <button type="button" data-filtre="Soja" aria-pressed="false">Soja</button>
       <button type="button" data-filtre="Blé" aria-pressed="false">Blé</button>
@@ -71,9 +71,9 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261019c"></script>
-<script src="js/vendor/lenis.min.js?v=20261019c"></script>
-<script src="js/animations.js?v=20261019c"></script>
+<script src="js/commun.js?v=20261019d"></script>
+<script src="js/vendor/lenis.min.js?v=20261019d"></script>
+<script src="js/animations.js?v=20261019d"></script>
 <script>
   (async function () {
     const zone = document.getElementById('fiches');
@@ -108,9 +108,7 @@
     document.querySelectorAll('.filtres button').forEach((bouton, _, tous) => {
       bouton.addEventListener('click', () => {
         tous.forEach((b) => b.setAttribute('aria-pressed', String(b === bouton)));
-        const changer = () => afficher(bouton.dataset.filtre);
-        if (document.startViewTransition && !MOUVEMENT_REDUIT) document.startViewTransition(changer);
-        else changer();
+        afficher(bouton.dataset.filtre);
       });
     });
 

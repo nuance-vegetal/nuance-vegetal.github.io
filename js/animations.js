@@ -65,15 +65,9 @@
     h.classList.remove('revele');
     h.classList.add('titre-anime');
   });
-  // Les autres éléments de l'accroche apparaissent en cascade
-  $$('.accroche > :not(h1)').forEach((el, i) => {
-    el.classList.add('revele');
-    el.style.setProperty('--i', i + 2);
-  });
 
   /* ---------- Photos qui se dévoilent ---------- */
-  $$('.accroche-visuel .photo, .bandeau .photo, .bloc-assiette .photo, .lien-photo .photo').forEach((p) => p.classList.add('devoile'));
-  $$('.accroche-visuel .photo, .bandeau .photo, .bloc-assiette .photo').forEach((p) => p.classList.add('parallaxe'));
+  const photos = $$('.accroche-visuel .photo, .bandeau .photo, .bloc-assiette .photo, .lien-photo .photo');
 
   /* ---------- Cartes empilées ---------- */
   const piles = $$('.pile').map((pile) => $$(':scope > li', pile));
@@ -81,7 +75,7 @@
     li.classList.remove('revele');
     li.style.setProperty('--i', i);
   }));
-  const parallaxes = $$('.parallaxe img');
+  const parallaxes = $$('.accroche-visuel .photo img, .bandeau .photo img, .bloc-assiette .photo img');
 
   /* ---------- Manifeste ---------- */
   const manifestes = $$('[data-manifeste]').map((section) => {
@@ -98,14 +92,11 @@
       obs.unobserve(e.target);
     });
   }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
-  $$('.titre-anime, .devoile').forEach((el) => obs.observe(el));
+  $$('.titre-anime').concat(photos, piles.flat()).forEach((el) => obs.observe(el));
   // Les éléments .revele ajoutés ici sont suivis par animerPage (commun.js, au chargement)
 
   /* ---------- Bandeau défilant qui suit le scroll ---------- */
-  const defilants = $$('.defilant-piste').map((piste) => {
-    piste.parentElement.classList.add('pilote');
-    return { piste, x: 0, largeur: 0 };
-  });
+  const defilants = $$('.defilant-piste').map((piste) => ({ piste, x: 0, largeur: 0 }));
 
   /* ---------- Boucle principale ---------- */
   let dernierY = window.scrollY;

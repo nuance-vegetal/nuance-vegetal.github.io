@@ -7,11 +7,11 @@
   <meta name="description" content="Scanne un produit ou entre les valeurs de l'étiquette : repères protéines, sel, graisses saturées et B12, plus gluten et lait au scan.">
   <meta name="theme-color" content="#F6EFE3">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
-  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.body||!document.body.classList.contains('charge'))document.documentElement.classList.remove('js')},3000)</script>
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261019c">
+  <link rel="stylesheet" href="css/style.css?v=20261019d">
 </head>
 <body class="page-secondaire">
 
@@ -58,7 +58,7 @@
         <div class="scan-statut" id="scan-statut" aria-live="polite"></div>
         <div class="historique" id="historique"></div>
 
-        <form id="decodeur" autocomplete="off" onsubmit="return false">
+        <form id="decodeur" class="revele" autocomplete="off" onsubmit="return false">
           <div class="champ">
             <label for="kcal">Énergie</label>
             <div class="saisie"><input type="text" id="kcal" inputmode="decimal" placeholder="210"><span class="unite">kcal</span></div>
@@ -85,7 +85,7 @@
         </form>
       </div>
 
-      <div class="collant">
+      <div class="collant revele" style="--i:1">
         <div id="fiche-droite"></div>
         <div id="bloc-reperes">
         <h2>tes <em class="serif">repères</em></h2>
@@ -155,11 +155,11 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261019c"></script>
-<script src="js/commun.js?v=20261019c"></script>
-<script src="js/vendor/lenis.min.js?v=20261019c"></script>
-<script src="js/animations.js?v=20261019c"></script>
-<script src="js/scanner.js?v=20261019c"></script>
+<script src="js/config.js?v=20261019d"></script>
+<script src="js/commun.js?v=20261019d"></script>
+<script src="js/vendor/lenis.min.js?v=20261019d"></script>
+<script src="js/animations.js?v=20261019d"></script>
+<script src="js/scanner.js?v=20261019d"></script>
 <script>
   (async function () {
     let C;

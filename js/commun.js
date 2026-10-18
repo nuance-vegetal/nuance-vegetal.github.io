@@ -113,7 +113,9 @@ function animerPage(racine = document) {
 
 document.documentElement.classList.add('js');
 document.addEventListener('DOMContentLoaded', () => {
-  requestAnimationFrame(() => document.body.classList.add('charge'));
+  const charger = () => document.body.classList.add('charge');
+  requestAnimationFrame(charger);
+  setTimeout(charger, 120); // si l'onglet est en arrière-plan
   animerPage();
   const barre = document.querySelector('.barre');
   if (barre) {
