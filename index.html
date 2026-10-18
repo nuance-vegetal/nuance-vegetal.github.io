@@ -3,156 +3,284 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Décode ton simili — lis l'étiquette en 30 secondes</title>
+  <title>Nuance végétal — lis l'étiquette en 30 secondes</title>
   <meta name="description" content="Apprends à lire l'étiquette d'une alternative végétale à la viande en 5 coups d'œil : protéines, B12, fer, sel, ingrédients.">
+  <meta name="theme-color" content="#F6EFE3">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.body||!document.body.classList.contains('charge'))document.documentElement.classList.remove('js')},3000)</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="images/hero.webp">
 </head>
 <body>
+
+<header class="barre">
+  <div class="barre-int">
+    <a class="marque" href="index.html">
+      <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétal</em></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html" aria-current="page">Accueil</a>
+      <a href="decodeur.html">Décodeur</a>
+      <a href="etiquette.html">Étiquette</a>
+      <a href="bases.html">Les bases</a>
+      <a href="etudes.html">Études</a>
+      <a href="fiche-frigo.html">Fiche frigo</a>
+    </nav>
+  </div>
+</header>
+
 <div class="page">
-
-  <header class="entete">
-    <a class="marque" href="index.html">Décode ton simili</a>
-  </header>
-
   <main>
-    <section class="accroche">
-      <span class="pastille gris">Enquête auprès de 222 répondants</span>
-      <h1>Lis ton étiquette en 30 secondes</h1>
-      <p class="secondaire">5 coups d'œil pour comprendre une alternative végétale à la viande. Pas de note toute faite : tu décides toi-même.</p>
-      <a class="bouton large" href="decodeur.html">
-        Décoder un produit
-        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
+    <div class="accueil-haut">
+      <section class="accroche">
+        <h1>lis ton étiquette en <em class="serif">30 secondes</em></h1>
+        <p class="intro">5 coups d'œil, zéro prise de tête. Pas de note toute faite : c'est toi qui décides.</p>
+        <div class="boutons boutons-ordi">
+          <a class="bouton entre" href="decodeur.html#scanner">
+            Scanner un produit
+            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 7v10"/><path d="M12 7v10"/><path d="M17 7v10"/></svg>
+          </a>
+          <a class="bouton entre secondaire-btn" href="decodeur.html">
+            Décoder à la main
+            <svg class="icone icone-fleche" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <div class="accroche-visuel revele">
+        <div class="sticker" aria-hidden="true">
+          <svg class="texte-rond" viewBox="0 0 100 100"><defs><path id="cercle" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#cercle">gratuit · sans pub · sans compte ·</textPath></text></svg>
+          <span class="rond"><svg class="logo-feuilles" viewBox="0 0 40 40"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+        </div>
+        <div class="photo">
+          <img src="images/hero.webp" width="1000" height="1150" alt="Cubes de tofu posés sur une planche en bois">
+        </div>
+        <div class="flottant f2" aria-hidden="true">Protéines <span class="pastille vert">Riche</span></div>
+        <div class="flottant f1" aria-hidden="true">B12 <span class="pastille vert">Enrichi</span></div>
+        <div class="flottant f3" aria-hidden="true">Sel <span class="pastille orange">Moyen</span></div>
+      </div>
+    </div>
+
+    <div class="defilant" aria-hidden="true">
+      <div class="defilant-piste" id="bandeau-enquete">
+        <span><em>8 sur 10</em> aiment le goût</span>
+        <span><em>12 %</em> les trouvent « naturels »</span>
+        <span><em>52 %</em> se méfient des industriels</span>
+        <span><em>56 %</em> citent le prix comme frein</span>
+        <span><em>14 %</em> regardent la B12 et le fer</span>
+        <span><em>8 sur 10</em> aiment le goût</span>
+        <span><em>12 %</em> les trouvent « naturels »</span>
+        <span><em>52 %</em> se méfient des industriels</span>
+        <span><em>56 %</em> citent le prix comme frein</span>
+        <span><em>14 %</em> regardent la B12 et le fer</span>
+      </div>
+    </div>
+
+    <section class="manifeste pleine-largeur" data-manifeste>
+      <div class="manifeste-int">
+        <span class="surtitre">notre parti pris</span>
+        <p class="manifeste-texte">pas de note toute faite. pas de jugement. juste les bons repères pour lire une étiquette <em class="serif">toi-même</em>, en 30 secondes chrono.</p>
+        <p class="manifeste-signature">Un outil né d'un TFE en diététique, pensé pour les débutant·es.</p>
+      </div>
     </section>
 
-    <div class="carte chiffre">
-      <strong>14 %</strong>
-      <p style="margin:0">des répondants regardent la <b>B12</b> et le <b>fer</b> sur l'étiquette. C'est pourtant l'enjeu principal d'une alimentation végétarienne.</p>
+    <span class="surtitre revele" style="margin-top:72px">01 · l'enquête</span>
+    <h2 style="margin-top:0">ce que l'enquête <em class="serif">a révélé</em></h2>
+    <div class="chiffres" id="chiffres-enquete">
+      <div class="chiffre-carte mis-en-avant revele">
+        <strong data-compteur="14" data-suffixe=" %">14 %</strong>
+        <p>regardent la B12 et le fer sur l'étiquette. C'est pourtant l'enjeu principal d'une alimentation végétarienne.</p>
+      </div>
+      <div class="chiffre-carte revele" style="--i:1">
+        <strong data-compteur="56" data-suffixe=" %">56 %</strong>
+        <p>citent le prix comme premier frein.</p>
+      </div>
+      <div class="chiffre-carte revele" style="--i:2">
+        <strong data-compteur="30" data-suffixe=" %">30 %</strong>
+        <p>pensent que le quinoa contient du blé.</p>
+      </div>
+      <div class="chiffre-carte revele" style="--i:3">
+        <strong data-compteur="75" data-suffixe=" %">75 %</strong>
+        <p>trouvent qu'un outil comme celui-ci est utile.</p>
+      </div>
     </div>
 
-    <h2>Les 5 coups d'œil</h2>
-    <ol class="coups">
-      <li><div><strong>Les ingrédients</strong><p>Le premier ingrédient te dit de quoi est fait le produit : soja, blé, pois, champignon…</p></div></li>
-      <li><div><strong>Les protéines</strong><p>Riche si au moins 20 % de l'énergie vient des protéines.</p></div></li>
-      <li><div><strong>La B12 et le fer</strong><p>Cherche « vitamine B12 » ou « fer » dans les ingrédients ou le tableau.</p></div></li>
-      <li><div><strong>Le sel</strong><p>Plus de 1,5 g pour 100 g, c'est beaucoup.</p></div></li>
-      <li><div><strong>Les graisses saturées</strong><p>Plus de 5 g pour 100 g, c'est beaucoup.</p></div></li>
+    <section class="coups-section">
+      <div class="coups-intro">
+        <span class="surtitre" style="margin-top:72px">02 · la méthode</span>
+        <h2 style="margin-top:0">les 5 coups <em class="serif">d'œil</em></h2>
+        <p class="revele">Garde-les en tête au rayon frais. Après ça, n'importe quelle étiquette devient lisible.</p>
+      </div>
+    <ol class="coups pile">
+      <li class="revele"><strong>les ingrédients</strong><p>Le premier ingrédient te dit de quoi est fait le produit : soja, blé, pois, champignon…</p></li>
+      <li class="revele" style="--i:1"><strong>les protéines</strong><p>Riche si au moins 20 % de l'énergie vient des protéines.</p></li>
+      <li class="revele" style="--i:2"><strong>la B12 et le fer</strong><p>Cherche « vitamine B12 » ou « fer » dans les ingrédients ou le tableau.</p></li>
+      <li class="revele" style="--i:3"><strong>le sel</strong><p>Plus de 1,5 g pour 100 g, c'est beaucoup.</p></li>
+      <li class="revele" style="--i:4"><strong>les graisses saturées</strong><p>Plus de 5 g pour 100 g, c'est beaucoup.</p></li>
     </ol>
+    </section>
 
-    <h2>Essaie sur une étiquette</h2>
-    <p class="secondaire petit">Touche un ingrédient ou une ligne du tableau pour voir l'explication.</p>
+    <span class="surtitre revele" style="margin-top:72px">03 · à toi</span>
+    <h2 style="margin-top:0">à toi de <em class="serif">jouer</em></h2>
+    <p class="secondaire revele">Touche un mot souligné sur l'étiquette : on t'explique tout.</p>
 
-    <div class="etiquette" id="etiquette-interactive">
-      <div class="nom-produit">Haché végétal</div>
-      <div class="secondaire petit">Produit fictif · 250 g</div>
+    <div class="duo">
+      <div class="etiquette revele" id="etiquette-interactive">
+        <div class="nom-produit">Haché végétal</div>
+        <div class="secondaire petit">Produit fictif · 250 g</div>
 
-      <div class="titre-bloc">Ingrédients</div>
-      <p class="ingredients">
-        Eau,
-        <button type="button" class="zone" data-info="soja" aria-pressed="false">protéines de soja (22 %)</button>,
-        huile de colza,
-        <button type="button" class="zone" data-info="ble" aria-pressed="false">protéines de blé</button>,
-        arômes, sel, fibres de pois,
-        <button type="button" class="zone" data-info="additif" aria-pressed="false">épaississant : méthylcellulose</button>,
-        <button type="button" class="zone" data-info="b12" aria-pressed="false">vitamine B12</button>,
-        <button type="button" class="zone" data-info="fer" aria-pressed="false">fer</button>.
-      </p>
+        <div class="titre-bloc">Ingrédients</div>
+        <p class="ingredients">
+          Eau,
+          <button type="button" class="zone" data-info="soja" aria-pressed="false">protéines de soja (22 %)</button>,
+          huile de colza,
+          <button type="button" class="zone" data-info="ble" aria-pressed="false">protéines de blé</button>,
+          arômes, sel, fibres de pois,
+          <button type="button" class="zone" data-info="additif" aria-pressed="false">épaississant : méthylcellulose</button>,
+          <button type="button" class="zone" data-info="b12" aria-pressed="false">vitamine B12</button>,
+          <button type="button" class="zone" data-info="fer" aria-pressed="false">fer</button>.
+        </p>
 
-      <div class="titre-bloc">Valeurs nutritionnelles pour 100 g</div>
-      <table class="tableau-nutri">
-        <tbody>
-          <tr><td>Énergie</td><td class="valeur">210 kcal</td></tr>
-          <tr><td>Matières grasses</td><td class="valeur">11 g</td></tr>
-          <tr class="sous"><td><button type="button" class="zone" data-info="satures" aria-pressed="false"><span>dont saturées</span></button></td><td class="valeur">1,2 g</td></tr>
-          <tr><td>Glucides</td><td class="valeur">4 g</td></tr>
-          <tr><td>Fibres</td><td class="valeur">4 g</td></tr>
-          <tr><td><button type="button" class="zone" data-info="proteines" aria-pressed="false"><span>Protéines</span></button></td><td class="valeur">18 g</td></tr>
-          <tr><td><button type="button" class="zone" data-info="sel" aria-pressed="false"><span>Sel</span></button></td><td class="valeur">1,3 g</td></tr>
-        </tbody>
-      </table>
+        <div class="titre-bloc">Valeurs nutritionnelles pour 100 g</div>
+        <table class="tableau-nutri">
+          <tbody>
+            <tr><td>Énergie</td><td class="valeur">210 kcal</td></tr>
+            <tr><td>Matières grasses</td><td class="valeur">11 g</td></tr>
+            <tr class="sous"><td><button type="button" class="zone" data-info="satures" aria-pressed="false"><span>dont saturées</span></button></td><td class="valeur">1,2 g</td></tr>
+            <tr><td>Glucides</td><td class="valeur">4 g</td></tr>
+            <tr><td>Fibres</td><td class="valeur">4 g</td></tr>
+            <tr><td><button type="button" class="zone" data-info="proteines" aria-pressed="false"><span>Protéines</span></button></td><td class="valeur">18 g</td></tr>
+            <tr><td><button type="button" class="zone" data-info="sel" aria-pressed="false"><span>Sel</span></button></td><td class="valeur">1,3 g</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="collant" id="explications" aria-live="polite">
+        <div class="carte explication" id="info-defaut">
+          <span class="surtitre">Explication</span>
+          <p class="secondaire" style="margin:0">Touche une zone soulignée de l'étiquette : l'explication s'affiche ici.</p>
+        </div>
+        <div class="carte explication" id="info-soja" hidden>
+          <span class="pastille lilas">Ingrédient principal</span>
+          <p>Le soja est la base de ce produit. C'est une légumineuse riche en protéines. Allergène à signaler sur l'étiquette.</p>
+          <p class="source">[Texte à valider par Camille]</p>
+        </div>
+        <div class="carte explication" id="info-ble" hidden>
+          <span class="pastille lilas">Gluten</span>
+          <p>Les protéines de blé apportent du gluten. À éviter en cas de maladie cœliaque ou d'allergie au blé.</p>
+          <p class="source">[Texte à valider par Camille]</p>
+        </div>
+        <div class="carte explication" id="info-additif" hidden>
+          <span class="pastille lilas">Additif</span>
+          <p>La méthylcellulose sert à lier le produit, comme l'œuf dans un hachis. Elle est autorisée en Europe (E461).</p>
+          <p class="source">[Texte et source à valider par Camille]</p>
+        </div>
+        <div class="carte explication" id="info-b12" hidden>
+          <span class="pastille vert">Enrichi</span>
+          <p>Bonne nouvelle : ce produit est enrichi en vitamine B12. Elle ne se trouve pas naturellement dans les végétaux.</p>
+          <p class="source">[Source à compléter]</p>
+        </div>
+        <div class="carte explication" id="info-fer" hidden>
+          <span class="pastille vert">Enrichi</span>
+          <p>Du fer a été ajouté. Le fer des végétaux est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi).</p>
+          <p class="source">[Source à compléter]</p>
+        </div>
+        <div class="carte explication" id="info-proteines" hidden>
+          <span class="pastille vert">Riche · 34 %</span>
+          <p>18 g × 4 ÷ 210 kcal = 34 % de l'énergie vient des protéines. Au-dessus de 20 %, le produit peut être dit « riche en protéines ».</p>
+          <p class="source">Règlement (CE) n° 1924/2006</p>
+        </div>
+        <div class="carte explication" id="info-sel" hidden>
+          <span class="pastille orange">Moyen</span>
+          <p>1,3 g pour 100 g. Une portion de 150 g apporte environ 2 g de sel, soit un tiers du repère de 6 g par jour.</p>
+          <p class="source">Food Standards Agency (UK)</p>
+        </div>
+        <div class="carte explication" id="info-satures" hidden>
+          <span class="pastille vert">Faible</span>
+          <p>1,2 g pour 100 g : c'est peu. Au-dessus de 5 g, c'est beaucoup.</p>
+          <p class="source">Food Standards Agency (UK)</p>
+        </div>
+      </div>
     </div>
 
-    <div id="explications" aria-live="polite">
-    <div class="carte explication" id="info-defaut">
-      <p class="secondaire" style="margin:0">L'explication s'affiche ici.</p>
-    </div>
-    <div class="carte explication" id="info-soja" hidden>
-      <span class="pastille lilas">Ingrédient principal</span>
-      <p>Le soja est la base de ce produit. C'est une légumineuse riche en protéines. Allergène à signaler sur l'étiquette.</p>
-      <p class="source">[Texte à valider par Camille]</p>
-    </div>
-    <div class="carte explication" id="info-ble" hidden>
-      <span class="pastille lilas">Gluten</span>
-      <p>Les protéines de blé apportent du gluten. À éviter en cas de maladie cœliaque ou d'allergie au blé.</p>
-      <p class="source">[Texte à valider par Camille]</p>
-    </div>
-    <div class="carte explication" id="info-additif" hidden>
-      <span class="pastille lilas">Additif</span>
-      <p>La méthylcellulose sert à lier le produit, comme l'œuf dans un hachis. Elle est autorisée en Europe (E461).</p>
-      <p class="source">[Texte et source à valider par Camille]</p>
-    </div>
-    <div class="carte explication" id="info-b12" hidden>
-      <span class="pastille vert">Enrichi</span>
-      <p>Bonne nouvelle : ce produit est enrichi en vitamine B12. Elle ne se trouve pas naturellement dans les végétaux.</p>
-      <p class="source">[Source à compléter]</p>
-    </div>
-    <div class="carte explication" id="info-fer" hidden>
-      <span class="pastille vert">Enrichi</span>
-      <p>Du fer a été ajouté. Le fer des végétaux est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi).</p>
-      <p class="source">[Source à compléter]</p>
-    </div>
-    <div class="carte explication" id="info-proteines" hidden>
-      <span class="pastille vert">Riche · 34 %</span>
-      <p>18 g × 4 ÷ 210 kcal = 34 % de l'énergie vient des protéines. Au-dessus de 20 %, le produit peut être dit « riche en protéines ».</p>
-      <p class="source">Règlement (CE) n° 1924/2006</p>
-    </div>
-    <div class="carte explication" id="info-sel" hidden>
-      <span class="pastille orange">Moyen</span>
-      <p>1,3 g pour 100 g. Une portion de 150 g apporte environ 2 g de sel, soit un tiers du repère de 6 g par jour.</p>
-      <p class="source">Food Standards Agency (UK)</p>
-    </div>
-    <div class="carte explication" id="info-satures" hidden>
-      <span class="pastille vert">Faible</span>
-      <p>1,2 g pour 100 g : c'est peu. Au-dessus de 5 g, c'est beaucoup.</p>
-      <p class="source">Food Standards Agency (UK)</p>
-    </div>
-    </div>
-
-    <h2>Pour aller plus loin</h2>
-    <div class="grille-2">
-      <a class="lien-encart lilas" href="bases.html">
-        C'est fait avec quoi ?
+    <span class="surtitre revele" style="margin-top:72px">04 · la suite</span>
+    <h2 style="margin-top:0">va plus <em class="serif">loin</em></h2>
+    <div class="liens">
+      <a class="lien-photo lilas revele" href="bases.html">
+        <div class="photo zoom"><img src="images/pois.webp" width="700" height="490" alt="" loading="lazy"></div>
+        <b>c'est fait avec quoi ?</b>
         <span>Tofu, seitan, Quorn… les bases expliquées.</span>
       </a>
-      <a class="lien-encart bleu" href="etudes.html">
-        Ce que disent les études
+      <a class="lien-photo bleu revele" href="etudes.html" style="--i:1">
+        <div class="photo zoom"><img src="images/etudes.webp" width="900" height="560" alt="" loading="lazy"></div>
+        <b>ce que dit la science</b>
         <span>Soja, ultra-transformation : les réponses sourcées.</span>
       </a>
-      <a class="lien-encart bleu" href="etiquette.html">
-        Étiquette décortiquée
+      <a class="lien-photo revele" href="etiquette.html" style="--i:2">
+        <div class="photo zoom"><img src="images/tempeh.webp" width="800" height="560" alt="" loading="lazy"></div>
+        <b>l'étiquette décortiquée</b>
         <span>Un exemple complet, ligne par ligne.</span>
       </a>
-      <a class="lien-encart lilas" href="fiche-frigo.html">
-        Fiche frigo
+      <a class="lien-photo revele" href="fiche-frigo.html" style="--i:3">
+        <div class="photo zoom"><img src="images/decodeur.webp" width="900" height="560" alt="" loading="lazy"></div>
+        <b>la fiche frigo</b>
         <span>Les repères à imprimer.</span>
       </a>
     </div>
 
-    <h2>Sa place dans l'assiette</h2>
-    <div class="carte">
-      <p>Un simili remplace la viande ou le poisson dans le repas. Il ne remplace pas les légumes ni les féculents.</p>
-      <p class="secondaire petit" style="margin:0">[Texte à compléter par Camille]</p>
+    <span class="surtitre revele" style="margin-top:72px">05 · l'assiette</span>
+    <h2 style="margin-top:0">sa place dans <em class="serif">l'assiette</em></h2>
+    <div class="bloc-assiette">
+      <div class="photo revele"><img src="images/assiette.webp" width="900" height="560" alt="Assiette de légumes variés et colorés" loading="lazy"></div>
+      <div class="carte revele" style="--i:1">
+        <p>Un simili remplace la viande ou le poisson dans le repas. Il ne remplace pas les légumes ni les féculents.</p>
+        <p class="secondaire petit" style="margin:0">[Texte à compléter par Camille]</p>
+      </div>
     </div>
   </main>
-
-  <footer class="pied">
-    Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.
-  </footer>
 </div>
 
+<footer class="pied">
+  <div class="pied-int">
+    <div>
+      <a class="marque" href="index.html">
+        <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétal</em></span>
+      </a>
+      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+    </div>
+    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+  </div>
+</footer>
+
+<script src="donnees/enquete.js"></script>
+<script>
+  /* Chiffres de l'enquête : modifiables dans donnees/enquete.js */
+  (function () {
+    const E = window.ENQUETE;
+    if (!E) return;
+    const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const bandeau = document.getElementById('bandeau-enquete');
+    if (bandeau && E.bandeau && E.bandeau.length) {
+      const items = E.bandeau.map((b) => '<span><em>' + esc(b.chiffre) + '</em> ' + esc(b.texte) + '</span>').join('');
+      bandeau.innerHTML = items + items;
+    }
+    const chiffres = document.getElementById('chiffres-enquete');
+    if (chiffres && E.chiffres && E.chiffres.length) {
+      chiffres.innerHTML = E.chiffres.map((c, i) =>
+        '<div class="chiffre-carte revele' + (c.misEnAvant ? ' mis-en-avant' : '') + '" style="--i:' + i + '">' +
+        '<strong data-compteur="' + Number(c.valeur) + '" data-suffixe="' + esc(c.unite || '') + '">' + esc(c.valeur) + esc(c.unite || '') + '</strong>' +
+        '<p>' + esc(c.texte) + '</p></div>').join('');
+    }
+  })();
+</script>
+<script src="js/commun.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/animations.js"></script>
 <script>
   (function () {
     const zones = document.querySelectorAll('#etiquette-interactive .zone');
@@ -163,7 +291,7 @@
         infos.forEach((info) => { info.hidden = info.id !== 'info-' + zone.dataset.info; });
         const cible = document.getElementById('info-' + zone.dataset.info);
         if (cible && cible.getBoundingClientRect().top > window.innerHeight - 80) {
-          cible.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          cible.scrollIntoView({ behavior: MOUVEMENT_REDUIT ? 'auto' : 'smooth', block: 'nearest' });
         }
       });
     });

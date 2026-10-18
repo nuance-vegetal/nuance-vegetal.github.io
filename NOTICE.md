@@ -48,6 +48,8 @@ Fichier : `donnees/bases.json`
 {
   "nom": "Tofu",
   "base": "Soja",
+  "image": "images/tofu.webp",
+  "image_description": "Bloc de tofu garni d'oignons verts",
   "description": "Une phrase simple.",
   "proteines": "≈ 12 à 15 g pour 100 g",
   "allergenes": ["Soja"],
@@ -57,16 +59,31 @@ Fichier : `donnees/bases.json`
 ```
 
 - `base` doit être exactement l'une de ces valeurs pour que les filtres marchent : `Soja`, `Blé`, `Champignon`, `Pois`, `Autre`.
+- `image` : la photo de la fiche, rangée dans le dossier `images/` (format paysage, idéalement en `.webp` et moins de 120 Ko). `image_description` décrit la photo pour les personnes aveugles.
 - `enquete` : le texte de l'encart bleu (résultat de l'enquête).
 
-## 3. Les seuils du décodeur
+## 3. Les chiffres de l'enquête (accueil)
+
+Fichier : `donnees/enquete.js`
+
+Il contient les cartes de chiffres (`chiffres`) et le bandeau qui défile (`bandeau`). Change seulement les nombres et les textes entre guillemets, puis enregistre : l'accueil se met à jour tout seul.
+
+D'autres chiffres de l'enquête sont écrits directement dans les textes : l'intro de la page Études (52 %), la fiche Études sur la B12 (14 %) et les champs `enquete` du fichier `donnees/bases.json`.
+
+## 4. Les seuils du décodeur
 
 Fichier : `js/config.js`
 
 Seuls les **chiffres** sont à changer. Le décimal s'écrit avec un **point** dans ce fichier (`1.5`, pas `1,5`) ; le site l'affiche ensuite avec une virgule.
 Un changement ici met à jour le décodeur **et** la fiche frigo.
 
-## 4. Les pièges à éviter
+### Les infos affichées après un scan
+
+Toujours dans `js/config.js`, la liste `scanInfos` choisit les lignes affichées après un scan et leur ordre : `b12`, `fer`, `gluten`, `lait`, `autresAllergenes`, `vegan`, `huilePalme`, `additifs`, `bio`. Pour masquer une info, supprime sa ligne (avec sa virgule).
+
+Ces infos viennent d'Open Food Facts, une base remplie par des bénévoles : « non signalé » ne veut jamais dire « absent ». Pour la mention végan, le site distingue « végan (label) », quand le produit porte un logo, et « végan d'après les ingrédients », une déduction moins sûre.
+
+## 5. Les pièges à éviter
 
 1. Garde les **guillemets droits** `"` autour des textes (pas « » ni “ ”) — à l'intérieur d'un texte, les « » sont permis.
 2. Une **virgule** entre deux fiches, mais **pas** après la dernière.
@@ -75,7 +92,7 @@ Un changement ici met à jour le décodeur **et** la fiche frigo.
 
 Si une page affiche « Les fiches n'ont pas pu être chargées », c'est presque toujours une virgule ou un guillemet oublié.
 
-## 5. Les autres textes
+## 6. Les autres textes
 
 Les textes de l'accueil, de l'étiquette décortiquée et de la fiche frigo sont directement dans les fichiers `.html`.
 Les passages entre crochets `[à compléter]` sont à rédiger ; on peut les remplacer en gardant tout ce qui est entre `<` et `>`.

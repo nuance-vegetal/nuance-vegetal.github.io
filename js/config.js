@@ -21,6 +21,19 @@ window.CONFIG = {
     reference: 'Food Standards Agency (UK)'
   },
   portionGrammes: 150,   // portion utilisée pour le sel par portion
-  selRepereJour: 6,      // repère de sel par jour, en g
-  proteinesCible: 20     // prix affiché « pour 20 g de protéines »
+  selRepereJour: 6,      // repère de sel par jour, en g (apport de référence UE ; l'OMS conseille moins de 5 g)
+
+  // Infos affichées après un scan, dans cet ordre. Enlève une ligne pour la masquer.
+  // Possibles : b12, fer, gluten, lait, autresAllergenes, vegan, huilePalme, additifs, bio
+  scanInfos: [
+    'b12',
+    'fer',
+    'gluten',
+    'lait',
+    'autresAllergenes',
+    'vegan',
+    'huilePalme',
+    'additifs',
+    'bio'
+  ]
 };

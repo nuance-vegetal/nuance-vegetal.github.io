@@ -3,26 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>C'est fait avec quoi ? — Décode ton simili</title>
+  <title>C'est fait avec quoi ? — Nuance végétal</title>
   <meta name="description" content="Tofu, tempeh, seitan, Quorn, pois, quinoa : de quoi sont faits les simili, leurs protéines et leurs allergènes.">
+  <meta name="theme-color" content="#F6EFE3">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.body||!document.body.classList.contains('charge'))document.documentElement.classList.remove('js')},3000)</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<div class="page">
+<body class="page-secondaire">
 
-  <header class="entete">
+<header class="barre">
+  <div class="barre-int">
     <a class="retour" href="index.html">
       <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
       Accueil
     </a>
-  </header>
+    <a class="marque" href="index.html">
+      <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétal</em></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="decodeur.html">Décodeur</a>
+      <a href="etiquette.html">Étiquette</a>
+      <a href="bases.html" aria-current="page">Les bases</a>
+      <a href="etudes.html">Études</a>
+      <a href="fiche-frigo.html">Fiche frigo</a>
+    </nav>
+  </div>
+</header>
 
+<div class="page">
   <main>
-    <h1>C'est fait avec quoi ?</h1>
-    <p class="secondaire">La moitié des répondants ne sait pas de quoi est fait le Quorn. Voici les bases les plus courantes.</p>
+    <section class="accroche" style="max-width:720px">
+      <span class="surtitre">les bases</span>
+      <h1>c'est fait <em class="serif">avec quoi</em> ?</h1>
+      <p class="intro">La moitié des répondants ne sait pas de quoi est fait le Quorn. Voici les bases les plus courantes, sans jargon.</p>
+    </section>
 
     <div class="filtres" role="group" aria-label="Filtrer par base">
       <button type="button" data-filtre="Tout" aria-pressed="true">Tout</button>
@@ -34,15 +54,26 @@
     </div>
 
     <p class="sr-only" id="compte" aria-live="polite"></p>
-    <div id="fiches"><p class="secondaire">Chargement…</p></div>
+    <div id="fiches" class="grille-fiches"><p class="secondaire">Chargement…</p></div>
   </main>
-
-  <footer class="pied">
-    Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.
-  </footer>
 </div>
 
+<footer class="pied">
+  <div class="pied-int">
+    <div>
+      <a class="marque" href="index.html">
+        <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétal</em></span>
+      </a>
+      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+    </div>
+    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+  </div>
+</footer>
+
 <script src="js/commun.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/animations.js"></script>
 <script>
   (async function () {
     const zone = document.getElementById('fiches');
@@ -56,16 +87,19 @@
 
     function afficher(filtre) {
       const liste = bases.filter((b) => filtre === 'Tout' || b.base === filtre);
-      zone.innerHTML = liste.map((b) => `
-        <article class="carte fiche-base">
-          <h3>${echapper(b.nom)} <span class="pastille lilas">${echapper(b.base)}</span></h3>
-          <p style="margin:0">${echapper(b.description)}</p>
-          <dl>
-            <dt>Protéines</dt><dd>${echapper(b.proteines)}</dd>
-            <dt>Allergènes</dt><dd>${(b.allergenes || []).map(echapper).join(', ')}</dd>
-          </dl>
-          <div class="encart bleu enquete-note">${echapper(b.enquete)}</div>
-          ${b.sources ? `<p class="petit secondaire" style="margin:10px 0 0">Sources : ${echapper(b.sources)}</p>` : ''}
+      zone.innerHTML = liste.map((b, i) => `
+        <article class="carte fiche-base" style="--i:${i}">
+          ${b.image ? `<div class="photo"><img src="${echapper(b.image)}" alt="${echapper(b.image_description || '')}" loading="lazy" width="800" height="560"><span class="pastille lilas sans-point">${echapper(b.base)}</span></div>` : ''}
+          <div class="texte">
+            <h3>${echapper(b.nom)}</h3>
+            <p style="margin:0" class="secondaire">${echapper(b.description)}</p>
+            <dl>
+              <dt>Protéines</dt><dd>${echapper(b.proteines)}</dd>
+              <dt>Allergènes</dt><dd>${(b.allergenes || []).map(echapper).join(', ')}</dd>
+            </dl>
+            <div class="encart bleu enquete-note">${echapper(b.enquete)}</div>
+            ${b.sources ? `<p class="petit secondaire" style="margin:10px 0 0">Sources : ${echapper(b.sources)}</p>` : ''}
+          </div>
         </article>`).join('') || '<p class="secondaire">Aucune fiche pour cette base.</p>';
       document.getElementById('compte').textContent = liste.length + ' fiche' + (liste.length > 1 ? 's' : '') + ' affichée' + (liste.length > 1 ? 's' : '');
     }
@@ -73,7 +107,9 @@
     document.querySelectorAll('.filtres button').forEach((bouton, _, tous) => {
       bouton.addEventListener('click', () => {
         tous.forEach((b) => b.setAttribute('aria-pressed', String(b === bouton)));
-        afficher(bouton.dataset.filtre);
+        const changer = () => afficher(bouton.dataset.filtre);
+        if (document.startViewTransition && !MOUVEMENT_REDUIT) document.startViewTransition(changer);
+        else changer();
       });
     });
 

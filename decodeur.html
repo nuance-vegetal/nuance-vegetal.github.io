@@ -3,105 +3,164 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Décodeur — Décode ton simili</title>
-  <meta name="description" content="Entre les valeurs de l'étiquette et vois tout de suite les repères protéines, sel, graisses saturées, B12 et le prix pour 20 g de protéines.">
+  <title>Décodeur — Nuance végétal</title>
+  <meta name="description" content="Scanne un produit ou entre les valeurs de l'étiquette : repères protéines, sel, graisses saturées et B12, plus gluten et lait au scan.">
+  <meta name="theme-color" content="#F6EFE3">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.body||!document.body.classList.contains('charge'))document.documentElement.classList.remove('js')},3000)</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<div class="page">
+<body class="page-secondaire">
 
-  <header class="entete">
+<header class="barre">
+  <div class="barre-int">
     <a class="retour" href="index.html">
       <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
       Accueil
     </a>
-  </header>
+    <a class="marque" href="index.html">
+      <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétal</em></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="decodeur.html" aria-current="page">Décodeur</a>
+      <a href="etiquette.html">Étiquette</a>
+      <a href="bases.html">Les bases</a>
+      <a href="etudes.html">Études</a>
+      <a href="fiche-frigo.html">Fiche frigo</a>
+    </nav>
+  </div>
+</header>
 
+<div class="page">
   <main>
-    <h1>Décodeur</h1>
-    <p class="secondaire">Recopie les valeurs pour 100 g. Les repères se mettent à jour pendant que tu tapes. Rien n'est envoyé : tout se calcule sur ton téléphone.</p>
+    <div class="decodeur-grille">
+      <div>
+        <section class="accroche">
+          <span class="surtitre">décodeur</span>
+          <h1>ton produit, <em class="serif">décodé</em></h1>
+          <p class="intro">Scanne le code-barres ou recopie les valeurs pour 100 g. Les repères s'allument en direct.</p>
+        </section>
 
-    <form id="decodeur" autocomplete="off" onsubmit="return false">
-      <div class="champ">
-        <label for="kcal">Énergie</label>
-        <div class="saisie"><input type="text" id="kcal" inputmode="decimal" placeholder="210"><span class="unite">kcal</span></div>
-      </div>
-      <div class="champ">
-        <label for="proteines">Protéines</label>
-        <div class="saisie"><input type="text" id="proteines" inputmode="decimal" placeholder="18"><span class="unite">g</span></div>
-      </div>
-      <div class="champ">
-        <label for="satures">dont acides gras saturés</label>
-        <div class="saisie"><input type="text" id="satures" inputmode="decimal" placeholder="1,2"><span class="unite">g</span></div>
-      </div>
-      <div class="champ">
-        <label for="sel">Sel</label>
-        <div class="saisie"><input type="text" id="sel" inputmode="decimal" placeholder="1,3"><span class="unite">g</span></div>
-      </div>
-      <div class="champ">
-        <label for="prix">Prix au kilo</label>
-        <div class="saisie"><input type="text" id="prix" inputmode="decimal" placeholder="14"><span class="unite">€/kg</span></div>
-      </div>
-      <fieldset class="choix">
-        <legend>Vitamine B12 dans les ingrédients ?</legend>
-        <div class="choix-options">
-          <label><input type="radio" name="b12" value="oui"> Oui</label>
-          <label><input type="radio" name="b12" value="non"> Non</label>
+        <div class="scan-carte revele">
+          <svg class="motif" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 7v10"/><path d="M12 7v10"/><path d="M17 7v10"/></svg>
+          <h2>scanne, on <em class="serif">remplit</em></h2>
+          <p>Les valeurs arrivent d'Open Food Facts, une base ouverte. Toi, tu lis les repères.</p>
+          <button type="button" class="bouton large entre" id="ouvrir-scanner">
+            Scanner un code-barres
+            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 7v10"/><path d="M12 7v10"/><path d="M17 7v10"/></svg>
+          </button>
         </div>
-      </fieldset>
-    </form>
+        <div class="scan-statut" id="scan-statut" aria-live="polite"></div>
 
-    <h2>Résultats</h2>
-    <div class="carte resultats" aria-live="polite">
-      <div class="ligne">
-        <div>Protéines<span class="detail" id="detail-proteines">% de l'énergie</span></div>
-        <span class="pastille gris" id="feu-proteines">À compléter</span>
+        <form id="decodeur" autocomplete="off" onsubmit="return false">
+          <div class="champ">
+            <label for="kcal">Énergie</label>
+            <div class="saisie"><input type="text" id="kcal" inputmode="decimal" placeholder="210"><span class="unite">kcal</span></div>
+          </div>
+          <div class="champ">
+            <label for="proteines">Protéines</label>
+            <div class="saisie"><input type="text" id="proteines" inputmode="decimal" placeholder="18"><span class="unite">g</span></div>
+          </div>
+          <div class="champ">
+            <label for="satures">dont acides gras saturés</label>
+            <div class="saisie"><input type="text" id="satures" inputmode="decimal" placeholder="1,2"><span class="unite">g</span></div>
+          </div>
+          <div class="champ">
+            <label for="sel">Sel</label>
+            <div class="saisie"><input type="text" id="sel" inputmode="decimal" placeholder="1,3"><span class="unite">g</span></div>
+          </div>
+          <fieldset class="choix">
+            <legend>Vitamine B12 dans les ingrédients ?</legend>
+            <div class="choix-options">
+              <label><input type="radio" name="b12" value="oui"> Oui</label>
+              <label><input type="radio" name="b12" value="non"> Non</label>
+            </div>
+          </fieldset>
+        </form>
       </div>
-      <div class="ligne">
-        <div>Sel<span class="detail" id="detail-sel">pour 100 g</span></div>
-        <span class="pastille gris" id="feu-sel">À compléter</span>
-      </div>
-      <div class="ligne">
-        <div>Graisses saturées<span class="detail" id="detail-satures">pour 100 g</span></div>
-        <span class="pastille gris" id="feu-satures">À compléter</span>
-      </div>
-      <div class="ligne">
-        <div>Vitamine B12</div>
-        <span class="pastille gris" id="feu-b12">À compléter</span>
+
+      <div class="collant">
+        <h2>tes <em class="serif">repères</em></h2>
+        <div class="carte resultats" aria-live="polite">
+          <div class="ligne">
+            <div>Protéines<span class="detail" id="detail-proteines">% de l'énergie</span></div>
+            <span class="pastille gris" id="feu-proteines">À compléter</span>
+          </div>
+          <div class="ligne">
+            <div>Sel<span class="detail" id="detail-sel">pour 100 g</span></div>
+            <span class="pastille gris" id="feu-sel">À compléter</span>
+          </div>
+          <div class="ligne">
+            <div>Graisses saturées<span class="detail" id="detail-satures">pour 100 g</span></div>
+            <span class="pastille gris" id="feu-satures">À compléter</span>
+          </div>
+          <div class="ligne">
+            <div>Vitamine B12</div>
+            <span class="pastille gris" id="feu-b12">À compléter</span>
+          </div>
+        </div>
+
+
+        <p class="petit secondaire" style="margin-top:16px">
+          Repères : protéines selon le règlement (CE) n° 1924/2006 ; sel et graisses saturées selon la Food Standards Agency (UK). Seuils en cours de validation.
+        </p>
       </div>
     </div>
-
-    <div class="encart bleu" aria-live="polite">
-      <div class="petit">Prix pour 20 g de protéines</div>
-      <div class="prix-total" id="prix-20g">—</div>
-      <div class="petit" id="detail-prix">Remplis le prix au kilo et les protéines.</div>
-    </div>
-
-    <p class="petit secondaire" style="margin-top:16px">
-      Repères : protéines selon le règlement (CE) n° 1924/2006 ; sel et graisses saturées selon la Food Standards Agency (UK). Seuils en cours de validation.
-    </p>
   </main>
-
-  <footer class="pied">
-    Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.
-  </footer>
 </div>
+
+<dialog class="scanner" id="scanner" aria-labelledby="titre-scanner">
+  <div class="scanner-tete">
+    <h2 id="titre-scanner">Scanner</h2>
+    <button type="button" class="bouton-icone" id="fermer-scanner" aria-label="Fermer le scanner">
+      <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+  <div class="scanner-corps">
+    <div class="viseur">
+      <video id="video" playsinline muted></video>
+      <div class="cadre" aria-hidden="true"></div>
+      <div class="laser" aria-hidden="true"></div>
+      <div class="message-viseur" id="message-viseur">Démarrage de la caméra…</div>
+    </div>
+    <p class="petit secondaire" style="margin:12px 0 0">Place le code-barres dans le cadre. La caméra reste sur ton appareil : seul le numéro du code est envoyé à Open Food Facts.</p>
+    <form class="saisie-code" id="form-code" novalidate>
+      <label for="code" class="sr-only">Numéro du code-barres</label>
+      <input type="text" id="code" inputmode="numeric" placeholder="Ou tape les chiffres du code" autocomplete="off" aria-describedby="erreur-code">
+      <button type="submit" class="bouton">Chercher</button>
+    </form>
+    <p class="petit message-erreur" id="erreur-code" style="margin:8px 0 0" aria-live="polite"></p>
+  </div>
+</dialog>
+
+<footer class="pied">
+  <div class="pied-int">
+    <div>
+      <a class="marque" href="index.html">
+        <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétal</em></span>
+      </a>
+      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+    </div>
+    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+  </div>
+</footer>
 
 <script src="js/config.js"></script>
 <script src="js/commun.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/scanner.js"></script>
 <script>
   (function () {
     const C = window.CONFIG;
     const $ = (id) => document.getElementById(id);
-
-    function feu(id, couleur, mot) {
-      const el = $(id);
-      el.className = 'pastille ' + couleur;
-      el.textContent = mot;
-    }
+    const feu = (id, couleur, mot) => majPastille($(id), couleur, mot);
 
     function niveau(valeur, vertMax, orangeMax) {
       if (valeur <= vertMax) return ['vert', 'Faible'];
@@ -114,7 +173,6 @@
       const prot = lireNombre($('proteines').value);
       const sat = lireNombre($('satures').value);
       const sel = lireNombre($('sel').value);
-      const prix = lireNombre($('prix').value);
       const b12 = document.querySelector('input[name="b12"]:checked');
 
       // Protéines : % de l'énergie
@@ -156,21 +214,134 @@
       if (!b12) feu('feu-b12', 'gris', 'À compléter');
       else if (b12.value === 'oui') feu('feu-b12', 'vert', 'Enrichi');
       else feu('feu-b12', 'orange', 'Absente');
-
-      // Prix pour 20 g de protéines
-      if (prix !== null && prot) {
-        const p = prix * C.proteinesCible / 10 / prot;
-        $('prix-20g').textContent = formatPrix(p);
-        $('detail-prix').textContent = formatNombre(prix, 2) + ' €/kg avec ' + formatNombre(prot) + ' g de protéines pour 100 g';
-      } else {
-        $('prix-20g').textContent = '—';
-        $('detail-prix').textContent = 'Remplis le prix au kilo et les protéines.';
-      }
     }
 
     $('decodeur').addEventListener('input', calculer);
     $('decodeur').addEventListener('change', calculer);
     calculer();
+
+    /* ---------- Scanner ---------- */
+    const dialogue = $('scanner');
+    const video = $('video');
+    const messageViseur = $('message-viseur');
+    const statut = $('scan-statut');
+
+    function afficherStatut(html) {
+      statut.innerHTML = html ? '<div class="carte">' + html + '</div>' : '';
+    }
+
+    function remplir(id, valeur, decimales) {
+      const champ = $(id);
+      champ.value = valeur === null ? '' : formatNombre(valeur, decimales);
+      champ.classList.remove('rempli');
+      void champ.offsetWidth;
+      if (valeur !== null) champ.classList.add('rempli');
+    }
+
+    async function chercher(code) {
+      afficherStatut('<span class="surtitre">Recherche</span><p style="margin:0">Je cherche le produit ' + echapper(code) + '…</p>');
+      try {
+        const p = await Scanner.chercherProduit(code);
+        if (!p) {
+          afficherStatut('<span class="pastille gris">Introuvable</span><p style="margin:10px 0 0">Ce produit n\'est pas encore dans Open Food Facts. Recopie les valeurs de l\'étiquette ci-dessous.</p>');
+          return;
+        }
+        remplir('kcal', p.kcal, 0);
+        remplir('proteines', p.proteines, 1);
+        remplir('satures', p.satures, 2);
+        remplir('sel', p.sel, 2);
+        document.querySelectorAll('input[name="b12"]').forEach((r) => { r.checked = p.infos.b12.etat !== 'non-signale' && r.value === 'oui'; });
+        calculer();
+
+        const manquants = [];
+        if (p.kcal === null) manquants.push('énergie');
+        if (p.proteines === null) manquants.push('protéines');
+        if (p.satures === null) manquants.push('graisses saturées');
+        if (p.sel === null) manquants.push('sel');
+        afficherStatut(
+          '<span class="pastille vert">Produit trouvé</span>' +
+          '<div class="produit-scanne">' +
+          (p.photo ? '<img src="' + echapper(p.photo) + '" alt="" width="64" height="64" loading="lazy">' : '') +
+          '<p><b>' + echapper(p.nom) + '</b>' + (p.marque && p.marque.toLowerCase() !== p.nom.toLowerCase() ? '<br><span class="secondaire">' + echapper(p.marque) + '</span>' : '') + '</p>' +
+          '</div>' +
+          '<p class="petit secondaire" style="margin:0">Vérifie les valeurs avec l\'étiquette : la base est remplie par des bénévoles.' +
+          (manquants.length ? ' Manquant : ' + manquants.join(', ') + '.' : '') +
+          '</p>' + infosComplementaires(p)
+        );
+        statut.scrollIntoView({ behavior: MOUVEMENT_REDUIT ? 'auto' : 'smooth', block: 'center' });
+      } catch (e) {
+        afficherStatut('<span class="pastille orange">Pas de connexion</span><p style="margin:10px 0 0">Open Food Facts ne répond pas. Vérifie ta connexion ou recopie les valeurs à la main.</p>');
+      }
+    }
+
+    /* Informations en plus après un scan (liste réglable dans js/config.js → scanInfos) */
+    const TITRES_INFOS = {
+      b12: 'Vitamine B12', fer: 'Fer', gluten: 'Gluten', lait: 'Lait (lactose)',
+      autresAllergenes: 'Autres allergènes', vegan: 'Végan', huilePalme: 'Huile de palme',
+      additifs: 'Additifs', bio: 'Bio'
+    };
+    const PASTILLES = {
+      quantite: 'vert', ingredients: 'vert', oui: 'vert', sans: 'vert',
+      present: 'lilas', traces: 'lilas', non: 'lilas', 'non-signale': 'gris'
+    };
+    function ligneInfo(cle, info) {
+      if (!info || !TITRES_INFOS[cle]) return '';
+      const long = info.texte.length > 26 ? ' texte-long' : '';
+      return '<div class="ligne"><span>' + TITRES_INFOS[cle] + '</span><span class="pastille ' + PASTILLES[info.etat] + long + '">' + echapper(info.texte) + '</span></div>';
+    }
+    function listeIngredients(texte) {
+      if (!texte) return '';
+      // Dans Open Food Facts, les allergènes sont entourés de _tirets bas_ : on les met en gras
+      const html = echapper(texte).replace(/_([^_]+)_/g, '<b>$1</b>');
+      return '<details class="ingredients-scan"><summary>Liste d’ingrédients ' + ICONE_CHEVRON + '</summary><p>' + html + '</p></details>';
+    }
+    function infosComplementaires(p) {
+      const liste = (C.scanInfos || Object.keys(TITRES_INFOS)).map((cle) => ligneInfo(cle, p.infos[cle])).join('');
+      return '<div class="infos-scan">' + liste + '</div>' + listeIngredients(p.ingredients) +
+        '<p class="petit secondaire" style="margin:10px 0 0">« Non signalé » ne veut pas dire absent : vérifie toujours la liste d’ingrédients et les allergènes en gras sur l’emballage. Données : Open Food Facts.</p>';
+    }
+
+    function quandCode(code) {
+      dialogue.close();
+      chercher(code);
+    }
+
+    async function ouvrirScanner() {
+      $('erreur-code').textContent = '';
+      $('code').value = '';
+      messageViseur.hidden = false;
+      messageViseur.textContent = 'Démarrage de la caméra…';
+      dialogue.showModal();
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !window.isSecureContext) {
+        messageViseur.textContent = 'La caméra n\'est pas disponible ici. Tape le numéro du code-barres ci-dessous.';
+        return;
+      }
+      try {
+        await Scanner.demarrer(video, quandCode);
+        messageViseur.hidden = true;
+      } catch (e) {
+        messageViseur.hidden = false;
+        messageViseur.textContent = 'Impossible d\'utiliser la caméra (autorisation refusée ou pas de caméra). Tape le numéro du code-barres ci-dessous.';
+      }
+    }
+
+    $('ouvrir-scanner').addEventListener('click', ouvrirScanner);
+    $('fermer-scanner').addEventListener('click', () => dialogue.close());
+    dialogue.addEventListener('close', () => Scanner.arreter());
+    dialogue.addEventListener('click', (e) => { if (e.target === dialogue) dialogue.close(); });
+
+    $('code').addEventListener('input', () => { $('erreur-code').textContent = ''; });
+    $('form-code').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const code = $('code').value.replace(/\s/g, '');
+      if (!Scanner.codeValide(code)) {
+        $('erreur-code').textContent = 'Le code-barres contient 8 à 14 chiffres, sous les barres.';
+        return;
+      }
+      quandCode(code);
+    });
+
+    if (location.hash === '#scanner') ouvrirScanner();
   })();
 </script>
 </body>
