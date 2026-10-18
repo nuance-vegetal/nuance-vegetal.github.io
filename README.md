@@ -1,4 +1,4 @@
-# Nuance végétal
+# Nuance végétale
 
 Site statique (HTML, CSS, JavaScript sans framework) du TFE en diététique de Camille, HEPH-Condorcet (Tournai).
 Il apprend à lire l'étiquette d'une alternative végétale à la viande en 5 coups d'œil.

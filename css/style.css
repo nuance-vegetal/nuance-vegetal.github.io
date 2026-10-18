@@ -1,4 +1,4 @@
-/* ============ Nuance végétal — beige + sauge, version premium ============ */
+/* ============ Nuance végétale — beige + sauge, version premium ============ */
 
 :root {
   --fond: #F6EFE3;
@@ -867,7 +867,7 @@ html.lenis, html.lenis body { height: auto; }
 .ingredients-scan p { margin: 0 0 6px; font-size: 14px; color: var(--texte-2); }
 .ingredients-scan b { color: var(--texte); }
 
-/* Logo Nuance végétal */
+/* Logo Nuance végétale */
 .marque .logo .logo-feuilles { width: 30px; height: 30px; transition: transform .5s var(--courbe); }
 .marque:hover .logo { transform: rotate(-6deg) scale(1.05); }
 .nom-marque { font-family: var(--police-titre); font-weight: 800; letter-spacing: -.03em; }

@@ -1,4 +1,4 @@
-# Notice — modifier le site Nuance végétal sans le développeur
+# Notice — modifier le site Nuance végétale sans le développeur
 
 Le site se modifie avec **Pages CMS** : des formulaires en ligne, comme sur n'importe quel site. Tu ne touches jamais au code et tu ne peux rien casser par erreur.
 
