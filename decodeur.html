@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Décodeur — Décode ton simili</title>
+  <meta name="description" content="Entre les valeurs de l'étiquette et vois tout de suite les repères protéines, sel, graisses saturées, B12 et le prix pour 20 g de protéines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="entete">
+    <a class="retour" href="index.html">
+      <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      Accueil
+    </a>
+  </header>
+
+  <main>
+    <h1>Décodeur</h1>
+    <p class="secondaire">Recopie les valeurs pour 100 g. Les repères se mettent à jour pendant que tu tapes. Rien n'est envoyé : tout se calcule sur ton téléphone.</p>
+
+    <form id="decodeur" autocomplete="off" onsubmit="return false">
+      <div class="champ">
+        <label for="kcal">Énergie</label>
+        <div class="saisie"><input type="text" id="kcal" inputmode="decimal" placeholder="210"><span class="unite">kcal</span></div>
+      </div>
+      <div class="champ">
+        <label for="proteines">Protéines</label>
+        <div class="saisie"><input type="text" id="proteines" inputmode="decimal" placeholder="18"><span class="unite">g</span></div>
+      </div>
+      <div class="champ">
+        <label for="satures">dont acides gras saturés</label>
+        <div class="saisie"><input type="text" id="satures" inputmode="decimal" placeholder="1,2"><span class="unite">g</span></div>
+      </div>
+      <div class="champ">
+        <label for="sel">Sel</label>
+        <div class="saisie"><input type="text" id="sel" inputmode="decimal" placeholder="1,3"><span class="unite">g</span></div>
+      </div>
+      <div class="champ">
+        <label for="prix">Prix au kilo</label>
+        <div class="saisie"><input type="text" id="prix" inputmode="decimal" placeholder="14"><span class="unite">€/kg</span></div>
+      </div>
+      <fieldset class="choix">
+        <legend>Vitamine B12 dans les ingrédients ?</legend>
+        <div class="choix-options">
+          <label><input type="radio" name="b12" value="oui"> Oui</label>
+          <label><input type="radio" name="b12" value="non"> Non</label>
+        </div>
+      </fieldset>
+    </form>
+
+    <h2>Résultats</h2>
+    <div class="carte resultats" aria-live="polite">
+      <div class="ligne">
+        <div>Protéines<span class="detail" id="detail-proteines">% de l'énergie</span></div>
+        <span class="pastille gris" id="feu-proteines">À compléter</span>
+      </div>
+      <div class="ligne">
+        <div>Sel<span class="detail" id="detail-sel">pour 100 g</span></div>
+        <span class="pastille gris" id="feu-sel">À compléter</span>
+      </div>
+      <div class="ligne">
+        <div>Graisses saturées<span class="detail" id="detail-satures">pour 100 g</span></div>
+        <span class="pastille gris" id="feu-satures">À compléter</span>
+      </div>
+      <div class="ligne">
+        <div>Vitamine B12</div>
+        <span class="pastille gris" id="feu-b12">À compléter</span>
+      </div>
+    </div>
+
+    <div class="encart bleu" aria-live="polite">
+      <div class="petit">Prix pour 20 g de protéines</div>
+      <div class="prix-total" id="prix-20g">—</div>
+      <div class="petit" id="detail-prix">Remplis le prix au kilo et les protéines.</div>
+    </div>
+
+    <p class="petit secondaire" style="margin-top:16px">
+      Repères : protéines selon le règlement (CE) n° 1924/2006 ; sel et graisses saturées selon la Food Standards Agency (UK). Seuils en cours de validation.
+    </p>
+  </main>
+
+  <footer class="pied">
+    Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.
+  </footer>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/commun.js"></script>
+<script>
+  (function () {
+    const C = window.CONFIG;
+    const $ = (id) => document.getElementById(id);
+
+    function feu(id, couleur, mot) {
+      const el = $(id);
+      el.className = 'pastille ' + couleur;
+      el.textContent = mot;
+    }
+
+    function niveau(valeur, vertMax, orangeMax) {
+      if (valeur <= vertMax) return ['vert', 'Faible'];
+      if (valeur <= orangeMax) return ['orange', 'Moyen'];
+      return ['rouge', 'Élevé'];
+    }
+
+    function calculer() {
+      const kcal = lireNombre($('kcal').value);
+      const prot = lireNombre($('proteines').value);
+      const sat = lireNombre($('satures').value);
+      const sel = lireNombre($('sel').value);
+      const prix = lireNombre($('prix').value);
+      const b12 = document.querySelector('input[name="b12"]:checked');
+
+      // Protéines : % de l'énergie
+      if (kcal && prot !== null) {
+        const pct = prot * 4 / kcal * 100;
+        if (pct >= C.proteines.vertMin) feu('feu-proteines', 'vert', 'Riche');
+        else if (pct >= C.proteines.orangeMin) feu('feu-proteines', 'orange', 'Source');
+        else feu('feu-proteines', 'rouge', 'Faible');
+        $('detail-proteines').textContent = formatNombre(pct, 0) + ' % de l\'énergie';
+      } else {
+        feu('feu-proteines', 'gris', 'À compléter');
+        $('detail-proteines').textContent = '% de l\'énergie';
+      }
+
+      // Sel
+      if (sel !== null) {
+        const [c, m] = niveau(sel, C.sel.vertMax, C.sel.orangeMax);
+        feu('feu-sel', c, m);
+        const portion = sel * C.portionGrammes / 100;
+        const pctJour = portion / C.selRepereJour * 100;
+        $('detail-sel').textContent = formatNombre(portion, 2) + ' g par portion de ' + C.portionGrammes +
+          ' g, soit ' + formatNombre(pctJour, 0) + ' % du repère de ' + C.selRepereJour + ' g par jour';
+      } else {
+        feu('feu-sel', 'gris', 'À compléter');
+        $('detail-sel').textContent = 'pour 100 g';
+      }
+
+      // Graisses saturées
+      if (sat !== null) {
+        const [c, m] = niveau(sat, C.satures.vertMax, C.satures.orangeMax);
+        feu('feu-satures', c, m);
+        $('detail-satures').textContent = formatNombre(sat) + ' g pour 100 g';
+      } else {
+        feu('feu-satures', 'gris', 'À compléter');
+        $('detail-satures').textContent = 'pour 100 g';
+      }
+
+      // B12
+      if (!b12) feu('feu-b12', 'gris', 'À compléter');
+      else if (b12.value === 'oui') feu('feu-b12', 'vert', 'Enrichi');
+      else feu('feu-b12', 'orange', 'Absente');
+
+      // Prix pour 20 g de protéines
+      if (prix !== null && prot) {
+        const p = prix * C.proteinesCible / 10 / prot;
+        $('prix-20g').textContent = formatPrix(p);
+        $('detail-prix').textContent = formatNombre(prix, 2) + ' €/kg avec ' + formatNombre(prot) + ' g de protéines pour 100 g';
+      } else {
+        $('prix-20g').textContent = '—';
+        $('detail-prix').textContent = 'Remplis le prix au kilo et les protéines.';
+      }
+    }
+
+    $('decodeur').addEventListener('input', calculer);
+    $('decodeur').addEventListener('change', calculer);
+    calculer();
+  })();
+</script>
+</body>
+</html>

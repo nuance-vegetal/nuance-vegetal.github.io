@@ -1,0 +1,368 @@
+/* ============ Décode ton simili — style beige + sauge ============ */
+
+:root {
+  --fond: #F6EFE3;
+  --carte: #FDF9F1;
+  --contour: #E6DAC4;
+  --contour-doux: #EFE6D4;
+  --pastille: #EDE3D0;
+  --pastille-texte: #5A4A2E;
+
+  --texte: #1F2D25;
+  --texte-2: #4A574E;
+  --principal: #2F6B4F;
+  --principal-survol: #1F4A36;
+
+  --vert-fond: #DCEFE3;   --vert-texte: #1E6B42;
+  --orange-fond: #FBE6CC; --orange-texte: #8A4B0F;
+  --rouge-fond: #F8D9D4;  --rouge-texte: #9B2C1C;
+  --lilas-fond: #E6E1F3;  --lilas-texte: #3E2F6B;
+  --bleu-fond: #E3EEF2;   --bleu-texte: #1E4350;
+
+  --r-carte: 20px;
+  --r-bouton: 13px;
+  --r-pastille: 999px;
+
+  --police-titre: 'Bricolage Grotesque', system-ui, sans-serif;
+  --police-texte: 'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: var(--police-texte);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 16px 24px;
+}
+
+h1, h2, h3 {
+  font-family: var(--police-titre);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 0 8px;
+}
+h1 { font-size: 30px; }
+h2 { font-size: 22px; margin-top: 32px; }
+h3 { font-size: 18px; }
+
+p { margin: 0 0 12px; }
+.secondaire { color: var(--texte-2); }
+.petit { font-size: 14px; }
+
+a { color: var(--principal); }
+a:hover { color: var(--principal-survol); }
+
+:focus-visible {
+  outline: 3px solid var(--principal);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Icônes (traits fins, style Lucide) ---------- */
+.icone {
+  width: 20px; height: 20px; flex: none;
+  fill: none; stroke: currentColor; stroke-width: 1.75;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ---------- En-tête ---------- */
+.entete {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 0 8px;
+}
+.entete .marque {
+  font-family: var(--police-titre); font-weight: 800; font-size: 18px;
+  color: var(--texte); text-decoration: none;
+  display: inline-flex; align-items: center; min-height: 44px;
+}
+.retour {
+  display: inline-flex; align-items: center; gap: 6px;
+  min-height: 44px; padding: 0 14px;
+  background: var(--carte); border: 1px solid var(--contour);
+  border-radius: var(--r-bouton);
+  color: var(--texte); text-decoration: none; font-weight: 500; font-size: 15px;
+}
+.retour:hover { border-color: var(--principal); color: var(--principal); }
+
+/* ---------- Boutons ---------- */
+.bouton {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 10px;
+  min-height: 48px; padding: 0 18px;
+  background: var(--principal); color: var(--carte);
+  border: 0; border-radius: var(--r-bouton);
+  font: 500 16px var(--police-texte);
+  text-decoration: none; cursor: pointer;
+}
+.bouton:hover { background: var(--principal-survol); color: var(--carte); }
+.bouton.large { width: 100%; }
+.bouton.secondaire-btn {
+  background: var(--carte); color: var(--texte); border: 1px solid var(--contour);
+}
+.bouton.secondaire-btn:hover { border-color: var(--principal); color: var(--principal); }
+
+/* ---------- Cartes et encarts ---------- */
+.carte {
+  background: var(--carte);
+  border: 1px solid var(--contour);
+  border-radius: var(--r-carte);
+  padding: 16px;
+  margin-top: 12px;
+}
+.encart { border-radius: var(--r-carte); padding: 16px; margin-top: 12px; }
+.encart h3 { font-size: 17px; }
+.encart.lilas { background: var(--lilas-fond); color: var(--lilas-texte); }
+.encart.bleu { background: var(--bleu-fond); color: var(--bleu-texte); }
+.encart.lilas a, .encart.bleu a { color: inherit; }
+
+.grille-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+
+.lien-encart {
+  display: flex; flex-direction: column; gap: 6px;
+  min-height: 96px; padding: 14px;
+  border-radius: var(--r-carte);
+  text-decoration: none; font-weight: 500;
+}
+.lien-encart.lilas { background: var(--lilas-fond); color: var(--lilas-texte); }
+.lien-encart.bleu { background: var(--bleu-fond); color: var(--bleu-texte); }
+.lien-encart span { font-weight: 400; font-size: 14px; }
+.lien-encart:hover { outline: 2px solid currentColor; outline-offset: -2px; }
+
+/* ---------- Pastilles (feux) ---------- */
+.pastille {
+  display: inline-block; padding: 3px 12px;
+  border-radius: var(--r-pastille);
+  font-size: 14px; font-weight: 500; white-space: nowrap;
+}
+.pastille.vert { background: var(--vert-fond); color: var(--vert-texte); }
+.pastille.orange { background: var(--orange-fond); color: var(--orange-texte); }
+.pastille.rouge { background: var(--rouge-fond); color: var(--rouge-texte); }
+.pastille.gris { background: var(--pastille); color: var(--pastille-texte); }
+.pastille.lilas { background: var(--lilas-fond); color: var(--lilas-texte); }
+.pastille.bleu { background: var(--bleu-fond); color: var(--bleu-texte); }
+
+.ligne {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--contour-doux);
+}
+.ligne:first-child { border-top: 0; }
+
+/* ---------- Accueil ---------- */
+.accroche { padding: 8px 0 4px; }
+.accroche h1 { font-size: 34px; margin-top: 12px; }
+.accroche .bouton { margin-top: 8px; }
+
+.chiffre { display: flex; gap: 14px; align-items: center; }
+.chiffre strong {
+  font-family: var(--police-titre); font-weight: 800; font-size: 34px;
+  color: var(--principal); line-height: 1; white-space: nowrap;
+}
+
+.coups { list-style: none; padding: 0; margin: 12px 0 0; counter-reset: coup; }
+.coups li {
+  counter-increment: coup;
+  display: grid; grid-template-columns: 36px 1fr; gap: 12px;
+  background: var(--carte); border: 1px solid var(--contour);
+  border-radius: var(--r-carte); padding: 14px; margin-top: 10px;
+}
+.coups li::before {
+  content: counter(coup);
+  display: grid; place-items: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--principal); color: var(--carte);
+  font-family: var(--police-titre); font-weight: 800;
+}
+.coups strong { display: block; }
+.coups p { margin: 2px 0 0; font-size: 15px; color: var(--texte-2); }
+
+/* ---------- Étiquette (interactive et décortiquée) ---------- */
+.etiquette {
+  background: #fff;
+  border: 1px solid var(--contour);
+  border-radius: var(--r-carte);
+  padding: 16px;
+  margin-top: 12px;
+  font-size: 15px;
+}
+.etiquette .nom-produit { font-family: var(--police-titre); font-weight: 800; font-size: 20px; margin-bottom: 4px; }
+.etiquette .titre-bloc {
+  font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--texte-2); margin: 14px 0 6px;
+}
+.etiquette .ingredients { line-height: 2; }
+
+.zone {
+  font: inherit; color: inherit; text-align: left;
+  background: transparent; border: 2px solid transparent;
+  border-radius: 8px; padding: 0 3px; margin: 0 -1px;
+  cursor: pointer;
+  text-decoration: underline dotted var(--principal);
+  text-underline-offset: 3px;
+}
+.zone:hover { background: var(--vert-fond); }
+.zone[aria-pressed="true"] { border-color: var(--principal); background: var(--vert-fond); text-decoration: none; }
+
+.tableau-nutri { width: 100%; border-collapse: collapse; }
+.tableau-nutri td { padding: 0; border-top: 1px solid var(--contour-doux); }
+.tableau-nutri td:last-child { text-align: right; padding-right: 6px; }
+.tableau-nutri tr.sous td:first-child { padding-left: 14px; }
+.tableau-nutri .zone {
+  display: block; width: 100%; min-height: 44px; margin: 0; padding: 0 6px;
+  text-decoration: none;
+}
+.tableau-nutri .zone span { text-decoration: underline dotted var(--principal); text-underline-offset: 3px; }
+.tableau-nutri .valeur { white-space: nowrap; }
+
+.explication { margin-top: 12px; }
+.explication[hidden] { display: none; }
+.explication .pastille { margin-bottom: 8px; }
+.explication .source { font-size: 13px; color: var(--texte-2); margin: 0; }
+
+/* ---------- Formulaire du décodeur ---------- */
+.champ { margin-top: 12px; }
+.champ label { display: block; font-weight: 500; margin-bottom: 4px; }
+.champ .saisie { position: relative; }
+.champ input[type="text"] {
+  width: 100%; min-height: 48px;
+  padding: 0 64px 0 14px;
+  background: var(--carte); border: 1px solid var(--contour); border-radius: var(--r-bouton);
+  font: 400 17px var(--police-texte); color: var(--texte);
+}
+.champ input[type="text"]:focus { border-color: var(--principal); outline: 2px solid var(--principal); outline-offset: 0; }
+.champ .unite {
+  position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+  color: var(--texte-2); font-size: 15px; pointer-events: none;
+}
+
+fieldset.choix { border: 0; padding: 0; margin: 12px 0 0; }
+fieldset.choix legend { font-weight: 500; margin-bottom: 4px; padding: 0; }
+.choix-options { display: flex; gap: 10px; }
+.choix-options label {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; background: var(--carte);
+  border: 1px solid var(--contour); border-radius: var(--r-bouton);
+  font-weight: 500; cursor: pointer;
+}
+.choix-options input { accent-color: var(--principal); width: 18px; height: 18px; margin: 0; }
+.choix-options label:has(input:checked) { border-color: var(--principal); background: var(--vert-fond); color: var(--vert-texte); }
+.choix-options label:has(input:focus-visible) { outline: 3px solid var(--principal); outline-offset: 2px; }
+
+.resultats .ligne { align-items: flex-start; }
+.resultats .detail { display: block; font-size: 14px; color: var(--texte-2); }
+.prix-total {
+  font-family: var(--police-titre); font-weight: 800; font-size: 30px; line-height: 1.1;
+}
+
+/* ---------- Accordéons ---------- */
+.accordeon {
+  background: var(--carte); border: 1px solid var(--contour);
+  border-radius: var(--r-carte); margin-top: 10px; overflow: hidden;
+}
+.accordeon summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; gap: 12px;
+  min-height: 56px; padding: 12px 16px;
+  font-weight: 700;
+}
+.accordeon summary::-webkit-details-marker { display: none; }
+.accordeon summary .chevron { margin-left: auto; transition: transform .2s; }
+.accordeon[open] summary .chevron { transform: rotate(180deg); }
+.accordeon summary:hover { color: var(--principal); }
+.accordeon .contenu { padding: 0 16px 16px; }
+.accordeon .contenu ul { padding-left: 20px; margin: 8px 0 12px; }
+.accordeon .contenu li { margin-bottom: 4px; }
+
+.numero {
+  display: grid; place-items: center; flex: none;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--principal); color: var(--carte);
+  font-family: var(--police-titre); font-weight: 800; font-size: 15px;
+}
+
+.verdict { border-left: 0; }
+.niveau { display: inline-flex; gap: 3px; vertical-align: middle; }
+.niveau i { width: 10px; height: 10px; border-radius: 50%; background: var(--pastille); border: 1px solid var(--contour); }
+.niveau i.plein { background: var(--principal); border-color: var(--principal); }
+.sources { font-size: 14px; color: var(--texte-2); padding-left: 18px; }
+.sources a { word-break: break-word; }
+
+/* ---------- Bases ---------- */
+.filtres {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+}
+.filtres button {
+  min-height: 44px; padding: 0 16px;
+  background: var(--carte); border: 1px solid var(--contour); border-radius: var(--r-pastille);
+  font: 500 15px var(--police-texte); color: var(--texte); cursor: pointer;
+}
+.filtres button:hover { border-color: var(--principal); }
+.filtres button[aria-pressed="true"] { background: var(--principal); border-color: var(--principal); color: var(--carte); }
+
+.fiche-base h3 { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 0 0 6px; }
+.fiche-base dl { margin: 10px 0 0; }
+.fiche-base dt { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--texte-2); margin-top: 10px; }
+.fiche-base dd { margin: 2px 0 0; }
+.enquete-note { margin-top: 12px; font-size: 14px; }
+
+.etiquette-brouillon { margin-left: 8px; font-size: 12px; vertical-align: middle; }
+
+/* ---------- Fiche frigo ---------- */
+.fiche-frigo { background: #fff; }
+.fiche-frigo h2 { font-size: 18px; margin-top: 18px; }
+.tableau-seuils { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tableau-seuils th, .tableau-seuils td {
+  text-align: left; padding: 8px 6px; border-top: 1px solid var(--contour-doux); vertical-align: top;
+}
+.tableau-seuils thead th { border-top: 0; font-size: 13px; color: var(--texte-2); }
+.tableau-seuils .pastille { font-size: 13px; padding: 2px 8px; }
+.tableau-seuils span.seuil { display: block; font-size: 13px; color: var(--texte-2); margin-top: 2px; }
+.liste-frigo { padding-left: 20px; margin: 6px 0; }
+.liste-frigo li { margin-bottom: 4px; }
+
+.message-erreur { color: var(--rouge-texte); }
+
+/* ---------- Pied de page ---------- */
+.pied {
+  margin-top: 40px; padding-top: 16px;
+  border-top: 1px solid var(--contour);
+  font-size: 14px; color: var(--texte-2);
+}
+
+/* ---------- Ordinateur : version téléphone centrée ---------- */
+@media (min-width: 1024px) {
+  .page { max-width: 560px; }
+}
+
+/* ---------- Impression ---------- */
+@media print {
+  @page { size: A4; margin: 12mm; }
+  body { background: #fff; font-size: 11pt; }
+  .page { max-width: none; padding: 0; }
+  .ne-pas-imprimer, .entete, .bouton, .retour { display: none !important; }
+  .carte, .fiche-frigo { border: 0; padding: 0; margin: 0; }
+  .pastille, .encart { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .fiche-frigo h1 { font-size: 22pt; }
+  .fiche-frigo h2 { font-size: 13pt; margin-top: 10pt; }
+  .tableau-seuils { font-size: 10pt; }
+  .tableau-seuils th, .tableau-seuils td { padding: 4pt; }
+  .encart { padding: 8pt 10pt; margin-top: 8pt; }
+  .pied { margin-top: 10pt; padding-top: 6pt; font-size: 8.5pt; }
+  .fiche-frigo, .pied { break-inside: avoid; }
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C'est fait avec quoi ? — Décode ton simili</title>
+  <meta name="description" content="Tofu, tempeh, seitan, Quorn, pois, quinoa : de quoi sont faits les simili, leurs protéines et leurs allergènes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="entete">
+    <a class="retour" href="index.html">
+      <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      Accueil
+    </a>
+  </header>
+
+  <main>
+    <h1>C'est fait avec quoi ?</h1>
+    <p class="secondaire">La moitié des répondants ne sait pas de quoi est fait le Quorn. Voici les bases les plus courantes.</p>
+
+    <div class="filtres" role="group" aria-label="Filtrer par base">
+      <button type="button" data-filtre="Tout" aria-pressed="true">Tout</button>
+      <button type="button" data-filtre="Soja" aria-pressed="false">Soja</button>
+      <button type="button" data-filtre="Blé" aria-pressed="false">Blé</button>
+      <button type="button" data-filtre="Champignon" aria-pressed="false">Champignon</button>
+      <button type="button" data-filtre="Pois" aria-pressed="false">Pois</button>
+      <button type="button" data-filtre="Autre" aria-pressed="false">Autre</button>
+    </div>
+
+    <p class="sr-only" id="compte" aria-live="polite"></p>
+    <div id="fiches"><p class="secondaire">Chargement…</p></div>
+  </main>
+
+  <footer class="pied">
+    Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.
+  </footer>
+</div>
+
+<script src="js/commun.js"></script>
+<script>
+  (async function () {
+    const zone = document.getElementById('fiches');
+    let bases;
+    try {
+      bases = await chargerDonnees('donnees/bases.json');
+    } catch (e) {
+      zone.innerHTML = '<p class="message-erreur">Les fiches n\'ont pas pu être chargées. Recharge la page.</p>';
+      return;
+    }
+
+    function afficher(filtre) {
+      const liste = bases.filter((b) => filtre === 'Tout' || b.base === filtre);
+      zone.innerHTML = liste.map((b) => `
+        <article class="carte fiche-base">
+          <h3>${echapper(b.nom)} <span class="pastille lilas">${echapper(b.base)}</span></h3>
+          <p style="margin:0">${echapper(b.description)}</p>
+          <dl>
+            <dt>Protéines</dt><dd>${echapper(b.proteines)}</dd>
+            <dt>Allergènes</dt><dd>${(b.allergenes || []).map(echapper).join(', ')}</dd>
+          </dl>
+          <div class="encart bleu enquete-note">${echapper(b.enquete)}</div>
+          ${b.sources ? `<p class="petit secondaire" style="margin:10px 0 0">Sources : ${echapper(b.sources)}</p>` : ''}
+        </article>`).join('') || '<p class="secondaire">Aucune fiche pour cette base.</p>';
+      document.getElementById('compte').textContent = liste.length + ' fiche' + (liste.length > 1 ? 's' : '') + ' affichée' + (liste.length > 1 ? 's' : '');
+    }
+
+    document.querySelectorAll('.filtres button').forEach((bouton, _, tous) => {
+      bouton.addEventListener('click', () => {
+        tous.forEach((b) => b.setAttribute('aria-pressed', String(b === bouton)));
+        afficher(bouton.dataset.filtre);
+      });
+    });
+
+    afficher('Tout');
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+[
+  {
+    "question": "Le soja est-il mauvais pour les hormones ?",
+    "brouillon": true,
+    "reponse": "Aux quantités d'une alimentation normale, les études ne montrent pas d'effet néfaste chez l'adulte.",
+    "points": [
+      "Le soja contient des isoflavones, parfois appelées « phyto-œstrogènes ».",
+      "L'évaluation européenne porte sur les compléments d'isoflavones isolées, pas sur les aliments au soja.",
+      "[à compléter par Camille]"
+    ],
+    "conseil": "Une à deux portions de produits au soja par jour s'intègrent dans une alimentation variée. [à valider]",
+    "niveau": 2,
+    "sources": [
+      { "texte": "EFSA ANS Panel (2015). Risk assessment for peri- and post-menopausal women taking food supplements containing isolated isoflavones. EFSA Journal 13(10):4246.", "url": "https://doi.org/10.2903/j.efsa.2015.4246" },
+      { "texte": "Messina M. (2016). Soy and Health Update. Nutrients 8(12):754.", "url": "https://doi.org/10.3390/nu8120754" }
+    ]
+  },
+  {
+    "question": "« Ultra-transformé », ça veut dire mauvais pour la santé ?",
+    "brouillon": true,
+    "reponse": "« Ultra-transformé » décrit la façon dont un produit est fabriqué, pas directement sa valeur nutritionnelle.",
+    "points": [
+      "La classification NOVA range les aliments selon leur degré de transformation.",
+      "Deux simili classés « ultra-transformés » peuvent avoir des profils très différents en sel, en graisses ou en protéines.",
+      "[à compléter par Camille]"
+    ],
+    "conseil": "Regarde aussi le tableau nutritionnel : protéines, sel, graisses saturées, B12.",
+    "niveau": 2,
+    "sources": [
+      { "texte": "Monteiro C.A. et al. (2019). Ultra-processed foods: what they are and how to identify them. Public Health Nutrition 22(5):936-941.", "url": "https://doi.org/10.1017/S1368980018003762" }
+    ]
+  },
+  {
+    "question": "Faut-il vraiment faire attention à la B12 ?",
+    "brouillon": true,
+    "reponse": "Oui : la vitamine B12 ne se trouve pas naturellement dans les végétaux. Si tu manges peu ou pas de produits animaux, il faut une source fiable.",
+    "points": [
+      "Seuls 14 % des répondants regardent la B12 et le fer sur l'étiquette.",
+      "Certains simili sont enrichis en B12, d'autres non : c'est écrit dans la liste des ingrédients ou le tableau nutritionnel.",
+      "[à compléter par Camille]"
+    ],
+    "conseil": "Demande à ton médecin ou à un·e diététicien·ne si un complément de B12 est utile pour toi.",
+    "niveau": 3,
+    "sources": [
+      { "texte": "Conseil Supérieur de la Santé (2016). Recommandations nutritionnelles pour la Belgique. Avis n° 9285.", "url": "https://www.health.belgium.be/fr/avis-9285-recommandations-nutritionnelles-pour-la-belgique-2016" }
+    ]
+  }
+]

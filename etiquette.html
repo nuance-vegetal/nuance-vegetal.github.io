@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Étiquette décortiquée — Décode ton simili</title>
+  <meta name="description" content="Une étiquette fictive de simili-carné lue ligne par ligne, en 5 commentaires.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="entete">
+    <a class="retour" href="index.html">
+      <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      Accueil
+    </a>
+  </header>
+
+  <main>
+    <h1>Étiquette décortiquée</h1>
+    <p class="secondaire">Un exemple complet, lu ligne par ligne. Le produit est fictif.</p>
+
+    <div class="etiquette">
+      <div class="nom-produit">Galettes végétales façon steak</div>
+      <div class="secondaire petit">Produit fictif · 2 × 100 g · 3,49 €, soit 17,45 €/kg</div>
+
+      <div class="titre-bloc">Ingrédients</div>
+      <p style="margin:0">
+        Eau, protéines de pois (18 %), huile de tournesol, protéines de blé, amidon de pomme de terre, arômes naturels, sel, épaississant : méthylcellulose, colorant : jus de betterave, vitamine B12.
+      </p>
+      <p class="petit secondaire" style="margin:8px 0 0">Peut contenir des traces de soja.</p>
+
+      <div class="titre-bloc">Valeurs nutritionnelles pour 100 g</div>
+      <table class="tableau-seuils">
+        <tbody>
+          <tr><td>Énergie</td><td>230 kcal</td></tr>
+          <tr><td>Matières grasses</td><td>14 g</td></tr>
+          <tr><td>&nbsp;&nbsp;dont saturées</td><td>1,6 g</td></tr>
+          <tr><td>Glucides</td><td>6 g</td></tr>
+          <tr><td>Fibres</td><td>3,5 g</td></tr>
+          <tr><td>Protéines</td><td>17 g</td></tr>
+          <tr><td>Sel</td><td>1,6 g</td></tr>
+          <tr><td>Vitamine B12</td><td>0,38 µg (15 % AR*)</td></tr>
+        </tbody>
+      </table>
+      <p class="petit secondaire" style="margin:8px 0 0">* AR : apport de référence pour un adulte.</p>
+    </div>
+
+    <h2>5 commentaires</h2>
+    <div id="commentaires">
+      <details class="accordeon" name="commentaires" open>
+        <summary><span class="numero">1</span> La base : du pois <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="contenu">
+          <p>Le premier ingrédient après l'eau est la protéine de pois : c'est la base du produit. Les protéines de blé apportent du gluten.</p>
+          <p class="petit secondaire" style="margin:0">[Texte à valider par Camille]</p>
+        </div>
+      </details>
+      <details class="accordeon" name="commentaires">
+        <summary><span class="numero">2</span> Protéines : riche <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="contenu">
+          <p>17 g × 4 ÷ 230 kcal = 30 % de l'énergie. C'est au-dessus de 20 % : <span class="pastille vert">Riche</span></p>
+          <p class="petit secondaire" style="margin:0">Règlement (CE) n° 1924/2006</p>
+        </div>
+      </details>
+      <details class="accordeon" name="commentaires">
+        <summary><span class="numero">3</span> B12 : enrichi <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="contenu">
+          <p>La vitamine B12 est dans les ingrédients et dans le tableau : <span class="pastille vert">Enrichi</span>. Pas de fer ajouté : pense à d'autres sources dans la journée (légumineuses, céréales complètes).</p>
+          <p class="petit secondaire" style="margin:0">[Source à compléter]</p>
+        </div>
+      </details>
+      <details class="accordeon" name="commentaires">
+        <summary><span class="numero">4</span> Sel : élevé <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="contenu">
+          <p>1,6 g pour 100 g, au-dessus de 1,5 g : <span class="pastille rouge">Élevé</span>. Une portion de 150 g apporte 2,4 g de sel, soit 40 % du repère de 6 g par jour. Pas besoin de resaler.</p>
+          <p class="petit secondaire" style="margin:0">Food Standards Agency (UK)</p>
+        </div>
+      </details>
+      <details class="accordeon" name="commentaires">
+        <summary><span class="numero">5</span> Graisses saturées : moyen <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="contenu">
+          <p>1,6 g pour 100 g, entre 1,5 et 5 g : <span class="pastille orange">Moyen</span>. L'huile de tournesol apporte surtout des graisses insaturées.</p>
+          <p class="petit secondaire" style="margin:0">Food Standards Agency (UK)</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="carte verdict">
+      <h3>Le verdict</h3>
+      <p>Une bonne source de protéines, enrichie en B12, mais assez salée. Accompagne-la de légumes et de féculents sans sel ajouté.</p>
+      <p class="petit secondaire" style="margin:0">[Texte à valider par Camille]</p>
+    </div>
+
+    <div class="encart lilas">
+      <h3>Les additifs, on en parle ?</h3>
+      <p>La <b>méthylcellulose</b> (E461) lie la préparation. Le <b>jus de betterave</b> donne la couleur « viande ». Ces additifs sont autorisés et évalués en Europe.</p>
+      <p class="petit" style="margin:0">[Texte et sources à valider par Camille]</p>
+    </div>
+  </main>
+
+  <footer class="pied">
+    Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.
+  </footer>
+</div>
+
+<script src="js/commun.js"></script>
+<script>
+  const conteneur = document.getElementById('commentaires');
+  accordeonExclusif(conteneur);
+</script>
+</body>
+</html>
