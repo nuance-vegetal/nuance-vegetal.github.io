@@ -123,4 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+/** Fait défiler jusqu'à un élément (passe par le défilement doux s'il est actif). */
+function defiler(el) {
+  if (window.defilerVers) window.defilerVers(el);
+  else el.scrollIntoView({ behavior: MOUVEMENT_REDUIT ? 'auto' : 'smooth', block: 'center' });
+}
+
 const ICONE_CHEVRON = '<svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';

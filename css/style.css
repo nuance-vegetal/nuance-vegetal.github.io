@@ -876,3 +876,90 @@ html.lenis, html.lenis body { height: auto; }
   font-size: 1.15em; color: var(--principal);
 }
 .sticker .rond .logo-feuilles { width: 40px; height: 40px; }
+
+/* ============ Fiche produit après un scan ============ */
+.fiche-produit {
+  margin-top: 14px; padding: 18px;
+  background: var(--carte); border: 1px solid var(--contour); border-radius: 26px;
+  box-shadow: var(--ombre);
+  animation: glisse .55s var(--courbe);
+}
+.fp-tete { display: flex; align-items: center; gap: 14px; }
+.fp-photo {
+  flex: none; width: 84px; height: 84px; border-radius: 20px; overflow: hidden;
+  background: #fff; border: 1px solid var(--contour);
+  display: grid; place-items: center; color: var(--principal);
+}
+.fp-photo img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+.fp-photo .icone { width: 34px; height: 34px; }
+.fp-badge {
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px;
+  background: var(--vert-fond); color: var(--vert-texte); font-size: 12px; font-weight: 500;
+}
+.fp-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.fp-nom {
+  margin: 6px 0 2px; font-size: 22px; line-height: 1.1; text-wrap: balance;
+}
+.fp-marque { margin: 0; color: var(--texte-2); font-size: 14px; }
+
+.fp-section {
+  margin: 20px 0 8px; font-size: 13px; font-weight: 500; letter-spacing: .02em; color: var(--texte-2);
+}
+.fp-section::before { content: "( "; opacity: .6; }
+.fp-section::after { content: " )"; opacity: .6; }
+
+/* 4 grosses tuiles de couleur */
+.fp-feux { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+.fp-feu {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 12px 14px; border-radius: 18px; min-height: 92px;
+  animation: pop .5s var(--courbe) both; animation-delay: calc(var(--i, 0) * 70ms + .15s);
+}
+.fp-feu-titre { font-size: 13px; opacity: .8; }
+.fp-feu strong {
+  font-family: var(--police-titre); font-weight: 800; font-size: 24px; letter-spacing: -.02em;
+  line-height: 1.1; text-transform: lowercase;
+}
+.fp-feu-val { font-size: 13px; margin-top: auto; opacity: .85; }
+.fp-feu.vert { background: var(--vert-fond); color: var(--vert-texte); }
+.fp-feu.orange { background: var(--orange-fond); color: var(--orange-texte); }
+.fp-feu.rouge { background: var(--rouge-fond); color: var(--rouge-texte); }
+.fp-feu.gris { background: var(--pastille); color: var(--pastille-texte); }
+
+/* Pastilles « bon à savoir » avec icône */
+.fp-infos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.fp-info {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 12px; border-radius: 16px; font-size: 14px; line-height: 1.3;
+  animation: pop .5s var(--courbe) both; animation-delay: calc(var(--i, 0) * 50ms + .15s);
+}
+.fp-info.large { grid-column: 1 / -1; }
+.fp-info .icone { width: 20px; height: 20px; margin-top: 1px; }
+.fp-info span { display: flex; flex-direction: column; gap: 1px; min-width: 0; overflow-wrap: anywhere; }
+.fp-info b { font-weight: 700; font-size: 13px; }
+.fp-info.vert { background: var(--vert-fond); color: var(--vert-texte); }
+.fp-info.lilas { background: var(--lilas-fond); color: var(--lilas-texte); }
+.fp-info.gris { background: var(--pastille); color: var(--pastille-texte); }
+
+.fiche-produit .ingredients-scan { margin-top: 14px; }
+.fp-note { margin: 12px 0 0; font-size: 13px; color: var(--texte-2); }
+.fp-actions { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 14px; }
+.fp-actions .bouton { min-height: 48px; }
+
+/* Squelette pendant la recherche */
+.squelette {
+  background: linear-gradient(90deg, var(--pastille) 0%, var(--carte) 50%, var(--pastille) 100%);
+  background-size: 200% 100%; animation: miroite 1.2s linear infinite; border-radius: 10px;
+}
+.fp-photo.squelette { border: 0; }
+.ligne-s { height: 12px; margin: 6px 0; }
+.tuile-s { height: 92px; border-radius: 18px; }
+@keyframes miroite { to { background-position: -200% 0; } }
+
+@media (min-width: 720px) {
+  .fp-feux { grid-template-columns: repeat(4, 1fr); }
+  .fp-actions { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .decodeur-grille .fp-feux { grid-template-columns: 1fr 1fr; }
+}

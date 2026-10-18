@@ -14,7 +14,7 @@ const Scanner = (() => {
     if (window.ZXing) return Promise.resolve();
     return new Promise((ok, ko) => {
       const s = document.createElement('script');
-      s.src = 'js/vendor/zxing.min.js';
+      s.src = 'js/vendor/zxing.min.js?v=0.23.0';
       s.onload = ok;
       s.onerror = () => ko(new Error('zxing'));
       document.head.appendChild(s);
@@ -132,7 +132,7 @@ const Scanner = (() => {
 
     const huilePalme = analyse.includes('en:palm-oil') ? { etat: 'present', texte: 'contient' }
       : analyse.includes('en:may-contain-palm-oil') ? { etat: 'traces', texte: 'peut contenir' }
-      : analyse.includes('en:palm-oil-free') ? { etat: 'sans', texte: "sans huile de palme" }
+      : analyse.includes('en:palm-oil-free') ? { etat: 'sans', texte: 'sans' }
       : { etat: 'non-signale', texte: 'non signalé' };
 
     const codes = (p.additives_tags || []).map((t) => t.replace(/^en:/, '').toUpperCase());
