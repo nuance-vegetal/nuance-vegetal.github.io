@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261019">
+  <link rel="stylesheet" href="css/style.css?v=20261019b">
 </head>
 <body class="page-secondaire">
 
@@ -85,6 +85,8 @@
       </div>
 
       <div class="collant">
+        <div id="fiche-droite"></div>
+        <div id="bloc-reperes">
         <h2>tes <em class="serif">repères</em></h2>
         <div class="carte resultats" aria-live="polite">
           <div class="ligne">
@@ -109,6 +111,7 @@
         <p class="petit secondaire" style="margin-top:16px">
           Repères : protéines selon le règlement (CE) n° 1924/2006 ; sel et graisses saturées selon la Food Standards Agency (UK). Seuils en cours de validation.
         </p>
+        </div>
       </div>
     </div>
   </main>
@@ -151,11 +154,11 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261019"></script>
-<script src="js/commun.js?v=20261019"></script>
-<script src="js/vendor/lenis.min.js?v=20261019"></script>
-<script src="js/animations.js?v=20261019"></script>
-<script src="js/scanner.js?v=20261019"></script>
+<script src="js/config.js?v=20261019b"></script>
+<script src="js/commun.js?v=20261019b"></script>
+<script src="js/vendor/lenis.min.js?v=20261019b"></script>
+<script src="js/animations.js?v=20261019b"></script>
+<script src="js/scanner.js?v=20261019b"></script>
 <script>
   (async function () {
     let C;
@@ -208,6 +211,12 @@
 
     function calculer() {
       const r = evaluer();
+      document.querySelectorAll('.fp-feu[data-cle]').forEach((t) => {
+        const v = r[t.dataset.cle];
+        t.className = 'fp-feu ' + v.couleur;
+        t.querySelector('strong').textContent = v.couleur === 'gris' ? '—' : v.mot;
+        if (t.dataset.cle !== 'b12' || v.couleur !== 'gris') t.querySelector('.fp-feu-val').textContent = v.court;
+      });
       ['proteines', 'sel', 'satures', 'b12'].forEach((cle) => {
         feu('feu-' + cle, r[cle].couleur, r[cle].mot);
         if (r[cle].detail && $('detail-' + cle)) $('detail-' + cle).textContent = r[cle].detail;
@@ -237,6 +246,8 @@
     }
 
     async function chercher(code) {
+      $('fiche-droite').innerHTML = '';
+      $('bloc-reperes').hidden = false;
       statut.innerHTML = '<div class="fiche-produit chargement" aria-label="Recherche du produit ' + echapper(code) + '">' +
         '<div class="fp-tete"><div class="fp-photo squelette"></div><div style="flex:1"><div class="squelette ligne-s" style="width:40%"></div><div class="squelette ligne-s" style="width:80%;height:20px"></div><div class="squelette ligne-s" style="width:55%"></div></div></div>' +
         '<div class="fp-feux">' + '<div class="squelette tuile-s"></div>'.repeat(4) + '</div>' +
@@ -265,9 +276,8 @@
         if (p.proteines === null) manquants.push('protéines');
         if (p.satures === null) manquants.push('graisses saturées');
         if (p.sel === null) manquants.push('sel');
-        statut.innerHTML = ficheProduit(p, evaluer(), manquants);
-        $('rescanner').addEventListener('click', ouvrirScanner);
-        defiler(statut);
+        afficherFiche(ficheProduit(p, evaluer(), manquants));
+        defiler(document.querySelector('.fiche-produit'));
       } catch (e) {
         afficherStatut('<span class="pastille orange">Petit souci</span><p style="margin:10px 0 0">Le produit a été trouvé mais n’a pas pu s’afficher. Recharge la page et réessaie.</p>');
         console.error(e);
@@ -300,7 +310,7 @@
         : INFOS.vegan.icone;
       if (p.infos.b12) r.b12.court = p.infos.b12.texte;
       const tuiles = TUILES.map(([cle, titre], i) =>
-        '<div class="fp-feu ' + r[cle].couleur + '" style="--i:' + i + '">' +
+        '<div class="fp-feu ' + r[cle].couleur + '" data-cle="' + cle + '" style="--i:' + i + '">' +
         '<span class="fp-feu-titre">' + titre + '</span>' +
         '<strong>' + (r[cle].couleur === 'gris' ? '—' : echapper(r[cle].mot)) + '</strong>' +
         '<span class="fp-feu-val">' + echapper(r[cle].court) + '</span></div>').join('');
@@ -315,6 +325,8 @@
           echapper(p.ingredients).replace(/_([^_]+)_/g, '<b>$1</b>') + '</p></details>'
         : '';
       return '<article class="fiche-produit">' +
+        '<button type="button" class="bouton-icone fp-fermer" id="fermer-fiche" aria-label="Fermer la fiche et revenir aux repères">' +
+        '<svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>' +
         '<div class="fp-tete"><div class="fp-photo">' + photo + '</div><div>' +
         '<span class="fp-badge">produit trouvé</span>' +
         '<h3 class="fp-nom">' + echapper(p.nom) + '</h3>' +
@@ -327,6 +339,21 @@
         '<div class="fp-actions"><button type="button" class="bouton" id="rescanner">scanner un autre produit</button>' +
         '<a class="bouton secondaire-btn" href="#decodeur">voir les valeurs</a></div>' +
         '</article>';
+    }
+
+    const grandEcran = window.matchMedia('(min-width: 1024px)');
+    function afficherFiche(html) {
+      statut.innerHTML = '';
+      $('fiche-droite').innerHTML = '';
+      (grandEcran.matches ? $('fiche-droite') : statut).innerHTML = html;
+      $('bloc-reperes').hidden = true;
+      $('rescanner').addEventListener('click', ouvrirScanner);
+      $('fermer-fiche').addEventListener('click', fermerFiche);
+    }
+    function fermerFiche() {
+      statut.innerHTML = '';
+      $('fiche-droite').innerHTML = '';
+      $('bloc-reperes').hidden = false;
     }
 
     function quandCode(code) {
