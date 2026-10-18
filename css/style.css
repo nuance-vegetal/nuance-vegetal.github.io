@@ -1038,3 +1038,15 @@ html.lenis, html.lenis body { height: auto; }
 @media (min-width: 720px) {
   .histo-liste { margin-inline: 0; padding-inline: 0; }
 }
+
+/* Formulaire « recopie l'étiquette » */
+.formulaire-etiquette { margin-top: 26px; }
+.separateur { display: flex; align-items: center; gap: 12px; color: var(--texte-2); font-size: 14px; margin-bottom: 14px; }
+.separateur::before, .separateur::after { content: ""; flex: 1; height: 1px; background: var(--contour); }
+.titre-formulaire { font-size: 26px; margin: 0 0 6px; }
+.etape {
+  display: inline-grid; place-items: center; width: 24px; height: 24px; margin-right: 8px; border-radius: 8px;
+  background: var(--sauge-clair); color: var(--principal-survol); font: 800 13px var(--police-titre); vertical-align: 1px;
+}
+.aide { margin: 6px 0 0; font-size: 13px; line-height: 1.45; color: var(--texte-2); }
+.champ input[type="text"]::placeholder { color: #B5AC9B; font-style: italic; }

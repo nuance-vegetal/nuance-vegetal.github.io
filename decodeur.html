@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261019d">
+  <link rel="stylesheet" href="css/style.css?v=20261019e">
 </head>
 <body class="page-secondaire">
 
@@ -43,7 +43,7 @@
         <section class="accroche">
           <span class="surtitre">décodeur</span>
           <h1>ton produit, <em class="serif">décodé</em></h1>
-          <p class="intro">Scanne le code-barres ou recopie les valeurs pour 100 g. Les repères s'allument en direct.</p>
+          <p class="intro">Deux façons de faire : scanne le code-barres, ou recopie le tableau de l’étiquette. Les repères s’allument en direct.</p>
         </section>
 
         <div class="scan-carte revele">
@@ -58,30 +58,40 @@
         <div class="scan-statut" id="scan-statut" aria-live="polite"></div>
         <div class="historique" id="historique"></div>
 
-        <form id="decodeur" class="revele" autocomplete="off" onsubmit="return false">
+        <form id="decodeur" class="formulaire-etiquette revele" autocomplete="off" onsubmit="return false" aria-describedby="explication-formulaire">
+          <div class="separateur" aria-hidden="true"><span>ou</span></div>
+          <h2 class="titre-formulaire">recopie <em class="serif">l’étiquette</em></h2>
+          <p class="secondaire petit" id="explication-formulaire">Pas de code-barres ? Retourne l’emballage et cherche le tableau <b>« Valeurs nutritionnelles pour 100 g »</b>. Recopie les 4 lignes ci-dessous, puis regarde la liste d’ingrédients pour la B12. Après un scan, ces cases sont déjà remplies : tu peux les corriger.</p>
+
           <div class="champ">
-            <label for="kcal">Énergie</label>
-            <div class="saisie"><input type="text" id="kcal" inputmode="decimal" placeholder="210"><span class="unite">kcal</span></div>
+            <label for="kcal"><span class="etape">1</span>Énergie</label>
+            <div class="saisie"><input type="text" id="kcal" inputmode="decimal" placeholder="ex. 210" aria-describedby="aide-kcal"><span class="unite">kcal</span></div>
+            <p class="aide" id="aide-kcal">Première ligne du tableau. Prends le chiffre en <b>kcal</b>, pas celui en kJ. Il sert à calculer la part des protéines.</p>
           </div>
           <div class="champ">
-            <label for="proteines">Protéines</label>
-            <div class="saisie"><input type="text" id="proteines" inputmode="decimal" placeholder="18"><span class="unite">g</span></div>
+            <label for="proteines"><span class="etape">2</span>Protéines</label>
+            <div class="saisie"><input type="text" id="proteines" inputmode="decimal" placeholder="ex. 18" aria-describedby="aide-proteines"><span class="unite">g</span></div>
+            <p class="aide" id="aide-proteines">La ligne « Protéines », en grammes pour 100 g.</p>
           </div>
           <div class="champ">
-            <label for="satures">dont acides gras saturés</label>
-            <div class="saisie"><input type="text" id="satures" inputmode="decimal" placeholder="1,2"><span class="unite">g</span></div>
+            <label for="satures"><span class="etape">3</span>Graisses saturées</label>
+            <div class="saisie"><input type="text" id="satures" inputmode="decimal" placeholder="ex. 1,2" aria-describedby="aide-satures"><span class="unite">g</span></div>
+            <p class="aide" id="aide-satures">Sous « Matières grasses », la ligne <b>« dont acides gras saturés »</b>.</p>
           </div>
           <div class="champ">
-            <label for="sel">Sel</label>
-            <div class="saisie"><input type="text" id="sel" inputmode="decimal" placeholder="1,3"><span class="unite">g</span></div>
+            <label for="sel"><span class="etape">4</span>Sel</label>
+            <div class="saisie"><input type="text" id="sel" inputmode="decimal" placeholder="ex. 1,3" aria-describedby="aide-sel"><span class="unite">g</span></div>
+            <p class="aide" id="aide-sel">La ligne « Sel », souvent la dernière du tableau.</p>
           </div>
-          <fieldset class="choix">
-            <legend>Vitamine B12 dans les ingrédients ?</legend>
+          <fieldset class="choix" aria-describedby="aide-b12">
+            <legend><span class="etape">5</span>Vitamine B12 dans les ingrédients ?</legend>
+            <p class="aide" id="aide-b12" style="margin:0 0 8px">Cherche « vitamine B12 » ou « cobalamine » dans la liste d’ingrédients ou sous le tableau.</p>
             <div class="choix-options">
               <label><input type="radio" name="b12" value="oui"> Oui</label>
               <label><input type="radio" name="b12" value="non"> Non</label>
             </div>
           </fieldset>
+          <p class="aide" style="margin-top:12px">La virgule ou le point marchent tous les deux. Une case vide reste « à compléter ».</p>
         </form>
       </div>
 
@@ -155,11 +165,11 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261019d"></script>
-<script src="js/commun.js?v=20261019d"></script>
-<script src="js/vendor/lenis.min.js?v=20261019d"></script>
-<script src="js/animations.js?v=20261019d"></script>
-<script src="js/scanner.js?v=20261019d"></script>
+<script src="js/config.js?v=20261019e"></script>
+<script src="js/commun.js?v=20261019e"></script>
+<script src="js/vendor/lenis.min.js?v=20261019e"></script>
+<script src="js/animations.js?v=20261019e"></script>
+<script src="js/scanner.js?v=20261019e"></script>
 <script>
   (async function () {
     let C;
