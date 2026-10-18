@@ -969,3 +969,42 @@ html.lenis, html.lenis body { height: auto; }
 .fp-tete { padding-right: 44px; }
 #fiche-droite .fiche-produit { margin-top: 0; }
 #bloc-reperes[hidden] { display: none; }
+
+/* Derniers produits scannés */
+.historique:empty { display: none; }
+.historique { margin-top: 14px; animation: glisse .5s var(--courbe); }
+.histo-tete { display: flex; align-items: center; justify-content: space-between; }
+.histo-tete .fp-section { margin: 6px 0; }
+.lien-discret {
+  min-height: 44px; padding: 0 4px; background: none; border: 0; cursor: pointer;
+  font: 500 14px var(--police-texte); color: var(--texte-2); text-decoration: underline; text-underline-offset: 3px;
+}
+.lien-discret:hover { color: var(--principal); }
+.histo-liste {
+  display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+  margin: 0 -16px; padding: 2px 16px 6px; scroll-snap-type: x proximity;
+}
+.histo-liste::-webkit-scrollbar { display: none; }
+.histo-item {
+  flex: none; width: 220px; min-height: 64px; scroll-snap-align: start;
+  display: flex; align-items: center; gap: 10px; padding: 8px 12px 8px 8px;
+  background: var(--carte); border: 1px solid var(--contour); border-radius: 16px;
+  font: inherit; color: inherit; text-align: left; cursor: pointer;
+  transition: border-color .2s, transform .2s var(--courbe);
+}
+.histo-item:hover { border-color: var(--principal); transform: translateY(-2px); }
+.histo-item img, .histo-vide {
+  flex: none; width: 44px; height: 44px; border-radius: 10px; object-fit: contain;
+  background: #fff; border: 1px solid var(--contour-doux); padding: 3px;
+  display: grid; place-items: center; color: var(--principal);
+}
+.histo-item span { display: flex; flex-direction: column; min-width: 0; }
+.histo-item b {
+  font-size: 14px; line-height: 1.25; font-weight: 700;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.histo-item small { font-size: 12px; color: var(--texte-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.histo-note { margin: 4px 0 0; font-size: 12px; color: var(--texte-2); }
+@media (min-width: 720px) {
+  .histo-liste { margin-inline: 0; padding-inline: 0; }
+}

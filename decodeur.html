@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261019b">
+  <link rel="stylesheet" href="css/style.css?v=20261019c">
 </head>
 <body class="page-secondaire">
 
@@ -56,6 +56,7 @@
           </button>
         </div>
         <div class="scan-statut" id="scan-statut" aria-live="polite"></div>
+        <div class="historique" id="historique"></div>
 
         <form id="decodeur" autocomplete="off" onsubmit="return false">
           <div class="champ">
@@ -154,11 +155,11 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261019b"></script>
-<script src="js/commun.js?v=20261019b"></script>
-<script src="js/vendor/lenis.min.js?v=20261019b"></script>
-<script src="js/animations.js?v=20261019b"></script>
-<script src="js/scanner.js?v=20261019b"></script>
+<script src="js/config.js?v=20261019c"></script>
+<script src="js/commun.js?v=20261019c"></script>
+<script src="js/vendor/lenis.min.js?v=20261019c"></script>
+<script src="js/animations.js?v=20261019c"></script>
+<script src="js/scanner.js?v=20261019c"></script>
 <script>
   (async function () {
     let C;
@@ -277,6 +278,7 @@
         if (p.satures === null) manquants.push('graisses saturées');
         if (p.sel === null) manquants.push('sel');
         afficherFiche(ficheProduit(p, evaluer(), manquants));
+        ajouterHisto(code, p);
         defiler(document.querySelector('.fiche-produit'));
       } catch (e) {
         afficherStatut('<span class="pastille orange">Petit souci</span><p style="margin:10px 0 0">Le produit a été trouvé mais n’a pas pu s’afficher. Recharge la page et réessaie.</p>');
@@ -356,6 +358,45 @@
       $('bloc-reperes').hidden = false;
     }
 
+    /* ---------- Derniers produits scannés : gardés seulement sur l'appareil ---------- */
+    const CLE_HISTO = 'nuance-vegetale-derniers-scans';
+    function lireHisto() {
+      try { const l = JSON.parse(localStorage.getItem(CLE_HISTO)); return Array.isArray(l) ? l : []; } catch (e) { return []; }
+    }
+    function ecrireHisto(liste) {
+      try { localStorage.setItem(CLE_HISTO, JSON.stringify(liste)); } catch (e) { /* stockage indisponible : tant pis */ }
+    }
+    function ajouterHisto(code, p) {
+      const liste = lireHisto().filter((x) => x.code !== code);
+      liste.unshift({ code, nom: p.nom, marque: p.marque || '', photo: p.photo || '' });
+      ecrireHisto(liste.slice(0, 8));
+      afficherHisto();
+    }
+    function afficherHisto() {
+      const zone = $('historique');
+      const liste = lireHisto().filter((x) => Scanner.codeValide(x.code));
+      if (!liste.length) { zone.innerHTML = ''; return; }
+      zone.innerHTML =
+        '<div class="histo-tete"><p class="fp-section">tes derniers scans</p>' +
+        '<button type="button" class="lien-discret" id="effacer-histo">effacer</button></div>' +
+        '<div class="histo-liste">' + liste.map((x) =>
+          '<button type="button" class="histo-item" data-code="' + echapper(x.code) + '">' +
+          (/^https:\/\/images\.openfoodfacts\.org\//.test(x.photo)
+            ? '<img src="' + echapper(x.photo) + '" alt="" width="44" height="44" loading="lazy">'
+            : '<span class="histo-vide">' + INFOS.vegan.icone + '</span>') +
+          '<span><b>' + echapper(x.nom) + '</b>' + (x.marque ? '<small>' + echapper(x.marque) + '</small>' : '') + '</span>' +
+          '</button>').join('') + '</div>' +
+        '<p class="histo-note">Gardés seulement sur cet appareil, jamais envoyés.</p>';
+    }
+    $('historique').addEventListener('click', (e) => {
+      const item = e.target.closest('.histo-item');
+      if (item) { chercher(item.dataset.code); return; }
+      if (e.target.closest('#effacer-histo')) {
+        try { localStorage.removeItem(CLE_HISTO); } catch (err) { /* rien */ }
+        afficherHisto();
+      }
+    });
+
     function quandCode(code) {
       dialogue.close();
       chercher(code);
@@ -396,6 +437,7 @@
       quandCode(code);
     });
 
+    afficherHisto();
     if (location.hash === '#scanner') ouvrirScanner();
   })();
 </script>
