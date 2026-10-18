@@ -17,10 +17,12 @@ Adresse du site : https://nuance-vegetal.github.io
 1. Va sur **https://app.pagescms.org** et clique sur **Sign in with GitHub**.
 2. Choisis le projet **nuance-vegetal.github.io**.
 3. À gauche, choisis ce que tu veux modifier :
-   - **Ce que disent les études** : les fiches question / réponse ;
-   - **C'est fait avec quoi ?** : les fiches tofu, tempeh, seitan…
-   - **Chiffres de l'enquête** : les cartes et le bandeau de l'accueil ;
-   - **Seuils du décodeur et infos du scan** : les feux vert / orange / rouge et les lignes affichées après un scan.
+   - **Textes des pages du site**
+     - **Accueil – chiffres de l'enquête** : les grandes cartes de chiffres et le bandeau qui défile ;
+     - **Les bases – fiches tofu, seitan, Quorn…** : la page « C'est fait avec quoi ? » ;
+     - **Études – questions et réponses** : la page « Ce que disent les études » ;
+   - **Réglages**
+     - **Décodeur, scan et fiche frigo – seuils des feux** : les limites vert / orange / rouge (utilisées par le décodeur, le scan et la fiche frigo) et les infos affichées après un scan.
 4. Change le texte dans les cases.
 5. Clique sur **Save** (en haut à droite).
 6. Attends environ **une minute**, puis recharge le site : ta modification est en ligne.
