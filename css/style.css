@@ -409,7 +409,7 @@ a:hover { color: var(--principal-survol); }
   border-radius: var(--r-carte); padding: 20px;
   background: var(--principal); color: var(--carte); margin-top: 18px;
 }
-.scan-carte h2 { color: var(--carte); margin: 0 0 6px; font-size: 22px; }
+.scan-carte h2 { color: var(--carte); margin: 0 0 14px; font-size: 22px; }
 .scan-carte p { color: #d9e7dc; font-size: 15px; }
 .scan-carte .bouton { background: var(--carte); color: var(--principal-survol); box-shadow: none; }
 .scan-carte .bouton:hover { background: #fff; color: var(--principal-survol); }
