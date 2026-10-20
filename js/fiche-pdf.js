@@ -52,7 +52,7 @@ window.FichePDF = (function () {
     // Polices du site (fichiers TTF hébergés dans fonts/)
     const polices = [
       ['DMSans-normal-400.ttf', 'DMSans', 'normal'], ['DMSans-normal-700.ttf', 'DMSans', 'bold'],
-      ['BricolageGrotesque-normal-800.ttf', 'Bricolage', 'bold'], ['InstrumentSerif-italic-400.ttf', 'Instrument', 'italic']
+      ['InstrumentSerif-normal-400.ttf', 'Instrument', 'normal'], ['InstrumentSerif-italic-400.ttf', 'Instrument', 'italic']
     ];
     for (const [f, nom, style] of polices) {
       doc.addFileToVFS(f, await enBase64('fonts/' + f));
@@ -78,8 +78,8 @@ window.FichePDF = (function () {
 
     const titre = (t) => {
       place(11);
-      doc.setFont('Bricolage', 'bold'); doc.setFontSize(15); doc.setTextColor(texte);
-      doc.text(t, M, y + 6); y += 10;
+      doc.setFont('Instrument', 'normal'); doc.setFontSize(20); doc.setTextColor(texte);
+      doc.text(t, M, y + 6.5); y += 10.5;
     };
     const lignes = (t, taille, largeur) => { doc.setFontSize(taille); return doc.splitTextToSize(t, largeur); };
     const para = (t, opts = {}) => {
@@ -136,11 +136,11 @@ window.FichePDF = (function () {
     /* ---------- Page 1 : couverture et seuils ---------- */
     fondPage();
     doc.setFillColor(survol); doc.rect(0, 0, L, 32, 'F');
-    doc.setFont('Bricolage', 'bold'); doc.setFontSize(20); doc.setTextColor('#FDF9F1');
-    doc.text('nuance', M, 15);
+    doc.setFont('Instrument', 'normal'); doc.setFontSize(26); doc.setTextColor('#FDF9F1');
+    doc.text('nuance', M, 15.5);
     const largeurNuance = doc.getTextWidth('nuance');
-    doc.setFont('Instrument', 'italic'); doc.setFontSize(23); doc.setTextColor(clair);
-    doc.text('végétale', M + largeurNuance + 2, 15);
+    doc.setFont('Instrument', 'italic'); doc.setFontSize(26); doc.setTextColor(clair);
+    doc.text('végétale', M + largeurNuance + 2, 15.5);
     doc.setFont('DMSans', 'normal'); doc.setFontSize(9); doc.setTextColor('#FDF9F1');
     doc.text('Ta fiche pour lire une étiquette en magasin.', M, 24);
     y = 40;

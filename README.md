@@ -34,7 +34,7 @@ Le scan était « hors périmètre » dans le cahier des charges : il a été aj
 
 Tout est désactivé quand l'appareil demande moins de mouvement (réglage d'accessibilité « réduire les animations ») : le contenu s'affiche alors directement.
 
-Les titres et textes d'interface ont un ton plus « réseaux sociaux » (minuscules, mot d'accent en italique Instrument Serif). Les contenus scientifiques n'ont pas été modifiés. Ce changement de ton est à valider par Camille.
+Les titres sont en Instrument Serif (fine et élégante, mot d'accent en italique), le texte courant en DM Sans ; ton plus « réseaux sociaux » (minuscules). Les contenus scientifiques n'ont pas été modifiés. Ce changement de ton est à valider par Camille.
 
 ## Lancer en local
 

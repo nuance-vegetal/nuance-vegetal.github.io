@@ -31,7 +31,7 @@
   --ombre-douce: 0 1px 2px rgba(70, 52, 20, .04), 0 10px 24px -14px rgba(70, 52, 20, .2);
   --courbe: cubic-bezier(.2, .7, .2, 1);
 
-  --police-titre: 'Bricolage Grotesque', system-ui, sans-serif;
+  --police-titre: 'Instrument Serif', Georgia, serif;
   --police-texte: 'DM Sans', system-ui, sans-serif;
   --police-accent: 'Instrument Serif', Georgia, serif;
 }
@@ -123,13 +123,13 @@ img { max-width: 100%; display: block; }
 h1, h2, h3 {
   font-family: var(--police-titre);
   font-weight: 800;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
+  letter-spacing: -0.012em;
+  line-height: 1.02;
   margin: 0 0 10px;
   text-wrap: balance;
 }
-h1 { font-size: clamp(40px, 11.5vw, 54px); }
-h2 { font-size: clamp(30px, 8vw, 40px); margin-top: 72px; }
+h1 { font-size: clamp(46px, 13vw, 62px); }
+h2 { font-size: clamp(36px, 9.5vw, 46px); margin-top: 72px; }
 h3 { font-size: 19px; letter-spacing: -0.015em; }
 
 p { margin: 0 0 12px; }
@@ -699,10 +699,10 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
   .nav a:hover { color: var(--texte); background: var(--fond-2); }
   .nav a[aria-current="page"] { color: var(--principal-survol); background: var(--sauge-clair); }
 
-  h2 { margin-top: 112px; font-size: 52px; }
+  h2 { margin-top: 112px; font-size: 60px; }
 
   .accueil-haut { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding-top: 32px; }
-  .accroche h1 { font-size: 76px; }
+  .accroche h1 { font-size: 88px; }
   .accroche .intro { font-size: 19px; }
   .accueil-haut .accroche-visuel { margin-top: 0; }
   .boutons-ordi { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
@@ -720,7 +720,7 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
   .bloc-assiette .carte { margin: 0; }
 
   .bandeau { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding-top: 32px; }
-  .bandeau h1 { font-size: 64px; }
+  .bandeau h1 { font-size: 76px; }
   .bandeau .photo { margin-top: 0; aspect-ratio: 4 / 3; }
 
   .decodeur-grille { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
@@ -1326,4 +1326,27 @@ html.menu-ouvert, html.menu-ouvert body { overflow: hidden; }
 @media (min-width: 720px) {
   .liens .lien-photo.large { grid-column: span 2; }
   .liens .lien-photo.large .photo { aspect-ratio: 16 / 6.2; }
+}
+
+/* ============ Titres en serif élégante (Instrument Serif) ============
+   La police n'existe qu'en une seule graisse : on interdit le faux gras pour garder des titres fins. */
+html { font-synthesis: none; }
+h1, h2, h3, .titre-anime { font-weight: 400; }
+.serif { font-size: 1em; }
+h3 { font-size: 22px; }
+.chiffre-carte strong { font-size: 48px; letter-spacing: -.01em; }
+.chiffre-carte.mis-en-avant strong { font-size: 64px; }
+.pile li strong { font-size: 30px; font-weight: 400; }
+.fp-feu strong { font-size: 28px; letter-spacing: 0; }
+.fp-nom { font-size: 26px; }
+.fiche-base h3 { font-size: 28px; }
+.titre-fiche-nutriment { font-size: 24px; letter-spacing: 0; }
+.titre-formulaire { font-size: 24px; }
+.menu-plein li a { font-size: 34px; letter-spacing: -.01em; }
+.etiquette .nom-produit { font-size: 26px; }
+.prix-total { letter-spacing: -.01em; }
+.nom-marque { font-size: 1.15em; letter-spacing: -.01em; }
+.numero, .coups li::before { font-family: var(--police-texte); font-weight: 700; }
+@media (min-width: 1024px) {
+  .pile li strong { font-size: 38px; }
 }
