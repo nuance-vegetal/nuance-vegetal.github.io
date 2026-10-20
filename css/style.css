@@ -1157,3 +1157,38 @@ html.lenis, html.lenis body { height: auto; }
 }
 .surtitre-trait::before { content: ""; width: 38px; height: 1px; background: currentColor; opacity: .8; }
 .surtitre-trait::after { content: none; }
+
+/* Explication dépliable sous une question du formulaire */
+.aide-depliable { margin: -2px 0 8px; }
+.aide-depliable summary {
+  list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;
+  min-height: 32px; font-size: 13px; font-weight: 500; color: var(--principal);
+}
+.aide-depliable summary::-webkit-details-marker { display: none; }
+.aide-depliable summary .icone { width: 16px; height: 16px; transition: transform .3s var(--courbe); }
+.aide-depliable[open] summary .icone { transform: rotate(180deg); }
+.aide-depliable p { margin: 2px 0 4px; font-size: 14px; line-height: 1.5; color: var(--texte-2); }
+fieldset.choix + fieldset.choix { margin-top: 18px; }
+
+/* Encadré « Bio ? Voici comment le vérifier » */
+.encart-bio {
+  margin-top: 14px; padding: 4px 14px 14px; border-radius: 18px;
+  background: var(--vert-fond); color: var(--vert-texte);
+}
+.encart-bio summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  min-height: 48px; font-weight: 700; font-size: 15px;
+}
+.encart-bio summary::-webkit-details-marker { display: none; }
+.encart-bio summary .chevron { transition: transform .3s var(--courbe); }
+.encart-bio[open] summary .chevron { transform: rotate(180deg); }
+.labels-bio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.labels-bio figure {
+  margin: 0; padding: 10px 6px; border-radius: 14px; background: #fff; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.labels-bio img { height: 58px; width: auto; max-width: 100%; object-fit: contain; }
+.labels-bio figcaption { font-size: 12px; line-height: 1.3; color: var(--texte); }
+.labels-bio figcaption b { display: block; font-size: 12.5px; }
+.labels-bio figcaption span { color: var(--texte-2); font-size: 11.5px; }
+.encart-bio > p { margin: 12px 0 0; font-size: 13.5px; line-height: 1.5; }

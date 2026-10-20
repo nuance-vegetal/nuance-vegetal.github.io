@@ -8,11 +8,11 @@
   <meta name="theme-color" content="#F6EFE3">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261020d"></script>
+  <script src="js/theme.js?v=20261021"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261020g">
+  <link rel="stylesheet" href="css/style.css?v=20261021">
 </head>
 <body class="page-secondaire">
 
@@ -79,9 +79,26 @@
           </div>
           <fieldset class="choix">
             <legend>B12 dans les ingrédients ?</legend>
+            <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p></details>
             <div class="choix-options">
               <label><input type="radio" name="b12" value="oui"> Oui</label>
               <label><input type="radio" name="b12" value="non"> Non</label>
+            </div>
+          </fieldset>
+          <fieldset class="choix">
+            <legend>Fer dans les ingrédients ?</legend>
+            <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p></details>
+            <div class="choix-options">
+              <label><input type="radio" name="fer" value="oui"> Oui</label>
+              <label><input type="radio" name="fer" value="non"> Non</label>
+            </div>
+          </fieldset>
+          <fieldset class="choix">
+            <legend>Présence de gluten ?</legend>
+            <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Le blé est mis en évidence en gras dans la liste d’ingrédients. Attention au gluten caché dans les céréales : seigle, avoine (si contamination croisée), blé, orge, triticale, épeautre, kamut. Si vous voyez ces ingrédients, c’est que le produit contient du gluten.</p></details>
+            <div class="choix-options">
+              <label><input type="radio" name="gluten" value="oui"> Oui</label>
+              <label><input type="radio" name="gluten" value="non"> Non</label>
             </div>
           </fieldset>
         </form>
@@ -107,6 +124,14 @@
           <div class="ligne">
             <div>Vitamine B12</div>
             <span class="pastille gris" id="feu-b12">À compléter</span>
+          </div>
+          <div class="ligne">
+            <div>Fer</div>
+            <span class="pastille gris" id="feu-fer">À compléter</span>
+          </div>
+          <div class="ligne">
+            <div>Gluten</div>
+            <span class="pastille gris" id="feu-gluten">À compléter</span>
           </div>
         </div>
 
@@ -157,11 +182,11 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261020c"></script>
-<script src="js/commun.js?v=20261020c"></script>
-<script src="js/vendor/lenis.min.js?v=20261020c"></script>
-<script src="js/animations.js?v=20261020c"></script>
-<script src="js/scanner.js?v=20261020c"></script>
+<script src="js/config.js?v=20261021"></script>
+<script src="js/commun.js?v=20261021"></script>
+<script src="js/vendor/lenis.min.js?v=20261021"></script>
+<script src="js/animations.js?v=20261021"></script>
+<script src="js/scanner.js?v=20261021"></script>
 <script>
   (async function () {
     let C;
@@ -209,6 +234,16 @@
       if (!b12) r.b12 = { couleur: 'gris', mot: 'À compléter', court: 'non signalée' };
       else if (b12.value === 'oui') r.b12 = { couleur: 'vert', mot: 'Enrichi', court: 'présente' };
       else r.b12 = { couleur: 'orange', mot: 'Absente', court: 'absente' };
+
+      const fer = document.querySelector('input[name="fer"]:checked');
+      if (!fer) r.fer = { couleur: 'gris', mot: 'À compléter' };
+      else if (fer.value === 'oui') r.fer = { couleur: 'vert', mot: 'Enrichi' };
+      else r.fer = { couleur: 'orange', mot: 'Absent' };
+
+      const gluten = document.querySelector('input[name="gluten"]:checked');
+      if (!gluten) r.gluten = { couleur: 'gris', mot: 'À compléter' };
+      else if (gluten.value === 'oui') r.gluten = { couleur: 'lilas', mot: 'Contient du gluten' };
+      else r.gluten = { couleur: 'vert', mot: 'Pas de gluten repéré' };
       return r;
     }
 
@@ -220,7 +255,7 @@
         t.querySelector('strong').textContent = v.couleur === 'gris' ? '—' : v.mot;
         if (t.dataset.cle !== 'b12' || v.couleur !== 'gris') t.querySelector('.fp-feu-val').textContent = v.court;
       });
-      ['proteines', 'sel', 'satures', 'b12'].forEach((cle) => {
+      ['proteines', 'sel', 'satures', 'b12', 'fer', 'gluten'].forEach((cle) => {
         feu('feu-' + cle, r[cle].couleur, r[cle].mot);
         if (r[cle].detail && $('detail-' + cle)) $('detail-' + cle).textContent = r[cle].detail;
       });
@@ -272,6 +307,11 @@
         remplir('satures', p.satures, 2);
         remplir('sel', p.sel, 2);
         document.querySelectorAll('input[name="b12"]').forEach((r) => { r.checked = p.infos.b12.etat !== 'non-signale' && r.value === 'oui'; });
+        document.querySelectorAll('input[name="fer"]').forEach((r) => { r.checked = p.infos.fer.etat !== 'non-signale' && r.value === 'oui'; });
+        const etatGluten = p.infos.gluten.etat;
+        document.querySelectorAll('input[name="gluten"]').forEach((r) => {
+          r.checked = (etatGluten === 'present' && r.value === 'oui') || (etatGluten === 'sans' && r.value === 'non');
+        });
         calculer();
 
         const manquants = [];
@@ -337,12 +377,29 @@
         (marque ? '<p class="fp-marque">' + echapper(marque) + '</p>' : '') + '</div></div>' +
         '<p class="fp-section">en un coup d’œil</p><div class="fp-feux">' + tuiles + '</div>' +
         (infos ? '<p class="fp-section">bon à savoir</p><div class="fp-infos">' + infos + '</div>' : '') +
+        encartBio(p.infos.bio) +
         ingredients +
         '<p class="fp-note">Données Open Food Facts, remplies par des bénévoles : vérifie avec l’emballage. « Non signalé » ne veut pas dire absent.' +
         (manquants.length ? ' Manquant : ' + manquants.join(', ') + '.' : '') + '</p>' +
         '<div class="fp-actions"><button type="button" class="bouton" id="rescanner">scanner un autre produit</button>' +
         '<a class="bouton secondaire-btn" href="#decodeur">voir les valeurs</a></div>' +
         '</article>';
+    }
+
+    /* Encadré « Bio ? » : ouvert si on ne sait pas, replié si le label bio est trouvé */
+    const LABELS_BIO = [
+      ['images/labels/bio-europeen.svg', 'Logo bio européen', 'obligatoire sur tout produit bio préemballé de l’UE'],
+      ['images/labels/biogarantie.svg', 'Biogarantie', 'label belge'],
+      ['images/labels/ab-agriculture-biologique.svg', 'AB (Agriculture Biologique)', 'label français, fréquent en Belgique']
+    ];
+    function encartBio(info) {
+      const connu = info && info.etat === 'oui';
+      return '<details class="encart-bio"' + (connu ? '' : ' open') + '>' +
+        '<summary>Bio ? Voici comment le vérifier ' + ICONE_CHEVRON + '</summary>' +
+        '<div class="labels-bio">' + LABELS_BIO.map(([src, nom, ou]) =>
+          '<figure><img src="' + src + '" alt="' + nom + '"><figcaption><b>' + nom + '</b><span>' + ou + '</span></figcaption></figure>').join('') + '</div>' +
+        '<p>Le logo européen est accompagné d’un code de l’organisme de contrôle (ex. BE-BIO-01) et de l’origine des ingrédients (Agriculture UE / non UE).</p>' +
+        '</details>';
     }
 
     const grandEcran = window.matchMedia('(min-width: 1024px)');

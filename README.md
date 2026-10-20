@@ -70,3 +70,13 @@ Photos [Unsplash](https://unsplash.com/license) (licence libre, usage gratuit), 
 | etudes.webp | @fotoinshadows |
 | assiette.webp | @nadineprimeau |
 | decodeur.webp | @thomaskinto |
+
+## Logos bio (encadré « Bio ? Voici comment le vérifier »)
+
+Affichés à titre d'information, pour aider à reconnaître les labels sur l'emballage (`images/labels/`) :
+
+| Fichier | Source |
+|---|---|
+| bio-europeen.svg | Logo bio de l'Union européenne — version vectorielle du fichier officiel de la Commission européenne ([Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Organic-Logo.svg), domaine public). La Commission autorise son usage pour informer le public sur le bio. |
+| biogarantie.svg | Logo Biogarantie — fichier publié sur le site officiel [biogarantie.be](https://biogarantie.be) |
+| ab-agriculture-biologique.svg | Logo AB — [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Agriculture-biologique.svg) (domaine public) |
