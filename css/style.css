@@ -1117,8 +1117,10 @@ html.lenis, html.lenis body { height: auto; }
 }
 .manifeste-int > :not(.plante) { position: relative; z-index: 1; }
 .plante {
-  position: absolute; right: -2vw; bottom: 0; z-index: 0; pointer-events: none;
-  width: min(78vw, 660px); height: auto; max-height: 96%;
+  /* Téléphone et tablette : la branche se place sous le texte, dans le coin droit */
+  position: relative; display: block; z-index: 0; pointer-events: none;
+  width: min(62vw, 360px); height: auto;
+  margin: 18px -20px -60px auto;
   color: var(--sur-fonce); opacity: .5;
   transform-origin: 92% 100%; animation: balance 9s ease-in-out infinite;
 }
@@ -1130,3 +1132,28 @@ html.lenis, html.lenis body { height: auto; }
 @keyframes balance { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-1.8deg) translateY(-4px); } }
 @media (prefers-reduced-motion: reduce) { .plante { animation: none; } }
 @media print { .plante { display: none; } }
+
+/* Ordinateur : la branche occupe le coin droit, le texte s'arrête avant elle */
+@media (min-width: 1024px) {
+  .manifeste-texte, .manifeste-signature { max-width: min(60%, 760px); }
+  .plante {
+    position: absolute; right: 0; bottom: 0; margin: 0;
+    width: min(34vw, 500px); max-height: 92%;
+  }
+}
+
+/* Manifeste : grande serif élégante (Instrument Serif), comme une couverture de magazine */
+.manifeste-texte {
+  font-family: var(--police-accent); font-weight: 400; font-style: normal;
+  font-size: clamp(44px, 11.5vw, 64px); line-height: 1; letter-spacing: -.015em;
+}
+@media (min-width: 1024px) {
+  .manifeste-texte { font-size: clamp(64px, 6.4vw, 96px); max-width: min(64%, 860px); }
+}
+.manifeste-texte .serif { font-size: 1em; font-style: italic; }
+.surtitre-trait {
+  display: inline-flex; align-items: center; gap: 14px;
+  text-transform: uppercase; letter-spacing: .22em; font-size: 12px;
+}
+.surtitre-trait::before { content: ""; width: 38px; height: 1px; background: currentColor; opacity: .8; }
+.surtitre-trait::after { content: none; }
