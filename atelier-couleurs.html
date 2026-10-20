@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Atelier couleurs — Nuance végétale</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <script src="js/theme.js?v=20261020c"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261020c">
+  <style>
+    .atelier { display: grid; gap: 24px; padding: 20px 0 40px; }
+    .atelier h1 { font-size: clamp(34px, 9vw, 52px); margin: 0 0 6px; }
+    .reglage {
+      display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 12px;
+      padding: 12px; margin-top: 10px; background: var(--carte); border: 1px solid var(--contour); border-radius: 18px;
+    }
+    .reglage input[type="color"] {
+      width: 56px; height: 56px; padding: 0; border: 1px solid var(--contour); border-radius: 14px;
+      background: none; cursor: pointer;
+    }
+    .reglage input[type="color"]::-webkit-color-swatch-wrapper { padding: 4px; }
+    .reglage input[type="color"]::-webkit-color-swatch { border: 0; border-radius: 10px; }
+    .reglage input[type="color"]::-moz-color-swatch { border: 0; border-radius: 10px; }
+    .reglage label { font-weight: 700; display: block; }
+    .reglage small { color: var(--texte-2); font-size: 13px; }
+    .reglage input[type="text"] {
+      width: 100%; max-width: 130px; min-height: 40px; margin-top: 4px; padding: 0 10px;
+      font: 500 15px var(--police-texte); letter-spacing: .04em; text-transform: uppercase;
+      border: 1px solid var(--contour); border-radius: 10px; background: #fff; color: var(--texte);
+    }
+    .copier {
+      min-height: 44px; padding: 0 14px; border-radius: 12px; cursor: pointer;
+      background: var(--fond); border: 1px solid var(--contour); color: var(--texte); font: 500 14px var(--police-texte);
+    }
+    .copier:hover { border-color: var(--principal); color: var(--principal); }
+    .copier.ok { background: var(--vert-fond); color: var(--vert-texte); border-color: transparent; }
+    .ambiance { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .ambiance select {
+      min-height: 44px; padding: 0 12px; border: 1px solid var(--contour); border-radius: 12px;
+      background: var(--carte); font: 500 15px var(--police-texte); color: var(--texte);
+    }
+    .alertes:empty { display: none; }
+    .alertes { margin-top: 12px; padding: 12px 14px; border-radius: 16px; background: var(--orange-fond); color: var(--orange-texte); font-size: 14px; }
+    .alertes p { margin: 0 0 4px; }
+    .alertes p:last-child { margin: 0; }
+    .etapes { margin-top: 14px; }
+    .etapes ol { margin: 6px 0 12px; padding-left: 20px; }
+    .etapes li { margin-bottom: 4px; }
+    .apercu-outils { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+    .apercu-outils button {
+      min-height: 40px; padding: 0 14px; border-radius: 999px; cursor: pointer;
+      background: var(--carte); border: 1px solid var(--contour); font: 500 14px var(--police-texte); color: var(--texte);
+    }
+    .apercu-outils button[aria-pressed="true"] { background: var(--principal); border-color: var(--principal); color: var(--carte); }
+    .telephone {
+      position: relative; width: 100%; max-width: 410px; margin: 0 auto; padding: 10px;
+      border-radius: 40px; background: #1d1d1f; box-shadow: var(--ombre);
+    }
+    .ecran { position: relative; overflow: hidden; border-radius: 30px; height: 720px; background: #fff; }
+    .ecran iframe { position: absolute; top: 0; left: 0; width: 390px; height: 100%; border: 0; transform-origin: top left; }
+    @media (min-width: 1024px) {
+      .atelier { grid-template-columns: 1fr 440px; align-items: start; gap: 48px; }
+      .colonne-apercu { position: sticky; top: 24px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header class="barre" style="position:static;background:none">
+    <div class="barre-int" style="padding-inline:0">
+      <a class="retour" href="index.html">
+        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        site
+      </a>
+    </div>
+  </header>
+
+  <main class="atelier">
+    <section>
+      <span class="surtitre">pour camille</span>
+      <h1>atelier <em class="serif">couleurs</em></h1>
+      <p class="secondaire">Choisis 4 couleurs : l'aperçu change en direct. Ensuite, copie les codes dans Pages CMS.</p>
+
+      <div class="ambiance">
+        <label for="depart" class="petit secondaire">Partir d'une ambiance :</label>
+        <select id="depart"></select>
+      </div>
+
+      <div id="reglages"></div>
+      <div class="alertes" id="alertes" aria-live="polite"></div>
+
+      <div class="carte etapes">
+        <b>Pour l'appliquer sur le site</b>
+        <ol>
+          <li>Pages CMS → <b>Réglages</b> → <b>Couleurs du site</b>.</li>
+          <li>Dans <b>Couleurs personnalisées</b>, colle les 4 codes.</li>
+          <li>Coche <b>Utiliser mes couleurs</b>, puis <b>Save</b>.</li>
+        </ol>
+        <button type="button" class="copier" id="copier-tout">copier les 4 codes</button>
+      </div>
+    </section>
+
+    <section class="colonne-apercu" aria-label="Aperçu du site">
+      <div class="apercu-outils" role="group" aria-label="Page affichée dans l'aperçu">
+        <button type="button" data-page="index.html" aria-pressed="true">accueil</button>
+        <button type="button" data-page="decodeur.html" aria-pressed="false">décodeur</button>
+        <button type="button" data-page="bases.html" aria-pressed="false">les bases</button>
+      </div>
+      <div class="telephone">
+        <div class="ecran"><iframe id="apercu" title="Aperçu du site avec les couleurs choisies" src="index.html?atelier=1"></iframe></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  (function () {
+    const N = window.NuanceCouleurs;
+    const AMBIANCES = [
+      ['sauge', 'Sauge'], ['terracotta', 'Terracotta'], ['lavande', 'Lavande'], ['ocean', 'Océan'],
+      ['olive', 'Olive'], ['cacao', 'Cacao'], ['framboise', 'Framboise']
+    ];
+    const COULEURS = [
+      ['fond', 'Fond de page', 'le fond derrière tout le site', '--fond'],
+      ['carte', 'Cartes', 'fiches, formulaires, encadrés', '--carte'],
+      ['principal', 'Couleur principale', 'boutons, liens, accents, pied de page', '--principal'],
+      ['texte', 'Texte', 'titres et paragraphes', '--texte']
+    ];
+    const etat = {};
+    const $ = (id) => document.getElementById(id);
+
+    // Valeurs de base d'une ambiance : lues dans la feuille de style
+    function couleursAmbiance(nom) {
+      const temoin = document.createElement('div');
+      temoin.setAttribute('data-theme', nom);
+      temoin.hidden = true;
+      document.body.appendChild(temoin);
+      const cs = getComputedStyle(temoin);
+      const r = {};
+      COULEURS.forEach(([cle, , , v]) => { r[cle] = cs.getPropertyValue(v).trim().toUpperCase(); });
+      temoin.remove();
+      return r;
+    }
+
+    // Formulaire
+    $('depart').innerHTML = AMBIANCES.map(([n, l]) => '<option value="' + n + '">' + l + '</option>').join('');
+    $('reglages').innerHTML = COULEURS.map(([cle, titre, aide]) =>
+      '<div class="reglage">' +
+      '<input type="color" id="pick-' + cle + '" aria-label="' + titre + '">' +
+      '<div><label for="hex-' + cle + '">' + titre + '</label><small>' + aide + '</small><br>' +
+      '<input type="text" id="hex-' + cle + '" maxlength="7" spellcheck="false" autocomplete="off"></div>' +
+      '<button type="button" class="copier" data-copier="' + cle + '">copier</button></div>').join('');
+
+    function afficher() {
+      COULEURS.forEach(([cle]) => { $('pick-' + cle).value = etat[cle].toLowerCase(); $('hex-' + cle).value = etat[cle]; });
+      appliquerApercu();
+      const alertes = N.verifier(etat.fond, etat.carte, etat.principal, etat.texte);
+      $('alertes').innerHTML = alertes.map((a) => '<p>' + a + '</p>').join('');
+    }
+
+    function appliquerApercu() {
+      const doc = $('apercu').contentDocument;
+      if (!doc || !doc.documentElement) return;
+      const p = N.paletteDepuis(etat.fond, etat.carte, etat.principal, etat.texte);
+      doc.documentElement.setAttribute('data-theme', 'sauge');
+      Object.keys(p).forEach((v) => doc.documentElement.style.setProperty(v, p[v]));
+    }
+
+    function charger(valeurs) { Object.assign(etat, valeurs); afficher(); }
+
+    COULEURS.forEach(([cle]) => {
+      $('pick-' + cle).addEventListener('input', (e) => { etat[cle] = e.target.value.toUpperCase(); afficher(); });
+      $('hex-' + cle).addEventListener('input', (e) => {
+        let v = e.target.value.trim();
+        if (v && v[0] !== '#') v = '#' + v;
+        if (N.hexValide(v)) { etat[cle] = v.toUpperCase(); $('pick-' + cle).value = v.toLowerCase(); appliquerApercu(); $('alertes').innerHTML = N.verifier(etat.fond, etat.carte, etat.principal, etat.texte).map((a) => '<p>' + a + '</p>').join(''); }
+      });
+    });
+    $('depart').addEventListener('change', (e) => charger(couleursAmbiance(e.target.value)));
+
+    // Copier
+    function copier(texte, bouton) {
+      const fini = () => { const ancien = bouton.textContent; bouton.textContent = 'copié'; bouton.classList.add('ok'); setTimeout(() => { bouton.textContent = ancien; bouton.classList.remove('ok'); }, 1500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(texte).then(fini, () => prompt('Copie ce texte :', texte));
+      else prompt('Copie ce texte :', texte);
+    }
+    document.addEventListener('click', (e) => {
+      const b = e.target.closest('[data-copier]');
+      if (b) copier(etat[b.dataset.copier], b);
+    });
+    $('copier-tout').addEventListener('click', (e) => copier(COULEURS.map(([cle, titre]) => titre + ' : ' + etat[cle]).join('\n'), e.target));
+
+    // Aperçu : choix de la page, mise à l'échelle du téléphone
+    const iframe = $('apercu');
+    iframe.addEventListener('load', appliquerApercu);
+    document.querySelectorAll('.apercu-outils button').forEach((b, _, tous) => b.addEventListener('click', () => {
+      tous.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      iframe.src = b.dataset.page + '?atelier=1';
+    }));
+    function echelle() {
+      const largeur = iframe.parentElement.clientWidth;
+      const k = Math.min(1, largeur / 390);
+      iframe.style.transform = 'scale(' + k + ')';
+      iframe.style.height = (720 / k) + 'px';
+    }
+    window.addEventListener('resize', echelle);
+    echelle();
+
+    // Départ : les couleurs actuellement réglées dans Pages CMS
+    fetch('donnees/theme.json', { cache: 'no-cache' }).then((r) => r.json()).then((t) => {
+      const p = t.personnalise;
+      if (p && p.actif && ['fond', 'carte', 'principal', 'texte'].every((k) => N.hexValide(p[k]))) {
+        charger({ fond: p.fond.toUpperCase(), carte: p.carte.toUpperCase(), principal: p.principal.toUpperCase(), texte: p.texte.toUpperCase() });
+      } else {
+        const nom = AMBIANCES.some(([n]) => n === t.theme) ? t.theme : 'sauge';
+        $('depart').value = nom;
+        charger(couleursAmbiance(nom));
+      }
+    }).catch(() => charger(couleursAmbiance('sauge')));
+  })();
+</script>
+</body>
+</html>

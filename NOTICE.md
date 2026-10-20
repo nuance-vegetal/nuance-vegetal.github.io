@@ -40,12 +40,19 @@ Dans le champ **Photo**, clique sur l'image puis **Upload** pour envoyer une nou
 
 ## Changer les couleurs
 
-1. **Réglages** → **Couleurs du site**.
-2. **Ambiance de couleurs** : choisis dans la liste. Le fond, les cartes, les boutons et le logo changent ensemble.
-3. **Couleur principale (facultatif)** : pour changer seulement la couleur des boutons et des accents, tape un code couleur comme `#2F6B4F` (tu en trouves sur https://htmlcolorcodes.com/fr). Laisse vide pour garder celle de l'ambiance. Si la couleur est trop claire, le site la fonce un peu pour que le texte reste lisible.
-4. **Save**, puis recharge le site après une minute.
+**Le plus simple : une ambiance prête**
+1. **Réglages** → **Couleurs du site** → **Ambiance de couleurs** : choisis dans la liste (sauge, terracotta, lavande, océan, olive, cacao, framboise).
+2. **Save**, puis recharge le site après une minute.
 
-Les feux vert / orange / rouge du décodeur ne changent pas : ils ont un sens et restent lisibles pour les personnes daltoniennes.
+**Tes propres couleurs, avec un nuancier et un aperçu**
+1. Ouvre **https://nuance-vegetal.github.io/atelier-couleurs.html** (page cachée, réservée à toi).
+2. Choisis le fond, les cartes, la couleur principale et le texte avec les nuanciers : l'aperçu du site change en direct. Un message orange te prévient si une couleur rend le texte difficile à lire (le site la corrige alors un peu tout seul).
+3. Clique sur **copier** à côté de chaque couleur et colle le code dans Pages CMS : **Réglages** → **Couleurs du site** → **Couleurs personnalisées**.
+4. Coche **Utiliser mes couleurs**, puis **Save**.
+
+Pour revenir à une ambiance prête, décoche **Utiliser mes couleurs**.
+
+Les feux vert / orange / rouge du décodeur ne changent jamais : ils ont un sens et restent lisibles pour les personnes daltoniennes.
 
 ## Bon à savoir
 

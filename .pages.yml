@@ -198,8 +198,8 @@ content:
       label: Ambiance de couleurs
       type: select
       required: true
-      description: 'Choisis une ambiance : fond, cartes, boutons et logo changent ensemble. Les feux vert / orange / rouge
-        ne changent jamais.'
+      description: 'Une ambiance prête : fond, cartes, boutons et logo changent ensemble. Les feux vert / orange / rouge ne
+        changent jamais. Ignorée si « Utiliser mes couleurs » est coché plus bas.'
       options:
         values:
         - name: sauge
@@ -216,15 +216,38 @@ content:
           label: Cacao (brun chaud)
         - name: framboise
           label: Framboise (rose poudré)
-    - name: couleurPrincipale
-      label: Couleur principale (facultatif)
-      type: string
-      description: 'Pour changer seulement la couleur des boutons et des titres en accent. Laisse vide pour garder celle de
-        l''ambiance. Exemple : #2F6B4F (trouve un code sur htmlcolorcodes.com/fr). Si la couleur est trop claire, le site
-        la fonce un peu pour que le texte reste lisible.'
-      pattern:
-        regex: ^(#[0-9A-Fa-f]{6})?$
-        message: 'Un code couleur commence par # suivi de 6 caractères, par exemple #2F6B4F'
+    - name: personnalise
+      label: Couleurs personnalisées
+      type: object
+      description: Choisis tes 4 couleurs avec un nuancier et un aperçu du site sur nuance-vegetal.github.io/atelier-couleurs.html,
+        puis colle les codes ici.
+      fields:
+      - name: actif
+        label: Utiliser mes couleurs (au lieu de l'ambiance)
+        type: boolean
+        default: false
+      - name: fond
+        label: Fond de page
+        type: string
+        pattern: &id001
+          regex: ^(#[0-9A-Fa-f]{6})?$
+          message: 'Un code couleur commence par # suivi de 6 caractères, par exemple #2F6B4F'
+        description: 'Exemple : #F6EFE3'
+      - name: carte
+        label: Cartes
+        type: string
+        pattern: *id001
+        description: 'Exemple : #FDF9F1'
+      - name: principal
+        label: Couleur principale (boutons, accents, pied de page)
+        type: string
+        pattern: *id001
+        description: 'Exemple : #2F6B4F'
+      - name: texte
+        label: Texte
+        type: string
+        pattern: *id001
+        description: 'Exemple : #1F2D25'
   - name: reglages
     label: Décodeur, scan et fiche frigo – seuils des feux
     type: file
