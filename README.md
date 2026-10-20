@@ -12,7 +12,7 @@ Il apprend à lire l'étiquette d'une alternative végétale à la viande en 5 c
 | `etiquette.html` | Étiquette décortiquée |
 | `bases.html` | C'est fait avec quoi ? (données : `donnees/bases.json`) |
 | `etudes.html` | Ce que disent les études (données : `donnees/etudes.json`) |
-| `fiche-frigo.html` | Fiche frigo imprimable |
+| `ta-fiche-pdf.html` | Ta fiche PDF : vrai PDF au format téléphone (`js/fiche-pdf.js`, jsPDF 4.2.1, licence MIT), imprimable. `fiche-frigo.html` redirige vers cette page. |
 
 En ligne : https://nuance-vegetal.github.io (GitHub Pages, dépôt `nuance-vegetal/nuance-vegetal.github.io`).
 
@@ -52,7 +52,7 @@ Aucun build : GitHub Pages publie la branche `main` telle quelle. Chaque commit 
 
 ## Vie privée
 
-Aucune donnée saisie n'est envoyée ni stockée, pas de cookies. Exception : quand on scanne, le numéro du code-barres (et lui seul) est envoyé à Open Food Facts pour trouver le produit. La caméra reste sur l'appareil. Les polices viennent de Google Fonts ; pour éviter tout appel à Google, on peut les héberger dans le dossier du site avant la mise en ligne.
+Aucune donnée saisie n'est envoyée ni stockée, pas de cookies. Exception : quand on scanne, le numéro du code-barres (et lui seul) est envoyé à Open Food Facts pour trouver le produit. La caméra reste sur l'appareil. Les polices (Bricolage Grotesque, DM Sans, Instrument Serif — licence SIL Open Font License) sont hébergées dans `fonts/` : aucune requête vers Google. L'encadré « Donne ton avis » renvoie vers le Google Form seulement quand on clique.
 
 ## Photos
 

@@ -323,7 +323,7 @@ content:
         pattern: *id001
         description: 'Exemple : #1F2D25'
   - name: reglages
-    label: Décodeur, scan et fiche frigo – seuils des feux
+    label: Décodeur, scan et fiche PDF – seuils des feux
     type: file
     path: donnees/reglages.json
     format: json
@@ -403,3 +403,23 @@ content:
           label: Additifs
         - name: bio
           label: Bio
+  - name: avis
+    label: Questionnaire « Donne ton avis »
+    type: file
+    path: donnees/avis.json
+    format: json
+    fields:
+    - name: lien
+      label: Lien du Google Form
+      type: string
+      description: Colle ici le lien de ton questionnaire (il commence par https://). L'encadré « Donne ton avis » apparaît
+        sur l'accueil et sous les résultats du scan dès que ce lien est rempli. Vide = encadré caché.
+      pattern:
+        regex: ^(https://\S+)?$
+        message: Le lien doit commencer par https://
+    - name: texte
+      label: Texte de l'encadré
+      type: text
+    - name: bouton
+      label: Texte du bouton
+      type: string

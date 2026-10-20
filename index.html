@@ -8,11 +8,9 @@
   <meta name="theme-color" content="#F6EFE3">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261021b"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261021b">
+  <script src="js/theme.js?v=20261021d"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261021d">
+  <link rel="stylesheet" href="css/style.css?v=20261021d">
   <link rel="preload" as="image" href="images/hero.webp">
 </head>
 <body>
@@ -30,7 +28,7 @@
       <a href="bases.html">Les bases</a>
       <a href="a-quoi-ca-sert.html">À quoi ça sert ?</a>
       <a href="etudes.html">Études</a>
-      <a href="fiche-frigo.html">Fiche frigo</a>
+      <a href="ta-fiche-pdf.html">Ta fiche PDF</a>
     </nav>
   </div>
 </header>
@@ -228,10 +226,10 @@
         <b>l'étiquette décortiquée</b>
         <span>Un exemple complet, ligne par ligne.</span>
       </a>
-      <a class="lien-photo revele" href="fiche-frigo.html" style="--i:3">
+      <a class="lien-photo revele" href="ta-fiche-pdf.html" style="--i:3">
         <div class="photo zoom"><img src="images/decodeur.webp" width="900" height="560" alt="" loading="lazy"></div>
-        <b>la fiche frigo</b>
-        <span>Les repères à imprimer.</span>
+        <b>ta fiche PDF</b>
+        <span>Les repères à garder sur ton téléphone.</span>
       </a>
     </div>
 
@@ -244,6 +242,7 @@
         <p class="secondaire petit" style="margin:0">[Texte à compléter par Camille]</p>
       </div>
     </div>
+    <div class="zone-avis revele" data-avis></div>
   </main>
 </div>
 
@@ -260,9 +259,10 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261021b"></script>
-<script src="js/vendor/lenis.min.js?v=20261021b"></script>
-<script src="js/animations.js?v=20261021b"></script>
+<script src="js/commun.js?v=20261021d"></script>
+<script src="js/vendor/lenis.min.js?v=20261021d"></script>
+<script src="js/avis.js?v=20261021d"></script>
+<script src="js/animations.js?v=20261021d"></script>
 <script>
   /* Chiffres de l'enquête : modifiables dans donnees/enquete.json (Pages CMS) */
   (async function () {

@@ -639,10 +639,10 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
 .fiche-base dd { margin: 0; }
 .enquete-note { margin-top: 14px; font-size: 14px; padding: 12px 14px; border-radius: 14px; }
 
-/* ---------- Fiche frigo ---------- */
-.fiche-frigo { background: #fff; box-shadow: var(--ombre); padding: 22px; }
-.fiche-frigo h2 { font-size: 18px; margin-top: 20px; }
-.fiche-frigo .titre-fiche { font-size: 30px; margin: 0 0 6px; }
+/* ---------- Ta fiche PDF ---------- */
+.fiche-pdf { background: #fff; box-shadow: var(--ombre); padding: 22px; }
+.fiche-pdf h2 { font-size: 18px; margin-top: 20px; }
+.fiche-pdf .titre-fiche { font-size: 30px; margin: 0 0 6px; }
 .tableau-seuils { width: 100%; border-collapse: collapse; font-size: 15px; }
 .tableau-seuils th, .tableau-seuils td {
   text-align: left; padding: 9px 6px; border-top: 1px solid var(--contour-doux); vertical-align: top;
@@ -651,8 +651,8 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
 .tableau-seuils .pastille { font-size: 13px; padding: 2px 9px; }
 .tableau-seuils .pastille::before { display: none; }
 .tableau-seuils span.seuil { display: block; font-size: 13px; color: var(--texte-2); margin-top: 3px; font-weight: 400; }
-.liste-frigo { padding-left: 20px; margin: 6px 0; }
-.liste-frigo li { margin-bottom: 6px; }
+.liste-fiche { padding-left: 20px; margin: 6px 0; }
+.liste-fiche li { margin-bottom: 6px; }
 
 .message-erreur { color: var(--rouge-texte); }
 
@@ -730,7 +730,7 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
   .grille-fiches { grid-template-columns: repeat(3, 1fr); gap: 18px; }
 
   .colonne-lecture { max-width: 780px; margin-inline: auto; }
-  .fiche-frigo { max-width: 780px; margin-inline: auto; }
+  .fiche-pdf { max-width: 780px; margin-inline: auto; }
   .pied-int { padding: 40px 32px 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: end; }
 }
 
@@ -864,7 +864,7 @@ html.lenis, html.lenis body { height: auto; }
 
 /* Titres : révélés mot par mot (animations.js) */
 .js main h1, .js main h2 { opacity: 0; }
-.js main .titre-anime, .js .fiche-frigo h2 { opacity: 1; }
+.js main .titre-anime, .js .fiche-pdf h2 { opacity: 1; }
 
 /* Haut de page : cascade au chargement */
 .js .accroche > :not(h1) { opacity: 0; transform: translateY(16px); transition: opacity .9s var(--courbe), transform .9s var(--courbe); }
@@ -919,10 +919,10 @@ html.lenis, html.lenis body { height: auto; }
   body::before { display: none; }
   .page { max-width: none; padding: 0; }
   .ne-pas-imprimer, .barre, .bouton, .retour { display: none !important; }
-  .carte, .fiche-frigo { border: 0; padding: 0; margin: 0; box-shadow: none; }
+  .carte, .fiche-pdf { border: 0; padding: 0; margin: 0; box-shadow: none; }
   .pastille, .encart { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .fiche-frigo h2 { font-size: 13pt; margin-top: 10pt; }
-  .fiche-frigo .titre-fiche { font-size: 22pt; margin: 0 0 4pt; }
+  .fiche-pdf h2 { font-size: 13pt; margin-top: 10pt; }
+  .fiche-pdf .titre-fiche { font-size: 22pt; margin: 0 0 4pt; }
   .js .revele, .mot-int { opacity: 1 !important; transform: none !important; }
   .progression { display: none; }
   .tableau-seuils { font-size: 10pt; }
@@ -931,7 +931,7 @@ html.lenis, html.lenis body { height: auto; }
   .pied { margin-top: 10pt; background: none; color: var(--texte-2); }
   .pied-int { padding: 6pt 0 0; border-top: 1px solid var(--contour); font-size: 8.5pt; display: block; }
   .pied .marque, .pied .credits { display: none; }
-  .fiche-frigo, .pied { break-inside: avoid; }
+  .fiche-pdf, .pied { break-inside: avoid; }
 }
 
 .infos-scan { margin-top: 12px; border-top: 1px solid var(--contour-doux); }
@@ -1214,3 +1214,42 @@ fieldset.choix + fieldset.choix { margin-top: 18px; }
   text-transform: uppercase; letter-spacing: .08em; color: var(--principal);
 }
 .fiche-nutriment .contenu > .pastille:first-child { margin-top: 2px; }
+
+/* Encadré « Vegan : non spécifié » (alerte douce) */
+.encart-vegan {
+  margin-top: 14px; padding: 14px 16px; border-radius: 18px;
+  background: var(--orange-fond); color: var(--orange-texte); font-size: 14px; line-height: 1.5;
+}
+.encart-vegan-titre { margin: 0 0 6px; font-weight: 700; font-size: 15px; }
+.encart-vegan p { margin: 0 0 8px; }
+.encart-vegan ul { margin: 0; padding-left: 18px; }
+.encart-vegan li { margin-bottom: 6px; }
+.encart-vegan li:last-child { margin-bottom: 0; }
+
+/* Ta fiche PDF : boutons, statut, QR code */
+.boutons-fiche { display: grid; gap: 10px; margin-top: 18px; max-width: 520px; }
+.statut-pdf { margin: 10px 0 0; font-size: 14px; color: var(--texte-2); min-height: 1.4em; }
+.labels-fiche { margin-top: 8px; }
+.qr-fiche { display: flex; align-items: center; gap: 14px; margin-top: 18px; padding: 12px; border-radius: 16px; background: var(--fond); }
+.qr-fiche img { width: 96px; height: 96px; border-radius: 8px; }
+.qr-fiche p { margin: 0; }
+@media (min-width: 720px) { .boutons-fiche { grid-template-columns: 1fr 1fr; } }
+@media print { .qr-fiche { background: none; padding: 0; } }
+
+/* Encadré « Donne ton avis » (couleur principale, distinct des alertes) */
+.zone-avis:empty, [data-avis]:empty { display: none; }
+.zone-avis { margin-top: 56px; }
+.encart-avis {
+  display: grid; grid-template-columns: auto 1fr; gap: 10px 14px; align-items: center;
+  padding: 18px; border-radius: 22px; background: var(--principal); color: var(--carte);
+}
+.encart-avis > .icone { width: 30px; height: 30px; color: var(--sur-fonce); }
+.encart-avis p { margin: 0; font-weight: 500; font-size: 16px; line-height: 1.4; }
+.encart-avis .bouton { grid-column: 1 / -1; background: var(--carte); color: var(--principal-survol); box-shadow: none; min-height: 52px; justify-content: space-between; }
+.encart-avis .bouton:hover { background: #fff; color: var(--principal-survol); }
+.fiche-produit .encart-avis { margin-top: 14px; }
+@media (min-width: 720px) {
+  .encart-avis { grid-template-columns: auto 1fr auto; padding: 20px 24px; }
+  .encart-avis .bouton { grid-column: auto; }
+}
+@media print { .encart-avis, .zone-avis { display: none !important; } }

@@ -8,11 +8,9 @@
   <meta name="theme-color" content="#F6EFE3">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261021b"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261021b">
+  <script src="js/theme.js?v=20261021d"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261021d">
+  <link rel="stylesheet" href="css/style.css?v=20261021d">
 </head>
 <body class="page-secondaire">
 
@@ -33,7 +31,7 @@
       <a href="bases.html">Les bases</a>
       <a href="a-quoi-ca-sert.html">À quoi ça sert ?</a>
       <a href="etudes.html">Études</a>
-      <a href="fiche-frigo.html">Fiche frigo</a>
+      <a href="ta-fiche-pdf.html">Ta fiche PDF</a>
     </nav>
   </div>
 </header>
@@ -183,11 +181,12 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261021b"></script>
-<script src="js/commun.js?v=20261021b"></script>
-<script src="js/vendor/lenis.min.js?v=20261021b"></script>
-<script src="js/animations.js?v=20261021b"></script>
-<script src="js/scanner.js?v=20261021b"></script>
+<script src="js/config.js?v=20261021d"></script>
+<script src="js/commun.js?v=20261021d"></script>
+<script src="js/vendor/lenis.min.js?v=20261021d"></script>
+<script src="js/animations.js?v=20261021d"></script>
+<script src="js/avis.js?v=20261021d"></script>
+<script src="js/scanner.js?v=20261021d"></script>
 <script>
   (async function () {
     let C;
@@ -379,13 +378,28 @@
         (marque ? '<p class="fp-marque">' + echapper(marque) + '</p>' : '') + '</div></div>' +
         '<p class="fp-section">en un coup d’œil</p><div class="fp-feux">' + tuiles + '</div>' +
         (infos ? '<p class="fp-section">bon à savoir</p><div class="fp-infos">' + infos + '</div>' : '') +
+        encartVegan(p.infos.vegan) +
         encartBio(p.infos.bio) +
         ingredients +
         '<p class="fp-note">Données Open Food Facts, remplies par des bénévoles : vérifie avec l’emballage. « Non signalé » ne veut pas dire absent.' +
         (manquants.length ? ' Manquant : ' + manquants.join(', ') + '.' : '') + '</p>' +
+        '<div data-avis></div>' +
         '<div class="fp-actions"><button type="button" class="bouton" id="rescanner">scanner un autre produit</button>' +
         '<a class="bouton secondaire-btn" href="#decodeur">voir les valeurs</a></div>' +
         '</article>';
+    }
+
+    /* Encadré « Vegan : non spécifié » (cahier des charges, modification 2) */
+    function encartVegan(info) {
+      if (!info || info.etat !== 'non-signale') return '';
+      return '<div class="encart-vegan" role="note">' +
+        '<p class="encart-vegan-titre">Vegan : ' + echapper(info.texte) + '</p>' +
+        '<p>Ce statut provient des labels encodés dans la base de données. Fais quand même attention et lis toujours bien l’étiquette pour ne pas manquer un ingrédient caché.</p>' +
+        '<ul>' +
+        '<li>Repère les ingrédients d’origine animale moins évidents : <b>lactosérum</b>, <b>caséine</b>, <b>gélatine</b>, <b>miel</b>, <b>carmin (E120)</b>.</li>' +
+        '<li>Distingue <b>« peut contenir des traces de lait »</b> (contamination possible en usine) d’un vrai <b>ingrédient laitier</b>.</li>' +
+        '<li>Regarde aussi les allergènes mis en évidence dans la liste d’ingrédients : le <b>lait</b> et les <b>œufs</b> doivent obligatoirement y être mis en évidence (le plus souvent en gras).</li>' +
+        '</ul></div>';
     }
 
     /* Encadré « Bio ? » : ouvert si on ne sait pas, replié si le label bio est trouvé */
@@ -411,6 +425,7 @@
       (grandEcran.matches ? $('fiche-droite') : statut).innerHTML = html;
       $('bloc-reperes').hidden = true;
       $('rescanner').addEventListener('click', ouvrirScanner);
+      if (window.Avis) Avis.afficher(document.querySelector('.fiche-produit'));
       $('fermer-fiche').addEventListener('click', fermerFiche);
     }
     function fermerFiche() {

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ta fiche PDF — Nuance végétale</title>
+  <meta name="description" content="Ta fiche PDF à garder sur ton téléphone pour lire l’étiquette d’un simili en magasin. Elle s’imprime aussi.">
+  <meta name="theme-color" content="#F6EFE3">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
+  <script src="js/theme.js?v=20261021d"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261021d">
+  <link rel="stylesheet" href="css/style.css?v=20261021d">
+</head>
+<body class="page-secondaire">
+
+<header class="barre">
+  <div class="barre-int">
+    <a class="retour" href="index.html">
+      <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      Accueil
+    </a>
+    <a class="marque" href="index.html">
+      <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétale</em></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="decodeur.html">Décodeur</a>
+      <a href="etiquette.html">Étiquette</a>
+      <a href="bases.html">Les bases</a>
+      <a href="a-quoi-ca-sert.html">À quoi ça sert ?</a>
+      <a href="etudes.html">Études</a>
+      <a href="ta-fiche-pdf.html" aria-current="page">Ta fiche PDF</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+
+  <main>
+    <section class="accroche ne-pas-imprimer" style="max-width:780px;margin-inline:auto">
+      <span class="surtitre">à garder sur toi</span>
+      <h1>ta fiche <em class="serif">PDF</em></h1>
+      <p class="intro">Télécharge-la sur ton téléphone pour l’avoir sous les yeux en magasin. Elle s’imprime aussi.</p>
+      <div class="boutons-fiche">
+        <button type="button" class="bouton entre" id="telecharger">Télécharger ma fiche PDF <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg></button>
+        <button type="button" class="bouton entre secondaire-btn" id="imprimer">imprimer <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg></button>
+      </div>
+      <p class="statut-pdf" id="statut-pdf" aria-live="polite"></p>
+    </section>
+
+    <article class="carte fiche-pdf revele" style="margin-top:28px">
+      <h2 class="titre-fiche">nuance <em class="serif">végétale</em></h2>
+      <p class="secondaire" style="margin:0">Les repères pour 100 g, en 5 coups d'œil.</p>
+
+      <h2>Les seuils</h2>
+      <table class="tableau-seuils">
+        <thead>
+          <tr><th scope="col">Repère</th><th scope="col">Vert</th><th scope="col">Orange</th><th scope="col">Rouge</th></tr>
+        </thead>
+        <tbody id="seuils"></tbody>
+      </table>
+      <p class="petit secondaire" style="margin:6px 0 0" id="references"></p>
+
+      <h2>B12 et fer</h2>
+      <ul class="liste-fiche">
+        <li>B12 : cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans les ingrédients : <span class="pastille vert">Enrichi</span> ou <span class="pastille orange">Absente</span></li>
+        <li>Fer : cherche « fer » ou un sel de fer (pyrophosphate ferrique, fumarate ferreux).</li>
+        <li>Le fer des végétaux est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi).</li>
+      </ul>
+
+      <h2>Les ingrédients</h2>
+      <ul class="liste-fiche">
+        <li>Le premier ingrédient (après l'eau) est la base : soja, blé, pois, champignon…</li>
+        <li>Les allergènes sont mis en évidence, le plus souvent en gras.</li>
+      </ul>
+
+      <div class="encart bleu">
+        <b>Le bon réflexe</b><br>
+        Compare le prix pour 20 g de protéines : prix au kilo × 2 ÷ protéines.
+        <span class="petit">Exemple : 14 €/kg et 15 g de protéines → 1,87 €.</span>
+      </div>
+
+      <h2>Pièges végan</h2>
+      <ul class="liste-fiche">
+        <li>Ingrédients d’origine animale moins évidents : <b>lactosérum</b>, <b>caséine</b>, <b>gélatine</b>, <b>miel</b>, <b>carmin (E120)</b>.</li>
+        <li>« Peut contenir des traces de lait » = contamination possible en usine, pas un vrai ingrédient laitier.</li>
+        <li>Le <b>lait</b> et les <b>œufs</b> sont obligatoirement mis en évidence dans les ingrédients (le plus souvent en gras).</li>
+      </ul>
+
+      <h2>Gluten caché</h2>
+      <p style="margin:6px 0">Le blé est mis en évidence en gras dans la liste d’ingrédients. Attention au gluten caché dans les céréales : <b>seigle, avoine</b> (si contamination croisée), <b>blé, orge, triticale, épeautre, kamut</b>.</p>
+
+      <h2>Bio ? Repère ces logos</h2>
+      <div class="labels-bio labels-fiche">
+        <figure><img src="images/labels/bio-europeen.svg" alt="Logo bio européen"><figcaption><b>Logo bio européen</b><span>obligatoire sur tout produit bio préemballé de l’UE</span></figcaption></figure>
+        <figure><img src="images/labels/biogarantie.svg" alt="Biogarantie"><figcaption><b>Biogarantie</b><span>label belge</span></figcaption></figure>
+        <figure><img src="images/labels/ab-agriculture-biologique.svg" alt="AB (Agriculture Biologique)"><figcaption><b>AB (Agriculture Biologique)</b><span>label français, fréquent en Belgique</span></figcaption></figure>
+      </div>
+      <p class="petit secondaire" style="margin:8px 0 0">Le logo européen est accompagné d’un code de l’organisme de contrôle (ex. BE-BIO-01) et de l’origine des ingrédients (Agriculture UE / non UE).</p>
+
+      <div class="qr-fiche">
+        <img src="images/qr-decodeur.png" alt="QR code vers le décodeur" width="96" height="96">
+        <p><b>Scanne pour ouvrir le décodeur</b><br><span class="petit secondaire">nuance-vegetal.github.io</span></p>
+      </div>
+    </article>
+  </main>
+</div>
+
+<footer class="pied">
+  <div class="pied-int">
+    <div>
+      <a class="marque" href="index.html">
+        <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétale</em></span>
+      </a>
+      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+    </div>
+    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+  </div>
+</footer>
+
+<script src="js/config.js?v=20261021d"></script>
+<script src="js/commun.js?v=20261021d"></script>
+<script src="js/vendor/lenis.min.js?v=20261021d"></script>
+<script src="js/fiche-pdf.js?v=20261021d"></script>
+<script src="js/animations.js?v=20261021d"></script>
+<script>
+  (async function () {
+    let C;
+    try { C = await chargerReglages(); } catch (e) { return; }
+    const f = (n) => formatNombre(n, 2);
+    const lignes = [
+      ['Protéines<span class="seuil">% de l\'énergie</span>',
+        `<span class="pastille vert">Riche</span><span class="seuil">≥ ${f(C.proteines.vertMin)} %</span>`,
+        `<span class="pastille orange">Source</span><span class="seuil">${f(C.proteines.orangeMin)} à ${f(C.proteines.vertMin)} %</span>`,
+        `<span class="pastille rouge">Faible</span><span class="seuil">&lt; ${f(C.proteines.orangeMin)} %</span>`],
+      ['Sel',
+        `<span class="pastille vert">Faible</span><span class="seuil">≤ ${f(C.sel.vertMax)} g</span>`,
+        `<span class="pastille orange">Moyen</span><span class="seuil">${f(C.sel.vertMax)} à ${f(C.sel.orangeMax)} g</span>`,
+        `<span class="pastille rouge">Élevé</span><span class="seuil">&gt; ${f(C.sel.orangeMax)} g</span>`],
+      ['Graisses saturées',
+        `<span class="pastille vert">Faible</span><span class="seuil">≤ ${f(C.satures.vertMax)} g</span>`,
+        `<span class="pastille orange">Moyen</span><span class="seuil">${f(C.satures.vertMax)} à ${f(C.satures.orangeMax)} g</span>`,
+        `<span class="pastille rouge">Élevé</span><span class="seuil">&gt; ${f(C.satures.orangeMax)} g</span>`]
+    ];
+    document.getElementById('seuils').innerHTML = lignes
+      .map(([r, v, o, ro]) => `<tr><th scope="row">${r}</th><td>${v}</td><td>${o}</td><td>${ro}</td></tr>`).join('');
+    document.getElementById('references').textContent =
+      'Protéines : ' + C.proteines.reference + '. Sel et graisses saturées : ' + C.sel.reference + '.';
+
+    document.getElementById('imprimer').addEventListener('click', () => window.print());
+
+    const bouton = document.getElementById('telecharger');
+    const statut = document.getElementById('statut-pdf');
+    bouton.addEventListener('click', async () => {
+      bouton.disabled = true;
+      statut.textContent = 'Préparation de ta fiche…';
+      try {
+        await FichePDF.telecharger(C);
+        statut.textContent = 'C’est prêt : ta fiche est dans tes téléchargements.';
+      } catch (e) {
+        console.error(e);
+        statut.textContent = 'Le PDF n’a pas pu être créé. Réessaie, ou utilise « imprimer » puis « Enregistrer en PDF ».';
+      } finally {
+        bouton.disabled = false;
+      }
+    });
+  })();
+</script>
+</body>
+</html>

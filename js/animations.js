@@ -59,7 +59,7 @@
   document.body.appendChild(barre);
 
   /* ---------- Titres mot par mot ---------- */
-  const titres = $$('main h1, main h2').filter((h) => !h.closest('.fiche-frigo, dialog'));
+  const titres = $$('main h1, main h2').filter((h) => !h.closest('.fiche-pdf, dialog'));
   titres.forEach((h) => {
     decouperMots(h, 'mot', 'mot-int');
     h.classList.remove('revele');

@@ -24,7 +24,8 @@ Adresse du site : https://nuance-vegetal.github.io
      - **Études – questions et réponses** : la page « Ce que disent les études » ;
    - **Réglages**
      - **Couleurs du site** : choisis une ambiance (sauge, terracotta, lavande, océan, olive, cacao, framboise) et, si tu veux, une couleur principale à toi ;
-     - **Décodeur, scan et fiche frigo – seuils des feux** : les limites vert / orange / rouge (utilisées par le décodeur, le scan et la fiche frigo) et les infos affichées après un scan.
+     - **Questionnaire « Donne ton avis »** : colle le lien de ton Google Form ; l'encadré « Donne ton avis » apparaît alors sur l'accueil et sous les résultats du scan ;
+     - **Décodeur, scan et fiche PDF – seuils des feux** : les limites vert / orange / rouge (utilisées par le décodeur, le scan et ta fiche PDF) et les infos affichées après un scan.
 4. Change le texte dans les cases.
 5. Clique sur **Save** (en haut à droite).
 6. Attends environ **une minute**, puis recharge le site : ta modification est en ligne.
@@ -65,7 +66,7 @@ Les feux vert / orange / rouge du décodeur ne changent jamais : ils ont un sens
 
 ## Ce qui ne se modifie pas (encore) avec les formulaires
 
-Les textes de l'accueil, les 5 commentaires de l'étiquette décortiquée et les listes de la fiche frigo sont dans les pages elles-mêmes : envoie les nouveaux textes à Alex. Les passages entre crochets `[à compléter]` sont ceux qui restent à rédiger.
+Les textes de l'accueil, les 5 commentaires de l'étiquette décortiquée et les listes de ta fiche PDF sont dans les pages elles-mêmes : envoie les nouveaux textes à Alex. Les passages entre crochets `[à compléter]` sont ceux qui restent à rédiger.
 
 D'autres chiffres de l'enquête sont écrits dans les textes et ne suivent pas les cartes de l'accueil : l'intro de la page Études (52 %), la fiche Études sur la B12 (14 %) et les encarts « résultat de l'enquête » des fiches Bases.
 

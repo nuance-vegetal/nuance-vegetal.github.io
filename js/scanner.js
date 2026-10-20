@@ -128,7 +128,7 @@ const Scanner = (() => {
       const liste = Array.from(new Set(animaux)).filter(Boolean).slice(0, 3);
       vegan = { etat: 'non', texte: 'non végan' + (liste.length ? ' : ' + liste.join(', ') : '') };
     } else if (analyse.includes('en:maybe-vegan')) vegan = { etat: 'non-signale', texte: 'peut-être végan' };
-    else vegan = { etat: 'non-signale', texte: 'non signalé' };
+    else vegan = { etat: 'non-signale', texte: 'non spécifié' };
 
     const huilePalme = analyse.includes('en:palm-oil') ? { etat: 'present', texte: 'contient' }
       : analyse.includes('en:may-contain-palm-oil') ? { etat: 'traces', texte: 'peut contenir' }
