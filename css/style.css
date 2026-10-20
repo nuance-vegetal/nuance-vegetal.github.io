@@ -800,7 +800,7 @@ html.lenis, html.lenis body { height: auto; }
 .pleine-largeur { margin-inline: calc(50% - 50vw); }
 .manifeste {
   background: var(--principal-survol); color: var(--carte);
-  min-height: 180vh; margin-top: 72px; position: relative;
+  min-height: 180vh; margin-top: 72px; position: relative; overflow-x: clip;
 }
 .manifeste-int {
   position: sticky; top: 0; min-height: 100vh;
@@ -1115,12 +1115,18 @@ html.lenis, html.lenis body { height: auto; }
   padding-left: max(20px, calc((100% - 1100px) / 2 + 20px));
   padding-right: max(20px, calc((100% - 1100px) / 2 + 20px));
 }
+.manifeste-int > :not(.plante) { position: relative; z-index: 1; }
 .plante {
-  position: absolute; right: -6px; bottom: -4px; pointer-events: none;
-  width: clamp(130px, 22vw, 300px); height: auto;
-  color: var(--sur-fonce); opacity: .42;
-  transform-origin: 95% 100%; animation: balance 8s ease-in-out infinite;
+  position: absolute; right: -2vw; bottom: 0; z-index: 0; pointer-events: none;
+  width: min(78vw, 660px); height: auto; max-height: 96%;
+  color: var(--sur-fonce); opacity: .5;
+  transform-origin: 92% 100%; animation: balance 9s ease-in-out infinite;
 }
-@keyframes balance { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-2.5deg); } }
+.plante .tige { fill: none; stroke: currentColor; stroke-linecap: round; opacity: .75; }
+.plante .f1 { fill: currentColor; opacity: .55; }
+.plante .f2 { fill: currentColor; opacity: .8; }
+.plante .f3 { fill: currentColor; opacity: .4; }
+.plante .nervure { fill: none; stroke: var(--principal-survol); stroke-width: 1.2; opacity: .55; stroke-linecap: round; }
+@keyframes balance { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-1.8deg) translateY(-4px); } }
 @media (prefers-reduced-motion: reduce) { .plante { animation: none; } }
 @media print { .plante { display: none; } }
