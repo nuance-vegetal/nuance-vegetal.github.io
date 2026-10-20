@@ -5,7 +5,7 @@
  */
 (function () {
   var CLE = 'nuance-vegetale-theme';
-  var THEMES = ['sauge', 'terracotta', 'lavande', 'ocean', 'olive', 'framboise'];
+  var THEMES = ['sauge', 'terracotta', 'lavande', 'ocean', 'olive', 'cacao', 'framboise'];
   var racine = document.documentElement;
 
   function hexValide(h) { return /^#[0-9a-fA-F]{6}$/.test(h || ''); }

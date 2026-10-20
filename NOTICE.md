@@ -22,7 +22,7 @@ Adresse du site : https://nuance-vegetal.github.io
      - **Les bases – fiches tofu, seitan, Quorn…** : la page « C'est fait avec quoi ? » ;
      - **Études – questions et réponses** : la page « Ce que disent les études » ;
    - **Réglages**
-     - **Couleurs du site** : choisis une ambiance (sauge, terracotta, lavande, océan, olive, framboise) et, si tu veux, une couleur principale à toi ;
+     - **Couleurs du site** : choisis une ambiance (sauge, terracotta, lavande, océan, olive, cacao, framboise) et, si tu veux, une couleur principale à toi ;
      - **Décodeur, scan et fiche frigo – seuils des feux** : les limites vert / orange / rouge (utilisées par le décodeur, le scan et la fiche frigo) et les infos affichées après un scan.
 4. Change le texte dans les cases.
 5. Clique sur **Save** (en haut à droite).

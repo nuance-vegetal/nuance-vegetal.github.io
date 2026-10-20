@@ -212,6 +212,8 @@ content:
           label: Océan (bleu-vert)
         - name: olive
           label: Olive (vert kaki)
+        - name: cacao
+          label: Cacao (brun chaud)
         - name: framboise
           label: Framboise (rose poudré)
     - name: couleurPrincipale

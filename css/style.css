@@ -78,6 +78,14 @@
   --principal: #953A59; --principal-survol: #6E2741;
   --sauge-clair: #F6DDE5; --sur-fonce: #F5C9D7;
 }
+[data-theme="cacao"] {
+  --fond: #F4EBE0; --fond-2: #ECDFCF; --carte: #FBF6EF;
+  --contour: #E3D3C0; --contour-doux: #EDE1D3;
+  --pastille: #EEE1D1; --pastille-texte: #5E4433;
+  --texte: #33241B; --texte-2: #66513F;
+  --principal: #74482F; --principal-survol: #583624;
+  --sauge-clair: #EEDCCB; --sur-fonce: #EBD3BE;
+}
 /* Le logo suit le thème */
 .logo-feuilles g:nth-of-type(1) path { fill: var(--sur-fonce); }
 .logo-feuilles g:nth-of-type(2) path { fill: var(--sauge-clair); }
