@@ -194,6 +194,13 @@ content:
     path: donnees/theme.json
     format: json
     fields:
+    - name: atelier
+      label: Atelier couleurs (nuancier + aperçu du site)
+      type: string
+      readonly: true
+      default: https://nuance-vegetal.github.io/atelier-couleurs.html
+      description: 'Copie cette adresse et ouvre-la dans un nouvel onglet : tu y choisis tes couleurs avec un aperçu du site,
+        puis tu colles les codes plus bas dans « Couleurs personnalisées ».'
     - name: theme
       label: Ambiance de couleurs
       type: select
@@ -219,8 +226,8 @@ content:
     - name: personnalise
       label: Couleurs personnalisées
       type: object
-      description: Choisis tes 4 couleurs avec un nuancier et un aperçu du site sur nuance-vegetal.github.io/atelier-couleurs.html,
-        puis colle les codes ici.
+      description: Colle ici les codes copiés dans l'atelier couleurs (adresse tout en haut), puis coche « Utiliser mes couleurs
+        ».
       fields:
       - name: actif
         label: Utiliser mes couleurs (au lieu de l'ambiance)
