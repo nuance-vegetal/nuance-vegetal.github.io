@@ -188,6 +188,41 @@ content:
   label: Réglages
   type: group
   items:
+  - name: couleurs
+    label: Couleurs du site
+    type: file
+    path: donnees/theme.json
+    format: json
+    fields:
+    - name: theme
+      label: Ambiance de couleurs
+      type: select
+      required: true
+      description: 'Choisis une ambiance : fond, cartes, boutons et logo changent ensemble. Les feux vert / orange / rouge
+        ne changent jamais.'
+      options:
+        values:
+        - name: sauge
+          label: Sauge (vert, actuel)
+        - name: terracotta
+          label: Terracotta (brique)
+        - name: lavande
+          label: Lavande (violet doux)
+        - name: ocean
+          label: Océan (bleu-vert)
+        - name: olive
+          label: Olive (vert kaki)
+        - name: framboise
+          label: Framboise (rose poudré)
+    - name: couleurPrincipale
+      label: Couleur principale (facultatif)
+      type: string
+      description: 'Pour changer seulement la couleur des boutons et des titres en accent. Laisse vide pour garder celle de
+        l''ambiance. Exemple : #2F6B4F (trouve un code sur htmlcolorcodes.com/fr). Si la couleur est trop claire, le site
+        la fonce un peu pour que le texte reste lisible.'
+      pattern:
+        regex: ^(#[0-9A-Fa-f]{6})?$
+        message: 'Un code couleur commence par # suivi de 6 caractères, par exemple #2F6B4F'
   - name: reglages
     label: Décodeur, scan et fiche frigo – seuils des feux
     type: file

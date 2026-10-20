@@ -22,6 +22,7 @@ Adresse du site : https://nuance-vegetal.github.io
      - **Les bases – fiches tofu, seitan, Quorn…** : la page « C'est fait avec quoi ? » ;
      - **Études – questions et réponses** : la page « Ce que disent les études » ;
    - **Réglages**
+     - **Couleurs du site** : choisis une ambiance (sauge, terracotta, lavande, océan, olive, framboise) et, si tu veux, une couleur principale à toi ;
      - **Décodeur, scan et fiche frigo – seuils des feux** : les limites vert / orange / rouge (utilisées par le décodeur, le scan et la fiche frigo) et les infos affichées après un scan.
 4. Change le texte dans les cases.
 5. Clique sur **Save** (en haut à droite).
@@ -36,6 +37,15 @@ Adresse du site : https://nuance-vegetal.github.io
 ### Changer une photo (fiches « C'est fait avec quoi ? »)
 
 Dans le champ **Photo**, clique sur l'image puis **Upload** pour envoyer une nouvelle photo. Choisis une photo en format paysage, la plus légère possible (moins de 200 Ko si tu peux). Remplis aussi la case « Description de la photo » : elle est lue aux personnes aveugles.
+
+## Changer les couleurs
+
+1. **Réglages** → **Couleurs du site**.
+2. **Ambiance de couleurs** : choisis dans la liste. Le fond, les cartes, les boutons et le logo changent ensemble.
+3. **Couleur principale (facultatif)** : pour changer seulement la couleur des boutons et des accents, tape un code couleur comme `#2F6B4F` (tu en trouves sur https://htmlcolorcodes.com/fr). Laisse vide pour garder celle de l'ambiance. Si la couleur est trop claire, le site la fonce un peu pour que le texte reste lisible.
+4. **Save**, puis recharge le site après une minute.
+
+Les feux vert / orange / rouge du décodeur ne changent pas : ils ont un sens et restent lisibles pour les personnes daltoniennes.
 
 ## Bon à savoir
 
