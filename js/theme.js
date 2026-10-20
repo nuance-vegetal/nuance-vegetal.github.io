@@ -11,6 +11,8 @@
   var VARIABLES = ['--fond', '--fond-2', '--carte', '--contour', '--contour-doux', '--pastille', '--pastille-texte',
     '--texte', '--texte-2', '--principal', '--principal-survol', '--sauge-clair', '--sur-fonce'];
   var racine = document.documentElement;
+  // Couleurs de base de chaque ambiance (pour compléter une couleur personnalisée laissée vide)
+  var BASES = {"sauge": {"fond": "#F6EFE3", "carte": "#FDF9F1", "principal": "#2F6B4F", "texte": "#1F2D25"}, "terracotta": {"fond": "#F7EEE6", "carte": "#FDF8F3", "principal": "#9C4325", "texte": "#2E211B"}, "lavande": {"fond": "#F3F0F6", "carte": "#FBF9FD", "principal": "#5B4B8A", "texte": "#221E2E"}, "ocean": {"fond": "#EEF3F3", "carte": "#F9FCFC", "principal": "#1F5F75", "texte": "#17262B"}, "olive": {"fond": "#F5F2E4", "carte": "#FCFAF1", "principal": "#58641C", "texte": "#24261A"}, "cacao": {"fond": "#F4EBE0", "carte": "#FBF6EF", "principal": "#74482F", "texte": "#33241B"}, "framboise": {"fond": "#F8F0F0", "carte": "#FDF8F8", "principal": "#953A59", "texte": "#2B1D22"}};
 
   /* ---------- Outils couleur ---------- */
   function hexValide(h) { return /^#[0-9a-fA-F]{6}$/.test(h || ''); }
@@ -71,8 +73,10 @@
     nettoyer();
     racine.setAttribute('data-theme', THEMES.indexOf(t.theme) >= 0 ? t.theme : 'sauge');
     var perso = t.personnalise;
-    if (perso && perso.actif && hexValide(perso.fond) && hexValide(perso.carte) && hexValide(perso.principal) && hexValide(perso.texte)) {
-      var p = paletteDepuis(perso.fond, perso.carte, perso.principal, perso.texte);
+    var base = BASES[racine.getAttribute('data-theme')] || BASES.sauge;
+    var choix = function (cle) { return perso && hexValide(perso[cle]) ? perso[cle] : base[cle]; };
+    if (perso && perso.actif && ['fond', 'carte', 'principal', 'texte'].some(function (k) { return hexValide(perso[k]); })) {
+      var p = paletteDepuis(choix('fond'), choix('carte'), choix('principal'), choix('texte'));
       Object.keys(p).forEach(function (v) { racine.style.setProperty(v, p[v]); });
       return;
     }
