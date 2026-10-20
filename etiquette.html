@@ -6,11 +6,12 @@
   <title>Étiquette décortiquée — Nuance végétale</title>
   <meta name="description" content="Une étiquette fictive de simili-carné lue ligne par ligne, en 5 commentaires.">
   <meta name="theme-color" content="#F6EFE3">
+  <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261022"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261022d">
-  <link rel="stylesheet" href="css/style.css?v=20261022d">
+  <script src="js/theme.js?v=20261023"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261023">
+  <link rel="stylesheet" href="css/style.css?v=20261023">
 </head>
 <body class="page-secondaire">
 
@@ -63,8 +64,8 @@
           <table class="tableau-seuils">
             <tbody>
               <tr><td>Énergie</td><td>230 kcal</td></tr>
-              <tr><td>Matières grasses</td><td>14 g</td></tr>
-              <tr><td>&nbsp;&nbsp;dont saturées <button type="button" class="repere" data-ouvre="5" aria-label="Commentaire 5 : graisses saturées">5</button></td><td>1,6 g</td></tr>
+              <tr><td>Matières grasses <button type="button" class="repere" data-ouvre="5" aria-label="Commentaire 5 : les graisses">5</button></td><td>14 g</td></tr>
+              <tr><td>&nbsp;&nbsp;dont saturées</td><td>1,6 g</td></tr>
               <tr><td>Glucides</td><td>6 g</td></tr>
               <tr><td>Fibres</td><td>3,5 g</td></tr>
               <tr><td>Protéines <button type="button" class="repere" data-ouvre="2" aria-label="Commentaire 2 : protéines">2</button></td><td>17 g</td></tr>
@@ -87,38 +88,41 @@
             </div>
           </details>
           <details class="accordeon revele" id="commentaire-2" style="--i:1">
-            <summary><span class="numero">2</span> Protéines : riche <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <summary><span class="numero">2</span> Protéines : atteint <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
             <div class="contenu">
-              <p>17 g × 4 ÷ 230 kcal = 30 % de l'énergie. C'est au-dessus de 20 % : <span class="pastille vert">Riche</span></p>
-              <p class="petit secondaire" style="margin:0">Règlement (CE) n° 1924/2006</p>
+              <p>17 g pour 100 g, plus que le repère de 10 g : <span class="pastille vert sans-point">✓ atteint</span></p>
+              <p>Et 17 g × 4 ÷ 230 kcal = 30 % de l'énergie : l'emballage a le droit de dire « riche en protéines » (règle européenne, à partir de 20 %).</p>
+              <p class="petit secondaire" style="margin:0">Conseil Supérieur de la Santé, avis n° 9445 (2021) · règlement (CE) n° 1924/2006</p>
             </div>
           </details>
           <details class="accordeon revele" id="commentaire-3" style="--i:2">
-            <summary><span class="numero">3</span> B12 : enrichi <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <summary><span class="numero">3</span> B12 et fer <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
             <div class="contenu">
-              <p>La vitamine B12 est dans les ingrédients et dans le tableau : <span class="pastille vert">Enrichi</span>. Pas de fer ajouté : pense à d'autres sources dans la journée (légumineuses, céréales complètes).</p>
-              <p class="petit secondaire" style="margin:0">[Source à compléter]</p>
+              <p>B12 : 0,38 µg pour 100 g, plus que le repère de 0,24 µg : <span class="pastille vert sans-point">✓ atteint</span></p>
+              <p>Fer : pas de quantité indiquée, ni dans les ingrédients : <span class="pastille gris sans-point">? non renseigné</span> Pense à d'autres sources dans la journée (légumineuses, céréales complètes).</p>
+              <p class="petit secondaire" style="margin:0">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
             </div>
           </details>
           <details class="accordeon revele" id="commentaire-4" style="--i:3">
-            <summary><span class="numero">4</span> Sel : élevé <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <summary><span class="numero">4</span> Sel : à surveiller <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
             <div class="contenu">
-              <p>1,6 g pour 100 g, au-dessus de 1,5 g : <span class="pastille rouge">Élevé</span>. Une portion de 150 g apporte 2,4 g de sel, soit 40 % du repère de 6 g par jour. Pas besoin de resaler.</p>
-              <p class="petit secondaire" style="margin:0">Food Standards Agency (UK)</p>
+              <p>1,6 g pour 100 g, au-dessus du repère de 1,1 g : <span class="pastille rose sans-point">! à surveiller</span> Pas besoin de resaler.</p>
+              <p class="petit secondaire" style="margin:0">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
             </div>
           </details>
           <details class="accordeon revele" id="commentaire-5" style="--i:4">
-            <summary><span class="numero">5</span> Graisses saturées : moyen <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <summary><span class="numero">5</span> Les graisses <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
             <div class="contenu">
-              <p>1,6 g pour 100 g, entre 1,5 et 5 g : <span class="pastille orange">Moyen</span>. L'huile de tournesol apporte surtout des graisses insaturées.</p>
-              <p class="petit secondaire" style="margin:0">Food Standards Agency (UK)</p>
+              <p>Matières grasses : 14 g pour 100 g, au-dessus du repère de 10 g : <span class="pastille rose sans-point">! à surveiller</span></p>
+              <p>Dont saturées : 1,6 g, moins de 5 g et à peine un neuvième des graisses (repère : au plus un tiers) : <span class="pastille vert sans-point">✓ atteint</span> L'huile de tournesol apporte surtout des graisses insaturées.</p>
+              <p class="petit secondaire" style="margin:0">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
             </div>
           </details>
         </div>
 
         <div class="carte revele">
-          <span class="surtitre">le verdict</span>
-          <p>Une bonne source de protéines, enrichie en B12, mais assez salée. Accompagne-la de légumes et de féculents sans sel ajouté.</p>
+          <span class="surtitre">à retenir</span>
+          <p>Assez de protéines et enrichie en B12. À surveiller : le sel et les matières grasses. Pas de fer indiqué. Accompagne-la de légumes et de féculents sans sel ajouté.</p>
           <p class="petit secondaire" style="margin:0">[Texte à valider par Camille]</p>
         </div>
 
@@ -145,10 +149,10 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261022"></script>
-<script src="js/menu.js?v=20261022"></script>
-<script src="js/vendor/lenis.min.js?v=20261022"></script>
-<script src="js/animations.js?v=20261022"></script>
+<script src="js/commun.js?v=20261023"></script>
+<script src="js/menu.js?v=20261023"></script>
+<script src="js/vendor/lenis.min.js?v=20261023"></script>
+<script src="js/animations.js?v=20261023"></script>
 <script>
   (function () {
     const accordeon = accordeonExclusif(document.getElementById('commentaires'));

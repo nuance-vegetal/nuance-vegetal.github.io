@@ -1,6 +1,8 @@
 /* ============ Nuance végétale — beige + sauge, version premium ============ */
 
 :root {
+  /* Le site a un seul thème clair, réglé pour être lisible : on empêche le navigateur de l’inverser en mode sombre */
+  color-scheme: only light;
   --fond: #F6EFE3;
   --fond-2: #EFE5D3;
   --carte: #FDF9F1;
@@ -22,6 +24,7 @@
   --rouge-fond: #F8D9D4;  --rouge-texte: #9B2C1C;
   --lilas-fond: #E6E1F3;  --lilas-texte: #3E2F6B;
   --bleu-fond: #E3EEF2;   --bleu-texte: #1E4350;
+  --rose-fond: #F7DDE4;   --rose-texte: #8A2C48;
 
   --r-carte: 22px;
   --r-bouton: 14px;
@@ -259,6 +262,7 @@ a:hover { color: var(--principal-survol); }
 .pastille.gris::before { opacity: .4; }
 .pastille.lilas { background: var(--lilas-fond); color: var(--lilas-texte); }
 .pastille.bleu { background: var(--bleu-fond); color: var(--bleu-texte); }
+.pastille.rose { background: var(--rose-fond); color: var(--rose-texte); }
 .pastille.pop { animation: pop .45s var(--courbe); }
 @keyframes pop {
   0% { transform: scale(.7); opacity: .3; }
@@ -1330,3 +1334,48 @@ html.menu-ouvert, html.menu-ouvert body { overflow: hidden; }
 
 /* Titres : Bricolage Grotesque en graisse intermédiaire (600), plus légère que la version d'origine (800) */
 :root { --graisse-titre: 600; }
+
+/* ============ Résultat selon le CSS (avis n° 9445) : 6 repères, sans verdict global ============ */
+.evaluation { margin-top: 4px; }
+.eval-resume { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+.eval-compte {
+  display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px 5px 6px; border-radius: 999px;
+  font-size: 13px; font-weight: 500;
+}
+.eval-compte .eval-symbole { width: 20px; height: 20px; font-size: 12px; }
+.eval-reperes { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.eval-repere {
+  display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; border-radius: 18px;
+  animation: pop .5s var(--courbe) both; animation-delay: calc(var(--i, 0) * 60ms + .1s);
+}
+.eval-symbole {
+  flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--eval-texte); color: var(--eval-fond);
+  font-family: var(--police-titre); font-weight: 700; font-size: 16px; line-height: 1;
+}
+/* Statuts : symbole + mot + couleur (jamais la couleur seule) */
+.evaluation .atteint { --eval-fond: var(--vert-fond); --eval-texte: var(--vert-texte); }
+.evaluation .surveiller { --eval-fond: var(--rose-fond); --eval-texte: var(--rose-texte); }
+.evaluation .inconnu { --eval-fond: var(--pastille); --eval-texte: var(--pastille-texte); }
+.eval-repere, .eval-compte { background: var(--eval-fond); color: var(--eval-texte); }
+.eval-repere .lien-info { flex: none; }
+.eval-corps { min-width: 0; flex: 1; }
+.eval-tete { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 6px; margin: 2px 0 2px; font-size: 15px; }
+.eval-tete b { font-weight: 700; }
+.eval-mot {
+  margin-left: auto; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 600;
+  border: 1px solid currentColor; white-space: nowrap;
+}
+.eval-message { margin: 0; font-size: 14px; line-height: 1.35; }
+.eval-chiffres { margin: 4px 0 0; font-size: 12.5px; opacity: .85; }
+.eval-allegation {
+  margin-top: 12px; padding: 12px 14px; border-radius: 18px;
+  border: 1px dashed var(--contour-fort); background: var(--carte); font-size: 14px;
+}
+.eval-allegation p { margin: 0 0 4px; }
+.eval-allegation p:last-child { margin: 0; }
+.eval-allegation-titre { font-weight: 700; }
+.eval-source { margin: 12px 0 0; font-size: 12.5px; color: var(--texte-2); }
+.eval-extra { margin: 10px 0 0; font-size: 14px; }
+.ligne-repere-s { height: 74px; border-radius: 18px; }
+.champ .facultatif { font-weight: 400; font-size: 12px; color: var(--texte-2); margin-left: 4px; }

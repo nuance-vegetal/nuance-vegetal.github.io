@@ -121,7 +121,7 @@ content:
         description: Ce qu'on voit sur la photo, en quelques mots. Elle est lue aux personnes aveugles.
         type: string
   - name: nutriments
-    label: À quoi ça sert ? – fiches B12, protéines, fer, additifs
+    label: À quoi ça sert ? – fiches B12, protéines, fer, additifs, allégations
     type: file
     path: donnees/nutriments.json
     format: json
@@ -323,72 +323,52 @@ content:
         pattern: *id001
         description: 'Exemple : #1F2D25'
   - name: reglages
-    label: Décodeur, scan et fiche PDF – seuils des feux
+    label: Décodeur, scan et fiche PDF – repères du CSS
     type: file
     path: donnees/reglages.json
     format: json
     fields:
-    - name: proteines
-      label: Protéines (part de l'énergie, en %)
-      description: À modifier seulement après validation dans la revue de littérature.
+    - name: css
+      label: Les 6 repères (Conseil Supérieur de la Santé, avis n° 9445)
+      description: 'Pour 100 g. Nombres à virgule : tape un point, par exemple 1.1. À vérifier dans l''avis original
+        avant de changer quoi que ce soit. La règle « saturées ≤ 1/3 des matières grasses » est fixe.'
       type: object
       fields:
-      - name: vertMin
-        label: Vert « Riche » à partir de… %
+      - name: proteinesMin
+        label: Protéines – atteint si plus de… g
         type: number
-      - name: orangeMin
-        label: 'Orange « Source » à partir de… % (en dessous : rouge « Faible »)'
+      - name: grassesMax
+        label: Matières grasses – atteint si moins de… g (et moins que les protéines)
         type: number
-      - name: reference
-        label: Référence affichée
-        type: string
-    - name: sel
-      label: Sel (grammes pour 100 g)
-      description: 'Nombres à virgule : tape un point, par exemple 0.3'
-      type: object
-      fields:
-      - name: vertMax
-        label: Vert « Faible » jusqu'à… g
+      - name: saturesMax
+        label: Graisses saturées – atteint si moins de… g (et au plus 1/3 des graisses)
         type: number
-      - name: orangeMax
-        label: 'Orange « Moyen » jusqu''à… g (au-dessus : rouge « Élevé »)'
+      - name: selMax
+        label: Sel – atteint jusqu'à… g
         type: number
-      - name: reference
-        label: Référence affichée
-        type: string
-    - name: satures
-      label: Graisses saturées (grammes pour 100 g)
-      description: 'Nombres à virgule : tape un point, par exemple 1.5'
-      type: object
-      fields:
-      - name: vertMax
-        label: Vert « Faible » jusqu'à… g
+      - name: ferMin
+        label: Fer – atteint si plus de… mg
         type: number
-      - name: orangeMax
-        label: 'Orange « Moyen » jusqu''à… g (au-dessus : rouge « Élevé »)'
+      - name: b12Min
+        label: Vitamine B12 – atteint si plus de… µg
+        type: number
+      - name: allegationRiche
+        label: Allégation « riche en protéines » à partir de… % de l'énergie
+        description: Règlement (CE) n° 1924/2006. C'est une info, pas un critère.
+        type: number
+      - name: allegationSource
+        label: Allégation « source de protéines » à partir de… % de l'énergie
         type: number
       - name: reference
-        label: Référence affichée
+        label: Référence affichée sous les résultats
         type: string
-    - name: portionGrammes
-      label: Taille d'une portion (g)
-      description: Sert à calculer le sel par portion.
-      type: number
-    - name: selRepereJour
-      label: Repère de sel par jour (g)
-      description: 6 = apport de référence européen · l'OMS conseille moins de 5.
-      type: number
     - name: scanInfos
       label: Infos affichées après un scan
-      description: Coche ce qui doit apparaître sous le produit scanné.
+      description: Coche ce qui doit apparaître sous le produit scanné, en plus des 6 repères (le fer et la B12 en font partie).
       type: select
       options:
         multiple: true
         values:
-        - name: b12
-          label: Vitamine B12
-        - name: fer
-          label: Fer
         - name: gluten
           label: Gluten
         - name: lait

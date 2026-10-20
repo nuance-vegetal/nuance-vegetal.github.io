@@ -8,7 +8,7 @@ Il apprend à lire l'étiquette d'une alternative végétale à la viande en 5 c
 | Fichier | Page |
 |---|---|
 | `index.html` | Accueil et étiquette interactive |
-| `decodeur.html` | Décodeur (calcul en direct) |
+| `decodeur.html` | Décodeur : 6 repères du Conseil Supérieur de la Santé, calcul en direct (`js/evaluation.js`) |
 | `etiquette.html` | Étiquette décortiquée |
 | `bases.html` | C'est fait avec quoi ? (données : `donnees/bases.json`) |
 | `etudes.html` | Ce que disent les études (données : `donnees/etudes.json`) |
@@ -23,8 +23,31 @@ Contenus et réglages : `donnees/*.json` (fiches Études et Bases, chiffres de l
 Le décodeur peut scanner un code-barres (`js/scanner.js`) :
 
 - détection native (`BarcodeDetector`) quand le navigateur la propose (Chrome Android), sinon la bibliothèque ZXing, copiée dans `js/vendor/zxing.min.js` (@zxing/library 0.23.0, licence Apache 2.0) et chargée seulement au moment du scan ;
-- les valeurs nutritionnelles viennent de l'API d'[Open Food Facts](https://world.openfoodfacts.org) (licence ODbL). Aucune note n'est affichée : le scan remplit seulement les champs du décodeur ;
+- les valeurs nutritionnelles viennent de l'API d'[Open Food Facts](https://world.openfoodfacts.org) (licence ODbL). Aucune note globale n'est affichée : le scan remplit les champs du décodeur, puis chaque repère est montré séparément ;
 - la caméra exige une adresse en **https** (ou localhost). On peut aussi taper le numéro du code-barres à la main.
+
+## Évaluation (cahier des charges « scanner », 20 octobre 2026)
+
+`js/evaluation.js` applique les critères du Conseil Supérieur de la Santé, avis n° 9445 « Alimentation végétarienne » (2021), pour 100 g :
+
+| Repère | Atteint si |
+|---|---|
+| Protéines | plus de 10 g |
+| Matières grasses | moins de 10 g et moins que les protéines |
+| Graisses saturées | moins de 5 g et au plus 1/3 des matières grasses |
+| Sel | 1,1 g maximum |
+| Fer | plus de 0,8 mg |
+| Vitamine B12 | plus de 0,24 µg |
+
+Chaque repère est « atteint » (✓), « à surveiller » (!) ou « non renseigné » (?) ; une valeur absente n'est jamais comptée comme 0. L'allégation européenne « riche en protéines » (≥ 20 % de l'énergie) ou « source de protéines » (≥ 12 %) est affichée à part, comme une information. Les seuils sont dans la constante `CSS` et peuvent être remplacés depuis `donnees/reglages.json` → `css`.
+
+Tests des 4 produits de validation du cahier des charges et des cas limites :
+
+```
+node tests/evaluation.test.js
+```
+
+Le site n'a qu'un thème clair : `color-scheme: only light` empêche les navigateurs en mode sombre de l'inverser.
 
 Le scan était « hors périmètre » dans le cahier des charges : il a été ajouté à la demande et reste à valider par Camille.
 

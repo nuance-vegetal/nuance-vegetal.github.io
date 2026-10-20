@@ -5,7 +5,7 @@
  */
 window.FichePDF = (function () {
   const L = 90, H = 160, M = 7, LARGEUR = L - 2 * M;
-  const FEUX = { vert: ['#DCEFE3', '#1E6B42'], orange: ['#FBE6CC', '#8A4B0F'], rouge: ['#F8D9D4', '#9B2C1C'] };
+  const FEUX = { vert: ['#DCEFE3', '#1E6B42'] };
   const BLEU = ['#E3EEF2', '#1E4350'];
   const ORANGE = ['#FBE6CC', '#8A4B0F'];
   const URL_SITE = 'https://nuance-vegetal.github.io/decodeur.html';
@@ -43,7 +43,6 @@ window.FichePDF = (function () {
     const v = getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
     return /^#[0-9a-fA-F]{6}$/.test(v) ? v : defaut;
   }
-  const nombre = (n) => new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 2 }).format(n);
 
   async function generer(C) {
     if (!window.jspdf) await chargerScript('js/vendor/jspdf.umd.min.js?v=4.2.1');
@@ -111,26 +110,21 @@ window.FichePDF = (function () {
       doc.setFont('DMSans', 'normal'); doc.setFontSize(9); doc.text(ls, M + 4, y + 10.5, { lineHeightFactor: 1.2 });
       y += h + 3;
     };
-    const pastille = (mot, feu, x, yy) => {
-      const [bg, fg] = FEUX[feu];
-      doc.setFillColor(bg); doc.roundedRect(x, yy, 17, 5.6, 2.8, 2.8, 'F');
-      doc.setFont('DMSans', 'bold'); doc.setFontSize(8); doc.setTextColor(fg);
-      doc.text(mot, x + 8.5, yy + 3.8, { align: 'center' });
-    };
-    const repere = (nom, detail, rangs) => {
-      place(8 + rangs.length * 7.2);
-      doc.setFont('DMSans', 'bold'); doc.setFontSize(10.5); doc.setTextColor(texte);
-      doc.text(nom, M, y + 4);
-      const largeurNom = doc.getTextWidth(nom);
-      if (detail) { doc.setFont('DMSans', 'normal'); doc.setFontSize(8); doc.setTextColor(texte2); doc.text(detail, M + largeurNom + 1.5, y + 4); }
-      y += 6.5;
-      rangs.forEach(([mot, feu, seuil]) => {
-        pastille(mot, feu, M, y);
-        doc.setFont('DMSans', 'normal'); doc.setFontSize(9); doc.setTextColor(texte);
-        doc.text(seuil, M + 20, y + 3.9);
-        y += 7.2;
-      });
-      y += 2;
+    // Un repère : rond sauge avec ✓ (dessiné, la police n'a pas ce signe), nom, puis seuil
+    const repere = (nom, seuil) => {
+      doc.setFont('DMSans', 'normal');
+      const ls = lignes(seuil, 8.5, LARGEUR - 9);
+      const h = 5 + ls.length * 8.5 * 0.42 + 3;
+      place(h);
+      const [bg, fg] = FEUX.vert;
+      doc.setFillColor(bg); doc.circle(M + 2.8, y + 3, 2.8, 'F');
+      doc.setDrawColor(fg); doc.setLineWidth(0.5);
+      doc.lines([[0.9, 0.9], [1.8, -2]], M + 1.5, y + 3.1);
+      doc.setFont('DMSans', 'bold'); doc.setFontSize(10); doc.setTextColor(texte);
+      doc.text(nom, M + 8, y + 4);
+      doc.setFont('DMSans', 'normal'); doc.setFontSize(8.5); doc.setTextColor(texte2);
+      doc.text(ls, M + 8, y + 8, { lineHeightFactor: 1.2 });
+      y += h;
     };
 
     /* ---------- Page 1 : couverture et seuils ---------- */
@@ -145,20 +139,12 @@ window.FichePDF = (function () {
     doc.text('Ta fiche pour lire une étiquette en magasin.', M, 24);
     y = 40;
 
-    titre('Les repères pour 100 g');
-    repere('Protéines', '(part de l’énergie)', [
-      ['Riche', 'vert', 'au moins ' + nombre(C.proteines.vertMin) + ' %'],
-      ['Source', 'orange', 'de ' + nombre(C.proteines.orangeMin) + ' à ' + nombre(C.proteines.vertMin) + ' %'],
-      ['Faible', 'rouge', 'moins de ' + nombre(C.proteines.orangeMin) + ' %']]);
-    repere('Sel', '', [
-      ['Faible', 'vert', 'jusqu’à ' + nombre(C.sel.vertMax) + ' g'],
-      ['Moyen', 'orange', 'de ' + nombre(C.sel.vertMax) + ' à ' + nombre(C.sel.orangeMax) + ' g'],
-      ['Élevé', 'rouge', 'plus de ' + nombre(C.sel.orangeMax) + ' g']]);
-    repere('Graisses saturées', '', [
-      ['Faible', 'vert', 'jusqu’à ' + nombre(C.satures.vertMax) + ' g'],
-      ['Moyen', 'orange', 'de ' + nombre(C.satures.vertMax) + ' à ' + nombre(C.satures.orangeMax) + ' g'],
-      ['Élevé', 'rouge', 'plus de ' + nombre(C.satures.orangeMax) + ' g']]);
-    para('Protéines : ' + C.proteines.reference + '. Sel et graisses saturées : ' + C.sel.reference + '.', { taille: 7.5 });
+    titre('Les 6 repères pour 100 g');
+    para('Atteint si :', { taille: 8.5 });
+    const S = Object.assign({}, NuanceEvaluation.CSS, C.css || {});
+    NuanceEvaluation.listeReperes(S).forEach(([nom, seuil]) => repere(nom, seuil));
+    para('Pas de note globale : regarde chaque repère et décide.', { taille: 8.5 });
+    para('Repères : ' + S.reference + '.', { taille: 7.5 });
 
     /* ---------- B12, fer, ingrédients, bon réflexe ---------- */
     nouvellePage();

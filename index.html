@@ -6,11 +6,12 @@
   <title>Nuance végétale — lis l'étiquette en 30 secondes</title>
   <meta name="description" content="Apprends à lire l'étiquette d'une alternative végétale à la viande en 5 coups d'œil : protéines, B12, fer, sel, ingrédients.">
   <meta name="theme-color" content="#F6EFE3">
+  <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261022"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261022d">
-  <link rel="stylesheet" href="css/style.css?v=20261022d">
+  <script src="js/theme.js?v=20261023"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261023">
+  <link rel="stylesheet" href="css/style.css?v=20261023">
   <link rel="preload" as="image" href="images/hero.webp">
 </head>
 <body>
@@ -118,11 +119,12 @@
       </div>
     <ol class="coups pile">
       <li class="revele"><strong>les ingrédients</strong><p>Le premier ingrédient te dit de quoi est fait le produit : soja, blé, pois, champignon…</p></li>
-      <li class="revele" style="--i:1"><strong>les protéines</strong><p>Riche si au moins 20 % de l'énergie vient des protéines.</p></li>
-      <li class="revele" style="--i:2"><strong>la B12 et le fer</strong><p>Cherche « vitamine B12 » ou « fer » dans les ingrédients ou le tableau.</p></li>
-      <li class="revele" style="--i:3"><strong>le sel</strong><p>Plus de 1,5 g pour 100 g, c'est beaucoup.</p></li>
-      <li class="revele" style="--i:4"><strong>les graisses saturées</strong><p>Plus de 5 g pour 100 g, c'est beaucoup.</p></li>
+      <li class="revele" style="--i:1"><strong>les protéines</strong><p>Plus de 10 g pour 100 g, pour bien remplacer la viande.</p></li>
+      <li class="revele" style="--i:2"><strong>la B12 et le fer</strong><p>Plus de 0,24 µg de B12 et 0,8 mg de fer pour 100 g. Pas de chiffre ? Cherche-les dans les ingrédients.</p></li>
+      <li class="revele" style="--i:3"><strong>le sel</strong><p>1,1 g pour 100 g au maximum.</p></li>
+      <li class="revele" style="--i:4"><strong>les graisses</strong><p>Moins de 10 g et moins que les protéines. Dont saturées : moins de 5 g, et au plus un tiers.</p></li>
     </ol>
+    <p class="petit secondaire revele">Repères du Conseil Supérieur de la Santé (avis n° 9445, 2021).</p>
     </section>
 
     <span class="surtitre revele" style="margin-top:72px">03 · à toi</span>
@@ -150,7 +152,7 @@
         <table class="tableau-nutri">
           <tbody>
             <tr><td>Énergie</td><td class="valeur">210 kcal</td></tr>
-            <tr><td>Matières grasses</td><td class="valeur">11 g</td></tr>
+            <tr><td><button type="button" class="zone" data-info="grasses" aria-pressed="false"><span>Matières grasses</span></button></td><td class="valeur">11 g</td></tr>
             <tr class="sous"><td><button type="button" class="zone" data-info="satures" aria-pressed="false"><span>dont saturées</span></button></td><td class="valeur">1,2 g</td></tr>
             <tr><td>Glucides</td><td class="valeur">4 g</td></tr>
             <tr><td>Fibres</td><td class="valeur">4 g</td></tr>
@@ -181,29 +183,34 @@
           <p class="source">[Texte et source à valider par Camille]</p>
         </div>
         <div class="carte explication" id="info-b12" hidden>
-          <span class="pastille vert">Enrichi</span>
-          <p>Bonne nouvelle : ce produit est enrichi en vitamine B12. Elle ne se trouve pas naturellement dans les végétaux.</p>
-          <p class="source">[Source à compléter]</p>
+          <span class="pastille gris sans-point">? non renseigné</span>
+          <p>De la B12 est ajoutée, mais la quantité n'est pas indiquée dans le tableau. Repère : plus de 0,24 µg pour 100 g. Elle ne se trouve pas naturellement dans les végétaux.</p>
+          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
         <div class="carte explication" id="info-fer" hidden>
-          <span class="pastille vert">Enrichi</span>
-          <p>Du fer a été ajouté. Le fer des végétaux est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi).</p>
-          <p class="source">[Source à compléter]</p>
+          <span class="pastille gris sans-point">? non renseigné</span>
+          <p>Du fer est ajouté, mais la quantité n'est pas indiquée. Repère : plus de 0,8 mg pour 100 g. Il est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi).</p>
+          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
         <div class="carte explication" id="info-proteines" hidden>
-          <span class="pastille vert">Riche · 34 %</span>
-          <p>18 g × 4 ÷ 210 kcal = 34 % de l'énergie vient des protéines. Au-dessus de 20 %, le produit peut être dit « riche en protéines ».</p>
-          <p class="source">Règlement (CE) n° 1924/2006</p>
+          <span class="pastille vert sans-point">✓ atteint</span>
+          <p>18 g pour 100 g : plus que le repère de 10 g. Bonus : 34 % de l'énergie vient des protéines, donc le fabricant peut écrire « riche en protéines » (règle européenne).</p>
+          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021) · règlement (CE) n° 1924/2006</p>
         </div>
         <div class="carte explication" id="info-sel" hidden>
-          <span class="pastille orange">Moyen</span>
-          <p>1,3 g pour 100 g. Une portion de 150 g apporte environ 2 g de sel, soit un tiers du repère de 6 g par jour.</p>
-          <p class="source">Food Standards Agency (UK)</p>
+          <span class="pastille rose sans-point">! à surveiller</span>
+          <p>1,3 g pour 100 g : au-dessus du repère de 1,1 g. Pas besoin de resaler le plat.</p>
+          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
         <div class="carte explication" id="info-satures" hidden>
-          <span class="pastille vert">Faible</span>
-          <p>1,2 g pour 100 g : c'est peu. Au-dessus de 5 g, c'est beaucoup.</p>
-          <p class="source">Food Standards Agency (UK)</p>
+          <span class="pastille vert sans-point">✓ atteint</span>
+          <p>1,2 g pour 100 g : moins de 5 g, et à peine un dixième des 11 g de graisses (repère : au plus un tiers). L'huile de colza apporte surtout de bonnes graisses.</p>
+          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
+        </div>
+        <div class="carte explication" id="info-grasses" hidden>
+          <span class="pastille rose sans-point">! à surveiller</span>
+          <p>11 g pour 100 g : un peu plus que le repère de 10 g. Les protéines (18 g) restent au-dessus, c'est déjà ça.</p>
+          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
       </div>
     </div>
@@ -264,11 +271,11 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261022"></script>
-<script src="js/menu.js?v=20261022"></script>
-<script src="js/vendor/lenis.min.js?v=20261022"></script>
-<script src="js/avis.js?v=20261022"></script>
-<script src="js/animations.js?v=20261022"></script>
+<script src="js/commun.js?v=20261023"></script>
+<script src="js/menu.js?v=20261023"></script>
+<script src="js/vendor/lenis.min.js?v=20261023"></script>
+<script src="js/avis.js?v=20261023"></script>
+<script src="js/animations.js?v=20261023"></script>
 <script>
   /* Chiffres de l'enquête : modifiables dans donnees/enquete.json (Pages CMS) */
   (async function () {

@@ -8,7 +8,7 @@
       "ouLaTrouver": [
         "[à compléter par Camille]"
       ],
-      "surEtiquette": "Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.",
+      "surEtiquette": "Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel. Repère du CSS : plus de 0,24 µg pour 100 g.",
       "conseil": "[à compléter par Camille]",
       "sources": [
         {
@@ -26,7 +26,7 @@
       "ouLaTrouver": [
         "[à compléter par Camille]"
       ],
-      "surEtiquette": "[à compléter par Camille]",
+      "surEtiquette": "Regarde la ligne « Protéines » du tableau, pour 100 g. Repère du CSS pour un produit qui remplace la viande : plus de 10 g. [à valider par Camille]",
       "conseil": "[à compléter par Camille]",
       "sources": [
         {
@@ -44,7 +44,7 @@
       "ouLaTrouver": [
         "[à compléter par Camille]"
       ],
-      "surEtiquette": "Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.",
+      "surEtiquette": "Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel. Repère du CSS : plus de 0,8 mg pour 100 g.",
       "conseil": "[à compléter par Camille]",
       "sources": [
         {
@@ -68,6 +68,26 @@
         {
           "texte": "[à compléter par Camille]",
           "url": ""
+        }
+      ],
+      "brouillon": true
+    },
+    {
+      "id": "allegations",
+      "titre": "Les allégations « riche en » et « source de »",
+      "resume": "Ce que l’emballage a le droit d’écrire. Une info, pas une note.",
+      "aQuoiCaSert": "Une allégation est une phrase mise en avant sur l’emballage, comme « riche en protéines ». Elle est encadrée par une règle européenne : le fabricant ne peut l’écrire que si le produit atteint un certain seuil. Elle dit ce qu’on peut écrire, pas si le produit est bon pour toi : c’est pour ça que le décodeur l’affiche à part, sous les 6 repères.",
+      "ouLaTrouver": [
+        "« Riche en protéines » : au moins 20 % de l’énergie du produit vient des protéines.",
+        "« Source de protéines » : au moins 12 % de l’énergie vient des protéines.",
+        "Le calcul : protéines (g) × 4 ÷ énergie (kcal) × 100. Exemple : 18 g × 4 ÷ 210 kcal = 34 %."
+      ],
+      "surEtiquette": "Cherche les mots « riche en » ou « source de » sur le devant du paquet, puis vérifie avec le tableau nutritionnel au dos.",
+      "conseil": "Un produit peut être « riche en protéines » et très salé à la fois. Regarde toujours les 6 repères.",
+      "sources": [
+        {
+          "texte": "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/ALL/?uri=CELEX:32006R1924"
         }
       ],
       "brouillon": true

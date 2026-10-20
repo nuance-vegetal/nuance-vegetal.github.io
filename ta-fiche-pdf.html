@@ -6,11 +6,12 @@
   <title>Ta fiche PDF — Nuance végétale</title>
   <meta name="description" content="Ta fiche PDF à garder sur ton téléphone pour lire l’étiquette d’un simili en magasin. Elle s’imprime aussi.">
   <meta name="theme-color" content="#F6EFE3">
+  <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261022"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261022d">
-  <link rel="stylesheet" href="css/style.css?v=20261022d">
+  <script src="js/theme.js?v=20261023"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261023">
+  <link rel="stylesheet" href="css/style.css?v=20261023">
 </head>
 <body class="page-secondaire">
 
@@ -52,12 +53,12 @@
 
     <article class="carte fiche-pdf revele" style="margin-top:28px">
       <h2 class="titre-fiche">nuance <em class="serif">végétale</em></h2>
-      <p class="secondaire" style="margin:0">Les repères pour 100 g, en 5 coups d'œil.</p>
+      <p class="secondaire" style="margin:0">Les 6 repères pour 100 g. Pas de note globale : c'est toi qui décides.</p>
 
-      <h2>Les seuils</h2>
+      <h2>Les repères</h2>
       <table class="tableau-seuils">
         <thead>
-          <tr><th scope="col">Repère</th><th scope="col">Vert</th><th scope="col">Orange</th><th scope="col">Rouge</th></tr>
+          <tr><th scope="col">Repère</th><th scope="col">Atteint si…</th></tr>
         </thead>
         <tbody id="seuils"></tbody>
       </table>
@@ -121,35 +122,21 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261022"></script>
-<script src="js/commun.js?v=20261022"></script>
-<script src="js/menu.js?v=20261022"></script>
-<script src="js/vendor/lenis.min.js?v=20261022"></script>
-<script src="js/fiche-pdf.js?v=20261022d"></script>
-<script src="js/animations.js?v=20261022"></script>
+<script src="js/config.js?v=20261023"></script>
+<script src="js/commun.js?v=20261023"></script>
+<script src="js/menu.js?v=20261023"></script>
+<script src="js/vendor/lenis.min.js?v=20261023"></script>
+<script src="js/evaluation.js?v=20261023"></script>
+<script src="js/fiche-pdf.js?v=20261023"></script>
+<script src="js/animations.js?v=20261023"></script>
 <script>
   (async function () {
     let C;
     try { C = await chargerReglages(); } catch (e) { return; }
-    const f = (n) => formatNombre(n, 2);
-    const lignes = [
-      ['Protéines<span class="seuil">% de l\'énergie</span>',
-        `<span class="pastille vert">Riche</span><span class="seuil">≥ ${f(C.proteines.vertMin)} %</span>`,
-        `<span class="pastille orange">Source</span><span class="seuil">${f(C.proteines.orangeMin)} à ${f(C.proteines.vertMin)} %</span>`,
-        `<span class="pastille rouge">Faible</span><span class="seuil">&lt; ${f(C.proteines.orangeMin)} %</span>`],
-      ['Sel',
-        `<span class="pastille vert">Faible</span><span class="seuil">≤ ${f(C.sel.vertMax)} g</span>`,
-        `<span class="pastille orange">Moyen</span><span class="seuil">${f(C.sel.vertMax)} à ${f(C.sel.orangeMax)} g</span>`,
-        `<span class="pastille rouge">Élevé</span><span class="seuil">&gt; ${f(C.sel.orangeMax)} g</span>`],
-      ['Graisses saturées',
-        `<span class="pastille vert">Faible</span><span class="seuil">≤ ${f(C.satures.vertMax)} g</span>`,
-        `<span class="pastille orange">Moyen</span><span class="seuil">${f(C.satures.vertMax)} à ${f(C.satures.orangeMax)} g</span>`,
-        `<span class="pastille rouge">Élevé</span><span class="seuil">&gt; ${f(C.satures.orangeMax)} g</span>`]
-    ];
-    document.getElementById('seuils').innerHTML = lignes
-      .map(([r, v, o, ro]) => `<tr><th scope="row">${r}</th><td>${v}</td><td>${o}</td><td>${ro}</td></tr>`).join('');
-    document.getElementById('references').textContent =
-      'Protéines : ' + C.proteines.reference + '. Sel et graisses saturées : ' + C.sel.reference + '.';
+    const S = Object.assign({}, NuanceEvaluation.CSS, C.css || {});
+    document.getElementById('seuils').innerHTML = NuanceEvaluation.listeReperes(S)
+      .map(([nom, seuil]) => `<tr><th scope="row">${nom}</th><td><span class="pastille vert sans-point">✓</span> ${seuil}</td></tr>`).join('');
+    document.getElementById('references').textContent = 'Repères : ' + S.reference + '.';
 
     document.getElementById('imprimer').addEventListener('click', () => window.print());
 

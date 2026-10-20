@@ -25,7 +25,7 @@ Adresse du site : https://nuance-vegetal.github.io
    - **Réglages**
      - **Couleurs du site** : choisis une ambiance (sauge, terracotta, lavande, océan, olive, cacao, framboise) et, si tu veux, une couleur principale à toi ;
      - **Questionnaire « Donne ton avis »** : colle le lien de ton Google Form ; l'encadré « Donne ton avis » apparaît alors sur l'accueil et sous les résultats du scan ;
-     - **Décodeur, scan et fiche PDF – seuils des feux** : les limites vert / orange / rouge (utilisées par le décodeur, le scan et ta fiche PDF) et les infos affichées après un scan.
+     - **Décodeur, scan et fiche PDF – repères du CSS** : les 6 seuils du Conseil Supérieur de la Santé (avis n° 9445, 2021) utilisés par le décodeur, le scan et ta fiche PDF, les seuils de l'allégation « riche en / source de protéines », et les infos « bon à savoir » affichées après un scan.
 4. Change le texte dans les cases.
 5. Clique sur **Save** (en haut à droite).
 6. Attends environ **une minute**, puis recharge le site : ta modification est en ligne.
@@ -54,14 +54,15 @@ Dans le champ **Photo**, clique sur l'image puis **Upload** pour envoyer une nou
 
 Pour revenir à une ambiance prête, décoche **Utiliser mes couleurs**.
 
-Les feux vert / orange / rouge du décodeur ne changent jamais : ils ont un sens et restent lisibles pour les personnes daltoniennes.
+Les couleurs des repères du décodeur (✓ atteint en vert sauge, ! à surveiller en rose, ? non renseigné en sable) ne changent jamais : elles ont un sens, et le symbole et le mot les accompagnent toujours.
 
 ## Bon à savoir
 
 - **Brouillon** : sur une fiche Études, la case « Brouillon » affiche « Brouillon à valider » sur le site. Décoche-la quand le texte est validé.
 - **Niveau de preuve** : 1 = faible, 2 = moyen, 3 = élevé.
 - **Seuils** : pour les nombres à virgule, tape un **point** (1.5) ; le site affiche ensuite une virgule (1,5).
-- **Infos du scan** : coche ou décoche les lignes à afficher après un scan (B12, fer, gluten, lait, végan…).
+- **Repères du CSS** : à vérifier dans l'avis original avant de les changer. La règle « saturées ≤ 1/3 des matières grasses » est fixe dans le code (`js/evaluation.js`).
+- **Infos du scan** : coche ou décoche les lignes « bon à savoir » à afficher après un scan (gluten, lait, végan…). Le fer et la B12 font partie des 6 repères.
 - **Erreur ?** Tout est gardé dans l'historique : Alex peut revenir à la version d'avant à tout moment.
 
 ## Ce qui ne se modifie pas (encore) avec les formulaires

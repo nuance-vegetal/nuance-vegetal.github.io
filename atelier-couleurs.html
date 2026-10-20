@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="only light">
   <meta name="robots" content="noindex">
   <title>Atelier couleurs — Nuance végétale</title>
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
-  <script src="js/theme.js?v=20261022"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261022d">
-  <link rel="stylesheet" href="css/style.css?v=20261022d">
+  <script src="js/theme.js?v=20261023"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261023">
+  <link rel="stylesheet" href="css/style.css?v=20261023">
   <style>
     .atelier { display: grid; gap: 24px; padding: 20px 0 40px; }
     .atelier h1 { font-size: clamp(34px, 9vw, 52px); margin: 0 0 6px; }
@@ -162,7 +163,7 @@
 
     function appliquerApercu() {
       const doc = $('apercu').contentDocument;
-      if (!doc || !doc.documentElement) return;
+      if (!doc || !doc.documentElement || !etat.fond) return; // couleurs pas encore chargées
       const p = N.paletteDepuis(etat.fond, etat.carte, etat.principal, etat.texte);
       doc.documentElement.setAttribute('data-theme', 'sauge');
       Object.keys(p).forEach((v) => doc.documentElement.style.setProperty(v, p[v]));

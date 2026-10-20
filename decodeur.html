@@ -4,13 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Décodeur — Nuance végétale</title>
-  <meta name="description" content="Scanne un produit ou entre les valeurs de l'étiquette : repères protéines, sel, graisses saturées et B12, plus gluten et lait au scan.">
+  <meta name="description" content="Scanne un produit ou entre les valeurs de l'étiquette : 6 repères du Conseil Supérieur de la Santé (protéines, graisses, saturées, sel, fer, B12).">
   <meta name="theme-color" content="#F6EFE3">
+  <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261022"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261022d">
-  <link rel="stylesheet" href="css/style.css?v=20261022d">
+  <script src="js/theme.js?v=20261023"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261023">
+  <link rel="stylesheet" href="css/style.css?v=20261023">
 </head>
 <body class="page-secondaire">
 
@@ -69,27 +70,39 @@
             <div class="saisie"><input type="text" id="proteines" inputmode="decimal" placeholder="ex. 18"><span class="unite">g</span></div>
           </div>
           <div class="champ">
-            <label for="satures">Graisses saturées</label>
+            <label for="grasses">Matières grasses</label>
+            <div class="saisie"><input type="text" id="grasses" inputmode="decimal" placeholder="ex. 11"><span class="unite">g</span></div>
+          </div>
+          <div class="champ">
+            <label for="satures">dont saturées</label>
             <div class="saisie"><input type="text" id="satures" inputmode="decimal" placeholder="ex. 1,2"><span class="unite">g</span></div>
           </div>
           <div class="champ">
             <label for="sel">Sel</label>
             <div class="saisie"><input type="text" id="sel" inputmode="decimal" placeholder="ex. 1,3"><span class="unite">g</span></div>
           </div>
+          <div class="champ">
+            <label for="fer">Fer <span class="facultatif">si indiqué</span></label>
+            <div class="saisie"><input type="text" id="fer" inputmode="decimal" placeholder="ex. 2,1"><span class="unite">mg</span></div>
+          </div>
+          <div class="champ">
+            <label for="b12">Vitamine B12 <span class="facultatif">si indiquée</span></label>
+            <div class="saisie"><input type="text" id="b12" inputmode="decimal" placeholder="ex. 0,38"><span class="unite">µg</span></div>
+          </div>
           <fieldset class="choix">
-            <legend>B12 dans les ingrédients ?</legend>
+            <legend>B12 citée dans les ingrédients ?</legend>
             <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p></details>
             <div class="choix-options">
-              <label><input type="radio" name="b12" value="oui"> Oui</label>
-              <label><input type="radio" name="b12" value="non"> Non</label>
+              <label><input type="radio" name="b12-cite" value="oui"> Oui</label>
+              <label><input type="radio" name="b12-cite" value="non"> Non</label>
             </div>
           </fieldset>
           <fieldset class="choix">
-            <legend>Fer dans les ingrédients ?</legend>
+            <legend>Fer cité dans les ingrédients ?</legend>
             <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p></details>
             <div class="choix-options">
-              <label><input type="radio" name="fer" value="oui"> Oui</label>
-              <label><input type="radio" name="fer" value="non"> Non</label>
+              <label><input type="radio" name="fer-cite" value="oui"> Oui</label>
+              <label><input type="radio" name="fer-cite" value="non"> Non</label>
             </div>
           </fieldset>
           <fieldset class="choix">
@@ -107,37 +120,7 @@
         <div id="fiche-droite"></div>
         <div id="bloc-reperes">
         <h2>tes <em class="serif">repères</em></h2>
-        <div class="carte resultats" aria-live="polite">
-          <div class="ligne">
-            <div>Protéines <a class="lien-info" href="a-quoi-ca-sert.html#proteines" aria-label="À quoi sert les protéines ?">?</a><span class="detail" id="detail-proteines">% de l'énergie</span></div>
-            <span class="pastille gris" id="feu-proteines">À compléter</span>
-          </div>
-          <div class="ligne">
-            <div>Sel<span class="detail" id="detail-sel">pour 100 g</span></div>
-            <span class="pastille gris" id="feu-sel">À compléter</span>
-          </div>
-          <div class="ligne">
-            <div>Graisses saturées<span class="detail" id="detail-satures">pour 100 g</span></div>
-            <span class="pastille gris" id="feu-satures">À compléter</span>
-          </div>
-          <div class="ligne">
-            <div>Vitamine B12 <a class="lien-info" href="a-quoi-ca-sert.html#b12" aria-label="À quoi sert la vitamine B12 ?">?</a></div>
-            <span class="pastille gris" id="feu-b12">À compléter</span>
-          </div>
-          <div class="ligne">
-            <div>Fer <a class="lien-info" href="a-quoi-ca-sert.html#fer" aria-label="À quoi sert le fer ?">?</a></div>
-            <span class="pastille gris" id="feu-fer">À compléter</span>
-          </div>
-          <div class="ligne">
-            <div>Gluten</div>
-            <span class="pastille gris" id="feu-gluten">À compléter</span>
-          </div>
-        </div>
-
-
-        <p class="petit secondaire" style="margin-top:16px">
-          Repères : protéines selon le règlement (CE) n° 1924/2006 ; sel et graisses saturées selon la Food Standards Agency (UK). Seuils en cours de validation.
-        </p>
+        <div class="carte resultats" id="evaluation-manuelle" aria-live="polite"></div>
         </div>
       </div>
     </div>
@@ -181,13 +164,14 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261022"></script>
-<script src="js/commun.js?v=20261022"></script>
-<script src="js/menu.js?v=20261022"></script>
-<script src="js/vendor/lenis.min.js?v=20261022"></script>
-<script src="js/animations.js?v=20261022"></script>
-<script src="js/avis.js?v=20261022"></script>
-<script src="js/scanner.js?v=20261022"></script>
+<script src="js/config.js?v=20261023"></script>
+<script src="js/commun.js?v=20261023"></script>
+<script src="js/menu.js?v=20261023"></script>
+<script src="js/vendor/lenis.min.js?v=20261023"></script>
+<script src="js/animations.js?v=20261023"></script>
+<script src="js/avis.js?v=20261023"></script>
+<script src="js/evaluation.js?v=20261023"></script>
+<script src="js/scanner.js?v=20261023"></script>
 <script>
   (async function () {
     let C;
@@ -196,70 +180,36 @@
       return;
     }
     const $ = (id) => document.getElementById(id);
-    const feu = (id, couleur, mot) => majPastille($(id), couleur, mot);
+    const E = window.NuanceEvaluation;
+    const seuils = Object.assign({}, C.css || {});
+    const coche = (nom) => { const r = document.querySelector('input[name="' + nom + '"]:checked'); return r ? r.value : null; };
 
-    function niveau(valeur, vertMax, orangeMax) {
-      if (valeur <= vertMax) return ['vert', 'Faible'];
-      if (valeur <= orangeMax) return ['orange', 'Moyen'];
-      return ['rouge', 'Élevé'];
+    /* Valeurs du formulaire (pour 100 g) → les 6 repères du CSS */
+    function lireFormulaire() {
+      return {
+        energie: lireNombre($('kcal').value),
+        proteines: lireNombre($('proteines').value),
+        grasses: lireNombre($('grasses').value),
+        satures: lireNombre($('satures').value),
+        sel: lireNombre($('sel').value),
+        fer: lireNombre($('fer').value),
+        b12: lireNombre($('b12').value),
+        ferCite: coche('fer-cite') === 'oui',
+        b12Cite: coche('b12-cite') === 'oui'
+      };
     }
+    const evaluer = () => E.evaluate(lireFormulaire(), seuils);
 
-    /* Évalue les valeurs saisies : couleur, mot et détail pour chaque repère */
-    function evaluer() {
-      const kcal = lireNombre($('kcal').value);
-      const prot = lireNombre($('proteines').value);
-      const sat = lireNombre($('satures').value);
-      const sel = lireNombre($('sel').value);
-      const b12 = document.querySelector('input[name="b12"]:checked');
-      const r = {};
-
-      if (kcal && prot !== null) {
-        const pct = prot * 4 / kcal * 100;
-        const [c, m] = pct >= C.proteines.vertMin ? ['vert', 'Riche'] : pct >= C.proteines.orangeMin ? ['orange', 'Source'] : ['rouge', 'Faible'];
-        r.proteines = { couleur: c, mot: m, detail: formatNombre(pct, 0) + ' % de l\'énergie', court: formatNombre(prot) + ' g · ' + formatNombre(pct, 0) + ' %' };
-      } else r.proteines = { couleur: 'gris', mot: 'À compléter', detail: '% de l\'énergie', court: 'non indiqué' };
-
-      if (sel !== null) {
-        const [c, m] = niveau(sel, C.sel.vertMax, C.sel.orangeMax);
-        const portion = sel * C.portionGrammes / 100;
-        const pctJour = portion / C.selRepereJour * 100;
-        r.sel = { couleur: c, mot: m, court: formatNombre(sel, 2) + ' g / 100 g',
-          detail: formatNombre(portion, 2) + ' g par portion de ' + C.portionGrammes + ' g, soit ' + formatNombre(pctJour, 0) + ' % du repère de ' + C.selRepereJour + ' g par jour' };
-      } else r.sel = { couleur: 'gris', mot: 'À compléter', detail: 'pour 100 g', court: 'non indiqué' };
-
-      if (sat !== null) {
-        const [c, m] = niveau(sat, C.satures.vertMax, C.satures.orangeMax);
-        r.satures = { couleur: c, mot: m, detail: formatNombre(sat) + ' g pour 100 g', court: formatNombre(sat, 2) + ' g / 100 g' };
-      } else r.satures = { couleur: 'gris', mot: 'À compléter', detail: 'pour 100 g', court: 'non indiqué' };
-
-      if (!b12) r.b12 = { couleur: 'gris', mot: 'À compléter', court: 'non signalée' };
-      else if (b12.value === 'oui') r.b12 = { couleur: 'vert', mot: 'Enrichi', court: 'présente' };
-      else r.b12 = { couleur: 'orange', mot: 'Absente', court: 'absente' };
-
-      const fer = document.querySelector('input[name="fer"]:checked');
-      if (!fer) r.fer = { couleur: 'gris', mot: 'À compléter' };
-      else if (fer.value === 'oui') r.fer = { couleur: 'vert', mot: 'Enrichi' };
-      else r.fer = { couleur: 'orange', mot: 'Absent' };
-
-      const gluten = document.querySelector('input[name="gluten"]:checked');
-      if (!gluten) r.gluten = { couleur: 'gris', mot: 'À compléter' };
-      else if (gluten.value === 'oui') r.gluten = { couleur: 'lilas', mot: 'Contient du gluten' };
-      else r.gluten = { couleur: 'vert', mot: 'Pas de gluten repéré' };
-      return r;
+    function ligneGluten() {
+      const g = coche('gluten');
+      return '<p class="eval-extra"><b>Gluten :</b> ' + (g === 'oui' ? 'contient du gluten.' : g === 'non' ? 'pas de gluten repéré.' : 'à compléter.') + '</p>';
     }
 
     function calculer() {
-      const r = evaluer();
-      document.querySelectorAll('.fp-feu[data-cle]').forEach((t) => {
-        const v = r[t.dataset.cle];
-        t.className = 'fp-feu ' + v.couleur;
-        t.querySelector('strong').textContent = v.couleur === 'gris' ? '—' : v.mot;
-        if (t.dataset.cle !== 'b12' || v.couleur !== 'gris') t.querySelector('.fp-feu-val').textContent = v.court;
-      });
-      ['proteines', 'sel', 'satures', 'b12', 'fer', 'gluten'].forEach((cle) => {
-        feu('feu-' + cle, r[cle].couleur, r[cle].mot);
-        if (r[cle].detail && $('detail-' + cle)) $('detail-' + cle).textContent = r[cle].detail;
-      });
+      const ev = evaluer();
+      $('evaluation-manuelle').innerHTML = E.rendre(ev) + ligneGluten();
+      const zone = document.querySelector('.fiche-produit [data-evaluation]');
+      if (zone) zone.innerHTML = E.rendre(ev, { source: 'Valeurs : Open Food Facts.' });
     }
 
     $('decodeur').addEventListener('input', calculer);
@@ -289,7 +239,7 @@
       $('bloc-reperes').hidden = false;
       statut.innerHTML = '<div class="fiche-produit chargement" aria-label="Recherche du produit ' + echapper(code) + '">' +
         '<div class="fp-tete"><div class="fp-photo squelette"></div><div style="flex:1"><div class="squelette ligne-s" style="width:40%"></div><div class="squelette ligne-s" style="width:80%;height:20px"></div><div class="squelette ligne-s" style="width:55%"></div></div></div>' +
-        '<div class="fp-feux">' + '<div class="squelette tuile-s"></div>'.repeat(4) + '</div>' +
+        '<div class="eval-reperes" style="margin-top:16px">' + '<div class="squelette ligne-repere-s"></div>'.repeat(6) + '</div>' +
         '<p class="petit secondaire" style="margin:12px 0 0;text-align:center">Je cherche le produit ' + echapper(code) + '…</p></div>';
       let p;
       try {
@@ -305,22 +255,19 @@
         }
         remplir('kcal', p.kcal, 0);
         remplir('proteines', p.proteines, 1);
+        remplir('grasses', p.grasses, 1);
         remplir('satures', p.satures, 2);
         remplir('sel', p.sel, 2);
-        document.querySelectorAll('input[name="b12"]').forEach((r) => { r.checked = p.infos.b12.etat !== 'non-signale' && r.value === 'oui'; });
-        document.querySelectorAll('input[name="fer"]').forEach((r) => { r.checked = p.infos.fer.etat !== 'non-signale' && r.value === 'oui'; });
+        remplir('fer', p.fer, 2);
+        remplir('b12', p.b12, 2);
+        document.querySelectorAll('input[name="b12-cite"]').forEach((r) => { r.checked = p.b12Cite && r.value === 'oui'; });
+        document.querySelectorAll('input[name="fer-cite"]').forEach((r) => { r.checked = p.ferCite && r.value === 'oui'; });
         const etatGluten = p.infos.gluten.etat;
         document.querySelectorAll('input[name="gluten"]').forEach((r) => {
           r.checked = (etatGluten === 'present' && r.value === 'oui') || (etatGluten === 'sans' && r.value === 'non');
         });
+        afficherFiche(ficheProduit(p));
         calculer();
-
-        const manquants = [];
-        if (p.kcal === null) manquants.push('énergie');
-        if (p.proteines === null) manquants.push('protéines');
-        if (p.satures === null) manquants.push('graisses saturées');
-        if (p.sel === null) manquants.push('sel');
-        afficherFiche(ficheProduit(p, evaluer(), manquants));
         ajouterHisto(code, p);
         defiler(document.querySelector('.fiche-produit'));
       } catch (e) {
@@ -346,21 +293,15 @@
       quantite: 'vert', ingredients: 'vert', oui: 'vert', sans: 'vert',
       present: 'lilas', traces: 'lilas', non: 'lilas', 'non-signale': 'gris'
     };
-    const TUILES = [['proteines', 'Protéines'], ['sel', 'Sel'], ['satures', 'Saturés'], ['b12', 'B12']];
     const LIENS_INFO = { proteines: 'proteines', b12: 'b12', fer: 'fer', additifs: 'additifs' };
 
-    function ficheProduit(p, r, manquants) {
+    function ficheProduit(p) {
       const marque = p.marque && p.marque.toLowerCase() !== p.nom.toLowerCase() ? p.marque : '';
       const photo = p.photo
         ? '<img src="' + echapper(p.photo) + '" alt="" width="84" height="84">'
         : INFOS.vegan.icone;
-      if (p.infos.b12) r.b12.court = p.infos.b12.texte;
-      const tuiles = TUILES.map(([cle, titre], i) =>
-        '<div class="fp-feu ' + r[cle].couleur + '" data-cle="' + cle + '" style="--i:' + i + '">' +
-        '<span class="fp-feu-titre">' + titre + (LIENS_INFO[cle] ? ' <a class="lien-info" href="a-quoi-ca-sert.html#' + LIENS_INFO[cle] + '" aria-label="À quoi ça sert ?">?</a>' : '') + '</span>' +
-        '<strong>' + (r[cle].couleur === 'gris' ? '—' : echapper(r[cle].mot)) + '</strong>' +
-        '<span class="fp-feu-val">' + echapper(r[cle].court) + '</span></div>').join('');
-      const infos = (C.scanInfos || Object.keys(INFOS)).filter((cle) => cle !== 'b12' && INFOS[cle] && p.infos[cle]).map((cle, i) => {
+      // B12 et fer font partie des 6 repères : on ne les répète pas dans « bon à savoir »
+      const infos = (C.scanInfos || Object.keys(INFOS)).filter((cle) => cle !== 'b12' && cle !== 'fer' && INFOS[cle] && p.infos[cle]).map((cle, i) => {
         const info = p.infos[cle];
         const large = info.texte.length > 24 ? ' large' : '';
         return '<div class="fp-info ' + COULEURS[info.etat] + large + '" style="--i:' + (i + 4) + '">' + INFOS[cle].icone +
@@ -377,13 +318,12 @@
         '<span class="fp-badge">produit trouvé</span>' +
         '<h3 class="fp-nom">' + echapper(p.nom) + '</h3>' +
         (marque ? '<p class="fp-marque">' + echapper(marque) + '</p>' : '') + '</div></div>' +
-        '<p class="fp-section">en un coup d’œil</p><div class="fp-feux">' + tuiles + '</div>' +
+        '<p class="fp-section">les 6 repères</p><div data-evaluation></div>' +
         (infos ? '<p class="fp-section">bon à savoir</p><div class="fp-infos">' + infos + '</div>' : '') +
         encartVegan(p.infos.vegan) +
         encartBio(p.infos.bio) +
         ingredients +
-        '<p class="fp-note">Données Open Food Facts, remplies par des bénévoles : vérifie avec l’emballage. « Non signalé » ne veut pas dire absent.' +
-        (manquants.length ? ' Manquant : ' + manquants.join(', ') + '.' : '') + '</p>' +
+        '<p class="fp-note">Données Open Food Facts, remplies par des bénévoles : vérifie avec l’emballage. « Non renseigné » ne veut pas dire absent.</p>' +
         '<div data-avis></div>' +
         '<div class="fp-actions"><button type="button" class="bouton" id="rescanner">scanner un autre produit</button>' +
         '<a class="bouton secondaire-btn" href="#decodeur">voir les valeurs</a></div>' +

@@ -2,6 +2,7 @@
  * Scan de code-barres → Open Food Facts → valeurs du décodeur.
  * La caméra reste dans le navigateur : rien n'est filmé ni enregistré.
  * Seul le numéro du code-barres est envoyé à Open Food Facts pour trouver le produit.
+ * À charger après js/evaluation.js.
  */
 const Scanner = (() => {
   const FORMATS = ['ean_13', 'ean_8', 'upc_a', 'upc_e'];
@@ -90,6 +91,7 @@ const Scanner = (() => {
 
     const p = data.product;
     const n = p.nutriments || {};
+    const ev = NuanceEvaluation.fromOpenFoodFacts(p);
     const nombre = (v) => (v === undefined || v === null || v === '' || isNaN(Number(v)) ? null : Number(v));
     let kcal = nombre(n['energy-kcal_100g']);
     if (kcal === null && nombre(n.energy_100g) !== null) kcal = nombre(n.energy_100g) / 4.184;
@@ -158,6 +160,12 @@ const Scanner = (() => {
       proteines: nombre(n.proteins_100g),
       satures: nombre(n['saturated-fat_100g']),
       sel: nombre(n.salt_100g),
+      // Pour les 6 repères du CSS (js/evaluation.js) : valeur absente = null, jamais 0
+      grasses: ev.grasses,
+      fer: ev.fer,
+      b12: ev.b12,
+      ferCite: ev.ferCite,
+      b12Cite: ev.b12Cite,
       infos: {
         b12,
         fer,
