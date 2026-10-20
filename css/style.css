@@ -31,7 +31,7 @@
   --ombre-douce: 0 1px 2px rgba(70, 52, 20, .04), 0 10px 24px -14px rgba(70, 52, 20, .2);
   --courbe: cubic-bezier(.2, .7, .2, 1);
 
-  --police-titre: 'Instrument Serif', Georgia, serif;
+  --police-titre: 'Bricolage Grotesque', system-ui, sans-serif;
   --police-texte: 'DM Sans', system-ui, sans-serif;
   --police-accent: 'Instrument Serif', Georgia, serif;
 }
@@ -122,14 +122,14 @@ img { max-width: 100%; display: block; }
 
 h1, h2, h3 {
   font-family: var(--police-titre);
-  font-weight: 800;
-  letter-spacing: -0.012em;
-  line-height: 1.02;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
   margin: 0 0 10px;
   text-wrap: balance;
 }
-h1 { font-size: clamp(46px, 13vw, 62px); }
-h2 { font-size: clamp(36px, 9.5vw, 46px); margin-top: 72px; }
+h1 { font-size: clamp(40px, 11.5vw, 54px); }
+h2 { font-size: clamp(30px, 8vw, 40px); margin-top: 72px; }
 h3 { font-size: 19px; letter-spacing: -0.015em; }
 
 p { margin: 0 0 12px; }
@@ -172,7 +172,7 @@ a:hover { color: var(--principal-survol); }
 }
 .marque {
   display: inline-flex; align-items: center; gap: 10px; min-height: 44px;
-  font-family: var(--police-titre); font-weight: 800; font-size: 18px; letter-spacing: -.02em;
+  font-family: var(--police-titre); font-weight: 600; font-size: 18px; letter-spacing: -.02em;
   color: var(--texte); text-decoration: none; margin-right: auto;
 }
 .marque .logo {
@@ -321,7 +321,7 @@ a:hover { color: var(--principal-survol); }
 .defilant:hover .defilant-piste { animation-play-state: paused; }
 .defilant-piste span {
   display: inline-flex; align-items: center; gap: 14px; padding-right: 14px;
-  font-family: var(--police-titre); font-weight: 800; font-size: 20px; letter-spacing: -.02em; white-space: nowrap;
+  font-family: var(--police-titre); font-weight: 600; font-size: 20px; letter-spacing: -.02em; white-space: nowrap;
 }
 .defilant-piste span::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--principal); opacity: .5; }
 .defilant-piste em { font-style: normal; color: var(--principal); }
@@ -335,7 +335,7 @@ a:hover { color: var(--principal-survol); }
 }
 .chiffre-carte.mis-en-avant { grid-column: 1 / -1; background: var(--principal); border-color: var(--principal); color: var(--carte); }
 .chiffre-carte strong {
-  display: block; font-family: var(--police-titre); font-weight: 800; font-size: 40px; line-height: 1;
+  display: block; font-family: var(--police-titre); font-weight: 600; font-size: 40px; line-height: 1;
   letter-spacing: -.03em; color: var(--principal); margin-bottom: 6px; font-variant-numeric: tabular-nums;
 }
 .chiffre-carte.mis-en-avant strong { font-size: 56px; color: var(--carte); }
@@ -356,7 +356,7 @@ a:hover { color: var(--principal-survol); }
   display: grid; place-items: center;
   width: 40px; height: 40px; border-radius: 13px;
   background: var(--principal); color: var(--carte);
-  font-family: var(--police-titre); font-weight: 800; font-size: 18px;
+  font-family: var(--police-titre); font-weight: 600; font-size: 18px;
 }
 .coups strong { display: block; font-size: 17px; margin-bottom: 2px; }
 .coups p { margin: 0; font-size: 15px; color: var(--texte-2); }
@@ -396,7 +396,7 @@ a:hover { color: var(--principal-survol); }
 .etiquette::before {
   content: ""; position: absolute; inset: 7px; border: 1px dashed var(--contour); border-radius: 13px; pointer-events: none;
 }
-.etiquette .nom-produit { font-family: var(--police-titre); font-weight: 800; font-size: 22px; letter-spacing: -.02em; }
+.etiquette .nom-produit { font-family: var(--police-titre); font-weight: 600; font-size: 22px; letter-spacing: -.02em; }
 .etiquette .titre-bloc {
   font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
   color: var(--texte-2); margin: 16px 0 6px;
@@ -443,7 +443,7 @@ a:hover { color: var(--principal-survol); }
   display: inline-grid; place-items: center; vertical-align: middle;
   width: 26px; height: 26px; margin-left: 6px; border-radius: 50%;
   background: var(--principal); color: var(--carte); border: 0; cursor: pointer;
-  font: 800 13px var(--police-titre);
+  font: 600 13px var(--police-titre);
   box-shadow: 0 0 0 0 color-mix(in srgb, var(--principal) 45%, transparent);
   animation: pulse 2.4s infinite;
 }
@@ -512,7 +512,7 @@ fieldset.choix legend { font-weight: 500; margin-bottom: 6px; padding: 0; }
 .resultats .ligne { align-items: flex-start; }
 .resultats .detail { display: block; font-size: 14px; color: var(--texte-2); }
 .prix-total {
-  font-family: var(--police-titre); font-weight: 800; font-size: 40px; line-height: 1.05; letter-spacing: -.03em;
+  font-family: var(--police-titre); font-weight: 600; font-size: 40px; line-height: 1.05; letter-spacing: -.03em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -603,7 +603,7 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
   display: grid; place-items: center; flex: none;
   width: 32px; height: 32px; border-radius: 11px;
   background: var(--principal); color: var(--carte);
-  font-family: var(--police-titre); font-weight: 800; font-size: 15px;
+  font-family: var(--police-titre); font-weight: 600; font-size: 15px;
 }
 
 .niveau { display: inline-flex; gap: 4px; vertical-align: middle; }
@@ -699,10 +699,10 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
   .nav a:hover { color: var(--texte); background: var(--fond-2); }
   .nav a[aria-current="page"] { color: var(--principal-survol); background: var(--sauge-clair); }
 
-  h2 { margin-top: 112px; font-size: 60px; }
+  h2 { margin-top: 112px; font-size: 52px; }
 
   .accueil-haut { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding-top: 32px; }
-  .accroche h1 { font-size: 88px; }
+  .accroche h1 { font-size: 76px; }
   .accroche .intro { font-size: 19px; }
   .accueil-haut .accroche-visuel { margin-top: 0; }
   .boutons-ordi { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
@@ -720,7 +720,7 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
   .bloc-assiette .carte { margin: 0; }
 
   .bandeau { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding-top: 32px; }
-  .bandeau h1 { font-size: 76px; }
+  .bandeau h1 { font-size: 64px; }
   .bandeau .photo { margin-top: 0; aspect-ratio: 4 / 3; }
 
   .decodeur-grille { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
@@ -809,7 +809,7 @@ html.lenis, html.lenis body { height: auto; }
 }
 .manifeste .surtitre { color: var(--sur-fonce); }
 .manifeste-texte {
-  font-family: var(--police-titre); font-weight: 800; letter-spacing: -.03em; line-height: 1.08;
+  font-family: var(--police-titre); font-weight: 600; letter-spacing: -.03em; line-height: 1.08;
   font-size: clamp(34px, 9.5vw, 84px); margin: 0; text-wrap: balance;
 }
 .manifeste-texte .serif { font-size: 1.12em; }
@@ -836,7 +836,7 @@ html.lenis, html.lenis body { height: auto; }
   content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
   background: var(--texte); opacity: var(--ombre-pile, 0);
 }
-.pile li strong { font-family: var(--police-titre); font-weight: 800; font-size: 24px; letter-spacing: -.02em; margin: 18px 0 4px; }
+.pile li strong { font-family: var(--police-titre); font-weight: 600; font-size: 24px; letter-spacing: -.02em; margin: 18px 0 4px; }
 .pile li p { font-size: 16px; }
 .pile li:nth-child(2) { background: var(--fond-2); }
 .pile li:nth-child(3) { background: var(--lilas-fond); border-color: transparent; }
@@ -957,7 +957,7 @@ html.lenis, html.lenis body { height: auto; }
 /* Logo Nuance végétale */
 .marque .logo .logo-feuilles { width: 30px; height: 30px; transition: transform .5s var(--courbe); }
 .marque:hover .logo { transform: rotate(-6deg) scale(1.05); }
-.nom-marque { font-family: var(--police-titre); font-weight: 800; letter-spacing: -.03em; }
+.nom-marque { font-family: var(--police-titre); font-weight: 600; letter-spacing: -.03em; }
 .nom-marque em {
   font-family: var(--police-accent); font-style: italic; font-weight: 400; letter-spacing: 0;
   font-size: 1.15em; color: var(--principal);
@@ -1004,7 +1004,7 @@ html.lenis, html.lenis body { height: auto; }
 }
 .fp-feu-titre { font-size: 13px; opacity: .8; }
 .fp-feu strong {
-  font-family: var(--police-titre); font-weight: 800; font-size: 24px; letter-spacing: -.02em;
+  font-family: var(--police-titre); font-weight: 600; font-size: 24px; letter-spacing: -.02em;
   line-height: 1.1; text-transform: lowercase;
 }
 .fp-feu-val { font-size: 13px; margin-top: auto; opacity: .85; }
@@ -1100,11 +1100,11 @@ html.lenis, html.lenis body { height: auto; }
 .formulaire-etiquette { margin-top: 26px; }
 .separateur { display: flex; align-items: center; gap: 12px; color: var(--texte-2); font-size: 14px; margin-bottom: 14px; }
 .separateur::before, .separateur::after { content: ""; flex: 1; height: 1px; background: var(--contour); }
-.titre-formulaire { font-family: var(--police-titre); font-weight: 800; font-size: 20px; letter-spacing: -.02em; margin: 0 0 4px; }
+.titre-formulaire { font-family: var(--police-titre); font-weight: 600; font-size: 20px; letter-spacing: -.02em; margin: 0 0 4px; }
 .titre-formulaire span { color: var(--principal); }
 .etape {
   display: inline-grid; place-items: center; width: 24px; height: 24px; margin-right: 8px; border-radius: 8px;
-  background: var(--sauge-clair); color: var(--principal-survol); font: 800 13px var(--police-titre); vertical-align: 1px;
+  background: var(--sauge-clair); color: var(--principal-survol); font: 600 13px var(--police-titre); vertical-align: 1px;
 }
 .aide { margin: 6px 0 0; font-size: 13px; line-height: 1.45; color: var(--texte-2); }
 .champ input[type="text"]::placeholder { color: color-mix(in srgb, var(--texte-2) 55%, var(--carte)); font-style: italic; }
@@ -1207,7 +1207,7 @@ fieldset.choix + fieldset.choix { margin-top: 18px; }
 .fiche-nutriment summary { align-items: center; }
 .icone-fiche { width: 40px; height: 40px; border-radius: 13px; }
 .icone-fiche .icone { width: 20px; height: 20px; color: var(--carte); }
-.titre-fiche-nutriment { display: flex; flex-direction: column; gap: 2px; font-family: var(--police-titre); font-weight: 800; font-size: 19px; letter-spacing: -.01em; }
+.titre-fiche-nutriment { display: flex; flex-direction: column; gap: 2px; font-family: var(--police-titre); font-weight: 600; font-size: 19px; letter-spacing: -.01em; }
 .titre-fiche-nutriment small { font-family: var(--police-texte); font-weight: 400; font-size: 14px; color: var(--texte-2); letter-spacing: 0; }
 .sous-titre-fiche {
   margin: 16px 0 4px; font-family: var(--police-texte); font-size: 13px; font-weight: 700;
@@ -1304,7 +1304,7 @@ body.avec-barre { padding-bottom: calc(92px + env(safe-area-inset-bottom)); }
 .menu-plein.ouvert li { opacity: 1; transform: none; }
 .menu-plein li a {
   display: flex; align-items: center; min-height: 58px;
-  font-family: var(--police-titre); font-weight: 800; font-size: 28px; letter-spacing: -.02em;
+  font-family: var(--police-titre); font-weight: 600; font-size: 28px; letter-spacing: -.02em;
   color: var(--carte); text-decoration: none;
 }
 .menu-plein li a[aria-current="page"] { color: var(--sur-fonce); }
@@ -1328,25 +1328,5 @@ html.menu-ouvert, html.menu-ouvert body { overflow: hidden; }
   .liens .lien-photo.large .photo { aspect-ratio: 16 / 6.2; }
 }
 
-/* ============ Titres en serif élégante (Instrument Serif) ============
-   La police n'existe qu'en une seule graisse : on interdit le faux gras pour garder des titres fins. */
-html { font-synthesis: none; }
-h1, h2, h3, .titre-anime { font-weight: 400; }
-.serif { font-size: 1em; }
-h3 { font-size: 22px; }
-.chiffre-carte strong { font-size: 48px; letter-spacing: -.01em; }
-.chiffre-carte.mis-en-avant strong { font-size: 64px; }
-.pile li strong { font-size: 30px; font-weight: 400; }
-.fp-feu strong { font-size: 28px; letter-spacing: 0; }
-.fp-nom { font-size: 26px; }
-.fiche-base h3 { font-size: 28px; }
-.titre-fiche-nutriment { font-size: 24px; letter-spacing: 0; }
-.titre-formulaire { font-size: 24px; }
-.menu-plein li a { font-size: 34px; letter-spacing: -.01em; }
-.etiquette .nom-produit { font-size: 26px; }
-.prix-total { letter-spacing: -.01em; }
-.nom-marque { font-size: 1.15em; letter-spacing: -.01em; }
-.numero, .coups li::before { font-family: var(--police-texte); font-weight: 700; }
-@media (min-width: 1024px) {
-  .pile li strong { font-size: 38px; }
-}
+/* Titres : Bricolage Grotesque en graisse intermédiaire (600), plus légère que la version d'origine (800) */
+:root { --graisse-titre: 600; }
