@@ -1,3 +1,7 @@
 {
-  "theme": "cacao"
+  "theme": "cacao",
+  "personnalise": {
+    "actif": true,
+    "fond": "#FBF8F4"
+  }
 }
