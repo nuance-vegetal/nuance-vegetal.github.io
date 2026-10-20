@@ -677,7 +677,7 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
 /* ---------- Tablette et ordinateur ---------- */
 @media (min-width: 720px) {
   .page { max-width: 760px; padding: 0 24px 24px; }
-  .liens { grid-template-columns: repeat(4, 1fr); }
+  .liens { grid-template-columns: repeat(3, 1fr); }
   .chiffres { grid-template-columns: repeat(3, 1fr); }
   .chiffre-carte.mis-en-avant { grid-column: auto; }
   .grille-fiches { grid-template-columns: 1fr 1fr; }
@@ -1317,3 +1317,13 @@ html.menu-ouvert, html.menu-ouvert body { overflow: hidden; }
   body.avec-barre { padding-bottom: 0; }
 }
 @media print { .barre-mobile, .menu-plein { display: none !important; } body.avec-barre { padding-bottom: 0; } }
+
+/* Carte « à quoi ça sert ? » mise en avant sur l'accueil */
+.lien-photo.vert { background: var(--vert-fond); border-color: transparent; }
+.lien-photo.vert b, .lien-photo.vert span { color: var(--vert-texte); }
+.liens .lien-photo.large { grid-column: 1 / -1; }
+.liens .lien-photo.large .photo { aspect-ratio: 16 / 7; }
+@media (min-width: 720px) {
+  .liens .lien-photo.large { grid-column: span 2; }
+  .liens .lien-photo.large .photo { aspect-ratio: 16 / 6.2; }
+}
