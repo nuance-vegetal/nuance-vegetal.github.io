@@ -1192,3 +1192,25 @@ fieldset.choix + fieldset.choix { margin-top: 18px; }
 .labels-bio figcaption b { display: block; font-size: 12.5px; }
 .labels-bio figcaption span { color: var(--texte-2); font-size: 11.5px; }
 .encart-bio > p { margin: 12px 0 0; font-size: 13.5px; line-height: 1.5; }
+
+/* Lien « ? » vers la page « à quoi ça sert ? » */
+.lien-info {
+  position: relative; display: inline-grid; place-items: center; vertical-align: 1px;
+  width: 20px; height: 20px; margin-left: 4px; border-radius: 50%;
+  background: color-mix(in srgb, currentColor 14%, transparent); color: inherit;
+  font: 700 12px var(--police-texte); text-decoration: none; line-height: 1;
+}
+.lien-info::after { content: ""; position: absolute; inset: -12px; }
+.lien-info:hover { background: var(--principal); color: var(--carte); }
+
+/* Page « à quoi ça sert ? » */
+.fiche-nutriment summary { align-items: center; }
+.icone-fiche { width: 40px; height: 40px; border-radius: 13px; }
+.icone-fiche .icone { width: 20px; height: 20px; color: var(--carte); }
+.titre-fiche-nutriment { display: flex; flex-direction: column; gap: 2px; font-family: var(--police-titre); font-weight: 800; font-size: 19px; letter-spacing: -.01em; }
+.titre-fiche-nutriment small { font-family: var(--police-texte); font-weight: 400; font-size: 14px; color: var(--texte-2); letter-spacing: 0; }
+.sous-titre-fiche {
+  margin: 16px 0 4px; font-family: var(--police-texte); font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--principal);
+}
+.fiche-nutriment .contenu > .pastille:first-child { margin-top: 2px; }

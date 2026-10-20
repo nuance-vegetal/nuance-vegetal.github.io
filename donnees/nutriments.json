@@ -1,0 +1,76 @@
+{
+  "fiches": [
+    {
+      "id": "b12",
+      "titre": "Vitamine B12",
+      "resume": "[à compléter par Camille]",
+      "aQuoiCaSert": "[à compléter par Camille]",
+      "ouLaTrouver": [
+        "[à compléter par Camille]"
+      ],
+      "surEtiquette": "Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.",
+      "conseil": "[à compléter par Camille]",
+      "sources": [
+        {
+          "texte": "[à compléter par Camille]",
+          "url": ""
+        }
+      ],
+      "brouillon": true
+    },
+    {
+      "id": "proteines",
+      "titre": "Protéines",
+      "resume": "[à compléter par Camille]",
+      "aQuoiCaSert": "[à compléter par Camille]",
+      "ouLaTrouver": [
+        "[à compléter par Camille]"
+      ],
+      "surEtiquette": "[à compléter par Camille]",
+      "conseil": "[à compléter par Camille]",
+      "sources": [
+        {
+          "texte": "[à compléter par Camille]",
+          "url": ""
+        }
+      ],
+      "brouillon": true
+    },
+    {
+      "id": "fer",
+      "titre": "Fer",
+      "resume": "[à compléter par Camille]",
+      "aQuoiCaSert": "[à compléter par Camille]",
+      "ouLaTrouver": [
+        "[à compléter par Camille]"
+      ],
+      "surEtiquette": "Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.",
+      "conseil": "[à compléter par Camille]",
+      "sources": [
+        {
+          "texte": "[à compléter par Camille]",
+          "url": ""
+        }
+      ],
+      "brouillon": true
+    },
+    {
+      "id": "additifs",
+      "titre": "Additifs",
+      "resume": "[à compléter par Camille]",
+      "aQuoiCaSert": "[à compléter par Camille]",
+      "ouLaTrouver": [
+        "[à compléter par Camille]"
+      ],
+      "surEtiquette": "[à compléter par Camille]",
+      "conseil": "[à compléter par Camille]",
+      "sources": [
+        {
+          "texte": "[à compléter par Camille]",
+          "url": ""
+        }
+      ],
+      "brouillon": true
+    }
+  ]
+}

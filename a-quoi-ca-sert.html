@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À quoi ça sert ? — Nuance végétale</title>
+  <meta name="description" content="Vitamine B12, protéines, fer, additifs : à quoi ça sert, où les trouver et comment les repérer sur l'étiquette.">
+  <meta name="theme-color" content="#F6EFE3">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
+  <script src="js/theme.js?v=20261021b"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261021b">
+</head>
+<body class="page-secondaire">
+
+<header class="barre">
+  <div class="barre-int">
+    <a class="retour" href="index.html">
+      <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      Accueil
+    </a>
+    <a class="marque" href="index.html">
+      <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétale</em></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="decodeur.html">Décodeur</a>
+      <a href="etiquette.html">Étiquette</a>
+      <a href="bases.html">Les bases</a>
+      <a href="a-quoi-ca-sert.html" aria-current="page">À quoi ça sert ?</a>
+      <a href="etudes.html">Études</a>
+      <a href="fiche-frigo.html">Fiche frigo</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <main>
+    <div class="bandeau">
+      <section class="accroche">
+        <span class="surtitre">comprendre</span>
+        <h1>à quoi <em class="serif">ça sert</em> ?</h1>
+        <p class="intro">B12, protéines, fer, additifs : ce qu’ils font dans ton corps, où les trouver, et comment les repérer sur l’étiquette.</p>
+      </section>
+      <div class="photo revele"><img src="images/decodeur.webp" width="900" height="560" alt="Graines de soja sur fond clair"></div>
+    </div>
+
+    <div class="colonne-lecture">
+      <div id="fiches" style="margin-top:32px"><p class="secondaire">Chargement…</p></div>
+    </div>
+  </main>
+</div>
+
+<footer class="pied">
+  <div class="pied-int">
+    <div>
+      <a class="marque" href="index.html">
+        <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétale</em></span>
+      </a>
+      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+    </div>
+    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+  </div>
+</footer>
+
+<script src="js/commun.js?v=20261021b"></script>
+<script src="js/vendor/lenis.min.js?v=20261021b"></script>
+<script src="js/animations.js?v=20261021b"></script>
+<script>
+  (async function () {
+    const zone = document.getElementById('fiches');
+    const ic = (d) => '<svg class="icone" viewBox="0 0 24 24" aria-hidden="true">' + d + '</svg>';
+    const ICONES = {
+      b12: ic('<path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/>'),
+      proteines: ic('<path d="M6.5 6.5h11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/>'),
+      fer: ic('<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>'),
+      additifs: ic('<path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/>')
+    };
+    let fiches;
+    try {
+      const d = await chargerDonnees('donnees/nutriments.json');
+      fiches = Array.isArray(d) ? d : d.fiches || [];
+    } catch (e) {
+      zone.innerHTML = '<p class="message-erreur">Les fiches n’ont pas pu être chargées. Recharge la page.</p>';
+      return;
+    }
+
+    const bloc = (titre, contenu) => contenu ? '<h3 class="sous-titre-fiche">' + titre + '</h3>' + contenu : '';
+    zone.innerHTML = fiches.map((f, i) => {
+      const liste = (f.ouLaTrouver || []).filter(Boolean).map((x) => '<li>' + echapper(x) + '</li>').join('');
+      const sources = (f.sources || []).filter((x) => x && x.texte).map((x) => '<li>' + echapper(x.texte) + (x.url ? ' <a href="' + echapper(x.url) + '" target="_blank" rel="noopener">Lire la source</a>' : '') + '</li>').join('');
+      return '<details class="accordeon fiche-nutriment revele" id="fiche-' + echapper(f.id || i) + '" style="--i:' + i + '">' +
+        '<summary><span class="numero icone-fiche">' + (ICONES[f.id] || ICONES.b12) + '</span>' +
+        '<span class="titre-fiche-nutriment">' + echapper(f.titre) + (f.resume ? '<small>' + echapper(f.resume) + '</small>' : '') + '</span>' + ICONE_CHEVRON + '</summary>' +
+        '<div class="contenu">' +
+        (f.brouillon ? '<span class="pastille gris">Brouillon à valider</span>' : '') +
+        bloc('à quoi ça sert ?', f.aQuoiCaSert ? '<p>' + echapper(f.aQuoiCaSert) + '</p>' : '') +
+        bloc('où le trouver ?', liste ? '<ul>' + liste + '</ul>' : '') +
+        bloc('sur l’étiquette', f.surEtiquette ? '<p>' + echapper(f.surEtiquette) + '</p>' : '') +
+        (f.conseil ? '<div class="encart bleu"><b>Conseil pratique</b><br>' + echapper(f.conseil) + '</div>' : '') +
+        (sources ? '<p class="petit" style="margin:14px 0 0"><b>Sources</b></p><ul class="sources">' + sources + '</ul>' : '') +
+        '</div></details>';
+    }).join('');
+
+    const accordeon = accordeonExclusif(zone);
+    animerPage(zone);
+
+    // Arrivée depuis le décodeur (lien « ? ») : on ouvre la bonne fiche
+    function ouvrirDepuisAdresse() {
+      const cible = location.hash && document.getElementById('fiche-' + location.hash.slice(1));
+      if (!cible) return;
+      cible.classList.add('visible');
+      accordeon.ouvrir(cible);
+      setTimeout(() => defiler(cible), 150);
+    }
+    ouvrirDepuisAdresse();
+    window.addEventListener('hashchange', ouvrirDepuisAdresse);
+  })();
+</script>
+</body>
+</html>

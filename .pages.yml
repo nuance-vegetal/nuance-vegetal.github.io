@@ -120,6 +120,73 @@ content:
         label: Description de la photo
         description: Ce qu'on voit sur la photo, en quelques mots. Elle est lue aux personnes aveugles.
         type: string
+  - name: nutriments
+    label: À quoi ça sert ? – fiches B12, protéines, fer, additifs
+    type: file
+    path: donnees/nutriments.json
+    format: json
+    fields:
+    - name: fiches
+      label: Les fiches
+      description: Une fiche par nutriment. Clique sur une fiche pour l'ouvrir et remplir les cases. Remplace les « [à compléter
+        par Camille] ».
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{titre}'
+      fields:
+      - name: titre
+        label: Titre
+        type: string
+        required: true
+        description: 'Par exemple : Vitamine B12'
+      - name: resume
+        label: Résumé en une ligne
+        type: string
+        description: 'Affiché sous le titre, avant d''ouvrir la fiche. Exemple : indispensable, et absente des végétaux.'
+      - name: aQuoiCaSert
+        label: À quoi ça sert ?
+        type: text
+        description: Le rôle dans le corps, en quelques phrases simples.
+      - name: ouLaTrouver
+        label: Où le trouver ?
+        type: string
+        list: true
+        description: Une source alimentaire par ligne.
+      - name: surEtiquette
+        label: Sur l'étiquette
+        type: text
+        description: Comment le repérer dans la liste d'ingrédients ou le tableau nutritionnel.
+      - name: conseil
+        label: Conseil pratique
+        type: text
+        description: Affiché dans l'encadré bleu. Laisse vide s'il n'y en a pas.
+      - name: sources
+        label: Sources
+        type: object
+        list:
+          collapsible:
+            collapsed: false
+            summary: '{texte}'
+        fields:
+        - name: texte
+          label: Référence
+          type: text
+          description: Auteur (année). Titre. Revue.
+        - name: url
+          label: Lien (facultatif)
+          type: string
+      - name: brouillon
+        label: Brouillon
+        type: boolean
+        default: true
+        description: 'Coché : le site affiche « Brouillon à valider ». Décoche quand le texte est validé.'
+      - name: id
+        label: Identifiant (ne pas modifier)
+        type: string
+        readonly: true
+        description: Sert aux liens « ? » du décodeur.
   - name: etudes
     label: Études – questions et réponses
     type: file

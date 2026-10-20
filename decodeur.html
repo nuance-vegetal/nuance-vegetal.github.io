@@ -8,11 +8,11 @@
   <meta name="theme-color" content="#F6EFE3">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261021"></script>
+  <script src="js/theme.js?v=20261021b"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261021">
+  <link rel="stylesheet" href="css/style.css?v=20261021b">
 </head>
 <body class="page-secondaire">
 
@@ -31,6 +31,7 @@
       <a href="decodeur.html" aria-current="page">Décodeur</a>
       <a href="etiquette.html">Étiquette</a>
       <a href="bases.html">Les bases</a>
+      <a href="a-quoi-ca-sert.html">À quoi ça sert ?</a>
       <a href="etudes.html">Études</a>
       <a href="fiche-frigo.html">Fiche frigo</a>
     </nav>
@@ -110,7 +111,7 @@
         <h2>tes <em class="serif">repères</em></h2>
         <div class="carte resultats" aria-live="polite">
           <div class="ligne">
-            <div>Protéines<span class="detail" id="detail-proteines">% de l'énergie</span></div>
+            <div>Protéines <a class="lien-info" href="a-quoi-ca-sert.html#proteines" aria-label="À quoi sert les protéines ?">?</a><span class="detail" id="detail-proteines">% de l'énergie</span></div>
             <span class="pastille gris" id="feu-proteines">À compléter</span>
           </div>
           <div class="ligne">
@@ -122,11 +123,11 @@
             <span class="pastille gris" id="feu-satures">À compléter</span>
           </div>
           <div class="ligne">
-            <div>Vitamine B12</div>
+            <div>Vitamine B12 <a class="lien-info" href="a-quoi-ca-sert.html#b12" aria-label="À quoi sert la vitamine B12 ?">?</a></div>
             <span class="pastille gris" id="feu-b12">À compléter</span>
           </div>
           <div class="ligne">
-            <div>Fer</div>
+            <div>Fer <a class="lien-info" href="a-quoi-ca-sert.html#fer" aria-label="À quoi sert le fer ?">?</a></div>
             <span class="pastille gris" id="feu-fer">À compléter</span>
           </div>
           <div class="ligne">
@@ -182,11 +183,11 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261021"></script>
-<script src="js/commun.js?v=20261021"></script>
-<script src="js/vendor/lenis.min.js?v=20261021"></script>
-<script src="js/animations.js?v=20261021"></script>
-<script src="js/scanner.js?v=20261021"></script>
+<script src="js/config.js?v=20261021b"></script>
+<script src="js/commun.js?v=20261021b"></script>
+<script src="js/vendor/lenis.min.js?v=20261021b"></script>
+<script src="js/animations.js?v=20261021b"></script>
+<script src="js/scanner.js?v=20261021b"></script>
 <script>
   (async function () {
     let C;
@@ -346,6 +347,7 @@
       present: 'lilas', traces: 'lilas', non: 'lilas', 'non-signale': 'gris'
     };
     const TUILES = [['proteines', 'Protéines'], ['sel', 'Sel'], ['satures', 'Saturés'], ['b12', 'B12']];
+    const LIENS_INFO = { proteines: 'proteines', b12: 'b12', fer: 'fer', additifs: 'additifs' };
 
     function ficheProduit(p, r, manquants) {
       const marque = p.marque && p.marque.toLowerCase() !== p.nom.toLowerCase() ? p.marque : '';
@@ -355,14 +357,14 @@
       if (p.infos.b12) r.b12.court = p.infos.b12.texte;
       const tuiles = TUILES.map(([cle, titre], i) =>
         '<div class="fp-feu ' + r[cle].couleur + '" data-cle="' + cle + '" style="--i:' + i + '">' +
-        '<span class="fp-feu-titre">' + titre + '</span>' +
+        '<span class="fp-feu-titre">' + titre + (LIENS_INFO[cle] ? ' <a class="lien-info" href="a-quoi-ca-sert.html#' + LIENS_INFO[cle] + '" aria-label="À quoi ça sert ?">?</a>' : '') + '</span>' +
         '<strong>' + (r[cle].couleur === 'gris' ? '—' : echapper(r[cle].mot)) + '</strong>' +
         '<span class="fp-feu-val">' + echapper(r[cle].court) + '</span></div>').join('');
       const infos = (C.scanInfos || Object.keys(INFOS)).filter((cle) => cle !== 'b12' && INFOS[cle] && p.infos[cle]).map((cle, i) => {
         const info = p.infos[cle];
         const large = info.texte.length > 24 ? ' large' : '';
         return '<div class="fp-info ' + COULEURS[info.etat] + large + '" style="--i:' + (i + 4) + '">' + INFOS[cle].icone +
-          '<span><b>' + INFOS[cle].titre + '</b>' + echapper(info.texte) + '</span></div>';
+          '<span><b>' + INFOS[cle].titre + (LIENS_INFO[cle] ? ' <a class="lien-info" href="a-quoi-ca-sert.html#' + LIENS_INFO[cle] + '" aria-label="À quoi ça sert ?">?</a>' : '') + '</b>' + echapper(info.texte) + '</span></div>';
       }).join('');
       const ingredients = p.ingredients
         ? '<details class="ingredients-scan"><summary>Liste d’ingrédients ' + ICONE_CHEVRON + '</summary><p>' +

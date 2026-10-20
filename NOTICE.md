@@ -20,6 +20,7 @@ Adresse du site : https://nuance-vegetal.github.io
    - **Textes des pages du site**
      - **Accueil – chiffres de l'enquête** : les grandes cartes de chiffres et le bandeau qui défile ;
      - **Les bases – fiches tofu, seitan, Quorn…** : la page « C'est fait avec quoi ? » ;
+     - **À quoi ça sert ? – fiches B12, protéines, fer, additifs** : la page qui explique chaque nutriment (rôle, où le trouver, comment le repérer sur l'étiquette). Les « ? » du décodeur ouvrent directement la bonne fiche ;
      - **Études – questions et réponses** : la page « Ce que disent les études » ;
    - **Réglages**
      - **Couleurs du site** : choisis une ambiance (sauge, terracotta, lavande, océan, olive, cacao, framboise) et, si tu veux, une couleur principale à toi ;
