@@ -1253,3 +1253,67 @@ fieldset.choix + fieldset.choix { margin-top: 18px; }
   .encart-avis .bouton { grid-column: auto; }
 }
 @media print { .encart-avis, .zone-avis { display: none !important; } }
+
+/* ============ Menu du téléphone : barre du bas + menu plein écran ============ */
+.barre-mobile {
+  position: fixed; z-index: 70; left: 10px; right: 10px;
+  bottom: calc(10px + env(safe-area-inset-bottom));
+  display: grid; grid-template-columns: repeat(5, 1fr); align-items: end;
+  height: 64px; padding: 0 4px 6px; border-radius: 22px;
+  background: color-mix(in srgb, var(--carte) 92%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px);
+  border: 1px solid var(--contour); box-shadow: 0 14px 34px -16px rgba(40, 30, 15, .45);
+}
+.barre-mobile a, .barre-mobile button {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  min-height: 52px; padding: 0; background: none; border: 0; cursor: pointer;
+  color: var(--texte-2); text-decoration: none; font: 500 11px var(--police-texte);
+}
+.barre-mobile .icone { width: 22px; height: 22px; }
+.barre-mobile a[aria-current="page"] { color: var(--principal); }
+.barre-mobile a[aria-current="page"] span { font-weight: 700; }
+.barre-mobile .barre-scan {
+  align-self: center; justify-self: center; width: 62px; height: 62px; min-height: 0; margin-top: -30px;
+  border-radius: 21px; background: var(--principal); color: var(--carte);
+  box-shadow: 0 10px 22px -8px color-mix(in srgb, var(--principal-survol) 80%, transparent);
+  transition: transform .2s var(--courbe);
+}
+.barre-mobile .barre-scan .icone { width: 28px; height: 28px; }
+.barre-mobile .barre-scan:active { transform: scale(.94); }
+body.avec-barre { padding-bottom: calc(92px + env(safe-area-inset-bottom)); }
+.avec-barre .retour { display: none; }
+.avec-barre.page-secondaire .marque { margin-left: 0; margin-right: auto; }
+
+.menu-plein {
+  position: fixed; inset: 0; z-index: 90; overflow-y: auto;
+  display: flex; flex-direction: column; padding: 18px 22px calc(28px + env(safe-area-inset-bottom));
+  background: var(--principal-survol); color: var(--carte);
+  opacity: 0; transform: translateY(16px); transition: opacity .3s var(--courbe), transform .3s var(--courbe);
+}
+.menu-plein.ouvert { opacity: 1; transform: none; }
+.menu-plein[hidden] { display: none; }
+.menu-plein-tete { display: flex; align-items: center; justify-content: space-between; }
+.menu-plein .surtitre { color: var(--sur-fonce); }
+.menu-plein .menu-fermer { background: transparent; border-color: color-mix(in srgb, var(--carte) 30%, transparent); color: var(--carte); }
+.menu-plein ul { list-style: none; margin: 18px 0 0; padding: 0; }
+.menu-plein li {
+  border-bottom: 1px solid color-mix(in srgb, var(--carte) 14%, transparent);
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .45s var(--courbe), transform .45s var(--courbe); transition-delay: calc(var(--i) * 40ms + 60ms);
+}
+.menu-plein.ouvert li { opacity: 1; transform: none; }
+.menu-plein li a {
+  display: flex; align-items: center; min-height: 58px;
+  font-family: var(--police-titre); font-weight: 800; font-size: 28px; letter-spacing: -.02em;
+  color: var(--carte); text-decoration: none;
+}
+.menu-plein li a[aria-current="page"] { color: var(--sur-fonce); }
+.menu-plein li a[aria-current="page"]::after { content: ""; width: 8px; height: 8px; margin-left: 10px; border-radius: 50%; background: var(--sur-fonce); }
+.menu-plein-pied { margin: auto 0 0; padding-top: 24px; font-size: 13px; color: var(--sur-fonce); opacity: .85; }
+html.menu-ouvert, html.menu-ouvert body { overflow: hidden; }
+
+@media (min-width: 1024px) {
+  .barre-mobile, .menu-plein { display: none !important; }
+  body.avec-barre { padding-bottom: 0; }
+}
+@media print { .barre-mobile, .menu-plein { display: none !important; } body.avec-barre { padding-bottom: 0; } }
