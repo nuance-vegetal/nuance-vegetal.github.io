@@ -4,6 +4,7 @@
   "personnalise": {
     "actif": true,
     "fond": "#F7EEE4",
+    "carte": "#FFFDFA",
     "principal": "#B98D74"
   }
 }
