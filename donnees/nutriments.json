@@ -5,10 +5,12 @@
       "resume": "Vitamine indispensable, absente des végétaux.",
       "aQuoiCaSert": "Elle aide à fabriquer les globules rouges, au bon fonctionnement du système nerveux et à réduire la fatigue. On la trouve dans les produits animaux. Les personnes qui n’en consomment pas ont besoin d’aliments enrichis ou de compléments.",
       "ouLaTrouver": [
-        "[à compléter par Camille]"
+        "Boissons végétales enrichies ",
+        "Substituts de viande enrichis",
+        "Compléments alimentaires"
       ],
       "surEtiquette": "Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel. Repère du CSS : plus de 0,24 µg pour 100 g.",
-      "conseil": "[à compléter par Camille]",
+      "conseil": "Les végétaux n’en contiennent pas. Choisis des produits enrichis (au moins 0,24 µg pour 100 g) et parles-en à ton médecin pour un complément, surtout si tu es vegan.",
       "sources": [
         {
           "texte": "Règlement (UE) n° 432/2012 ; Melina, Craig & Levin (2016)."
@@ -55,9 +57,6 @@
       "titre": "Additifs",
       "resume": "Ajoutés pour la texture, le goût ou la conservation.",
       "aQuoiCaSert": "Ce sont des substances qu’on ne mange pas seules, mais qu’on ajoute aux aliments pour un rôle technique, par exemple les conserver, épaissir ou colorer. ",
-      "ouLaTrouver": [
-        "[à compléter par Camille]"
-      ],
       "surEtiquette": "[à compléter par Camille]",
       "conseil": "Ils sont autorisés et réévalués au niveau européen. Une longue liste d’additifs indique souvent un produit plus transformé, et le CSS conseille de limiter les aliments ultra-transformés.",
       "sources": [
