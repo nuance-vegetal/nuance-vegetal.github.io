@@ -53,13 +53,13 @@
     },
     {
       "titre": "Additifs",
-      "resume": "[à compléter par Camille]",
-      "aQuoiCaSert": "[à compléter par Camille]",
+      "resume": "Ajoutés pour la texture, le goût ou la conservation.",
+      "aQuoiCaSert": "Ce sont des substances qu’on ne mange pas seules, mais qu’on ajoute aux aliments pour un rôle technique, par exemple les conserver, épaissir ou colorer. ",
       "ouLaTrouver": [
         "[à compléter par Camille]"
       ],
       "surEtiquette": "[à compléter par Camille]",
-      "conseil": "[à compléter par Camille]",
+      "conseil": "Ils sont autorisés et réévalués au niveau européen. Une longue liste d’additifs indique souvent un produit plus transformé, et le CSS conseille de limiter les aliments ultra-transformés.",
       "sources": [
         {
           "texte": "[à compléter par Camille]"
