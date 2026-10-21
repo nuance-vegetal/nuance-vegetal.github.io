@@ -1,10 +1,9 @@
 {
   "fiches": [
     {
-      "id": "b12",
       "titre": "Vitamine B12",
-      "resume": "[à compléter par Camille]",
-      "aQuoiCaSert": "[à compléter par Camille]",
+      "resume": "Vitamine indispensable, absente des végétaux.",
+      "aQuoiCaSert": "Elle aide à fabriquer les globules rouges, au bon fonctionnement du système nerveux et à réduire la fatigue. On la trouve dans les produits animaux. Les personnes qui n’en consomment pas ont besoin d’aliments enrichis ou de compléments.",
       "ouLaTrouver": [
         "[à compléter par Camille]"
       ],
@@ -12,14 +11,13 @@
       "conseil": "[à compléter par Camille]",
       "sources": [
         {
-          "texte": "[à compléter par Camille]",
-          "url": ""
+          "texte": "Règlement (UE) n° 432/2012 ; Melina, Craig & Levin (2016)."
         }
       ],
-      "brouillon": true
+      "brouillon": true,
+      "id": "b12"
     },
     {
-      "id": "proteines",
       "titre": "Protéines",
       "resume": "[à compléter par Camille]",
       "aQuoiCaSert": "[à compléter par Camille]",
@@ -30,14 +28,13 @@
       "conseil": "[à compléter par Camille]",
       "sources": [
         {
-          "texte": "[à compléter par Camille]",
-          "url": ""
+          "texte": "[à compléter par Camille]"
         }
       ],
-      "brouillon": true
+      "brouillon": true,
+      "id": "proteines"
     },
     {
-      "id": "fer",
       "titre": "Fer",
       "resume": "[à compléter par Camille]",
       "aQuoiCaSert": "[à compléter par Camille]",
@@ -48,14 +45,13 @@
       "conseil": "[à compléter par Camille]",
       "sources": [
         {
-          "texte": "[à compléter par Camille]",
-          "url": ""
+          "texte": "[à compléter par Camille]"
         }
       ],
-      "brouillon": true
+      "brouillon": true,
+      "id": "fer"
     },
     {
-      "id": "additifs",
       "titre": "Additifs",
       "resume": "[à compléter par Camille]",
       "aQuoiCaSert": "[à compléter par Camille]",
@@ -66,14 +62,13 @@
       "conseil": "[à compléter par Camille]",
       "sources": [
         {
-          "texte": "[à compléter par Camille]",
-          "url": ""
+          "texte": "[à compléter par Camille]"
         }
       ],
-      "brouillon": true
+      "brouillon": true,
+      "id": "additifs"
     },
     {
-      "id": "allegations",
       "titre": "Les allégations « riche en » et « source de »",
       "resume": "Ce que l’emballage a le droit d’écrire. Une info, pas une note.",
       "aQuoiCaSert": "Une allégation est une phrase mise en avant sur l’emballage, comme « riche en protéines ». Elle est encadrée par une règle européenne : le fabricant ne peut l’écrire que si le produit atteint un certain seuil. Elle dit ce qu’on peut écrire, pas si le produit est bon pour toi : c’est pour ça que le décodeur l’affiche à part, sous les 6 repères.",
@@ -90,7 +85,8 @@
           "url": "https://eur-lex.europa.eu/legal-content/FR/ALL/?uri=CELEX:32006R1924"
         }
       ],
-      "brouillon": true
+      "brouillon": true,
+      "id": "allegations"
     }
   ]
 }
