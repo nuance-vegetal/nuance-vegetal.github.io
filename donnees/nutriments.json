@@ -71,11 +71,14 @@
       "titre": "Additifs",
       "resume": "Ajoutés pour la texture, le goût ou la conservation.",
       "aQuoiCaSert": "Ce sont des substances qu’on ne mange pas seules, mais qu’on ajoute aux aliments pour un rôle technique, par exemple les conserver, épaissir ou colorer. ",
-      "surEtiquette": "[à compléter par Camille]",
+      "surEtiquette": "Compare les listes d’ingrédients : à produit équivalent, privilégie celui qui contient le moins d’additifs. Les additifs apparaissent après le nom de leur catégorie, par exemple « épaississant (E461) ».",
       "conseil": "Ils sont autorisés et réévalués au niveau européen. Une longue liste d’additifs indique souvent un produit plus transformé, et le CSS conseille de limiter les aliments ultra-transformés.",
       "sources": [
         {
           "texte": "Règlement (CE) n° 1333/2008 ; Règlement (UE) n° 257/2010 ; CSS (2025), avis n° 9805-9807."
+        },
+        {
+          "texte": "Règlement (UE) n° 1169/2011, annexe VII, partie C ; étude sur les analogues végétaux (Nutrients, 2025) ; CSS (2025), avis n° 9805-9807."
         }
       ],
       "brouillon": true,
