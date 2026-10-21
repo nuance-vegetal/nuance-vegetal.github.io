@@ -19,16 +19,16 @@
     },
     {
       "titre": "Protéines",
-      "resume": "[à compléter par Camille]",
-      "aQuoiCaSert": "[à compléter par Camille]",
+      "resume": "Les briques du corps, à varier dans l’alimentation végétale.",
+      "aQuoiCaSert": "Elles aident à maintenir la masse musculaire et des os en bonne santé. ",
       "ouLaTrouver": [
         "[à compléter par Camille]"
       ],
       "surEtiquette": "Regarde la ligne « Protéines » du tableau, pour 100 g. Repère du CSS pour un produit qui remplace la viande : plus de 10 g. [à valider par Camille]",
-      "conseil": "[à compléter par Camille]",
+      "conseil": "En alimentation végétale, il est conseillé de combiner différentes sources (légumineuses, céréales, soja, fruits à coque) au fil des repas de la journée.",
       "sources": [
         {
-          "texte": "[à compléter par Camille]"
+          "texte": "Règlement (UE) n° 432/2012 ; CSS (2021), avis n° 9445."
         }
       ],
       "brouillon": true,
