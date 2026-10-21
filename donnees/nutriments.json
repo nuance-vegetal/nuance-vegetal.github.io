@@ -41,13 +41,19 @@
       "resume": "Minéral clé, moins bien absorbé quand il vient des végétaux.",
       "aQuoiCaSert": "Il aide à transporter l’oxygène dans le corps, à fabriquer les globules rouges et à réduire la fatigue. ",
       "ouLaTrouver": [
-        "[à compléter par Camille]"
+        "Légumineuses (lentilles, pois chiches, haricots)",
+        "Céréales complètes",
+        "Graines oléagineuses",
+        "Fruits à coque"
       ],
       "surEtiquette": "Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel. Repère du CSS : plus de 0,8 mg pour 100 g.",
-      "conseil": "Le fer des végétaux est moins bien absorbé que celui de la viande. L’associer à une source de vitamine C au même repas aide à mieux l’absorber.",
+      "conseil": "Associe ces aliments à une source de vitamine C au même repas (poivron, agrumes, kiwi) : elle aide à mieux absorber le fer.",
       "sources": [
         {
           "texte": "Règlement (UE) n° 432/2012 ; Haider et al. (2018) ; CSS (2021), avis n° 9445."
+        },
+        {
+          "texte": "CSS (2021), avis n° 9445 ; Règlement (UE) n° 432/2012, page L 136/34 (« la vitamine C accroît l’absorption de fer »)."
         }
       ],
       "brouillon": true,
