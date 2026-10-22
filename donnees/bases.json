@@ -9,7 +9,7 @@
         "Soja"
       ],
       "enquete": "91 % de bonnes réponses",
-      "sources": "NUBEL, Table belge des aliments ; Règlement (UE) n° 1169/2011 consulté le 22/10/2026",
+      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/tofu.webp",
       "image_description": "Bloc de tofu garni d'oignons verts"
     },
@@ -22,7 +22,7 @@
         "Soja"
       ],
       "enquete": "60 % de bonnes réponses",
-      "sources": "NUBEL, Table belge des aliments ; Règlement (UE) n° 1169/2011 consulté le 22/10/2026",
+      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/tempeh.webp",
       "image_description": "Blocs de tempeh sur une planche"
     },
@@ -35,7 +35,7 @@
         "Gluten (blé)"
       ],
       "enquete": "69 % de bonnes réponses",
-      "sources": "NUBEL, Table belge des aliments ; Règlement (UE) n° 1169/2011 consulté le 22/10/2026",
+      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/seitan.webp",
       "image_description": "Épis de blé dorés"
     },
@@ -49,7 +49,7 @@
         "Gluten (selon la recette)"
       ],
       "enquete": "La moitié des répondants ne sait pas de quoi il est fait.",
-      "sources": "NUBEL, Table belge des aliments ; Règlement (UE) n° 1169/2011 consulté le 22/10/2026",
+      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/quorn.webp",
       "image_description": "Trois champignons dans la forêt"
     },
@@ -61,7 +61,7 @@
       "allergenes": [
         "Aucun allergène majeur (vérifier l'étiquette)"
       ],
-      "sources": "NUBEL, Table belge des aliments ; Règlement (UE) n° 1169/2011 consulté le 22/10/2026",
+      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/pois.webp",
       "image_description": "Pois jaunes cassés et pois chiches"
     },
@@ -74,7 +74,7 @@
         "Sans gluten naturellement"
       ],
       "enquete": "30 % des répondants pensent qu'il contient du blé.",
-      "sources": "NUBEL, Table belge des aliments ; Règlement (UE) n° 1169/2011 consulté le 22/10/2026",
+      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/quinoa.webp",
       "image_description": "Graines de quinoa de plusieurs couleurs"
     }
