@@ -89,14 +89,31 @@
       "titre": "Additifs",
       "resume": "Ajoutés pour la texture, le goût ou la conservation.",
       "aQuoiCaSert": "Ce sont des substances qu’on ne mange pas seules, mais qu’on ajoute aux aliments pour un rôle technique, par exemple les conserver, épaissir ou colorer. ",
-      "surEtiquette": "Compare les listes d’ingrédients : à produit équivalent, privilégie celui qui contient le moins d’additifs. Les additifs apparaissent après le nom de leur catégorie, par exemple « épaississant (E461) ».",
-      "conseil": "Ils sont autorisés et réévalués au niveau européen. Une longue liste d’additifs indique souvent un produit plus transformé, et le CSS conseille de limiter les aliments ultra-transformés.",
+      "surEtiquette": "Dans la liste d’ingrédients, un additif apparaît après le nom de sa catégorie, suivi de son nom ou de son numéro E, par exemple « épaississant (E461) » ou « épaississant : méthylcellulose ».",
+      "conseil": "Ils sont autorisés et réévalués au niveau européen. Dans les alternatives végétales, on en trouve en général entre 1 et 5 par produit, surtout des épaississants comme la méthylcellulose (E461). Ces produits sont souvent classés parmi les aliments ultra-transformés : le CSS conseille de les limiter et de privilégier les aliments peu ou pas transformés.",
       "sources": [
         {
           "texte": "Règlement (CE) n° 1333/2008 ; Règlement (UE) n° 257/2010 ; CSS (2025), avis n° 9805-9807."
         },
         {
-          "texte": "Règlement (UE) n° 1169/2011, annexe VII, partie C ; étude sur les analogues végétaux (Nutrients, 2025) ; CSS (2025), avis n° 9805-9807."
+          "texte": "Règlement (CE) n° 1333/2008 sur les additifs alimentaires.",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32008R1333"
+        },
+        {
+          "texte": "Règlement (UE) n° 257/2010 (programme de réévaluation des additifs).",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32010R0257"
+        },
+        {
+          "texte": "Règlement (UE) n° 1169/2011, annexe VII, partie C.",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32011R1169"
+        },
+        {
+          "texte": "Brodersen L, Rimbach G, Seidel U, Rinne P, Hasler M, Bosy-Westphal A, Jans K. (2025). A Nutritional Evaluation of Plant-Based Meat and Sausage Analogues. Foods, 14(21), 3674.",
+          "url": "https://doi.org/10.3390/foods14213674"
+        },
+        {
+          "texte": "CSS (2025). Recommandations alimentaires pour la population belge, avis n° 9805-9807.",
+          "url": "https://www.nubel.be/wp-content/uploads/2025/07/250626_CSS98059807_Recommandationsalimentaires2025_vWeb.pdf"
         }
       ],
       "brouillon": true,
