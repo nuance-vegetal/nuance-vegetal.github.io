@@ -8,16 +8,18 @@
         "Boissons végétales enrichies ",
         "Substituts de viande enrichis",
         "Compléments alimentaires",
-        "Produits laitiers, pour les végétariens (en petite quantité)"
+        "Produits laitiers, pour les végétariens"
       ],
       "surEtiquette": "Vérifie sur l’emballage que le produit est bien enrichi en vitamine B12. Attention : beaucoup d’alternatives végétales ne sont pas enrichies, et les boissons végétales le sont plus souvent en calcium qu’en B12.",
-      "conseil": "Les végétaux et les algues (nori, spiruline) ne sont pas des sources fiables. Prends chaque jour un complément de B12 certifié, pendant un repas, et choisis des produits enrichis. Si tu ne prends pas de complément depuis plusieurs mois, parles-en à ton médecin pour faire une prise de sang..",
+      "conseil": "Les végétaux et les algues (nori, spiruline) ne sont pas des sources fiables. Prends chaque jour un complément de B12 certifié, pendant un repas, et choisis des produits enrichis. Si tu ne prends pas de complément depuis plusieurs mois, parle-en à ton médecin pour faire une prise de sang.",
       "sources": [
         {
-          "texte": "Niklewicz A, Smith AD, Smith A, et al. (2023). The importance of vitamin B12 for individuals choosing plant-based diets. European Journal of Nutrition 62(3):1551–1559. doi:10.1007/s00394-022-03025-4"
+          "texte": "Niklewicz A, Smith AD, Smith A, et al. (2023). The importance of vitamin B12 for individuals choosing plant-based diets. European Journal of Nutrition 62(3):1551–1559. doi:10.1007/s00394-022-03025-4",
+          "url": "https://doi.org/10.1007/s00394-022-03025-4"
         },
         {
-          "texte": "Niklewicz A, Hannibal L, Warren M, Ahmadi KR. (2024). A systematic review and meta-analysis of functional vitamin B12 status among adult vegans. Nutrition Bulletin 49(4):463–479. doi:10.1111/nbu.12712"
+          "texte": "Niklewicz A, Hannibal L, Warren M, Ahmadi KR. (2024). A systematic review and meta-analysis of functional vitamin B12 status among adult vegans. Nutrition Bulletin 49(4):463–479. doi:10.1111/nbu.12712",
+          "url": "https://doi.org/10.1111/nbu.12712"
         }
       ],
       "brouillon": false,
@@ -39,10 +41,12 @@
       "conseil": "Varie les sources au fil des repas de la journée. Pour un substitut de viande prêt à l’emploi, vérifie qu’il contient plus de 10 g de protéines pour 100 g.",
       "sources": [
         {
-          "texte": "Règlement (UE) n° 432/2012 ; CSS (2021), avis n° 9445."
+          "texte": "Règlement (UE) n° 432/2012",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32012R0432"
         },
         {
-          "texte": "CSS (2021), avis n° 9445, p. 28."
+          "texte": "CSS (2021), avis n° 9445 – L’alimentation végétarienne, p. 25-27.",
+          "url": "https://www.hgr-css.be/fr/report/9445/lalimentation-vegetarienne"
         }
       ],
       "brouillon": false,
