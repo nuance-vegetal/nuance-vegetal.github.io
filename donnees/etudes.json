@@ -2,14 +2,15 @@
   "fiches": [
     {
       "question": "Le soja est-il mauvais pour les hormones ?",
-      "brouillon": true,
-      "reponse": "Aux quantités d'une alimentation normale, les études ne montrent pas d'effet néfaste chez l'adulte.",
+      "reponse": "Chez les femmes ménopausées, les études ne montrent pas d’effet néfaste des isoflavones de soja sur le sein, l’utérus ou la thyroïde, même à des doses de compléments.",
       "points": [
-        "Le soja contient des isoflavones, parfois appelées « phyto-œstrogènes ».",
-        "L'évaluation européenne porte sur les compléments d'isoflavones isolées, pas sur les aliments au soja.",
-        "[à compléter par Camille]"
+        "Le soja contient des isoflavones, parfois appelées « phyto-œstrogènes », dont la structure ressemble à celle de l’œstradiol.",
+        "L’évaluation européenne porte sur les compléments d’isoflavones isolées chez les femmes post-ménopausées, pas sur les aliments au soja.",
+        "Jusqu’à 150 mg/j pendant 2,5 ans, aucun effet n’a été observé sur la densité mammaire, l’endomètre ou les hormones thyroïdiennes.",
+        "Une portion de boisson soja, de yaourt soja ou de tofu peut apporter autant d’isoflavones qu’un complément.",
+        "Ces conclusions ne s’appliquent pas aux femmes qui ont ou ont eu un cancer du sein ou de l’utérus hormonodépendant, ni aux hommes ou aux enfants."
       ],
-      "conseil": "Une à deux portions de produits au soja par jour s'intègrent dans une alimentation variée. [à valider]",
+      "conseil": "Les produits au soja peuvent faire partie d’une alimentation variée. En cas d’antécédent de cancer hormonodépendant, demande l’avis de ton médecin avant de prendre des compléments d’isoflavones.",
       "niveau": 2,
       "sources": [
         {
@@ -20,11 +21,11 @@
           "texte": "Messina M. (2016). Soy and Health Update. Nutrients 8(12):754.",
           "url": "https://doi.org/10.3390/nu8120754"
         }
-      ]
+      ],
+      "brouillon": true
     },
     {
       "question": "« Ultra-transformé », ça veut dire mauvais pour la santé ?",
-      "brouillon": true,
       "reponse": "« Ultra-transformé » décrit la façon dont un produit est fabriqué, pas directement sa valeur nutritionnelle.",
       "points": [
         "La classification NOVA range les aliments selon leur degré de transformation.",
@@ -38,11 +39,11 @@
           "texte": "Monteiro C.A. et al. (2019). Ultra-processed foods: what they are and how to identify them. Public Health Nutrition 22(5):936-941.",
           "url": "https://doi.org/10.1017/S1368980018003762"
         }
-      ]
+      ],
+      "brouillon": true
     },
     {
       "question": "Faut-il vraiment faire attention à la B12 ?",
-      "brouillon": true,
       "reponse": "Oui : la vitamine B12 ne se trouve pas naturellement dans les végétaux. Si tu manges peu ou pas de produits animaux, il faut une source fiable.",
       "points": [
         "Seuls 14 % des répondants regardent la B12 et le fer sur l'étiquette.",
@@ -56,7 +57,8 @@
           "texte": "Conseil Supérieur de la Santé (2016). Recommandations nutritionnelles pour la Belgique. Avis n° 9285.",
           "url": "https://www.health.belgium.be/fr/avis-9285-recommandations-nutritionnelles-pour-la-belgique-2016"
         }
-      ]
+      ],
+      "brouillon": true
     }
   ]
 }
