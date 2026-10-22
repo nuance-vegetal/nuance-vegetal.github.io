@@ -22,11 +22,12 @@
     },
     {
       "question": "« Ultra-transformé », ça veut dire mauvais pour la santé ?",
-      "reponse": "« Ultra-transformé » décrit la façon dont un produit est fabriqué, pas directement sa valeur nutritionnelle.",
+      "reponse": "« Ultra-transformé » désigne le groupe 4 de la classification NOVA : des produits fabriqués à partir d’ingrédients industriels et d’additifs. Les études associent une alimentation riche en ultra-transformés à une moins bonne qualité nutritionnelle et à plus de maladies chroniques.",
       "points": [
-        "La classification NOVA range les aliments selon leur degré de transformation.",
-        "Deux simili classés « ultra-transformés » peuvent avoir des profils très différents en sel, en graisses ou en protéines.",
-        "[à compléter par Camille]"
+        "La classification NOVA range les aliments en 4 groupes selon l’ampleur et le but de leur transformation industrielle.",
+        "Un produit est ultra-transformé si sa liste d’ingrédients contient au moins un ingrédient rarement utilisé en cuisine (isolat de protéine de soja, gluten, sirop de glucose-fructose, maltodextrine…) ou un additif « cosmétique » (arômes, colorants, émulsifiants, épaississants, édulcorants…).",
+        "Une alimentation riche en ultra-transformés est associée à plus d’obésité, d’hypertension, de maladies cardiovasculaires et de cancers. Ce sont des études observationnelles, qui montrent un lien et pas une cause.",
+        "La transformation en soi n’est pas le problème : les conserves, le pain ou le fromage ne sont pas ultra-transformés."
       ],
       "conseil": "Regarde aussi le tableau nutritionnel : protéines, sel, graisses saturées, B12.",
       "niveau": 2,
