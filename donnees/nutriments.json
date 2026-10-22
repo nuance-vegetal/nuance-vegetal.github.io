@@ -10,8 +10,8 @@
         "Compléments alimentaires",
         "Produits laitiers, pour les végétariens"
       ],
-      "surEtiquette": "Vérifie sur l’emballage que le produit est bien enrichi en vitamine B12. Attention : beaucoup d’alternatives végétales ne sont pas enrichies, et les boissons végétales le sont plus souvent en calcium qu’en B12.",
-      "conseil": "Les végétaux et les algues (nori, spiruline) ne sont pas des sources fiables. Prends chaque jour un complément de B12 certifié, pendant un repas, et choisis des produits enrichis. Si tu ne prends pas de complément depuis plusieurs mois, parle-en à ton médecin pour faire une prise de sang.",
+      "surEtiquette": "Vérifie sur l’emballage que le produit est bien enrichi en vitamine B12. Tous les produits végétaux ne le sont pas, et un produit non enrichi n’est pas une source fiable de B12.",
+      "conseil": "Les végétaux et les algues (nori, spiruline) ne sont pas des sources fiables. Prends chaque jour un complément de B12, pendant un repas, et choisis des produits enrichis. Si tu ne prends pas de complément depuis 3 à 6 mois, parle-en à ton médecin pour faire une prise de sang.",
       "sources": [
         {
           "texte": "Niklewicz A, Smith AD, Smith A, et al. (2023). The importance of vitamin B12 for individuals choosing plant-based diets. European Journal of Nutrition 62(3):1551–1559. doi:10.1007/s00394-022-03025-4",
