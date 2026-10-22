@@ -8,9 +8,9 @@
         "L’évaluation européenne porte sur les compléments d’isoflavones isolées (soja, trèfle rouge, kudzu) chez les femmes péri- et post-ménopausées.",
         "Aucun effet n’a été observé sur la densité mammaire ni sur les hormones thyroïdiennes.",
         "Pour l’utérus, aucun effet n’a été observé jusqu’à 150 mg/j pendant 2,5 ans ; après 5 ans, quelques changements non cancéreux ont été rapportés.",
-        "Ces conclusions ne s’appliquent pas aux femmes qui ont ou ont eu un cancer du sein, ni à celles qui ont des antécédents familiaux de cancer, faute de données."
+        "Ces conclusions ne s'appliquent pas aux femmes qui ont ou ont eu un cancer hormonodépendant du sein ou de l'utérus, faute de données."
       ],
-      "conseil": "En cas d’antécédent personnel ou familial de cancer hormonodépendant, demande l’avis de ton médecin avant de prendre des compléments d’isoflavones.",
+      "conseil": "En cas de cancer hormonodépendant, actuel ou passé, demande l'avis de ton médecin avant de prendre des compléments d'isoflavones.",
       "niveau": 2,
       "sources": [
         {
@@ -48,19 +48,24 @@
         "Seuls 14 % des répondants regardent la B12 et le fer sur l'étiquette.",
         "Certains simili sont enrichis en B12, d'autres non : vérifie l’emballage.",
         "Sans complément, les véganes ont un taux de B12 plus bas et plus de signes de carence que les omnivores.",
-        "Les végétariens sont aussi concernés : leur taux moyen de B12 est presque aussi bas que celui des véganes, et ils prennent moins souvent un complément (51 % contre 90 %)",
+        "Les végétariens sont aussi concernés : leur taux moyen de B12 est presque aussi bas que celui des véganes, et ils prennent moins souvent un complément (51 % contre 90 %).",
         "Les véganes qui prennent un complément ont un bien meilleur statut en B12 que ceux qui n’en prennent pas.",
         "Un manque peut s’installer sans anémie et passer inaperçu : fatigue, troubles de la mémoire, fourmillements.",
-        "Les femmes enceintes ou qui veulent l’être, et les plus de 60 ans, sont les plus à risque."
+        "Les femmes enceintes ou qui veulent l'être sont plus à risque. Après 60 ans, il est aussi conseillé de demander un avis."
       ],
       "conseil": "Un complément de B12 pris chaque jour pendant un repas est le moyen le plus simple d’éviter un manque. Demande à ton médecin ou à un·e diététicien·ne lequel te convient, surtout si tu passes au végan, si tu prévois une grossesse ou si tu as plus de 60 ans.",
       "niveau": 3,
       "sources": [
         {
-          "texte": "Niklewicz A, Smith AD, Smith A, et al. (2023). The importance of vitamin B12 for individuals choosing plant-based diets. European Journal of Nutrition 62(3):1551–1559. doi:10.1007/s00394-022-03025-4"
+          "texte": "Niklewicz A, Smith AD, Smith A, et al. (2023). The importance of vitamin B12 for individuals choosing plant-based diets. European Journal of Nutrition 62(3):1551–1559. doi:10.1007/s00394-022-03025-4",
+          "url": "https://doi.org/10.1007/s00394-022-03025-4"
         },
         {
-          "texte": "Niklewicz A, Hannibal L, Warren M, Ahmadi KR. (2024). A systematic review and meta-analysis of functional vitamin B12 status among adult vegans. Nutrition Bulletin 49(4):463–479. doi:10.1111/nbu.12712"
+          "texte": "Niklewicz A, Hannibal L, Warren M, Ahmadi KR. (2024). A systematic review and meta-analysis of functional vitamin B12 status among adult vegans. Nutrition Bulletin 49(4):463–479. doi:10.1111/nbu.12712",
+          "url": "https://doi.org/10.1111/nbu.12712"
+        },
+        {
+          "texte": "Questionnaire de perception des alternatives végétales, Camille Desmet (2026)"
         }
       ],
       "brouillon": false
