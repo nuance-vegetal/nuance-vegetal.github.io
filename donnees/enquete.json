@@ -1,13 +1,13 @@
 {
   "chiffres": [
     {
-      "valeur": 14,
+      "valeur": 13,
       "unite": " %",
       "texte": "regardent la B12 et le fer sur l'étiquette. C'est pourtant l'enjeu principal d'une alimentation végétarienne.",
       "misEnAvant": true
     },
     {
-      "valeur": 56,
+      "valeur": 58,
       "unite": " %",
       "texte": "citent le prix comme premier frein.",
       "misEnAvant": false
@@ -19,7 +19,7 @@
       "misEnAvant": false
     },
     {
-      "valeur": 75,
+      "valeur": 76,
       "unite": " %",
       "texte": "trouvent qu'un outil comme celui-ci est utile.",
       "misEnAvant": false
@@ -31,7 +31,7 @@
       "texte": "aiment le goût"
     },
     {
-      "chiffre": "12 %",
+      "chiffre": "13 %",
       "texte": "les trouvent « naturels »"
     },
     {
@@ -39,11 +39,11 @@
       "texte": "se méfient des industriels"
     },
     {
-      "chiffre": "56 %",
+      "chiffre": "58 %",
       "texte": "citent le prix comme frein"
     },
     {
-      "chiffre": "14 %",
+      "chiffre": "13 %",
       "texte": "regardent la B12 et le fer"
     }
   ]
