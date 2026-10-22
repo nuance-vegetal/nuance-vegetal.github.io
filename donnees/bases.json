@@ -3,47 +3,45 @@
     {
       "nom": "Tofu",
       "base": "Soja",
-      "image": "images/tofu.webp",
-      "image_description": "Bloc de tofu garni d'oignons verts",
       "description": "Lait de soja caillé puis pressé, un peu comme un fromage frais.",
       "proteines": "≈ 12 à 15 g pour 100 g",
       "allergenes": [
         "Soja"
       ],
-      "enquete": "[à compléter] % de bonnes réponses",
-      "sources": "[à compléter]"
+      "enquete": "91 % de bonnes réponses",
+      "sources": "[à compléter]",
+      "image": "images/tofu.webp",
+      "image_description": "Bloc de tofu garni d'oignons verts"
     },
     {
       "nom": "Tempeh",
       "base": "Soja",
-      "image": "images/tempeh.webp",
-      "image_description": "Blocs de tempeh sur une planche",
       "description": "Graines de soja entières fermentées, pressées en bloc.",
       "proteines": "≈ 18 à 20 g pour 100 g",
       "allergenes": [
         "Soja"
       ],
-      "enquete": "[à compléter] % de bonnes réponses",
-      "sources": "[à compléter]"
+      "enquete": "60 % de bonnes réponses",
+      "sources": "[à compléter]",
+      "image": "images/tempeh.webp",
+      "image_description": "Blocs de tempeh sur une planche"
     },
     {
       "nom": "Seitan",
       "base": "Blé",
-      "image": "images/seitan.webp",
-      "image_description": "Épis de blé dorés",
       "description": "Gluten de blé, la protéine du blé, pétri et cuit.",
       "proteines": "≈ 20 à 25 g pour 100 g",
       "allergenes": [
         "Gluten (blé)"
       ],
-      "enquete": "[à compléter] % de bonnes réponses",
-      "sources": "[à compléter]"
+      "enquete": "69 % de bonnes réponses",
+      "sources": "[à compléter]",
+      "image": "images/seitan.webp",
+      "image_description": "Épis de blé dorés"
     },
     {
       "nom": "Quorn",
       "base": "Champignon",
-      "image": "images/quorn.webp",
-      "image_description": "Trois champignons dans la forêt",
       "description": "Mycoprotéine, obtenue à partir d'un champignon microscopique cultivé. Certaines recettes contiennent du blanc d'œuf.",
       "proteines": "≈ 11 à 15 g pour 100 g",
       "allergenes": [
@@ -51,33 +49,35 @@
         "Gluten (selon la recette)"
       ],
       "enquete": "La moitié des répondants ne sait pas de quoi il est fait.",
-      "sources": "[à compléter]"
+      "sources": "[à compléter]",
+      "image": "images/quorn.webp",
+      "image_description": "Trois champignons dans la forêt"
     },
     {
       "nom": "Protéines de pois",
       "base": "Pois",
-      "image": "images/pois.webp",
-      "image_description": "Pois jaunes cassés et pois chiches",
       "description": "Protéines extraites du pois jaune, souvent texturées pour imiter le haché ou les nuggets.",
       "proteines": "≈ 15 à 20 g pour 100 g (produit prêt à cuire)",
       "allergenes": [
         "Aucun allergène majeur (vérifier l'étiquette)"
       ],
       "enquete": "[à compléter] % de bonnes réponses",
-      "sources": "[à compléter]"
+      "sources": "[à compléter]",
+      "image": "images/pois.webp",
+      "image_description": "Pois jaunes cassés et pois chiches"
     },
     {
       "nom": "Quinoa",
       "base": "Autre",
-      "image": "images/quinoa.webp",
-      "image_description": "Graines de quinoa de plusieurs couleurs",
       "description": "Graine d'une plante de la famille des épinards et de la betterave. Ce n'est pas une céréale et il ne contient pas de blé.",
       "proteines": "≈ 4 g pour 100 g (cuit)",
       "allergenes": [
         "Sans gluten naturellement"
       ],
       "enquete": "30 % des répondants pensent qu'il contient du blé.",
-      "sources": "[à compléter]"
+      "sources": "[à compléter]",
+      "image": "images/quinoa.webp",
+      "image_description": "Graines de quinoa de plusieurs couleurs"
     }
   ]
 }
