@@ -58,7 +58,7 @@
         "Graines oléagineuses",
         "Fruits à coque"
       ],
-      "surEtiquette": "Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel. Repère du CSS : plus de 0,8 mg pour 100 g.",
+      "surEtiquette": "Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel. Repère du CSS pour les substituts de viande : au moins 0,8 mg pour 100 g.",
       "conseil": "Associe ces aliments à une source de vitamine C au même repas (poivron, agrumes, kiwi) : elle aide à mieux absorber le fer.",
       "sources": [
         {
@@ -66,6 +66,12 @@
         },
         {
           "texte": "CSS (2021), avis n° 9445 ; Règlement (UE) n° 432/2012, page L 136/34 (« la vitamine C accroît l’absorption de fer »)."
+        },
+        {
+          "texte": "Règlement (CE) n° 1925/2006, annexe II."
+        },
+        {
+          "texte": "Règlement (UE) n° 1169/2011."
         }
       ],
       "brouillon": true,
