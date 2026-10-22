@@ -22,10 +22,10 @@
     },
     {
       "question": "« Ultra-transformé », ça veut dire mauvais pour la santé ?",
-      "reponse": "« Ultra-transformé » désigne le groupe 4 de la classification NOVA : des produits fabriqués à partir d’ingrédients industriels et d’additifs. Les études associent une alimentation riche en ultra-transformés à une moins bonne qualité nutritionnelle et à plus de maladies chroniques.",
+      "reponse": "« Ultra-transformé » désigne le groupe 4 de la classification NOVA : des produits fabriqués à partir d’ingrédients industriels et d’additifs. Les études associent une alimentation riche en ultra-transformés à une moins bonne qualité nutritionnelle et à plus d’obésité, d’hypertension et de maladies cardiovasculaires.",
       "points": [
         "La classification NOVA range les aliments en 4 groupes selon l’ampleur et le but de leur transformation industrielle.",
-        "Un produit est ultra-transformé si sa liste d’ingrédients contient au moins un ingrédient jamais utilisé en cuisine ou un additif « cosmétique ».",
+        "Un produit est ultra-transformé si sa liste d’ingrédients contient au moins un ingrédient jamais ou rarement utilisé en cuisine, ou un additif « cosmétique ».",
         "Au début ou au milieu de la liste, repère les ingrédients industriels : isolat de protéine de soja, gluten, protéines hydrolysées, sirop de glucose-fructose, maltodextrine, dextrose, huiles hydrogénées.",
         "À la fin de la liste, repère les additifs cosmétiques : arômes, exhausteurs de goût, colorants, émulsifiants, édulcorants, épaississants.",
         "Une alimentation riche en ultra-transformés est associée à plus d’obésité, d’hypertension, de maladies cardiovasculaires, de dyslipidémie, de troubles digestifs et de cancers.",
@@ -39,7 +39,7 @@
           "url": "https://doi.org/10.1017/S1368980018003762"
         }
       ],
-      "brouillon": true
+      "brouillon": false
     },
     {
       "question": "Faut-il vraiment faire attention à la B12 ?",
@@ -63,7 +63,7 @@
           "texte": "Niklewicz A, Hannibal L, Warren M, Ahmadi KR. (2024). A systematic review and meta-analysis of functional vitamin B12 status among adult vegans. Nutrition Bulletin 49(4):463–479. doi:10.1111/nbu.12712"
         }
       ],
-      "brouillon": true
+      "brouillon": false
     }
   ]
 }
