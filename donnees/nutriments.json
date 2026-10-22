@@ -3,17 +3,21 @@
     {
       "titre": "Vitamine B12",
       "resume": "Vitamine indispensable, absente des végétaux.",
-      "aQuoiCaSert": "Elle aide à fabriquer les globules rouges, au bon fonctionnement du système nerveux et à réduire la fatigue. On la trouve dans les produits animaux. Les personnes qui n’en consomment pas ont besoin d’aliments enrichis ou de compléments.",
+      "aQuoiCaSert": "Elle est indispensable à la fabrication des cellules sanguines, au tissu nerveux et à la production d’énergie dans les cellules. Seules certaines bactéries la produisent : on la trouve donc uniquement dans les produits animaux et les aliments enrichis. Un manque peut passer inaperçu au début, car il ne provoque pas toujours d’anémie. Il se manifeste souvent par de la fatigue, des troubles de la mémoire ou des fourmillements dans les mains et les pieds.",
       "ouLaTrouver": [
         "Boissons végétales enrichies ",
         "Substituts de viande enrichis",
-        "Compléments alimentaires"
+        "Compléments alimentaires",
+        "Produits laitiers, pour les végétariens (en petite quantité)"
       ],
-      "surEtiquette": "Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel. Repère du CSS : plus de 0,24 µg pour 100 g.",
-      "conseil": "Les végétaux n’en contiennent pas. Choisis des produits enrichis (au moins 0,24 µg pour 100 g) et parles-en à ton médecin pour un complément, surtout si tu es vegan.",
+      "surEtiquette": "Vérifie sur l’emballage que le produit est bien enrichi en vitamine B12. Attention : beaucoup d’alternatives végétales ne sont pas enrichies, et les boissons végétales le sont plus souvent en calcium qu’en B12.",
+      "conseil": "Les végétaux et les algues (nori, spiruline) ne sont pas des sources fiables. Prends chaque jour un complément de B12 certifié, pendant un repas, et choisis des produits enrichis. Si tu ne prends pas de complément depuis plusieurs mois, parles-en à ton médecin pour faire une prise de sang..",
       "sources": [
         {
-          "texte": "Règlement (UE) n° 432/2012 ; Melina, Craig & Levin (2016)."
+          "texte": "Niklewicz A, Smith AD, Smith A, et al. (2023). The importance of vitamin B12 for individuals choosing plant-based diets. European Journal of Nutrition 62(3):1551–1559. doi:10.1007/s00394-022-03025-4"
+        },
+        {
+          "texte": "Niklewicz A, Hannibal L, Warren M, Ahmadi KR. (2024). A systematic review and meta-analysis of functional vitamin B12 status among adult vegans. Nutrition Bulletin 49(4):463–479. doi:10.1111/nbu.12712"
         }
       ],
       "brouillon": true,
