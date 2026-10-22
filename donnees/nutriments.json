@@ -113,7 +113,7 @@
           "url": "https://www.nubel.be/wp-content/uploads/2025/07/250626_CSS98059807_Recommandationsalimentaires2025_vWeb.pdf"
         }
       ],
-      "brouillon": true,
+      "brouillon": false,
       "id": "additifs"
     },
     {
@@ -131,9 +131,13 @@
         {
           "texte": "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé",
           "url": "https://eur-lex.europa.eu/legal-content/FR/ALL/?uri=CELEX:32006R1924"
+        },
+        {
+          "texte": "Règlement (UE) n° 1169/2011, annexe XIV (coefficients de conversion pour le calcul de l'énergie).",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32011R1169"
         }
       ],
-      "brouillon": true,
+      "brouillon": false,
       "id": "allegations"
     }
   ]
