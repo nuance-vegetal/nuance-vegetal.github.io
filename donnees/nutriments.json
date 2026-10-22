@@ -62,16 +62,24 @@
       "conseil": "Associe ces aliments à une source de vitamine C au même repas (poivron, agrumes, kiwi) : elle aide à mieux absorber le fer.",
       "sources": [
         {
-          "texte": "Règlement (UE) n° 432/2012 ; Haider et al. (2018) ; CSS (2021), avis n° 9445."
+          "texte": "Règlement (UE) n° 432/2012",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32012R0432"
         },
         {
-          "texte": "CSS (2021), avis n° 9445 ; Règlement (UE) n° 432/2012, page L 136/34 (« la vitamine C accroît l’absorption de fer »)."
+          "texte": "Haider et al. (2018) : Haider LM, Schwingshackl L, Hoffmann G, Ekmekcioglu C. The effect of vegetarian diets on iron status in adults: A systematic review and meta-analysis. Critical Reviews in Food Science and Nutrition, 58(8), 1359–1374.",
+          "url": "https://doi.org/10.1080/10408398.2016.1259210"
         },
         {
-          "texte": "Règlement (CE) n° 1925/2006, annexe II."
+          "texte": "CSS (2021), avis n° 9445 – L’alimentation végétarienne,",
+          "url": "https://www.hgr-css.be/fr/report/9445/lalimentation-vegetarienne"
         },
         {
-          "texte": "Règlement (UE) n° 1169/2011."
+          "texte": "Règlement (CE) n° 1925/2006",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32006R1925"
+        },
+        {
+          "texte": "Règlement (UE) n° 1169/2011",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32011R1169"
         }
       ],
       "brouillon": true,
