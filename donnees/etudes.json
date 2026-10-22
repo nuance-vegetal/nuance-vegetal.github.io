@@ -25,11 +25,13 @@
       "reponse": "« Ultra-transformé » désigne le groupe 4 de la classification NOVA : des produits fabriqués à partir d’ingrédients industriels et d’additifs. Les études associent une alimentation riche en ultra-transformés à une moins bonne qualité nutritionnelle et à plus de maladies chroniques.",
       "points": [
         "La classification NOVA range les aliments en 4 groupes selon l’ampleur et le but de leur transformation industrielle.",
-        "Un produit est ultra-transformé si sa liste d’ingrédients contient au moins un ingrédient rarement utilisé en cuisine (isolat de protéine de soja, gluten, sirop de glucose-fructose, maltodextrine…) ou un additif « cosmétique » (arômes, colorants, émulsifiants, épaississants, édulcorants…).",
-        "Une alimentation riche en ultra-transformés est associée à plus d’obésité, d’hypertension, de maladies cardiovasculaires et de cancers. Ce sont des études observationnelles, qui montrent un lien et pas une cause.",
-        "La transformation en soi n’est pas le problème : les conserves, le pain ou le fromage ne sont pas ultra-transformés."
+        "Un produit est ultra-transformé si sa liste d’ingrédients contient au moins un ingrédient jamais utilisé en cuisine ou un additif « cosmétique ».",
+        "Au début ou au milieu de la liste, repère les ingrédients industriels : isolat de protéine de soja, gluten, protéines hydrolysées, sirop de glucose-fructose, maltodextrine, dextrose, huiles hydrogénées.",
+        "À la fin de la liste, repère les additifs cosmétiques : arômes, exhausteurs de goût, colorants, émulsifiants, édulcorants, épaississants.",
+        "Une alimentation riche en ultra-transformés est associée à plus d’obésité, d’hypertension, de maladies cardiovasculaires, de dyslipidémie, de troubles digestifs et de cancers.",
+        "La transformation en soi n’est pas le problème : les conserves, les fromages ou le pain simple (farine, eau, sel, levure) ne sont pas ultra-transformés."
       ],
-      "conseil": "Lis d’abord la liste d’ingrédients pour repérer les marqueurs d’ultra-transformation, puis le tableau nutritionnel (protéines, sel, graisses saturées,...)",
+      "conseil": "Lis la liste d’ingrédients : un seul ingrédient industriel ou additif cosmétique suffit pour qu’un produit soit ultra-transformé.",
       "niveau": 2,
       "sources": [
         {
