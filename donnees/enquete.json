@@ -13,13 +13,13 @@
       "misEnAvant": false
     },
     {
-      "valeur": 30,
+      "valeur": 28,
       "unite": " %",
       "texte": "pensent que le quinoa contient du blé.",
       "misEnAvant": false
     },
     {
-      "valeur": 76,
+      "valeur": 77,
       "unite": " %",
       "texte": "trouvent qu'un outil comme celui-ci est utile.",
       "misEnAvant": false
@@ -35,7 +35,7 @@
       "texte": "les trouvent « naturels »"
     },
     {
-      "chiffre": "52 %",
+      "chiffre": "49 %",
       "texte": "se méfient des industriels"
     },
     {
