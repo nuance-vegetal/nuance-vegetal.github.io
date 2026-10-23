@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261028"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261028">
-  <link rel="stylesheet" href="css/style.css?v=20261028">
+  <script src="js/theme.js?v=20261029"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261029">
+  <link rel="stylesheet" href="css/style.css?v=20261029">
 </head>
 <body class="page-secondaire">
 
@@ -78,8 +78,36 @@
 
     <span class="surtitre revele" style="margin-top:72px">02 · la complémentarité</span>
     <h2 style="margin-top:0">associer, <em class="serif">sans se prendre la tête</em></h2>
-    <div class="carte revele" id="comp-principe"></div>
-    <div class="grille-assiettes" id="comp-associations"></div>
+
+    <!-- 1. Le principe en image : chacun a son point faible, ensemble c'est complet -->
+    <div class="comp-principe revele">
+      <div class="puzzle" role="img" aria-label="Les céréales ont peu de lysine et beaucoup de méthionine. Les légumineuses ont beaucoup de lysine et peu de méthionine. Ensemble, les deux sont bien couvertes.">
+        <div class="pz-tete" aria-hidden="true"><span></span><span>lysine</span><span>méthionine</span></div>
+        <div class="pz-ligne" aria-hidden="true">
+          <span class="pz-nom">céréales</span>
+          <span class="pz-barre faible" style="--v:.38"><i></i></span>
+          <span class="pz-barre" style="--v:.92"><i></i></span>
+        </div>
+        <div class="pz-ligne" aria-hidden="true">
+          <span class="pz-nom">légumineuses</span>
+          <span class="pz-barre" style="--v:.95"><i></i></span>
+          <span class="pz-barre faible" style="--v:.42"><i></i></span>
+        </div>
+        <div class="pz-ligne pz-ensemble" aria-hidden="true">
+          <span class="pz-nom">ensemble</span>
+          <span class="pz-barre" style="--v:1"><i></i><b>✓</b></span>
+          <span class="pz-barre" style="--v:1"><i></i><b>✓</b></span>
+        </div>
+        <p class="pz-legende" aria-hidden="true">Schéma simplifié, sans quantités.</p>
+      </div>
+      <div class="comp-texte" id="comp-principe"></div>
+    </div>
+
+    <!-- 2. Les assiettes, rangées en deux familles -->
+    <h3 class="comp-groupe revele"><span class="comp-pastille">+</span> à associer dans la journée</h3>
+    <div class="grille-formules" id="comp-associer"></div>
+    <h3 class="comp-groupe revele"><span class="comp-pastille seul">✓</span> complet à lui seul</h3>
+    <div class="grille-formules" id="comp-seul"></div>
 
     <section class="sources-page revele" aria-labelledby="titre-sources">
       <h2 id="titre-sources" style="margin-top:56px">sources</h2>
@@ -102,10 +130,10 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261028"></script>
-<script src="js/menu.js?v=20261028"></script>
-<script src="js/vendor/lenis.min.js?v=20261028"></script>
-<script src="js/animations.js?v=20261028"></script>
+<script src="js/commun.js?v=20261029"></script>
+<script src="js/menu.js?v=20261029"></script>
+<script src="js/vendor/lenis.min.js?v=20261029"></script>
+<script src="js/animations.js?v=20261029"></script>
 <script>
   /* Contenu : donnees/equivalences.json (Pages CMS → « Équivalences et complémentarité ») */
   (async function () {
@@ -235,18 +263,25 @@
 
     const C = D.complementarite || {};
     $('comp-principe').innerHTML = texteRiche(C.principe) +
-      (C.phrase ? '<p class="comp-phrase">' + enLigne(C.phrase) + '</p>' : '') +
+      (C.phrase ? '<p class="comp-phrase"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>' + enLigne(C.phrase) + '</span></p>' : '') +
       (C.source ? '<p class="petit secondaire" style="margin:0">Source : ' + echapper(C.source) + '.</p>' : '') +
       (C.note ? '<p class="petit secondaire" style="margin:4px 0 0">' + echapper(C.note) + '</p>' : '');
-    $('comp-associations').innerHTML = (C.associations || []).filter((a) => a && a.titre).map((a, i) =>
-      '<article class="carte assiette revele" style="--i:' + i + '">' +
-      '<div class="assiette-visuel" aria-hidden="true">' + (a.familles || []).filter(Boolean).map((f, j) =>
-        '<span class="assiette-part part-' + (j % 2) + '">' + echapper(f) + '</span>').join('<span class="assiette-plus">+</span>') + '</div>' +
-      '<h3>' + echapper(a.titre) + '</h3>' +
-      '<ul class="assiette-exemples">' + (a.exemples || []).filter(Boolean).map((x) => '<li>' + echapper(x) + '</li>').join('') + '</ul>' +
-      (a.pourquoi ? '<p class="assiette-pourquoi">' + echapper(a.pourquoi) + '</p>' : '') +
-      (a.source ? '<p class="petit secondaire" style="margin:8px 0 0">Source : ' + echapper(a.source) + '</p>' : '') +
-      '</article>').join('');
+
+    // Une carte = une « formule » : familles en pastilles, exemples en étiquettes, la raison en une ligne
+    const carte = (a, i) => {
+      const familles = (a.familles || []).filter(Boolean);
+      return '<article class="formule revele" style="--i:' + i + '">' +
+        '<div class="formule-tete">' + familles.map((f, j) => '<span class="famille f' + (j % 2) + '">' + echapper(f) + '</span>').join('<span class="formule-op">+</span>') +
+        (familles.length > 1 ? '<span class="formule-op">=</span><span class="famille complet">✓ complet</span>' : '<span class="famille complet">✓ complet</span>') + '</div>' +
+        '<h4>' + echapper(a.titre) + '</h4>' +
+        '<ul class="formule-exemples">' + (a.exemples || []).filter(Boolean).map((x) => '<li>' + echapper(x) + '</li>').join('') + '</ul>' +
+        (a.pourquoi ? '<p class="formule-pourquoi">' + echapper(a.pourquoi) + '</p>' : '') +
+        (a.source ? '<p class="formule-source">Source : ' + echapper(a.source) + '</p>' : '') +
+        '</article>';
+    };
+    const assiettes = (C.associations || []).filter((a) => a && a.titre);
+    $('comp-associer').innerHTML = assiettes.filter((a) => (a.familles || []).filter(Boolean).length > 1).map(carte).join('');
+    $('comp-seul').innerHTML = assiettes.filter((a) => (a.familles || []).filter(Boolean).length <= 1).map(carte).join('');
     animerPage(document.querySelector('main'));
   })();
 </script>

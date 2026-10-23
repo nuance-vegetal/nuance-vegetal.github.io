@@ -1410,26 +1410,6 @@ html.menu-ouvert, html.menu-ouvert body { overflow: hidden; }
 @media (min-width: 720px) { .grille-createurs { grid-template-columns: 1fr 1fr; } }
 
 /* ============ Équivalences et complémentarité ============ */
-.comp-phrase {
-  margin: 12px 0; padding: 12px 14px; border-radius: 16px;
-  background: var(--sauge-clair); color: var(--texte); font-weight: 500;
-}
-.grille-assiettes { display: grid; gap: 14px; margin-top: 14px; }
-@media (min-width: 720px) { .grille-assiettes { grid-template-columns: 1fr 1fr; } }
-@media (min-width: 1024px) { .grille-assiettes { grid-template-columns: repeat(3, 1fr); } }
-.assiette h3 { margin: 14px 0 6px; font-size: 18px; }
-.assiette-visuel {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
-  aspect-ratio: 1; max-width: 150px; margin: 0 auto; padding: 14px; border-radius: 50%;
-  background: radial-gradient(circle, var(--carte) 0 58%, var(--fond-2) 59% 100%);
-  border: 1px solid var(--contour); text-align: center;
-}
-.assiette-part { padding: 6px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; line-height: 1.2; }
-.assiette-part.part-0 { background: var(--vert-fond); color: var(--vert-texte); }
-.assiette-part.part-1 { background: var(--lilas-fond); color: var(--lilas-texte); }
-.assiette-plus { font-weight: 700; color: var(--texte-2); }
-.assiette-exemples { margin: 0; padding-left: 18px; }
-.assiette-pourquoi { margin: 10px 0 0; font-size: 14px; color: var(--texte-2); }
 
 /* ============ Décodeur : l'étiquette à remplir ============ */
 /* Comme le tableau nutritionnel au dos du paquet, dans le même ordre : on recopie ligne par ligne */
@@ -1738,3 +1718,57 @@ html.menu-ouvert, html.menu-ouvert body { overflow: hidden; }
   .eq-icones { margin-top: 6px; }
   .eq-icones.oeufs span { width: 32px; height: 40px; }
 }
+
+/* ============ Équivalences : la complémentarité, en clair ============ */
+.comp-principe { display: grid; gap: 14px; margin-top: 8px; }
+@media (min-width: 900px) { .comp-principe { grid-template-columns: 1.1fr 1fr; align-items: center; gap: 28px; } }
+.puzzle {
+  padding: 18px 16px 14px; border-radius: 26px; background: var(--principal-survol); color: var(--carte);
+}
+.pz-tete, .pz-ligne { display: grid; grid-template-columns: 6.6em 1fr 1fr; align-items: center; gap: 10px; }
+.pz-tete { margin-bottom: 6px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: color-mix(in srgb, var(--carte) 70%, transparent); }
+.pz-ligne { padding: 9px 0; border-top: 1px solid color-mix(in srgb, var(--carte) 14%, transparent); }
+.pz-nom { font: 600 15px var(--police-titre); }
+.pz-barre { position: relative; height: 14px; border-radius: 99px; background: color-mix(in srgb, var(--carte) 14%, transparent); }
+.pz-barre i {
+  position: absolute; inset: 0; border-radius: inherit; background: var(--sur-fonce);
+  transform-origin: left; transform: scaleX(0); transition: transform 1.1s var(--courbe);
+}
+.pz-barre.faible i { background: #F4B9A6; }
+.comp-principe.visible .pz-barre i, html:not(.js) .pz-barre i { transform: scaleX(var(--v)); }
+.pz-ligne:nth-child(3) .pz-barre i { transition-delay: .15s; }
+.pz-ensemble .pz-barre i { transition-delay: .5s; background: var(--carte); }
+.pz-barre b {
+  position: absolute; right: -4px; top: 50%; display: grid; place-items: center; width: 22px; height: 22px; margin-top: -11px;
+  border-radius: 50%; background: var(--vert-texte); color: var(--vert-fond); font-size: 12px;
+  transform: scale(0); transition: transform .5s var(--courbe) 1.2s;
+}
+.comp-principe.visible .pz-barre b { transform: scale(1); }
+.pz-ensemble { margin-top: 4px; padding-top: 12px; border-top: 2px dashed color-mix(in srgb, var(--carte) 30%, transparent); }
+.pz-ensemble .pz-nom { color: var(--sur-fonce); }
+.pz-legende { margin: 8px 0 0; font-size: 12px; color: color-mix(in srgb, var(--carte) 60%, transparent); }
+.comp-texte p { margin: 0 0 10px; }
+.comp-texte > p:first-child { font-size: 17px; line-height: 1.5; }
+.comp-phrase {
+  display: flex; gap: 10px; align-items: flex-start; margin: 4px 0 12px !important; padding: 12px 14px; border-radius: 16px;
+  background: var(--sauge-clair); color: var(--texte); font-weight: 500;
+}
+.comp-phrase .icone { margin-top: 1px; color: var(--principal); }
+
+.comp-groupe { display: flex; align-items: center; gap: 10px; margin: 34px 0 12px; font: 600 20px var(--police-titre); letter-spacing: -.02em; }
+.comp-pastille { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: var(--principal); color: var(--carte); font-size: 17px; }
+.comp-pastille.seul { background: var(--vert-texte); }
+.grille-formules { display: grid; gap: 10px; }
+@media (min-width: 720px) { .grille-formules { grid-template-columns: 1fr 1fr; gap: 14px; } }
+.formule { padding: 16px; border-radius: 22px; background: var(--carte); border: 1px solid var(--contour); }
+.formule-tete { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.famille { padding: 6px 11px; border-radius: 999px; font: 600 13px/1.1 var(--police-titre); }
+.famille.f0 { background: #F6E3B8; color: #6B4A12; }
+.famille.f1 { background: var(--lilas-fond); color: var(--lilas-texte); }
+.famille.complet { background: var(--vert-fond); color: var(--vert-texte); }
+.formule-op { font: 600 16px var(--police-titre); color: var(--texte-2); }
+.formule h4 { margin: 14px 0 8px; font: 600 17px/1.25 var(--police-titre); letter-spacing: -.01em; }
+.formule-exemples { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.formule-exemples li { padding: 6px 10px; border-radius: 10px; background: var(--fond-2); font-size: 14px; }
+.formule-pourquoi { margin: 12px 0 0; font-size: 14px; line-height: 1.45; color: var(--texte-2); }
+.formule-source { margin: 8px 0 0; font-size: 12px; color: var(--texte-2); opacity: .8; }
