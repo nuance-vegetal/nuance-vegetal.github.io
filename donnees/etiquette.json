@@ -6,14 +6,50 @@
     "commentaireIngredients": 1,
     "traces": "Peut contenir des traces de soja.",
     "valeurs": [
-      { "nom": "Énergie", "valeur": "230 kcal" },
-      { "nom": "Matières grasses", "valeur": "14 g", "commentaire": 5 },
-      { "nom": "dont saturées", "valeur": "1,6 g", "sousLigne": true },
-      { "nom": "Glucides", "valeur": "6 g" },
-      { "nom": "Fibres", "valeur": "3,5 g" },
-      { "nom": "Protéines", "valeur": "17 g", "commentaire": 2 },
-      { "nom": "Sel", "valeur": "1,6 g", "commentaire": 4 },
-      { "nom": "Vitamine B12", "valeur": "0,38 µg (15 % AR*)", "commentaire": 3 }
+      {
+        "nom": "Énergie",
+        "valeur": "230 kcal",
+        "sousLigne": false
+      },
+      {
+        "nom": "Matières grasses",
+        "valeur": "14 g",
+        "commentaire": 5,
+        "sousLigne": false
+      },
+      {
+        "nom": "dont saturées",
+        "valeur": "1,6 g",
+        "sousLigne": true
+      },
+      {
+        "nom": "Glucides",
+        "valeur": "6 g",
+        "sousLigne": false
+      },
+      {
+        "nom": "Fibres",
+        "valeur": "3,5 g",
+        "sousLigne": false
+      },
+      {
+        "nom": "Protéines",
+        "valeur": "17 g",
+        "commentaire": 2,
+        "sousLigne": false
+      },
+      {
+        "nom": "Sel",
+        "valeur": "1,6 g",
+        "commentaire": 4,
+        "sousLigne": false
+      },
+      {
+        "nom": "Vitamine B12",
+        "valeur": "0,38 µg (15 % AR*)",
+        "commentaire": 3,
+        "sousLigne": false
+      }
     ],
     "note": "* AR : apport de référence pour un adulte."
   },
@@ -51,7 +87,7 @@
   },
   "additifs": {
     "titre": "les additifs, on en parle ?",
-    "texte": "La **méthylcellulose** (E461) lie la préparation. Le **jus de betterave** donne la couleur « viande ». Ces additifs sont autorisés et évalués en Europe.",
-    "sources": "[Texte et sources à valider par Camille]"
+    "texte": "La **méthylcellulose** (E461) est un additif qui lie la préparation : il est autorisé et évalué en Europe. Le **jus de betterave** donne la couleur « viande » : c'est un ingrédient qui colore, pas un additif.",
+    "sources": "  Règlement (CE) n° 1333/2008 · EFSA 2018"
   }
 }
