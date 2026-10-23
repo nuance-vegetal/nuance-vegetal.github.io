@@ -1216,8 +1216,17 @@ fieldset.choix + fieldset.choix { margin-top: 18px; }
 
 /* Page « à quoi ça sert ? » */
 .fiche-nutriment summary { align-items: center; }
-.icone-fiche { width: 40px; height: 40px; border-radius: 13px; }
-.icone-fiche .icone { width: 20px; height: 20px; color: var(--carte); }
+.icone-fiche {
+  width: 48px; height: 48px; border-radius: 15px; flex: none;
+  transition: transform .45s var(--courbe);
+}
+.icone-fiche .icone { width: 28px; height: 28px; stroke-width: 1.6; }
+.icone-fiche.teinte-vert { background: var(--vert-fond); color: var(--vert-texte); }
+.icone-fiche.teinte-lilas { background: var(--lilas-fond); color: var(--lilas-texte); }
+.icone-fiche.teinte-rouge { background: var(--rouge-fond); color: var(--rouge-texte); }
+.icone-fiche.teinte-bleu { background: var(--bleu-fond); color: var(--bleu-texte); }
+.icone-fiche.teinte-orange { background: var(--orange-fond); color: var(--orange-texte); }
+.fiche-nutriment summary:hover .icone-fiche, .fiche-nutriment[open] .icone-fiche { transform: rotate(-8deg) scale(1.06); }
 .titre-fiche-nutriment { display: flex; flex-direction: column; gap: 2px; font-family: var(--police-titre); font-weight: 600; font-size: 19px; letter-spacing: -.01em; }
 .titre-fiche-nutriment small { font-family: var(--police-texte); font-weight: 400; font-size: 14px; color: var(--texte-2); letter-spacing: 0; }
 .sous-titre-fiche {

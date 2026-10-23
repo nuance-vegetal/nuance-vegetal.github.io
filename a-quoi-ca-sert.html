@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261027"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261027">
-  <link rel="stylesheet" href="css/style.css?v=20261027">
+  <script src="js/theme.js?v=20261028"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261028">
+  <link rel="stylesheet" href="css/style.css?v=20261028">
 </head>
 <body class="page-secondaire">
 
@@ -69,21 +69,30 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261027"></script>
-<script src="js/menu.js?v=20261027"></script>
-<script src="js/vendor/lenis.min.js?v=20261027"></script>
-<script src="js/animations.js?v=20261027"></script>
+<script src="js/commun.js?v=20261028"></script>
+<script src="js/menu.js?v=20261028"></script>
+<script src="js/vendor/lenis.min.js?v=20261028"></script>
+<script src="js/animations.js?v=20261028"></script>
 <script>
   (async function () {
     const zone = document.getElementById('fiches');
     const ic = (d) => '<svg class="icone" viewBox="0 0 24 24" aria-hidden="true">' + d + '</svg>';
+    // Icônes bicolores dessinées pour les fiches : un aplat léger + un trait
+    const PLEIN = 'fill="currentColor" stroke="none"';
+    const VOILE = 'fill="currentColor" fill-opacity=".22"';
     const ICONES = {
-      b12: ic('<path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/>'),
-      proteines: ic('<path d="M6.5 6.5h11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/>'),
-      fer: ic('<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>'),
-      additifs: ic('<path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/>'),
-      allegations: ic('<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/>')
+      // Gélule, une moitié pleine
+      b12: ic('<g transform="rotate(-45 12 12)"><rect x="2.5" y="7.5" width="19" height="9" rx="4.5" ' + VOILE + '/><path d="M12 7.5h5a4.5 4.5 0 0 1 0 9h-5Z" ' + PLEIN + '/><path d="M12 7.5v9"/></g>'),
+      // Cosse de pois ouverte avec ses graines
+      proteines: ic('<path d="M3.5 20.5C4 11 10.5 4 20.5 3.5 20 13.5 13 20 3.5 20.5Z" ' + VOILE + '/><circle cx="8.4" cy="15.6" r="2.1" ' + PLEIN + '/><circle cx="12" cy="12" r="2.1" ' + PLEIN + '/><circle cx="15.6" cy="8.4" r="2.1" ' + PLEIN + '/><path d="M3.5 20.5 2 22"/>'),
+      // Case du tableau périodique : Fe, numéro 26
+      fer: ic('<rect x="3" y="3" width="18" height="18" rx="5" ' + VOILE + '/><text x="12.4" y="16.6" text-anchor="middle" font-size="10" font-weight="700" font-family="Bricolage Grotesque, system-ui, sans-serif" ' + PLEIN + '>Fe</text><text x="6.2" y="8.4" font-size="4.2" font-weight="600" font-family="DM Sans, system-ui, sans-serif" ' + PLEIN + '>26</text>'),
+      // Fiole avec liquide et bulles
+      additifs: ic('<path d="M9 3h6"/><path d="M10 3v6.2L4.6 18.4A1.8 1.8 0 0 0 6.2 21h11.6a1.8 1.8 0 0 0 1.6-2.6L14 9.2V3"/><path d="M7.3 14.5h9.4l2 3.6a1.2 1.2 0 0 1-1 1.9H6.3a1.2 1.2 0 0 1-1-1.9Z" ' + PLEIN + '/><circle cx="11" cy="11.5" r=".9" ' + PLEIN + '/><circle cx="13.6" cy="9.8" r=".7" ' + PLEIN + '/>'),
+      // Badge « certifié » : ce que l'emballage a le droit d'écrire
+      allegations: ic('<path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" ' + VOILE + '/><path d="m8.6 12.2 2.3 2.3 4.5-4.6" stroke-width="2.2"/>')
     };
+    const TEINTES = { b12: 'lilas', proteines: 'vert', fer: 'rouge', additifs: 'bleu', allegations: 'orange' };
     let fiches;
     try {
       const d = await chargerDonnees('donnees/nutriments.json');
@@ -98,7 +107,7 @@
       const liste = (f.ouLaTrouver || []).filter(Boolean).map((x) => '<li>' + echapper(x) + '</li>').join('');
       const sources = (f.sources || []).filter((x) => x && x.texte).map((x) => '<li>' + echapper(x.texte) + (x.url ? ' <a href="' + echapper(x.url) + '" target="_blank" rel="noopener">Lire la source</a>' : '') + '</li>').join('');
       return '<details class="accordeon fiche-nutriment revele" id="fiche-' + echapper(f.id || i) + '" style="--i:' + i + '">' +
-        '<summary><span class="numero icone-fiche">' + (ICONES[f.id] || ICONES.b12) + '</span>' +
+        '<summary><span class="numero icone-fiche teinte-' + (TEINTES[f.id] || 'vert') + '">' + (ICONES[f.id] || ICONES.proteines) + '</span>' +
         '<span class="titre-fiche-nutriment">' + echapper(f.titre) + (f.resume ? '<small>' + echapper(f.resume) + '</small>' : '') + '</span>' + ICONE_CHEVRON + '</summary>' +
         '<div class="contenu">' +
         (f.brouillon ? '<span class="pastille gris">Brouillon à valider</span>' : '') +
