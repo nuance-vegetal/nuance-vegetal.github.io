@@ -1638,3 +1638,94 @@ html.menu-ouvert, html.menu-ouvert body { overflow: hidden; }
 .suite-curseur-int { display: flex; flex-direction: column; height: 100%; transition: transform .6s var(--courbe); }
 .suite-curseur-int img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; }
 @media not ((hover: hover) and (pointer: fine)) { .suite-curseur { display: none; } }
+
+/* ============ Décodeur compact (moins de défilement sur téléphone) ============ */
+.mode-saisie {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 4px 0 14px; padding: 4px;
+  border-radius: 16px; background: var(--fond-2); border: 1px solid var(--contour);
+}
+.mode-saisie button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px;
+  border: 0; border-radius: 12px; background: transparent; color: var(--texte-2);
+  font: 600 15px var(--police-titre); text-transform: lowercase; cursor: pointer; transition: background .3s, color .3s, box-shadow .3s;
+}
+.mode-saisie button .icone { width: 18px; height: 18px; }
+.mode-saisie button[aria-pressed="true"] { background: var(--carte); color: var(--texte); box-shadow: var(--ombre-douce); }
+@media (max-width: 1023px) {
+  [data-mode="main"] .scan-carte, [data-mode="main"] #historique, [data-mode="main"] .titre-formulaire { display: none; }
+  [data-mode="main"] .formulaire-etiquette { margin-top: 0; }
+}
+@media (min-width: 1024px) { .mode-saisie { display: none; } }
+
+/* Étiquette plus serrée */
+.etiquette-saisie { padding: 2px 14px 12px; margin-top: 10px; }
+.es-tete { padding: 8px 0 6px; border-bottom-width: 5px; font-size: 15px; }
+.ligne-saisie { min-height: 44px; gap: 6px; }
+.ligne-saisie input { min-height: 34px; font-size: 18px; width: 4.2em; }
+.ls-pointilles { margin-bottom: 15px; }
+.ls-nom small { font: 400 11px var(--police-texte); color: var(--texte-2); margin-left: 2px; }
+.ls-unite { width: 2.1em; font-size: 13px; }
+.ls-statut { width: 22px; height: 22px; font-size: 12px; }
+.es-pied { padding-top: 10px; }
+
+/* Questions : une ligne chacune, aide commune repliée */
+.ingredients-saisie { margin-top: 10px; padding: 2px 14px 8px; }
+.ingredients-saisie .es-intertitre { margin-top: 10px; }
+.ingredients-saisie fieldset.choix { padding: 6px 0; }
+.ingredients-saisie legend { line-height: 38px; font-size: 15px; }
+.ingredients-saisie .choix-options label { min-height: 32px; min-width: 56px; }
+.aide-ingredients { padding-top: 6px !important; }
+.aide-ingredients p { font-size: 13.5px; }
+
+/* Barre de résultat qui reste au-dessus de la barre du bas pendant qu'on remplit */
+.barre-resultat {
+  position: sticky; bottom: calc(96px + env(safe-area-inset-bottom)); z-index: 5;
+  display: flex; align-items: center; gap: 6px; margin-top: 12px; padding: 8px 8px 8px 10px;
+  border-radius: 18px; background: var(--texte); color: var(--carte); text-decoration: none;
+  box-shadow: 0 14px 30px -12px rgba(30, 20, 10, .5);
+  animation: glisse .45s var(--courbe);
+}
+.barre-resultat[hidden] { display: none; }
+.br-compte { display: inline-flex; align-items: center; gap: 5px; padding: 4px 9px 4px 4px; border-radius: 99px;
+  background: color-mix(in srgb, var(--carte) 12%, transparent); font: 600 15px var(--police-titre); font-variant-numeric: tabular-nums; }
+.br-compte b { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; }
+.br-compte.atteint b { background: var(--vert-fond); color: var(--vert-texte); }
+.br-compte.surveiller b { background: var(--rose-fond); color: var(--rose-texte); }
+.br-compte.inconnu b { background: var(--pastille); color: var(--pastille-texte); }
+.br-voir { margin-left: auto; display: inline-flex; align-items: center; gap: 4px; padding: 8px 10px; border-radius: 12px;
+  background: var(--carte); color: var(--texte); font: 600 13px var(--police-titre); white-space: nowrap; }
+.br-voir .icone { width: 15px; height: 15px; }
+@media (min-width: 1024px) { .barre-resultat { display: none !important; } }
+@media (max-width: 360px) { .br-voir { font-size: 0; padding: 8px; } .br-voir .icone { width: 18px; height: 18px; } }
+
+/* Équivalences : mini barre de portion, en bas, pendant qu'on fait défiler les cartes */
+.portion-mini {
+  position: fixed; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom)); z-index: 40;
+  display: flex; align-items: center; gap: 10px; padding: 6px;
+  border-radius: 999px; background: var(--principal-survol); color: var(--carte);
+  box-shadow: 0 16px 34px -14px rgba(30, 20, 10, .55);
+  transform: translate(-50%, 140%); opacity: 0; pointer-events: none;
+  transition: transform .5s var(--courbe), opacity .3s;
+}
+.portion-mini.visible { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
+.portion-mini span { font-size: 14px; white-space: nowrap; color: color-mix(in srgb, var(--carte) 80%, transparent); }
+.portion-mini b { font: 600 20px var(--police-titre); color: var(--carte); font-variant-numeric: tabular-nums; }
+.portion-mini button {
+  width: 42px; height: 42px; border: 0; border-radius: 50%; cursor: pointer;
+  background: var(--carte); color: var(--principal-survol); font: 600 22px/1 var(--police-titre);
+  transition: transform .2s var(--courbe);
+}
+.portion-mini button:active { transform: scale(.9); }
+@media (min-width: 1024px) { .portion-mini { bottom: 28px; } }
+/* Cartes plus basses sur téléphone : on voit toute la grille en un ou deux coups de pouce */
+@media (max-width: 899px) {
+  .eq-carte { min-height: 0; border-radius: 20px; }
+  .eq-photo { flex: 0 0 auto; height: 86px; min-height: 0; }
+  .eq-carte.taille-grande .eq-photo { height: 120px; min-height: 0; }
+  .eq-carte.taille-large.avec-photo .eq-photo { flex: 0 0 34%; height: auto; }
+  .eq-texte { padding: 10px 12px 12px; }
+  .eq-chiffre { font-size: 40px; }
+  .eq-carte.sans-photo { min-height: 0; }
+  .eq-icones { margin-top: 6px; }
+  .eq-icones.oeufs span { width: 32px; height: 40px; }
+}

@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261026"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261026">
-  <link rel="stylesheet" href="css/style.css?v=20261026">
+  <script src="js/theme.js?v=20261027"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261027">
+  <link rel="stylesheet" href="css/style.css?v=20261027">
 </head>
 <body class="page-secondaire">
 
@@ -64,6 +64,13 @@
       </div>
     </section>
 
+    <!-- Portion toujours à portée de pouce pendant qu'on regarde les cartes -->
+    <div class="portion-mini" id="portion-mini" aria-hidden="true">
+      <button type="button" data-pas="-25" aria-label="25 g de moins" tabindex="-1">−</button>
+      <span><b id="portion-mini-valeur">100</b> g de viande</span>
+      <button type="button" data-pas="25" aria-label="25 g de plus" tabindex="-1">+</button>
+    </div>
+
     <p class="eq-exemple revele" id="eq-exemple" aria-live="polite"></p>
     <div class="bento-eq" id="eq-liste"></div>
     <p class="petit secondaire" id="eq-qualite" style="margin:18px 0 0"></p>
@@ -95,10 +102,10 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261026"></script>
-<script src="js/menu.js?v=20261026"></script>
-<script src="js/vendor/lenis.min.js?v=20261026"></script>
-<script src="js/animations.js?v=20261026"></script>
+<script src="js/commun.js?v=20261027"></script>
+<script src="js/menu.js?v=20261027"></script>
+<script src="js/vendor/lenis.min.js?v=20261027"></script>
+<script src="js/animations.js?v=20261027"></script>
 <script>
   /* Contenu : donnees/equivalences.json (Pages CMS → « Équivalences et complémentarité ») */
   (async function () {
@@ -185,6 +192,7 @@
         return;
       }
       $('eq-liste').classList.remove('vide');
+      $('portion-mini-valeur').textContent = formatNombre(viande, 0);
       const curseur = $('eq-curseur');
       if (Number(curseur.value) !== viande) curseur.value = Math.min(400, Math.max(25, viande));
       curseur.style.setProperty('--p', (Math.min(400, Math.max(25, viande)) - 25) / 375);
@@ -202,6 +210,24 @@
         carte.classList.toggle('fourchette', a.unite !== 'g' && v.min !== v.max);
       });
     }
+    // Barre mini : visible quand la grande portion est sortie de l'écran mais que les cartes sont là
+    const mini = $('portion-mini');
+    let portionVisible = true, cartesVisibles = false;
+    const majMini = () => {
+      const montrer = !portionVisible && cartesVisibles;
+      mini.classList.toggle('visible', montrer);
+      mini.setAttribute('aria-hidden', String(!montrer));
+      mini.querySelectorAll('button').forEach((b) => { b.tabIndex = montrer ? 0 : -1; });
+    };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([e]) => { portionVisible = e.isIntersecting; majMini(); }).observe(document.querySelector('.portion'));
+      new IntersectionObserver(([e]) => { cartesVisibles = e.isIntersecting; majMini(); }, { rootMargin: '0px 0px -30% 0px' }).observe($('eq-liste'));
+    }
+    mini.querySelectorAll('[data-pas]').forEach((b) => b.addEventListener('click', () => {
+      champ.value = Math.min(1000, Math.max(25, (lireNombre(champ.value) || 0) + Number(b.dataset.pas)));
+      calculer();
+    }));
+
     champ.addEventListener('input', calculer);
     $('eq-curseur').addEventListener('input', (e) => { champ.value = e.target.value; calculer(); });
     document.querySelectorAll('[data-portion]').forEach((b) => b.addEventListener('click', () => { champ.value = b.dataset.portion; calculer(); }));
