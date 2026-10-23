@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Les créateurs — Nuance végétale</title>
+  <meta name="description" content="Qui a créé Nuance végétale : l'autrice du TFE, la création du site, les professeur·es et l'école.">
+  <meta name="theme-color" content="#F6EFE3">
+  <meta name="color-scheme" content="only light">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
+  <script src="js/theme.js?v=20261024"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261024">
+  <link rel="stylesheet" href="css/style.css?v=20261024">
+</head>
+<body class="page-secondaire">
+
+<header class="barre">
+  <div class="barre-int">
+    <a class="retour" href="index.html">
+      <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      Accueil
+    </a>
+    <a class="marque" href="index.html">
+      <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétale</em></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="decodeur.html">Décodeur</a>
+      <a href="etiquette.html">Étiquette</a>
+      <a href="bases.html">Les bases</a>
+      <a href="equivalences.html">Équivalences</a>
+      <a href="a-quoi-ca-sert.html">À quoi ça sert ?</a>
+      <a href="etudes.html">Études</a>
+      <a href="ta-fiche-pdf.html">Ta fiche PDF</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <main>
+    <section class="accroche" style="max-width:720px">
+      <span class="surtitre">les créateurs</span>
+      <h1>qui est <em class="serif">derrière</em> ?</h1>
+      <p class="intro" id="createurs-intro"></p>
+    </section>
+    <div id="createurs" class="grille-createurs"><p class="secondaire">Chargement…</p></div>
+  </main>
+</div>
+
+<footer class="pied">
+  <div class="pied-int">
+    <div>
+      <a class="marque" href="index.html">
+        <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétale</em></span>
+      </a>
+      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
+    </div>
+    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+  </div>
+</footer>
+
+<script src="js/commun.js?v=20261024"></script>
+<script src="js/menu.js?v=20261024"></script>
+<script src="js/vendor/lenis.min.js?v=20261024"></script>
+<script src="js/animations.js?v=20261024"></script>
+<script>
+  /* Contenu : donnees/createurs.json (Pages CMS → « Créateurs ») */
+  (async function () {
+    const zone = document.getElementById('createurs');
+    let D;
+    try { D = await chargerDonnees('donnees/createurs.json'); } catch (e) {
+      zone.innerHTML = '<p class="message-erreur">Cette page n’a pas pu être chargée. Recharge la page.</p>';
+      return;
+    }
+    document.getElementById('createurs-intro').textContent = D.intro || '';
+    const personnes = (D.personnes || []).filter((p) => p && p.nom);
+    const E = D.ecole || {};
+    zone.innerHTML = personnes.map((p, i) =>
+      '<article class="carte carte-createur revele" style="--i:' + i + '">' +
+      '<span class="surtitre">' + echapper(p.role || '') + '</span>' +
+      '<h2>' + echapper(p.nom) + '</h2>' +
+      (p.detail ? '<p class="secondaire">' + echapper(p.detail) + '</p>' : '') + '</article>').join('') +
+      (E.nom ? '<article class="carte carte-createur carte-ecole revele" style="--i:' + personnes.length + '">' +
+        '<span class="surtitre">l’école</span><h2>' + echapper(E.nom) + '</h2>' +
+        '<p class="secondaire">' + [E.formation, E.lieu].filter(Boolean).map(echapper).join(' · ') + '</p></article>' : '') +
+      (D.autres ? '<div class="carte carte-createur revele">' + texteRiche(D.autres) + '</div>' : '');
+    animerPage(zone);
+  })();
+</script>
+</body>
+</html>

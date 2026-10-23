@@ -61,6 +61,119 @@ content:
         description: 'Par exemple : aiment le goût'
         type: string
         required: true
+  - name: assiette
+    label: Accueil – « Sa place dans l'assiette »
+    type: file
+    path: donnees/assiette.json
+    format: json
+    fields:
+    - name: texte
+      label: Texte
+      description: "Mise en forme : **mot** = gras ; [atteint], [à surveiller], [non renseigné] = pastilles de couleur ; une ligne vide = nouveau paragraphe."
+      type: text
+      required: true
+    - name: note
+      label: Petite note sous le texte
+      description: Par exemple « [Texte à compléter par Camille] ». Laisse vide quand le texte est validé.
+      type: string
+  - name: etiquette
+    label: Étiquette décortiquée – produit, 5 commentaires, à retenir, additifs
+    type: file
+    path: donnees/etiquette.json
+    format: json
+    fields:
+    - name: produit
+      label: L'étiquette du produit fictif
+      type: object
+      fields:
+      - name: nom
+        label: Nom du produit
+        type: string
+      - name: details
+        label: Ligne sous le nom
+        type: string
+      - name: ingredients
+        label: Ingrédients
+        type: text
+      - name: commentaireIngredients
+        label: Numéro du commentaire à côté de « Ingrédients »
+        description: 1 = le premier commentaire. Laisse vide pour ne pas mettre de numéro.
+        type: number
+      - name: traces
+        label: Traces
+        type: string
+      - name: valeurs
+        label: Valeurs nutritionnelles pour 100 g
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{nom} : {valeur}'
+        fields:
+        - name: nom
+          label: Nom
+          type: string
+        - name: valeur
+          label: Valeur
+          type: string
+        - name: commentaire
+          label: Numéro du commentaire
+          description: Le petit rond cliquable qui ouvre le commentaire. Laisse vide s'il n'y en a pas.
+          type: number
+        - name: sousLigne
+          label: Ligne « dont… » (décalée)
+          type: boolean
+      - name: note
+        label: Note sous le tableau
+        type: string
+    - name: commentaires
+      label: Les commentaires
+      description: "Dans l'ordre : le premier porte le numéro 1, le deuxième le numéro 2…"
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{titre}'
+      fields:
+      - name: titre
+        label: Titre
+        type: string
+        required: true
+      - name: texte
+        label: Texte
+        description: "Mise en forme : **mot** = gras ; [atteint], [à surveiller], [non renseigné] = pastilles de couleur ; une ligne vide = nouveau paragraphe."
+        type: text
+      - name: source
+        label: Source ou note
+        type: string
+    - name: aRetenir
+      label: Carte « à retenir »
+      type: object
+      fields:
+      - name: titre
+        label: Petit titre
+        type: string
+      - name: texte
+        label: Texte
+        type: text
+      - name: note
+        label: Note
+        description: Laisse vide quand le texte est validé.
+        type: string
+    - name: additifs
+      label: Encadré « les additifs »
+      type: object
+      fields:
+      - name: titre
+        label: Titre
+        type: string
+      - name: texte
+        label: Texte
+        description: "Mise en forme : **mot** = gras ; [atteint], [à surveiller], [non renseigné] = pastilles de couleur ; une ligne vide = nouveau paragraphe."
+        type: text
+      - name: sources
+        label: Sources
+        type: string
   - name: bases
     label: Les bases – fiches tofu, seitan, Quorn…
     type: file
@@ -120,6 +233,107 @@ content:
         label: Description de la photo
         description: Ce qu'on voit sur la photo, en quelques mots. Elle est lue aux personnes aveugles.
         type: string
+  - name: equivalences
+    label: Équivalences et complémentarité
+    type: file
+    path: donnees/equivalences.json
+    format: json
+    fields:
+    - name: intro
+      label: Phrase d'introduction
+      type: text
+    - name: quantiteParDefaut
+      label: Quantité de viande au départ (g)
+      type: number
+    - name: phraseQualite
+      label: Phrase sous les équivalences
+      type: text
+    - name: alternatives
+      label: Les alternatives
+      description: Équivalent de 100 g de viande, poisson ou poulet crus. Le site fait la règle de trois pour les autres quantités.
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{nom} : {quantite} {unite}'
+      fields:
+      - name: nom
+        label: Nom
+        type: string
+        required: true
+      - name: quantite
+        label: Quantité pour 100 g de viande
+        description: En grammes (secs pour les légumineuses), ou en nombre d'œufs.
+        type: number
+        required: true
+      - name: unite
+        label: Unité
+        description: « g », ou « œufs » pour une fourchette arrondie à l'œuf entier.
+        type: string
+      - name: quantiteMax
+        label: Haut de la fourchette (œufs seulement)
+        description: Par exemple 3 pour « 2 à 3 œufs ». 0 = pas de fourchette.
+        type: number
+      - name: quantiteCuite
+        label: Quantité cuite (g, légumineuses seulement)
+        description: 0 = ne pas afficher.
+        type: number
+      - name: cuilleres
+        label: Cuillères à soupe pour la quantité cuite
+        description: 0 = ne pas afficher.
+        type: number
+    - name: source
+      label: Source des équivalences
+      type: text
+    - name: noteEquivalences
+      label: Note
+      description: Laisse vide quand les valeurs sont validées.
+      type: string
+    - name: complementarite
+      label: Complémentarité des protéines
+      type: object
+      fields:
+      - name: principe
+        label: Le principe
+        description: "Mise en forme : **mot** = gras ; [atteint], [à surveiller], [non renseigné] = pastilles de couleur ; une ligne vide = nouveau paragraphe."
+        type: text
+      - name: phrase
+        label: Phrase mise en avant
+        type: text
+      - name: source
+        label: Source du principe
+        type: text
+      - name: note
+        label: Note
+        description: Laisse vide quand le texte est validé.
+        type: string
+      - name: associations
+        label: Les assiettes
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{titre}'
+        fields:
+        - name: titre
+          label: Titre
+          type: string
+          required: true
+        - name: familles
+          label: Ce qu'on voit dans l'assiette
+          description: Un ou deux mots par case, par exemple « céréales » puis « légumineuses ».
+          type: string
+          list: true
+        - name: exemples
+          label: Exemples d'assiettes
+          type: string
+          list: true
+        - name: pourquoi
+          label: Pourquoi ça marche
+          type: text
+        - name: source
+          label: Source
+          type: text
   - name: nutriments
     label: À quoi ça sert ? – fiches B12, protéines, fer, additifs, allégations
     type: file
@@ -251,6 +465,124 @@ content:
         description: 'Coché : le site affiche « Brouillon à valider ». Décoche quand le texte est validé.'
         type: boolean
         default: true
+  - name: fichePdf
+    label: Fiche PDF – titres, textes et encadrés
+    type: file
+    path: donnees/fiche-pdf.json
+    format: json
+    fields:
+    - name: sousTitre
+      label: Phrase sous « nuance végétale »
+      type: string
+    - name: titreReperes
+      label: Titre des repères
+      description: Les seuils eux-mêmes se changent dans « Décodeur, scan et fiche PDF – repères du CSS ».
+      type: string
+    - name: introReperes
+      label: Petit texte avant les repères
+      type: string
+    - name: noteReperes
+      label: Petit texte après les repères
+      type: string
+    - name: sections
+      label: Les rubriques
+      description: Dans l'ordre de la fiche. **mot** = gras.
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{titre}'
+      fields:
+      - name: titre
+        label: Titre
+        type: string
+      - name: nouvellePage
+        label: Commencer une nouvelle page du PDF
+        type: boolean
+      - name: texte
+        label: Paragraphe
+        type: text
+      - name: points
+        label: Liste à puces
+        type: text
+        list: true
+      - name: encadre
+        label: Encadré de couleur
+        description: Laisse le texte vide pour ne pas afficher d'encadré.
+        type: object
+        fields:
+        - name: titre
+          label: Titre de l'encadré
+          type: string
+        - name: texte
+          label: Texte de l'encadré
+          type: text
+        - name: couleur
+          label: Couleur
+          type: select
+          options:
+            values:
+            - name: bleu
+              label: Bleu
+            - name: orange
+              label: Orange
+    - name: titreBio
+      label: Titre des logos bio
+      type: string
+    - name: noteBio
+      label: Texte sous les logos bio
+      type: text
+    - name: titreQr
+      label: Texte à côté du QR code
+      type: string
+    - name: piedPage
+      label: Dernière ligne de la fiche
+      type: text
+  - name: createurs
+    label: Créateurs
+    type: file
+    path: donnees/createurs.json
+    format: json
+    fields:
+    - name: intro
+      label: Introduction
+      type: text
+    - name: personnes
+      label: Les personnes
+      description: Une carte par personne. Une carte sans nom n'est pas affichée.
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{role} : {nom}'
+      fields:
+      - name: role
+        label: Rôle
+        description: Par exemple « Autrice du TFE », « Professeure », « Promoteur ».
+        type: string
+      - name: nom
+        label: Prénom et nom
+        type: string
+      - name: detail
+        label: Précision
+        type: string
+    - name: ecole
+      label: L'école
+      type: object
+      fields:
+      - name: nom
+        label: Nom de l'école
+        type: string
+      - name: lieu
+        label: Ville
+        type: string
+      - name: formation
+        label: Formation
+        type: string
+    - name: autres
+      label: Autres infos
+      description: "Mise en forme : **mot** = gras ; [atteint], [à surveiller], [non renseigné] = pastilles de couleur ; une ligne vide = nouveau paragraphe."
+      type: text
 - name: parametres
   label: Réglages
   type: group
@@ -383,6 +715,62 @@ content:
           label: Additifs
         - name: bio
           label: Bio
+  - name: scanner
+    label: Scanner – mots-clés végan et catégories
+    type: file
+    path: donnees/scanner.json
+    format: json
+    fields:
+    - name: messageNonAlternative
+      label: Message pour la viande, le poisson, les laitiers et les œufs
+      description: Affiché à la place des 6 repères.
+      type: text
+    - name: mentionsVegan
+      label: Mentions « vegan » reconnues (toutes langues)
+      description: Cherchées dans le nom et les labels du produit. Majuscules et accents ignorés.
+      type: string
+      list: true
+    - name: negations
+      label: Mots qui annulent une mention vegan juste avant
+      description: Par exemple « non » dans « non vegan », « not », « niet ».
+      type: string
+      list: true
+    - name: motsCles
+      label: Mots-clés dans les ingrédients, par langue
+      description: Seulement quand Open Food Facts ne donne ni label ni analyse. Jamais affichés aux visiteurs. Majuscules et accents ignorés, mots entiers seulement.
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{langue}'
+      fields:
+      - name: langue
+        label: Langue
+        type: string
+      - name: nonVegan
+        label: Non végan
+        description: Un mot trouvé = « non végan ».
+        type: string
+        list: true
+      - name: peutEtreVegan
+        label: Peut-être végan (ne conclut rien)
+        type: string
+        list: true
+      - name: fauxPositifs
+        label: Faux positifs à exclure
+        description: Par exemple « beurre de cacao », « sans lactose ».
+        type: string
+        list: true
+    - name: categoriesNonAlternatives
+      label: Catégories Open Food Facts « pas une alternative »
+      description: 'Viande, poisson, laitiers, œufs. Format : en:meats'
+      type: string
+      list: true
+    - name: categoriesAlternatives
+      label: Catégories des substituts de viande (exception)
+      description: Un produit dans une de ces catégories garde les 6 repères.
+      type: string
+      list: true
   - name: avis
     label: Questionnaire « Donne ton avis »
     type: file

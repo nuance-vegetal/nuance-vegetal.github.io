@@ -16,8 +16,8 @@
     saturesMax: 5,         // graisses saturées : moins de 5 g / 100 g…
     saturesPartMax: 1 / 3, // … et au plus un tiers des matières grasses
     selMax: 1.1,           // sel : 1,1 g / 100 g au maximum
-    ferMin: 0.8,           // fer : plus de 0,8 mg / 100 g
-    b12Min: 0.24,          // vitamine B12 : plus de 0,24 µg / 100 g
+    ferMin: 0.8,           // fer : au moins 0,8 mg / 100 g (seuil inclus)
+    b12Min: 0.24,          // vitamine B12 : au moins 0,24 µg / 100 g (seuil inclus)
     allegationRiche: 20,   // « riche en protéines » : au moins 20 % de l'énergie (règlement CE 1924/2006)
     allegationSource: 12,  // « source de protéines » : au moins 12 % de l'énergie
     reference: 'Conseil Supérieur de la Santé, avis n° 9445 « Alimentation végétarienne » (2021)'
@@ -40,7 +40,7 @@
     let energie = nb(n['energy-kcal_100g']);
     if (energie === null && nb(n.energy_100g) !== null) energie = nb(n.energy_100g) / 4.184;
     const ferG = nb(n.iron_100g), b12G = nb(n['vitamin-b12_100g']);
-    const ingredients = (p && (p.ingredients_text_fr || p.ingredients_text)) || '';
+    const ingredients = (p && (p.ingredients_text_fr || p.ingredients_text_nl || p.ingredients_text_en || p.ingredients_text)) || '';
     return {
       nom: (p && (p.product_name_fr || p.product_name)) || '',
       energie: energie === null ? null : Math.round(energie),
@@ -105,19 +105,19 @@
           valeur: fr(sel, 2) + ' g' });
     r[3].repere = fr(S.selMax) + ' g maximum';
 
-    // 5. Fer : > 0,8 mg
+    // 5. Fer : ≥ 0,8 mg
     if (fer === null) r.push({ cle: 'fer', nom: 'Fer', statut: 'inconnu', valeur: null, detail: p.ferCite ? 'ajouté' : 'absent',
       message: p.ferCite ? 'Du fer est ajouté, mais la quantité n’est pas indiquée.' : 'Pas de quantité indiquée.' });
-    else r.push({ cle: 'fer', nom: 'Fer', statut: fer > S.ferMin ? 'atteint' : 'surveiller',
-      message: fer > S.ferMin ? 'Bonne source de fer. Associe-le à de la vitamine C.' : 'Peu de fer.', valeur: fr(fer, 2) + ' mg' });
-    r[4].repere = 'plus de ' + fr(S.ferMin) + ' mg';
+    else r.push({ cle: 'fer', nom: 'Fer', statut: fer >= S.ferMin ? 'atteint' : 'surveiller',
+      message: fer >= S.ferMin ? 'Bonne source de fer. Associe-le à de la vitamine C.' : 'Peu de fer.', valeur: fr(fer, 2) + ' mg' });
+    r[4].repere = 'au moins ' + fr(S.ferMin) + ' mg';
 
-    // 6. Vitamine B12 : > 0,24 µg
+    // 6. Vitamine B12 : ≥ 0,24 µg
     if (b12 === null) r.push({ cle: 'b12', nom: 'Vitamine B12', statut: 'inconnu', valeur: null, detail: p.b12Cite ? 'ajoutée' : 'absente',
-      message: p.b12Cite ? 'De la B12 est ajoutée, mais la quantité n’est pas indiquée.' : 'Pas de B12 indiquée. Un complément reste indispensable si tu es végétarien·ne.' });
-    else r.push({ cle: 'b12', nom: 'Vitamine B12', statut: b12 > S.b12Min ? 'atteint' : 'surveiller',
-      message: b12 > S.b12Min ? 'Enrichi en B12.' : 'Peu de B12.', valeur: fr(b12, 2) + ' µg' });
-    r[5].repere = 'plus de ' + fr(S.b12Min) + ' µg';
+      message: p.b12Cite ? 'De la B12 est ajoutée, mais la quantité n’est pas indiquée.' : 'Pas de B12 indiquée : pense à une autre source fiable (aliments enrichis ou complément). Parles-en à un·e diététicien·ne.' });
+    else r.push({ cle: 'b12', nom: 'Vitamine B12', statut: b12 >= S.b12Min ? 'atteint' : 'surveiller',
+      message: b12 >= S.b12Min ? 'Enrichi en B12.' : 'Peu de B12.', valeur: fr(b12, 2) + ' µg' });
+    r[5].repere = 'au moins ' + fr(S.b12Min) + ' µg';
 
     // Allégation européenne (information, pas un critère)
     let allegation = null;
@@ -144,8 +144,8 @@
       ['Matières grasses', 'moins de ' + fr(S.grassesMax) + ' g, et moins que les protéines'],
       ['Graisses saturées', 'moins de ' + fr(S.saturesMax) + ' g, et au plus 1/3 des graisses'],
       ['Sel', fr(S.selMax) + ' g maximum'],
-      ['Fer', 'plus de ' + fr(S.ferMin) + ' mg'],
-      ['Vitamine B12', 'plus de ' + fr(S.b12Min) + ' µg']
+      ['Fer', 'au moins ' + fr(S.ferMin) + ' mg'],
+      ['Vitamine B12', 'au moins ' + fr(S.b12Min) + ' µg']
     ];
   }
 

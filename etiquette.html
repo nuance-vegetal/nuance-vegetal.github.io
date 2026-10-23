@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261023"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261023">
-  <link rel="stylesheet" href="css/style.css?v=20261023">
+  <script src="js/theme.js?v=20261024"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261024">
+  <link rel="stylesheet" href="css/style.css?v=20261024">
 </head>
 <body class="page-secondaire">
 
@@ -30,6 +30,7 @@
       <a href="decodeur.html">Décodeur</a>
       <a href="etiquette.html" aria-current="page">Étiquette</a>
       <a href="bases.html">Les bases</a>
+      <a href="equivalences.html">Équivalences</a>
       <a href="a-quoi-ca-sert.html">À quoi ça sert ?</a>
       <a href="etudes.html">Études</a>
       <a href="ta-fiche-pdf.html">Ta fiche PDF</a>
@@ -50,87 +51,13 @@
 
     <div class="duo" style="margin-top:40px">
       <div class="collant">
-        <div class="etiquette revele">
-          <div class="nom-produit">Galettes végétales façon steak</div>
-          <div class="secondaire petit">Produit fictif · 2 × 100 g · 3,49 €, soit 17,45 €/kg</div>
-
-          <div class="titre-bloc">Ingrédients <button type="button" class="repere" data-ouvre="1" aria-label="Commentaire 1 : la base">1</button></div>
-          <p style="margin:0">
-            Eau, protéines de pois (18 %), huile de tournesol, protéines de blé, amidon de pomme de terre, arômes naturels, sel, épaississant : méthylcellulose, colorant : jus de betterave, vitamine B12.
-          </p>
-          <p class="petit secondaire" style="margin:8px 0 0">Peut contenir des traces de soja.</p>
-
-          <div class="titre-bloc">Valeurs nutritionnelles pour 100 g</div>
-          <table class="tableau-seuils">
-            <tbody>
-              <tr><td>Énergie</td><td>230 kcal</td></tr>
-              <tr><td>Matières grasses <button type="button" class="repere" data-ouvre="5" aria-label="Commentaire 5 : les graisses">5</button></td><td>14 g</td></tr>
-              <tr><td>&nbsp;&nbsp;dont saturées</td><td>1,6 g</td></tr>
-              <tr><td>Glucides</td><td>6 g</td></tr>
-              <tr><td>Fibres</td><td>3,5 g</td></tr>
-              <tr><td>Protéines <button type="button" class="repere" data-ouvre="2" aria-label="Commentaire 2 : protéines">2</button></td><td>17 g</td></tr>
-              <tr><td>Sel <button type="button" class="repere" data-ouvre="4" aria-label="Commentaire 4 : sel">4</button></td><td>1,6 g</td></tr>
-              <tr><td>Vitamine B12 <button type="button" class="repere" data-ouvre="3" aria-label="Commentaire 3 : vitamine B12">3</button></td><td>0,38 µg (15 % AR*)</td></tr>
-            </tbody>
-          </table>
-          <p class="petit secondaire" style="margin:8px 0 0">* AR : apport de référence pour un adulte.</p>
-        </div>
+        <div class="etiquette revele" id="etiquette-produit"></div>
       </div>
 
       <div>
         <h2 style="margin-top:32px">les 5 <em class="serif">commentaires</em></h2>
-        <div id="commentaires">
-          <details class="accordeon revele" id="commentaire-1" open>
-            <summary><span class="numero">1</span> La base : du pois <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="contenu">
-              <p>Le premier ingrédient après l'eau est la protéine de pois : c'est la base du produit. Les protéines de blé apportent du gluten.</p>
-              <p class="petit secondaire" style="margin:0">[Texte à valider par Camille]</p>
-            </div>
-          </details>
-          <details class="accordeon revele" id="commentaire-2" style="--i:1">
-            <summary><span class="numero">2</span> Protéines : atteint <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="contenu">
-              <p>17 g pour 100 g, plus que le repère de 10 g : <span class="pastille vert sans-point">✓ atteint</span></p>
-              <p>Et 17 g × 4 ÷ 230 kcal = 30 % de l'énergie : l'emballage a le droit de dire « riche en protéines » (règle européenne, à partir de 20 %).</p>
-              <p class="petit secondaire" style="margin:0">Conseil Supérieur de la Santé, avis n° 9445 (2021) · règlement (CE) n° 1924/2006</p>
-            </div>
-          </details>
-          <details class="accordeon revele" id="commentaire-3" style="--i:2">
-            <summary><span class="numero">3</span> B12 et fer <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="contenu">
-              <p>B12 : 0,38 µg pour 100 g, plus que le repère de 0,24 µg : <span class="pastille vert sans-point">✓ atteint</span></p>
-              <p>Fer : pas de quantité indiquée, ni dans les ingrédients : <span class="pastille gris sans-point">? non renseigné</span> Pense à d'autres sources dans la journée (légumineuses, céréales complètes).</p>
-              <p class="petit secondaire" style="margin:0">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
-            </div>
-          </details>
-          <details class="accordeon revele" id="commentaire-4" style="--i:3">
-            <summary><span class="numero">4</span> Sel : à surveiller <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="contenu">
-              <p>1,6 g pour 100 g, au-dessus du repère de 1,1 g : <span class="pastille rose sans-point">! à surveiller</span> Pas besoin de resaler.</p>
-              <p class="petit secondaire" style="margin:0">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
-            </div>
-          </details>
-          <details class="accordeon revele" id="commentaire-5" style="--i:4">
-            <summary><span class="numero">5</span> Les graisses <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-            <div class="contenu">
-              <p>Matières grasses : 14 g pour 100 g, au-dessus du repère de 10 g : <span class="pastille rose sans-point">! à surveiller</span></p>
-              <p>Dont saturées : 1,6 g, moins de 5 g et à peine un neuvième des graisses (repère : au plus un tiers) : <span class="pastille vert sans-point">✓ atteint</span> L'huile de tournesol apporte surtout des graisses insaturées.</p>
-              <p class="petit secondaire" style="margin:0">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
-            </div>
-          </details>
-        </div>
-
-        <div class="carte revele">
-          <span class="surtitre">à retenir</span>
-          <p>Assez de protéines et enrichie en B12. À surveiller : le sel et les matières grasses. Pas de fer indiqué. Accompagne-la de légumes et de féculents sans sel ajouté.</p>
-          <p class="petit secondaire" style="margin:0">[Texte à valider par Camille]</p>
-        </div>
-
-        <div class="encart lilas revele">
-          <h3>les additifs, on en parle ?</h3>
-          <p>La <b>méthylcellulose</b> (E461) lie la préparation. Le <b>jus de betterave</b> donne la couleur « viande ». Ces additifs sont autorisés et évalués en Europe.</p>
-          <p class="petit" style="margin:0">[Texte et sources à valider par Camille]</p>
-        </div>
+        <div id="commentaires"><p class="secondaire">Chargement…</p></div>
+        <div id="etiquette-fin"></div>
       </div>
     </div>
   </main>
@@ -144,25 +71,67 @@
       <span class="nom-marque">nuance <em>végétale</em></span>
       </a>
       <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
     </div>
     <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261023"></script>
-<script src="js/menu.js?v=20261023"></script>
-<script src="js/vendor/lenis.min.js?v=20261023"></script>
-<script src="js/animations.js?v=20261023"></script>
+<script src="js/commun.js?v=20261024"></script>
+<script src="js/menu.js?v=20261024"></script>
+<script src="js/vendor/lenis.min.js?v=20261024"></script>
+<script src="js/animations.js?v=20261024"></script>
 <script>
-  (function () {
-    const accordeon = accordeonExclusif(document.getElementById('commentaires'));
-    document.querySelectorAll('.repere').forEach((r) => {
-      r.addEventListener('click', () => {
-        const d = document.getElementById('commentaire-' + r.dataset.ouvre);
-        accordeon.ouvrir(d);
-        defiler(d);
-        d.querySelector('summary').focus({ preventScroll: true });
-      });
+  /* Textes de l'étiquette : donnees/etiquette.json (Pages CMS → « Étiquette décortiquée ») */
+  (async function () {
+    const zoneProduit = document.getElementById('etiquette-produit');
+    const zone = document.getElementById('commentaires');
+    let E;
+    try { E = await chargerDonnees('donnees/etiquette.json'); } catch (e) {
+      zone.innerHTML = '<p class="message-erreur">L’étiquette n’a pas pu être chargée. Recharge la page.</p>';
+      return;
+    }
+    const commentaires = E.commentaires || [];
+    const bouton = (n) => n && commentaires[n - 1]
+      ? ' <button type="button" class="repere" data-ouvre="' + n + '" aria-label="Commentaire ' + n + ' : ' + echapper(commentaires[n - 1].titre) + '">' + n + '</button>'
+      : '';
+    const P = E.produit || {};
+    zoneProduit.innerHTML =
+      '<div class="nom-produit">' + echapper(P.nom || '') + '</div>' +
+      (P.details ? '<div class="secondaire petit">' + echapper(P.details) + '</div>' : '') +
+      '<div class="titre-bloc">Ingrédients' + bouton(P.commentaireIngredients) + '</div>' +
+      '<p style="margin:0">' + enLigne(P.ingredients) + '</p>' +
+      (P.traces ? '<p class="petit secondaire" style="margin:8px 0 0">' + echapper(P.traces) + '</p>' : '') +
+      '<div class="titre-bloc">Valeurs nutritionnelles pour 100 g</div>' +
+      '<table class="tableau-seuils"><tbody>' + (P.valeurs || []).map((v) =>
+        '<tr><td>' + (v.sousLigne ? '&nbsp;&nbsp;' : '') + echapper(v.nom) + bouton(v.commentaire) + '</td><td>' + echapper(v.valeur) + '</td></tr>').join('') +
+      '</tbody></table>' +
+      (P.note ? '<p class="petit secondaire" style="margin:8px 0 0">' + echapper(P.note) + '</p>' : '');
+
+    const chevron = '<svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+    zone.innerHTML = commentaires.map((c, i) =>
+      '<details class="accordeon revele" id="commentaire-' + (i + 1) + '" style="--i:' + i + '"' + (i === 0 ? ' open' : '') + '>' +
+      '<summary><span class="numero">' + (i + 1) + '</span> ' + echapper(c.titre) + ' ' + chevron + '</summary>' +
+      '<div class="contenu">' + texteRiche(c.texte) +
+      (c.source ? '<p class="petit secondaire" style="margin:0">' + echapper(c.source) + '</p>' : '') +
+      '</div></details>').join('');
+
+    const R = E.aRetenir || {}, A = E.additifs || {};
+    document.getElementById('etiquette-fin').innerHTML =
+      (R.texte ? '<div class="carte revele"><span class="surtitre">' + echapper(R.titre || 'à retenir') + '</span>' + texteRiche(R.texte) +
+        (R.note ? '<p class="petit secondaire" style="margin:0">' + echapper(R.note) + '</p>' : '') + '</div>' : '') +
+      (A.texte ? '<div class="encart lilas revele"><h3>' + echapper(A.titre || 'les additifs') + '</h3>' + texteRiche(A.texte) +
+        (A.sources ? '<p class="petit" style="margin:0">' + echapper(A.sources) + '</p>' : '') + '</div>' : '');
+
+    animerPage(document.querySelector('.duo'));
+    const accordeon = accordeonExclusif(zone);
+    zoneProduit.addEventListener('click', (e) => {
+      const r = e.target.closest('.repere');
+      if (!r) return;
+      const d = document.getElementById('commentaire-' + r.dataset.ouvre);
+      accordeon.ouvrir(d);
+      defiler(d);
+      d.querySelector('summary').focus({ preventScroll: true });
     });
   })();
 </script>

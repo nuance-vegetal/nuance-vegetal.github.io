@@ -3,13 +3,13 @@
     {
       "valeur": 13,
       "unite": " %",
-      "texte": "regardent la B12 et le fer sur l'étiquette. C'est pourtant l'enjeu principal d'une alimentation végétarienne.",
+      "texte": "regardent la B12 et le fer sur l'étiquette. C'est pourtant un enjeu clé d'une alimentation végétarienne.",
       "misEnAvant": true
     },
     {
       "valeur": 58,
       "unite": " %",
-      "texte": "citent le prix comme premier frein.",
+      "texte": "le prix est le frein le plus cité (plusieurs réponses étaient possibles).",
       "misEnAvant": false
     },
     {
@@ -21,7 +21,7 @@
     {
       "valeur": 77,
       "unite": " %",
-      "texte": "trouvent qu'un outil comme celui-ci est utile.",
+      "texte": "le trouveraient utile ou peut-être utile (44 % oui, 33 % peut-être).",
       "misEnAvant": false
     }
   ],

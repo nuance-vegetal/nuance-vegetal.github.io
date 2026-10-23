@@ -35,6 +35,26 @@ function echapper(texte) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+/**
+ * Texte écrit dans Pages CMS → HTML sûr.
+ * **mot** = gras ; [atteint], [à surveiller], [non renseigné] = pastilles des repères ;
+ * une ligne vide = nouveau paragraphe.
+ */
+const PASTILLES_TEXTE = {
+  'atteint': '<span class="pastille vert sans-point">✓ atteint</span>',
+  'à surveiller': '<span class="pastille rose sans-point">! à surveiller</span>',
+  'non renseigné': '<span class="pastille gris sans-point">? non renseigné</span>'
+};
+function enLigne(texte) {
+  return echapper(texte || '')
+    .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+    .replace(/\[(atteint|à surveiller|non renseigné)\]/gi, (m, mot) => PASTILLES_TEXTE[mot.toLowerCase()]);
+}
+function texteRiche(texte) {
+  return String(texte || '').split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean)
+    .map((p) => '<p>' + enLigne(p).replace(/\n/g, '<br>') + '</p>').join('');
+}
+
 /** Change la couleur et le mot d'une pastille, avec une petite animation. */
 function majPastille(el, couleur, mot) {
   const classe = 'pastille ' + couleur;

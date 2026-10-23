@@ -1,0 +1,14 @@
+{
+  "intro": "Nuance végétale est né d’un travail de fin d’études (TFE) en diététique. Voici les personnes derrière le site.",
+  "personnes": [
+    { "role": "Autrice du TFE", "nom": "Camille Desmet", "detail": "Étudiante en diététique" },
+    { "role": "Création du site", "nom": "Alex", "detail": "" },
+    { "role": "Professeur·e", "nom": "", "detail": "" }
+  ],
+  "ecole": {
+    "nom": "Haute École Provinciale de Hainaut – Condorcet (HEPH-Condorcet)",
+    "lieu": "Tournai",
+    "formation": "Bachelier en Diététique"
+  },
+  "autres": ""
+}

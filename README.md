@@ -1,7 +1,7 @@
 # Nuance végétale
 
 Site statique (HTML, CSS, JavaScript sans framework) du TFE en diététique de Camille, HEPH-Condorcet (Tournai).
-Il apprend à lire l'étiquette d'une alternative végétale à la viande en 5 coups d'œil.
+Il apprend à lire l'étiquette d'une alternative végétale à la viande en 5 coups d'œil et 6 repères.
 
 ## Pages
 
@@ -9,7 +9,9 @@ Il apprend à lire l'étiquette d'une alternative végétale à la viande en 5 c
 |---|---|
 | `index.html` | Accueil et étiquette interactive |
 | `decodeur.html` | Décodeur : 6 repères du Conseil Supérieur de la Santé, calcul en direct (`js/evaluation.js`) |
-| `etiquette.html` | Étiquette décortiquée |
+| `etiquette.html` | Étiquette décortiquée (textes : `donnees/etiquette.json`) |
+| `equivalences.html` | Équivalences et complémentarité (`donnees/equivalences.json`) |
+| `createurs.html` | Les créateurs (`donnees/createurs.json`), lien dans le pied de page et le menu |
 | `bases.html` | C'est fait avec quoi ? (données : `donnees/bases.json`) |
 | `etudes.html` | Ce que disent les études (données : `donnees/etudes.json`) |
 | `ta-fiche-pdf.html` | Ta fiche PDF : vrai PDF au format téléphone (`js/fiche-pdf.js`, jsPDF 4.2.1, licence MIT), imprimable. `fiche-frigo.html` redirige vers cette page. |
@@ -41,11 +43,29 @@ Le décodeur peut scanner un code-barres (`js/scanner.js`) :
 
 Chaque repère est « atteint » (✓), « à surveiller » (!) ou « non renseigné » (?) ; une valeur absente n'est jamais comptée comme 0. L'allégation européenne « riche en protéines » (≥ 20 % de l'énergie) ou « source de protéines » (≥ 12 %) est affichée à part, comme une information. Les seuils sont dans la constante `CSS` et peuvent être remplacés depuis `donnees/reglages.json` → `css`.
 
-Tests des 4 produits de validation du cahier des charges et des cas limites :
+Fer et B12 : le seuil est inclus (« au moins »). Protéines : « plus de 10 g », seuil exclu.
+
+## Statut végan et produits hors alternatives (cahier des charges du 23 octobre 2026)
+
+`js/vegan.js`, listes dans `donnees/scanner.json` (modifiables dans Pages CMS) :
+
+- produit en catégorie viande, poisson, laitiers ou œufs (`categories_tags`) et pas en substitut de viande : « non végan » et un message à la place des 6 repères ;
+- statut végan, dans l'ordre : mention ou label vegan non niée (nom, nom générique, labels ; FR, NL, DE, EN, ES, IT) → analyse d'Open Food Facts → mots-clés dans les ingrédients (FR, NL, EN ; mots entiers, accents ignorés, faux positifs retirés, expressions longues d'abord) → « non spécifié ». La détection n'est jamais affichée.
+- ingrédients lus en français, sinon néerlandais, sinon anglais.
+
+Tests :
 
 ```
 node tests/evaluation.test.js
 ```
+
+```
+node tests/vegan.test.js
+```
+
+## Contenus modifiables
+
+Étiquette décortiquée, « Sa place dans l'assiette », fiche PDF (page et PDF), créateurs, équivalences et mots-clés du scanner sont dans `donnees/*.json`. Dans les textes : `**gras**`, `[atteint]`, `[à surveiller]`, `[non renseigné]` (fonctions `enLigne` et `texteRiche` de `js/commun.js`).
 
 Le site n'a qu'un thème clair : `color-scheme: only light` empêche les navigateurs en mode sombre de l'inverser.
 

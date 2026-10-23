@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261023"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261023">
-  <link rel="stylesheet" href="css/style.css?v=20261023">
+  <script src="js/theme.js?v=20261024"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261024">
+  <link rel="stylesheet" href="css/style.css?v=20261024">
 </head>
 <body class="page-secondaire">
 
@@ -30,6 +30,7 @@
       <a href="decodeur.html" aria-current="page">Décodeur</a>
       <a href="etiquette.html">Étiquette</a>
       <a href="bases.html">Les bases</a>
+      <a href="equivalences.html">Équivalences</a>
       <a href="a-quoi-ca-sert.html">À quoi ça sert ?</a>
       <a href="etudes.html">Études</a>
       <a href="ta-fiche-pdf.html">Ta fiche PDF</a>
@@ -107,7 +108,7 @@
           </fieldset>
           <fieldset class="choix">
             <legend>Présence de gluten ?</legend>
-            <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Le blé est mis en évidence en gras dans la liste d’ingrédients. Attention au gluten caché dans les céréales : seigle, avoine (si contamination croisée), blé, orge, triticale, épeautre, kamut. Si vous voyez ces ingrédients, c’est que le produit contient du gluten.</p></details>
+            <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Les céréales contenant du gluten sont mises en évidence dans la liste d’ingrédients (le plus souvent en gras). Attention au gluten caché dans les céréales : seigle, avoine, blé, orge, triticale, épeautre, khorasan (kamut). Si tu vois ces ingrédients, c’est que le produit contient du gluten.</p></details>
             <div class="choix-options">
               <label><input type="radio" name="gluten" value="oui"> Oui</label>
               <label><input type="radio" name="gluten" value="non"> Non</label>
@@ -159,19 +160,21 @@
       <span class="nom-marque">nuance <em>végétale</em></span>
       </a>
       <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
     </div>
     <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
   </div>
 </footer>
 
-<script src="js/config.js?v=20261023"></script>
-<script src="js/commun.js?v=20261023"></script>
-<script src="js/menu.js?v=20261023"></script>
-<script src="js/vendor/lenis.min.js?v=20261023"></script>
-<script src="js/animations.js?v=20261023"></script>
-<script src="js/avis.js?v=20261023"></script>
-<script src="js/evaluation.js?v=20261023"></script>
-<script src="js/scanner.js?v=20261023"></script>
+<script src="js/config.js?v=20261024"></script>
+<script src="js/commun.js?v=20261024"></script>
+<script src="js/menu.js?v=20261024"></script>
+<script src="js/vendor/lenis.min.js?v=20261024"></script>
+<script src="js/animations.js?v=20261024"></script>
+<script src="js/avis.js?v=20261024"></script>
+<script src="js/evaluation.js?v=20261024"></script>
+<script src="js/vegan.js?v=20261024"></script>
+<script src="js/scanner.js?v=20261024"></script>
 <script>
   (async function () {
     let C;
@@ -202,7 +205,7 @@
 
     function ligneGluten() {
       const g = coche('gluten');
-      return '<p class="eval-extra"><b>Gluten :</b> ' + (g === 'oui' ? 'contient du gluten.' : g === 'non' ? 'pas de gluten repéré.' : 'à compléter.') + '</p>';
+      return '<p class="eval-extra"><b>Gluten :</b> ' + (g === 'oui' ? 'contient du gluten.' : g === 'non' ? 'pas de gluten repéré.' : 'non renseigné.') + '</p>';
     }
 
     function calculer() {
@@ -253,15 +256,17 @@
           afficherStatut('<span class="pastille gris">Introuvable</span><p style="margin:10px 0 0">Ce produit n\'est pas encore dans Open Food Facts. Recopie les valeurs de l\'étiquette ci-dessous.</p>');
           return;
         }
-        remplir('kcal', p.kcal, 0);
-        remplir('proteines', p.proteines, 1);
-        remplir('grasses', p.grasses, 1);
-        remplir('satures', p.satures, 2);
-        remplir('sel', p.sel, 2);
-        remplir('fer', p.fer, 2);
-        remplir('b12', p.b12, 2);
-        document.querySelectorAll('input[name="b12-cite"]').forEach((r) => { r.checked = p.b12Cite && r.value === 'oui'; });
-        document.querySelectorAll('input[name="fer-cite"]').forEach((r) => { r.checked = p.ferCite && r.value === 'oui'; });
+        if (!p.nonAlternative) {
+          remplir('kcal', p.kcal, 0);
+          remplir('proteines', p.proteines, 1);
+          remplir('grasses', p.grasses, 1);
+          remplir('satures', p.satures, 2);
+          remplir('sel', p.sel, 2);
+          remplir('fer', p.fer, 2);
+          remplir('b12', p.b12, 2);
+          document.querySelectorAll('input[name="b12-cite"]').forEach((r) => { r.checked = p.b12Cite && r.value === 'oui'; });
+          document.querySelectorAll('input[name="fer-cite"]').forEach((r) => { r.checked = p.ferCite && r.value === 'oui'; });
+        }
         const etatGluten = p.infos.gluten.etat;
         document.querySelectorAll('input[name="gluten"]').forEach((r) => {
           r.checked = (etatGluten === 'present' && r.value === 'oui') || (etatGluten === 'sans' && r.value === 'non');
@@ -318,7 +323,9 @@
         '<span class="fp-badge">produit trouvé</span>' +
         '<h3 class="fp-nom">' + echapper(p.nom) + '</h3>' +
         (marque ? '<p class="fp-marque">' + echapper(marque) + '</p>' : '') + '</div></div>' +
-        '<p class="fp-section">les 6 repères</p><div data-evaluation></div>' +
+        (p.nonAlternative
+          ? '<div class="encart-hors-alternative" role="note"><p>' + echapper(p.messageNonAlternative) + '</p></div>'
+          : '<p class="fp-section">les 6 repères</p><div data-evaluation></div>') +
         (infos ? '<p class="fp-section">bon à savoir</p><div class="fp-infos">' + infos + '</div>' : '') +
         encartVegan(p.infos.vegan) +
         encartBio(p.infos.bio) +

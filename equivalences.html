@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Équivalences — Nuance végétale</title>
+  <meta name="description" content="Combien de tofu, tempeh, Quorn, seitan, légumineuses ou œufs pour remplacer une portion de viande, et comment associer les protéines végétales.">
+  <meta name="theme-color" content="#F6EFE3">
+  <meta name="color-scheme" content="only light">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
+  <script src="js/theme.js?v=20261024"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261024">
+  <link rel="stylesheet" href="css/style.css?v=20261024">
+</head>
+<body class="page-secondaire">
+
+<header class="barre">
+  <div class="barre-int">
+    <a class="retour" href="index.html">
+      <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      Accueil
+    </a>
+    <a class="marque" href="index.html">
+      <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétale</em></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="decodeur.html">Décodeur</a>
+      <a href="etiquette.html">Étiquette</a>
+      <a href="bases.html">Les bases</a>
+      <a href="equivalences.html" aria-current="page">Équivalences</a>
+      <a href="a-quoi-ca-sert.html">À quoi ça sert ?</a>
+      <a href="etudes.html">Études</a>
+      <a href="ta-fiche-pdf.html">Ta fiche PDF</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <main>
+    <section class="accroche" style="max-width:760px">
+      <span class="surtitre">équivalences</span>
+      <h1>combien pour <em class="serif">remplacer</em> ?</h1>
+      <p class="intro" id="eq-intro"></p>
+    </section>
+
+    <span class="surtitre revele" style="margin-top:40px">01 · les équivalences</span>
+    <h2 style="margin-top:0">ta portion, <em class="serif">en végétal</em></h2>
+    <div class="carte calculateur revele">
+      <label for="eq-viande">Viande, poisson ou poulet crus</label>
+      <div class="calculateur-saisie">
+        <button type="button" class="bouton-icone" data-pas="-25" aria-label="25 g de moins">−</button>
+        <div class="saisie"><input type="text" id="eq-viande" inputmode="numeric" value="100" aria-describedby="eq-aide"><span class="unite">g</span></div>
+        <button type="button" class="bouton-icone" data-pas="25" aria-label="25 g de plus">+</button>
+      </div>
+      <p class="petit secondaire" id="eq-aide" style="margin:8px 0 0">100 g crus, c’est environ 75 g cuits.</p>
+      <p class="eq-exemple" id="eq-exemple" aria-live="polite"></p>
+      <ul class="eq-liste" id="eq-liste"></ul>
+      <p class="petit secondaire" id="eq-qualite" style="margin:14px 0 0"></p>
+      <p class="petit secondaire" id="eq-source" style="margin:6px 0 0"></p>
+    </div>
+
+    <span class="surtitre revele" style="margin-top:72px">02 · la complémentarité</span>
+    <h2 style="margin-top:0">associer, <em class="serif">sans se prendre la tête</em></h2>
+    <div class="carte revele" id="comp-principe"></div>
+    <div class="grille-assiettes" id="comp-associations"></div>
+  </main>
+</div>
+
+<footer class="pied">
+  <div class="pied-int">
+    <div>
+      <a class="marque" href="index.html">
+        <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="nom-marque">nuance <em>végétale</em></span>
+      </a>
+      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
+    </div>
+    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+  </div>
+</footer>
+
+<script src="js/commun.js?v=20261024"></script>
+<script src="js/menu.js?v=20261024"></script>
+<script src="js/vendor/lenis.min.js?v=20261024"></script>
+<script src="js/animations.js?v=20261024"></script>
+<script>
+  /* Contenu : donnees/equivalences.json (Pages CMS → « Équivalences et complémentarité ») */
+  (async function () {
+    let D;
+    try { D = await chargerDonnees('donnees/equivalences.json'); } catch (e) {
+      document.getElementById('eq-liste').innerHTML = '<li class="message-erreur">Les équivalences n’ont pas pu être chargées. Recharge la page.</li>';
+      return;
+    }
+    const $ = (id) => document.getElementById(id);
+    const champ = $('eq-viande');
+    const ALT = (D.alternatives || []).filter((a) => a && a.nom && a.quantite);
+    $('eq-intro').textContent = D.intro || '';
+    $('eq-qualite').textContent = D.phraseQualite || '';
+    $('eq-source').textContent = [D.source ? 'Source : ' + D.source : '', D.noteEquivalences || ''].filter(Boolean).join(' ');
+    champ.value = D.quantiteParDefaut || 100;
+
+    const g = (n) => formatNombre(Math.round(n), 0) + ' g';
+    /* Règle de trois à partir des valeurs pour 100 g de viande */
+    function quantite(a, viande) {
+      const f = viande / 100;
+      if (a.unite !== 'g') {
+        const min = Math.max(1, Math.round(a.quantite * f));
+        const max = Math.max(min, Math.round((a.quantiteMax || a.quantite) * f));
+        const mot = a.unite || 'œufs';
+        return min === max ? min + ' ' + (min > 1 ? mot : mot.replace(/s$/, '')) : min + ' à ' + max + ' ' + mot;
+      }
+      let t = g(a.quantite * f) + (a.quantiteCuite ? ' secs' : '');
+      if (a.quantiteCuite) t += ', ou ' + g(a.quantiteCuite * f) + ' cuits' + (a.cuilleres ? ' (environ ' + formatNombre(Math.round(a.cuilleres * f), 0) + ' cuillères à soupe)' : '');
+      return t;
+    }
+    function calculer() {
+      const viande = lireNombre(champ.value);
+      if (!viande) {
+        $('eq-exemple').textContent = 'Tape une quantité en grammes.';
+        $('eq-liste').innerHTML = '';
+        return;
+      }
+      const premier = ALT[0];
+      $('eq-exemple').innerHTML = premier ? '<b>' + g(viande) + ' de viande</b> = ' + echapper(quantite(premier, viande)) + ' de ' + echapper(premier.nom.toLowerCase()) : '';
+      $('eq-aide').textContent = g(viande) + ' crus, c’est environ ' + g(viande * 0.75) + ' cuits.';
+      $('eq-liste').innerHTML = ALT.map((a, i) =>
+        '<li style="--i:' + i + '"><span class="eq-nom">' + echapper(a.nom) + '</span><span class="eq-valeur">' + echapper(quantite(a, viande)) + '</span></li>').join('');
+    }
+    champ.addEventListener('input', calculer);
+    document.querySelectorAll('[data-pas]').forEach((b) => b.addEventListener('click', () => {
+      const v = Math.max(25, (lireNombre(champ.value) || 0) + Number(b.dataset.pas));
+      champ.value = v;
+      calculer();
+    }));
+    calculer();
+
+    const C = D.complementarite || {};
+    $('comp-principe').innerHTML = texteRiche(C.principe) +
+      (C.phrase ? '<p class="comp-phrase">' + enLigne(C.phrase) + '</p>' : '') +
+      (C.source ? '<p class="petit secondaire" style="margin:0">Source : ' + echapper(C.source) + '</p>' : '') +
+      (C.note ? '<p class="petit secondaire" style="margin:4px 0 0">' + echapper(C.note) + '</p>' : '');
+    $('comp-associations').innerHTML = (C.associations || []).filter((a) => a && a.titre).map((a, i) =>
+      '<article class="carte assiette revele" style="--i:' + i + '">' +
+      '<div class="assiette-visuel" aria-hidden="true">' + (a.familles || []).filter(Boolean).map((f, j) =>
+        '<span class="assiette-part part-' + (j % 2) + '">' + echapper(f) + '</span>').join('<span class="assiette-plus">+</span>') + '</div>' +
+      '<h3>' + echapper(a.titre) + '</h3>' +
+      '<ul class="assiette-exemples">' + (a.exemples || []).filter(Boolean).map((x) => '<li>' + echapper(x) + '</li>').join('') + '</ul>' +
+      (a.pourquoi ? '<p class="assiette-pourquoi">' + echapper(a.pourquoi) + '</p>' : '') +
+      (a.source ? '<p class="petit secondaire" style="margin:8px 0 0">Source : ' + echapper(a.source) + '</p>' : '') +
+      '</article>').join('');
+    animerPage(document.querySelector('main'));
+  })();
+</script>
+</body>
+</html>

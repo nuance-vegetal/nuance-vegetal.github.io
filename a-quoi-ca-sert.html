@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261023"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261023">
-  <link rel="stylesheet" href="css/style.css?v=20261023">
+  <script src="js/theme.js?v=20261024"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261024">
+  <link rel="stylesheet" href="css/style.css?v=20261024">
 </head>
 <body class="page-secondaire">
 
@@ -30,6 +30,7 @@
       <a href="decodeur.html">Décodeur</a>
       <a href="etiquette.html">Étiquette</a>
       <a href="bases.html">Les bases</a>
+      <a href="equivalences.html">Équivalences</a>
       <a href="a-quoi-ca-sert.html" aria-current="page">À quoi ça sert ?</a>
       <a href="etudes.html">Études</a>
       <a href="ta-fiche-pdf.html">Ta fiche PDF</a>
@@ -62,15 +63,16 @@
       <span class="nom-marque">nuance <em>végétale</em></span>
       </a>
       <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
     </div>
     <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261023"></script>
-<script src="js/menu.js?v=20261023"></script>
-<script src="js/vendor/lenis.min.js?v=20261023"></script>
-<script src="js/animations.js?v=20261023"></script>
+<script src="js/commun.js?v=20261024"></script>
+<script src="js/menu.js?v=20261024"></script>
+<script src="js/vendor/lenis.min.js?v=20261024"></script>
+<script src="js/animations.js?v=20261024"></script>
 <script>
   (async function () {
     const zone = document.getElementById('fiches');
@@ -101,7 +103,7 @@
         '<div class="contenu">' +
         (f.brouillon ? '<span class="pastille gris">Brouillon à valider</span>' : '') +
         bloc('à quoi ça sert ?', f.aQuoiCaSert ? '<p>' + echapper(f.aQuoiCaSert) + '</p>' : '') +
-        bloc('où le trouver ?', liste ? '<ul>' + liste + '</ul>' : '') +
+        bloc('où en trouver ?', liste ? '<ul>' + liste + '</ul>' : '') +
         bloc('sur l’étiquette', f.surEtiquette ? '<p>' + echapper(f.surEtiquette) + '</p>' : '') +
         (f.conseil ? '<div class="encart bleu"><b>Conseil pratique</b><br>' + echapper(f.conseil) + '</div>' : '') +
         (sources ? '<p class="petit" style="margin:14px 0 0"><b>Sources</b></p><ul class="sources">' + sources + '</ul>' : '') +

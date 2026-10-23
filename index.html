@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nuance végétale — lis l'étiquette en 30 secondes</title>
-  <meta name="description" content="Apprends à lire l'étiquette d'une alternative végétale à la viande en 5 coups d'œil : protéines, B12, fer, sel, ingrédients.">
+  <meta name="description" content="Apprends à lire l'étiquette d'une alternative végétale à la viande en 5 coups d'œil et 6 repères : protéines, graisses, sel, fer, B12, ingrédients.">
   <meta name="theme-color" content="#F6EFE3">
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261023"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261023">
-  <link rel="stylesheet" href="css/style.css?v=20261023">
+  <script src="js/theme.js?v=20261024"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261024">
+  <link rel="stylesheet" href="css/style.css?v=20261024">
   <link rel="preload" as="image" href="images/hero.webp">
 </head>
 <body>
@@ -27,6 +27,7 @@
       <a href="decodeur.html">Décodeur</a>
       <a href="etiquette.html">Étiquette</a>
       <a href="bases.html">Les bases</a>
+      <a href="equivalences.html">Équivalences</a>
       <a href="a-quoi-ca-sert.html">À quoi ça sert ?</a>
       <a href="etudes.html">Études</a>
       <a href="ta-fiche-pdf.html">Ta fiche PDF</a>
@@ -39,7 +40,7 @@
     <div class="accueil-haut">
       <section class="accroche">
         <h1>lis ton étiquette en <em class="serif">30 secondes</em></h1>
-        <p class="intro">5 coups d'œil, zéro prise de tête. Pas de note toute faite : c'est toi qui décides.</p>
+        <p class="intro">5 coups d'œil, 6 repères, zéro prise de tête. Pas de note toute faite : c'est toi qui décides.</p>
         <div class="boutons boutons-ordi">
           <a class="bouton entre" href="decodeur.html#scanner">
             Scanner un produit
@@ -60,24 +61,24 @@
         <div class="photo">
           <img src="images/hero.webp" width="1000" height="1150" alt="Cubes de tofu posés sur une planche en bois">
         </div>
-        <div class="flottant f2" aria-hidden="true">Protéines <span class="pastille vert">Riche</span></div>
-        <div class="flottant f1" aria-hidden="true">B12 <span class="pastille vert">Enrichi</span></div>
-        <div class="flottant f3" aria-hidden="true">Sel <span class="pastille orange">Moyen</span></div>
+        <div class="flottant f2" aria-hidden="true">Protéines <span class="pastille vert">Atteint</span></div>
+        <div class="flottant f1" aria-hidden="true">B12 <span class="pastille vert">Atteint</span></div>
+        <div class="flottant f3" aria-hidden="true">Sel <span class="pastille rose">À surveiller</span></div>
       </div>
     </div>
 
     <div class="defilant" aria-hidden="true">
       <div class="defilant-piste" id="bandeau-enquete">
         <span><em>8 sur 10</em> aiment le goût</span>
-        <span><em>12 %</em> les trouvent « naturels »</span>
-        <span><em>52 %</em> se méfient des industriels</span>
-        <span><em>56 %</em> citent le prix comme frein</span>
-        <span><em>14 %</em> regardent la B12 et le fer</span>
+        <span><em>13 %</em> les trouvent « naturels »</span>
+        <span><em>49 %</em> se méfient des industriels</span>
+        <span><em>58 %</em> citent le prix comme frein</span>
+        <span><em>13 %</em> regardent la B12 et le fer</span>
         <span><em>8 sur 10</em> aiment le goût</span>
-        <span><em>12 %</em> les trouvent « naturels »</span>
-        <span><em>52 %</em> se méfient des industriels</span>
-        <span><em>56 %</em> citent le prix comme frein</span>
-        <span><em>14 %</em> regardent la B12 et le fer</span>
+        <span><em>13 %</em> les trouvent « naturels »</span>
+        <span><em>49 %</em> se méfient des industriels</span>
+        <span><em>58 %</em> citent le prix comme frein</span>
+        <span><em>13 %</em> regardent la B12 et le fer</span>
       </div>
     </div>
 
@@ -94,33 +95,33 @@
     <h2 style="margin-top:0">ce que l'enquête <em class="serif">a révélé</em></h2>
     <div class="chiffres" id="chiffres-enquete">
       <div class="chiffre-carte mis-en-avant revele">
-        <strong data-compteur="14" data-suffixe=" %">14 %</strong>
-        <p>regardent la B12 et le fer sur l'étiquette. C'est pourtant l'enjeu principal d'une alimentation végétarienne.</p>
+        <strong data-compteur="13" data-suffixe=" %">13 %</strong>
+        <p>regardent la B12 et le fer sur l'étiquette. C'est pourtant un enjeu clé d'une alimentation végétarienne.</p>
       </div>
       <div class="chiffre-carte revele" style="--i:1">
-        <strong data-compteur="56" data-suffixe=" %">56 %</strong>
-        <p>citent le prix comme premier frein.</p>
+        <strong data-compteur="58" data-suffixe=" %">58 %</strong>
+        <p>le prix est le frein le plus cité (plusieurs réponses étaient possibles).</p>
       </div>
       <div class="chiffre-carte revele" style="--i:2">
-        <strong data-compteur="30" data-suffixe=" %">30 %</strong>
+        <strong data-compteur="28" data-suffixe=" %">28 %</strong>
         <p>pensent que le quinoa contient du blé.</p>
       </div>
       <div class="chiffre-carte revele" style="--i:3">
-        <strong data-compteur="75" data-suffixe=" %">75 %</strong>
-        <p>trouvent qu'un outil comme celui-ci est utile.</p>
+        <strong data-compteur="77" data-suffixe=" %">77 %</strong>
+        <p>le trouveraient utile ou peut-être utile (44 % oui, 33 % peut-être).</p>
       </div>
     </div>
 
     <section class="coups-section">
       <div class="coups-intro">
         <span class="surtitre" style="margin-top:72px">02 · la méthode</span>
-        <h2 style="margin-top:0">les 5 coups <em class="serif">d'œil</em></h2>
+        <h2 style="margin-top:0">5 coups d'œil, <em class="serif">6 repères</em></h2>
         <p class="revele">Garde-les en tête au rayon frais. Après ça, n'importe quelle étiquette devient lisible.</p>
       </div>
     <ol class="coups pile">
       <li class="revele"><strong>les ingrédients</strong><p>Le premier ingrédient te dit de quoi est fait le produit : soja, blé, pois, champignon…</p></li>
       <li class="revele" style="--i:1"><strong>les protéines</strong><p>Plus de 10 g pour 100 g, pour bien remplacer la viande.</p></li>
-      <li class="revele" style="--i:2"><strong>la B12 et le fer</strong><p>Plus de 0,24 µg de B12 et 0,8 mg de fer pour 100 g. Pas de chiffre ? Cherche-les dans les ingrédients.</p></li>
+      <li class="revele" style="--i:2"><strong>la B12 et le fer</strong><p>Au moins 0,24 µg de B12 et 0,8 mg de fer pour 100 g. Pas de chiffre ? Cherche-les dans les ingrédients.</p></li>
       <li class="revele" style="--i:3"><strong>le sel</strong><p>1,1 g pour 100 g au maximum.</p></li>
       <li class="revele" style="--i:4"><strong>les graisses</strong><p>Moins de 10 g et moins que les protéines. Dont saturées : moins de 5 g, et au plus un tiers.</p></li>
     </ol>
@@ -184,12 +185,12 @@
         </div>
         <div class="carte explication" id="info-b12" hidden>
           <span class="pastille gris sans-point">? non renseigné</span>
-          <p>De la B12 est ajoutée, mais la quantité n'est pas indiquée dans le tableau. Repère : plus de 0,24 µg pour 100 g. Elle ne se trouve pas naturellement dans les végétaux.</p>
+          <p>De la B12 est ajoutée, mais la quantité n'est pas indiquée dans le tableau. Repère : au moins 0,24 µg pour 100 g. Elle ne se trouve pas naturellement dans les végétaux.</p>
           <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
         <div class="carte explication" id="info-fer" hidden>
           <span class="pastille gris sans-point">? non renseigné</span>
-          <p>Du fer est ajouté, mais la quantité n'est pas indiquée. Repère : plus de 0,8 mg pour 100 g. Il est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi).</p>
+          <p>Du fer est ajouté, mais la quantité n'est pas indiquée. Repère : au moins 0,8 mg pour 100 g. Il est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi).</p>
           <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
         <div class="carte explication" id="info-proteines" hidden>
@@ -204,7 +205,7 @@
         </div>
         <div class="carte explication" id="info-satures" hidden>
           <span class="pastille vert sans-point">✓ atteint</span>
-          <p>1,2 g pour 100 g : moins de 5 g, et à peine un dixième des 11 g de graisses (repère : au plus un tiers). L'huile de colza apporte surtout de bonnes graisses.</p>
+          <p>1,2 g pour 100 g : moins de 5 g, soit environ 11 % des graisses : bien en dessous du tiers maximum (33 %). L'huile de colza apporte surtout de bonnes graisses.</p>
           <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
         <div class="carte explication" id="info-grasses" hidden>
@@ -228,6 +229,11 @@
         <b>c'est fait avec quoi ?</b>
         <span>Tofu, seitan, Quorn… les bases expliquées.</span>
       </a>
+      <a class="lien-photo revele" href="equivalences.html" style="--i:2">
+        <div class="photo zoom"><img src="images/tofu.webp" width="800" height="560" alt="" loading="lazy"></div>
+        <b>équivalences</b>
+        <span>Combien de tofu ou de lentilles pour remplacer ta viande, et comment associer.</span>
+      </a>
       <a class="lien-photo bleu revele" href="etudes.html" style="--i:2">
         <div class="photo zoom"><img src="images/etudes.webp" width="900" height="560" alt="" loading="lazy"></div>
         <b>ce que dit la science</b>
@@ -249,9 +255,8 @@
     <h2 style="margin-top:0">sa place dans <em class="serif">l'assiette</em></h2>
     <div class="bloc-assiette">
       <div class="photo revele"><img src="images/assiette.webp" width="900" height="560" alt="Assiette de légumes variés et colorés" loading="lazy"></div>
-      <div class="carte revele" style="--i:1">
+      <div class="carte revele" style="--i:1" id="texte-assiette">
         <p>Un simili remplace la viande ou le poisson dans le repas. Il ne remplace pas les légumes ni les féculents.</p>
-        <p class="secondaire petit" style="margin:0">[Texte à compléter par Camille]</p>
       </div>
     </div>
     <div class="zone-avis revele" data-avis></div>
@@ -266,17 +271,25 @@
       <span class="nom-marque">nuance <em>végétale</em></span>
       </a>
       <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
     </div>
     <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261023"></script>
-<script src="js/menu.js?v=20261023"></script>
-<script src="js/vendor/lenis.min.js?v=20261023"></script>
-<script src="js/avis.js?v=20261023"></script>
-<script src="js/animations.js?v=20261023"></script>
+<script src="js/commun.js?v=20261024"></script>
+<script src="js/menu.js?v=20261024"></script>
+<script src="js/vendor/lenis.min.js?v=20261024"></script>
+<script src="js/avis.js?v=20261024"></script>
+<script src="js/animations.js?v=20261024"></script>
 <script>
+  /* « Sa place dans l'assiette » : modifiable dans donnees/assiette.json (Pages CMS) */
+  chargerDonnees('donnees/assiette.json').then((A) => {
+    if (!A || !A.texte) return;
+    document.getElementById('texte-assiette').innerHTML = texteRiche(A.texte) +
+      (A.note ? '<p class="secondaire petit" style="margin:0">' + echapper(A.note) + '</p>' : '');
+  }).catch(() => { /* on garde le texte de la page */ });
+
   /* Chiffres de l'enquête : modifiables dans donnees/enquete.json (Pages CMS) */
   (async function () {
     let E;

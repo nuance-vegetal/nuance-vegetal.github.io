@@ -1,0 +1,57 @@
+{
+  "produit": {
+    "nom": "Galettes végétales façon steak",
+    "details": "Produit fictif · 2 × 100 g · 3,49 €, soit 17,45 €/kg",
+    "ingredients": "Eau, protéines de pois (18 %), huile de tournesol, protéines de blé, amidon de pomme de terre, arômes naturels, sel, épaississant : méthylcellulose, colorant : jus de betterave, vitamine B12.",
+    "commentaireIngredients": 1,
+    "traces": "Peut contenir des traces de soja.",
+    "valeurs": [
+      { "nom": "Énergie", "valeur": "230 kcal" },
+      { "nom": "Matières grasses", "valeur": "14 g", "commentaire": 5 },
+      { "nom": "dont saturées", "valeur": "1,6 g", "sousLigne": true },
+      { "nom": "Glucides", "valeur": "6 g" },
+      { "nom": "Fibres", "valeur": "3,5 g" },
+      { "nom": "Protéines", "valeur": "17 g", "commentaire": 2 },
+      { "nom": "Sel", "valeur": "1,6 g", "commentaire": 4 },
+      { "nom": "Vitamine B12", "valeur": "0,38 µg (15 % AR*)", "commentaire": 3 }
+    ],
+    "note": "* AR : apport de référence pour un adulte."
+  },
+  "commentaires": [
+    {
+      "titre": "La base : du pois",
+      "texte": "Le premier ingrédient après l'eau est la protéine de pois : c'est la base du produit. Les protéines de blé apportent du gluten.",
+      "source": "[Texte à valider par Camille]"
+    },
+    {
+      "titre": "Protéines : atteint",
+      "texte": "17 g pour 100 g, plus que le repère de 10 g : [atteint]\n\nEt 17 g × 4 ÷ 230 kcal = 30 % de l'énergie : l'emballage a le droit de dire « riche en protéines » (règle européenne, à partir de 20 %).",
+      "source": "Conseil Supérieur de la Santé, avis n° 9445 (2021) · règlement (CE) n° 1924/2006"
+    },
+    {
+      "titre": "B12 et fer",
+      "texte": "B12 : 0,38 µg pour 100 g, plus que le repère de 0,24 µg : [atteint]\n\nFer : ni dans les ingrédients ni dans le tableau : [non renseigné] Pense à d'autres sources dans la journée (légumineuses, céréales complètes).",
+      "source": "Conseil Supérieur de la Santé, avis n° 9445 (2021)"
+    },
+    {
+      "titre": "Sel : à surveiller",
+      "texte": "1,6 g pour 100 g, au-dessus du repère de 1,1 g : [à surveiller] Pas besoin de resaler.",
+      "source": "Conseil Supérieur de la Santé, avis n° 9445 (2021)"
+    },
+    {
+      "titre": "Les graisses",
+      "texte": "Matières grasses : 14 g pour 100 g, au-dessus du repère de 10 g : [à surveiller]\n\nDont saturées : 1,6 g, moins de 5 g, soit environ 11 % des graisses : bien en dessous du tiers maximum (33 %) : [atteint] L'huile de tournesol apporte surtout des graisses insaturées.",
+      "source": "Conseil Supérieur de la Santé, avis n° 9445 (2021)"
+    }
+  ],
+  "aRetenir": {
+    "titre": "à retenir",
+    "texte": "Assez de protéines et enrichie en B12. À surveiller : le sel et les matières grasses. Pas de fer indiqué. Accompagne-la de légumes et de féculents sans sel ajouté.",
+    "note": "[Texte à valider par Camille]"
+  },
+  "additifs": {
+    "titre": "les additifs, on en parle ?",
+    "texte": "La **méthylcellulose** (E461) lie la préparation. Le **jus de betterave** donne la couleur « viande ». Ces additifs sont autorisés et évalués en Europe.",
+    "sources": "[Texte et sources à valider par Camille]"
+  }
+}

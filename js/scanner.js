@@ -2,7 +2,7 @@
  * Scan de code-barres → Open Food Facts → valeurs du décodeur.
  * La caméra reste dans le navigateur : rien n'est filmé ni enregistré.
  * Seul le numéro du code-barres est envoyé à Open Food Facts pour trouver le produit.
- * À charger après js/evaluation.js.
+ * À charger après js/evaluation.js et js/vegan.js.
  */
 const Scanner = (() => {
   const FORMATS = ['ean_13', 'ean_8', 'upc_a', 'upc_e'];
@@ -74,14 +74,23 @@ const Scanner = (() => {
     if (flux) { flux.getTracks().forEach((t) => t.stop()); flux = null; }
   }
 
+  // Mots-clés végan et catégories, chargés une seule fois (sans eux : label et analyse d'Open Food Facts seulement)
+  let promesseListes = null;
+  function chargerListesVegan() {
+    if (!promesseListes) promesseListes = chargerDonnees('donnees/scanner.json').catch(() => ({}));
+    return promesseListes;
+  }
+
   function codeValide(code) {
     return /^\d{8,14}$/.test(String(code).trim());
   }
 
   /** Cherche le produit sur Open Food Facts. Renvoie null s'il n'existe pas. */
   async function chercherProduit(code) {
-    const champs = 'product_name,product_name_fr,brands,nutriments,ingredients_text_fr,ingredients_text,allergens_tags,traces_tags,labels_tags,' +
-      'ingredients_analysis_tags,ingredients,additives_tags,image_front_small_url';
+    const champs = 'product_name,product_name_fr,product_name_nl,product_name_en,generic_name,generic_name_fr,brands,nutriments,' +
+      'ingredients_text_fr,ingredients_text_nl,ingredients_text_en,ingredients_text,allergens_tags,traces_tags,labels_tags,labels,' +
+      'categories_tags,ingredients_analysis_tags,ingredients,additives_tags,image_front_small_url';
+    const listesVegan = chargerListesVegan();
     const url = 'https://world.openfoodfacts.org/api/v2/product/' + encodeURIComponent(code.trim()) + '.json?fields=' + champs;
     const rep = await fetch(url, { headers: { Accept: 'application/json' } });
     if (rep.status === 404) return null;
@@ -96,7 +105,8 @@ const Scanner = (() => {
     let kcal = nombre(n['energy-kcal_100g']);
     if (kcal === null && nombre(n.energy_100g) !== null) kcal = nombre(n.energy_100g) / 4.184;
 
-    const ingredients = p.ingredients_text_fr || p.ingredients_text || '';
+    // Ingrédients dans la langue disponible : français, sinon néerlandais, sinon anglais
+    const ingredients = p.ingredients_text_fr || p.ingredients_text_nl || p.ingredients_text_en || p.ingredients_text || '';
     const allergenes = p.allergens_tags || [];
     const traces = p.traces_tags || [];
     const labels = p.labels_tags || [];
@@ -121,16 +131,17 @@ const Scanner = (() => {
 
     const analyse = p.ingredients_analysis_tags || [];
 
-    // Végan : le label d'abord, sinon l'analyse des ingrédients faite par Open Food Facts
-    let vegan;
-    if (labels.some((l) => /vegan/.test(l) && !/non-vegan/.test(l))) vegan = { etat: 'oui', texte: 'végan (label)' };
-    else if (analyse.includes('en:vegan')) vegan = { etat: 'oui', texte: "végan d'après les ingrédients" };
-    else if (analyse.includes('en:non-vegan')) {
-      const animaux = (p.ingredients || []).filter((i) => i.vegan === 'no').map((i) => (i.text || '').replace(/_/g, '').trim().toLowerCase());
-      const liste = Array.from(new Set(animaux)).filter(Boolean).slice(0, 3);
-      vegan = { etat: 'non', texte: 'non végan' + (liste.length ? ' : ' + liste.join(', ') : '') };
-    } else if (analyse.includes('en:maybe-vegan')) vegan = { etat: 'non-signale', texte: 'peut-être végan' };
-    else vegan = { etat: 'non-signale', texte: 'non spécifié' };
+    // Végan et produits hors alternatives : voir js/vegan.js (listes dans donnees/scanner.json)
+    const config = await listesVegan;
+    const statutVegan = NuanceVegan.statut({
+      noms: [p.product_name_fr, p.product_name, p.product_name_nl, p.product_name_en, p.generic_name_fr, p.generic_name].filter(Boolean),
+      labels: labels.concat(p.labels ? [p.labels] : []),
+      analyse,
+      ingredients,
+      categories: p.categories_tags || [],
+      ingredientsAnimaux: (p.ingredients || []).filter((i) => i.vegan === 'no').map((i) => (i.text || '').replace(/_/g, '').trim().toLowerCase())
+    }, config);
+    const vegan = { etat: statutVegan.etat, texte: statutVegan.texte };
 
     const huilePalme = analyse.includes('en:palm-oil') ? { etat: 'present', texte: 'contient' }
       : analyse.includes('en:may-contain-palm-oil') ? { etat: 'traces', texte: 'peut contenir' }
@@ -155,6 +166,9 @@ const Scanner = (() => {
       nom: p.product_name_fr || p.product_name || 'Produit sans nom',
       marque: (p.brands || '').split(',')[0].trim(),
       photo: /^https:\/\/images\.openfoodfacts\.org\//.test(p.image_front_small_url || '') ? p.image_front_small_url : null,
+      // Viande, poisson, laitier ou œufs (et pas un substitut de viande) : les repères du CSS ne s'appliquent pas
+      nonAlternative: statutVegan.nonAlternative,
+      messageNonAlternative: config.messageNonAlternative || 'Ce produit n’est pas une alternative végétale : les repères du CSS ne s’appliquent pas.',
       ingredients,
       kcal: kcal === null ? null : Math.round(kcal),
       proteines: nombre(n.proteins_100g),

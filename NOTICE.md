@@ -4,6 +4,16 @@ Le site se modifie avec **Pages CMS** : des formulaires en ligne, comme sur n'im
 
 Adresse du site : https://nuance-vegetal.github.io
 
+## En 5 étapes
+
+1. Va sur **https://app.pagescms.org**, **Sign in with GitHub**, puis choisis **nuance-vegetal.github.io**.
+2. À gauche, clique sur ce que tu veux changer (liste complète ci-dessous).
+3. Change le texte dans les cases.
+4. Clique sur **Save**, en haut à droite.
+5. Attends environ **une minute** et recharge le site : c'est en ligne.
+
+Ce qu'il te faut : ton compte GitHub, déjà ajouté au projet (c'est le cas : tu as déjà fait des modifications avec Pages CMS).
+
 ---
 
 ## Une seule fois au début
@@ -19,12 +29,18 @@ Adresse du site : https://nuance-vegetal.github.io
 3. À gauche, choisis ce que tu veux modifier :
    - **Textes des pages du site**
      - **Accueil – chiffres de l'enquête** : les grandes cartes de chiffres et le bandeau qui défile ;
+     - **Accueil – « Sa place dans l'assiette »** : le texte de la section 05 ;
+     - **Étiquette décortiquée** : l'étiquette du produit fictif, les 5 commentaires, la carte « à retenir » et l'encadré des additifs ;
      - **Les bases – fiches tofu, seitan, Quorn…** : la page « C'est fait avec quoi ? » ;
-     - **À quoi ça sert ? – fiches B12, protéines, fer, additifs** : la page qui explique chaque nutriment (rôle, où le trouver, comment le repérer sur l'étiquette). Les « ? » du décodeur ouvrent directement la bonne fiche ;
+     - **Équivalences et complémentarité** : les quantités du calculateur (pour 100 g de viande), les phrases, la source et les assiettes ;
+     - **À quoi ça sert ? – fiches B12, protéines, fer, additifs, allégations** : la page qui explique chaque nutriment (rôle, où le trouver, comment le repérer sur l'étiquette). Les « ? » du décodeur ouvrent directement la bonne fiche ;
      - **Études – questions et réponses** : la page « Ce que disent les études » ;
+     - **Fiche PDF** : tous les titres, textes, listes et encadrés de ta fiche. La page « Ta fiche PDF » et le fichier PDF téléchargé changent ensemble ;
+     - **Créateurs** : les noms (toi, Alex, tes professeur·es) et l'école. Une carte sans nom n'est pas affichée ;
    - **Réglages**
      - **Couleurs du site** : choisis une ambiance (sauge, terracotta, lavande, océan, olive, cacao, framboise) et, si tu veux, une couleur principale à toi ;
      - **Questionnaire « Donne ton avis »** : colle le lien de ton Google Form ; l'encadré « Donne ton avis » apparaît alors sur l'accueil et sous les résultats du scan ;
+     - **Scanner – mots-clés végan et catégories** : les mots qui font classer un produit « non végan » (en français, néerlandais et anglais), les faux positifs (« beurre de cacao »…), les mentions « vegan » reconnues, et les catégories Open Food Facts de la viande, du poisson, des laitiers et des œufs ;
      - **Décodeur, scan et fiche PDF – repères du CSS** : les 6 seuils du Conseil Supérieur de la Santé (avis n° 9445, 2021) utilisés par le décodeur, le scan et ta fiche PDF, les seuils de l'allégation « riche en / source de protéines », et les infos « bon à savoir » affichées après un scan.
 4. Change le texte dans les cases.
 5. Clique sur **Save** (en haut à droite).
@@ -65,11 +81,19 @@ Les couleurs des repères du décodeur (✓ atteint en vert sauge, ! à surveill
 - **Infos du scan** : coche ou décoche les lignes « bon à savoir » à afficher après un scan (gluten, lait, végan…). Le fer et la B12 font partie des 6 repères.
 - **Erreur ?** Tout est gardé dans l'historique : Alex peut revenir à la version d'avant à tout moment.
 
+## Mettre en forme un texte
+
+Dans les grandes cases de texte (étiquette, assiette, créateurs, équivalences) :
+
+- `**mot**` met le mot en **gras** ;
+- `[atteint]`, `[à surveiller]` et `[non renseigné]` deviennent les pastilles de couleur des repères ;
+- une ligne vide commence un nouveau paragraphe.
+
 ## Ce qui ne se modifie pas (encore) avec les formulaires
 
-Les textes de l'accueil, les 5 commentaires de l'étiquette décortiquée et les listes de ta fiche PDF sont dans les pages elles-mêmes : envoie les nouveaux textes à Alex. Les passages entre crochets `[à compléter]` sont ceux qui restent à rédiger.
+Les autres textes de l'accueil (titres, 5 coups d'œil, « à toi de jouer ») sont dans la page elle-même : envoie les nouveaux textes à Alex. Les passages entre crochets `[à compléter]` sont ceux qui restent à rédiger.
 
-D'autres chiffres de l'enquête sont écrits dans les textes et ne suivent pas les cartes de l'accueil : l'intro de la page Études (52 %), la fiche Études sur la B12 (14 %) et les encarts « résultat de l'enquête » des fiches Bases.
+D'autres chiffres de l'enquête sont écrits dans les textes et ne suivent pas les cartes de l'accueil : l'intro de la page Études (49 %), la fiche Études sur la B12 (13 %) et les encarts « résultat de l'enquête » des fiches Bases.
 
 ---
 

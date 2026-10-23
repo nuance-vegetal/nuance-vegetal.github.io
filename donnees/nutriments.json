@@ -10,7 +10,7 @@
         "Compléments alimentaires",
         "Produits laitiers, pour les végétariens"
       ],
-      "surEtiquette": "Vérifie sur l’emballage que le produit est bien enrichi en vitamine B12. Tous les produits végétaux ne le sont pas, et un produit non enrichi n’est pas une source fiable de B12.",
+      "surEtiquette": "Vérifie sur l’emballage que le produit est bien enrichi en vitamine B12. Tous les produits végétaux ne le sont pas, et un produit non enrichi n’est pas une source fiable de B12. Repère du CSS pour les substituts de viande : au moins 0,24 µg pour 100 g.",
       "conseil": "Les végétaux et les algues (nori, spiruline) ne sont pas des sources fiables. Prends chaque jour un complément de B12, pendant un repas, et choisis des produits enrichis. Si tu ne prends pas de complément depuis 3 à 6 mois, parle-en à ton médecin pour faire une prise de sang.",
       "sources": [
         {

@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261023"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261023">
-  <link rel="stylesheet" href="css/style.css?v=20261023">
+  <script src="js/theme.js?v=20261024"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261024">
+  <link rel="stylesheet" href="css/style.css?v=20261024">
 </head>
 <body class="page-secondaire">
 
@@ -30,6 +30,7 @@
       <a href="decodeur.html">Décodeur</a>
       <a href="etiquette.html">Étiquette</a>
       <a href="bases.html">Les bases</a>
+      <a href="equivalences.html">Équivalences</a>
       <a href="a-quoi-ca-sert.html">À quoi ça sert ?</a>
       <a href="etudes.html">Études</a>
       <a href="ta-fiche-pdf.html" aria-current="page">Ta fiche PDF</a>
@@ -53,57 +54,30 @@
 
     <article class="carte fiche-pdf revele" style="margin-top:28px">
       <h2 class="titre-fiche">nuance <em class="serif">végétale</em></h2>
-      <p class="secondaire" style="margin:0">Les 6 repères pour 100 g. Pas de note globale : c'est toi qui décides.</p>
+      <p class="secondaire" style="margin:0" id="fiche-sous-titre"></p>
 
-      <h2>Les repères</h2>
+      <h2 id="fiche-titre-reperes">Les 6 repères pour 100 g</h2>
       <table class="tableau-seuils">
         <thead>
-          <tr><th scope="col">Repère</th><th scope="col">Atteint si…</th></tr>
+          <tr><th scope="col">Repère</th><th scope="col" id="fiche-intro-reperes">Atteint si…</th></tr>
         </thead>
         <tbody id="seuils"></tbody>
       </table>
       <p class="petit secondaire" style="margin:6px 0 0" id="references"></p>
 
-      <h2>B12 et fer</h2>
-      <ul class="liste-fiche">
-        <li>B12 : cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans les ingrédients : <span class="pastille vert">Enrichi</span> ou <span class="pastille orange">Absente</span></li>
-        <li>Fer : cherche « fer » ou un sel de fer (pyrophosphate ferrique, fumarate ferreux).</li>
-        <li>Le fer des végétaux est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi).</li>
-      </ul>
+      <div id="fiche-sections"></div>
 
-      <h2>Les ingrédients</h2>
-      <ul class="liste-fiche">
-        <li>Le premier ingrédient (après l'eau) est la base : soja, blé, pois, champignon…</li>
-        <li>Les allergènes sont mis en évidence, le plus souvent en gras.</li>
-      </ul>
-
-      <div class="encart bleu">
-        <b>Le bon réflexe</b><br>
-        Compare le prix pour 20 g de protéines : prix au kilo × 2 ÷ protéines.
-        <span class="petit">Exemple : 14 €/kg et 15 g de protéines → 1,87 €.</span>
-      </div>
-
-      <h2>Pièges végan</h2>
-      <ul class="liste-fiche">
-        <li>Ingrédients d’origine animale moins évidents : <b>lactosérum</b>, <b>caséine</b>, <b>gélatine</b>, <b>miel</b>, <b>carmin (E120)</b>.</li>
-        <li>« Peut contenir des traces de lait » = contamination possible en usine, pas un vrai ingrédient laitier.</li>
-        <li>Le <b>lait</b> et les <b>œufs</b> sont obligatoirement mis en évidence dans les ingrédients (le plus souvent en gras).</li>
-      </ul>
-
-      <h2>Gluten caché</h2>
-      <p style="margin:6px 0">Le blé est mis en évidence en gras dans la liste d’ingrédients. Attention au gluten caché dans les céréales : <b>seigle, avoine</b> (si contamination croisée), <b>blé, orge, triticale, épeautre, kamut</b>.</p>
-
-      <h2>Bio ? Repère ces logos</h2>
+      <h2 id="fiche-titre-bio">Bio ? Repère ces logos</h2>
       <div class="labels-bio labels-fiche">
         <figure><img src="images/labels/bio-europeen.svg" alt="Logo bio européen"><figcaption><b>Logo bio européen</b><span>obligatoire sur tout produit bio préemballé de l’UE</span></figcaption></figure>
         <figure><img src="images/labels/biogarantie.svg" alt="Biogarantie"><figcaption><b>Biogarantie</b><span>label belge</span></figcaption></figure>
         <figure><img src="images/labels/ab-agriculture-biologique.svg" alt="AB (Agriculture Biologique)"><figcaption><b>AB (Agriculture Biologique)</b><span>label français, fréquent en Belgique</span></figcaption></figure>
       </div>
-      <p class="petit secondaire" style="margin:8px 0 0">Le logo européen est accompagné d’un code de l’organisme de contrôle (ex. BE-BIO-01) et de l’origine des ingrédients (Agriculture UE / non UE).</p>
+      <p class="petit secondaire" style="margin:8px 0 0" id="fiche-note-bio"></p>
 
       <div class="qr-fiche">
         <img src="images/qr-decodeur.png" alt="QR code vers le décodeur" width="96" height="96">
-        <p><b>Scanne pour ouvrir le décodeur</b><br><span class="petit secondaire">nuance-vegetal.github.io</span></p>
+        <p><b id="fiche-titre-qr">Scanne pour ouvrir le décodeur</b><br><span class="petit secondaire">nuance-vegetal.github.io</span></p>
       </div>
     </article>
   </main>
@@ -117,26 +91,47 @@
       <span class="nom-marque">nuance <em>végétale</em></span>
       </a>
       <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
     </div>
     <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
   </div>
 </footer>
 
-<script src="js/config.js?v=20261023"></script>
-<script src="js/commun.js?v=20261023"></script>
-<script src="js/menu.js?v=20261023"></script>
-<script src="js/vendor/lenis.min.js?v=20261023"></script>
-<script src="js/evaluation.js?v=20261023"></script>
-<script src="js/fiche-pdf.js?v=20261023"></script>
-<script src="js/animations.js?v=20261023"></script>
+<script src="js/config.js?v=20261024"></script>
+<script src="js/commun.js?v=20261024"></script>
+<script src="js/menu.js?v=20261024"></script>
+<script src="js/vendor/lenis.min.js?v=20261024"></script>
+<script src="js/evaluation.js?v=20261024"></script>
+<script src="js/fiche-pdf.js?v=20261024"></script>
+<script src="js/animations.js?v=20261024"></script>
 <script>
   (async function () {
-    let C;
-    try { C = await chargerReglages(); } catch (e) { return; }
+    let C, T;
+    try { [C, T] = await Promise.all([chargerReglages(), chargerDonnees('donnees/fiche-pdf.json')]); } catch (e) {
+      document.getElementById('statut-pdf').textContent = 'La fiche n’a pas pu être chargée. Recharge la page.';
+      return;
+    }
+    // Textes de la fiche : donnees/fiche-pdf.json (Pages CMS → « Fiche PDF »), les mêmes pour la page et le PDF
+    const $ = (id) => document.getElementById(id);
+    const remplirTexte = (id, t) => { if (t) $(id).textContent = t; };
+    remplirTexte('fiche-sous-titre', T.sousTitre);
+    remplirTexte('fiche-titre-reperes', T.titreReperes);
+    remplirTexte('fiche-intro-reperes', T.introReperes);
+    remplirTexte('fiche-titre-bio', T.titreBio);
+    remplirTexte('fiche-note-bio', T.noteBio);
+    remplirTexte('fiche-titre-qr', T.titreQr);
+    $('fiche-sections').innerHTML = (T.sections || []).map((sec) => {
+      const e = sec.encadre || {};
+      const points = (sec.points || []).filter(Boolean);
+      return (sec.titre ? '<h2>' + echapper(sec.titre) + '</h2>' : '') +
+        (sec.texte ? '<p style="margin:6px 0">' + enLigne(sec.texte) + '</p>' : '') +
+        (points.length ? '<ul class="liste-fiche">' + points.map((p) => '<li>' + enLigne(p) + '</li>').join('') + '</ul>' : '') +
+        (e.texte ? '<div class="encart ' + (e.couleur === 'orange' ? 'orange' : 'bleu') + '">' + (e.titre ? '<b>' + echapper(e.titre) + '</b><br>' : '') + enLigne(e.texte) + '</div>' : '');
+    }).join('');
     const S = Object.assign({}, NuanceEvaluation.CSS, C.css || {});
     document.getElementById('seuils').innerHTML = NuanceEvaluation.listeReperes(S)
       .map(([nom, seuil]) => `<tr><th scope="row">${nom}</th><td><span class="pastille vert sans-point">✓</span> ${seuil}</td></tr>`).join('');
-    document.getElementById('references').textContent = 'Repères : ' + S.reference + '.';
+    document.getElementById('references').textContent = 'Repères : ' + S.reference + '.' + (T.noteReperes ? ' ' + T.noteReperes : '');
 
     document.getElementById('imprimer').addEventListener('click', () => window.print());
 
@@ -146,7 +141,7 @@
       bouton.disabled = true;
       statut.textContent = 'Préparation de ta fiche…';
       try {
-        await FichePDF.telecharger(C);
+        await FichePDF.telecharger(C, T);
         statut.textContent = 'C’est prêt : ta fiche est dans tes téléchargements.';
       } catch (e) {
         console.error(e);

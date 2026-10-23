@@ -38,7 +38,10 @@ const cas = [
   ['valeur absente → non renseigné', evaluate({}).reperes[0].statut, 'inconnu'],
   ['allégation 12 à 19 % → source', evaluate({ proteines: 7, energie: 200 }).allegation.niveau, 'source'],
   ['allégation < 12 % → aucune', evaluate({ proteines: 4, energie: 200 }).allegation.niveau, 'aucune'],
-  ['pas d’allégation sans énergie', evaluate({ proteines: 10 }).allegation, null]
+  ['pas d’allégation sans énergie', evaluate({ proteines: 10 }).allegation, null],
+  ['fer exactement 0,8 mg → atteint', evaluate({ fer: 0.8 }).reperes[4].statut, 'atteint'],
+  ['B12 exactement 0,24 µg → atteint', evaluate({ b12: 0.24 }).reperes[5].statut, 'atteint'],
+  ['protéines exactement 10 g → à surveiller (> 10 g)', evaluate({ proteines: 10 }).reperes[0].statut, 'surveiller']
 ];
 for (const [nom, obtenu, attendu] of cas) {
   const ok = obtenu === attendu;

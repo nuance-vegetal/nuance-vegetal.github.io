@@ -9,9 +9,11 @@
     ['decodeur.html', 'décodeur'],
     ['etiquette.html', 'étiquette'],
     ['bases.html', 'les bases'],
+    ['equivalences.html', 'équivalences'],
     ['a-quoi-ca-sert.html', 'à quoi ça sert ?'],
     ['etudes.html', 'études'],
-    ['ta-fiche-pdf.html', 'ta fiche PDF']
+    ['ta-fiche-pdf.html', 'ta fiche PDF'],
+    ['createurs.html', 'les créateurs']
   ];
   const ic = (d) => '<svg class="icone" viewBox="0 0 24 24" aria-hidden="true">' + d + '</svg>';
   const ICONES = {

@@ -243,6 +243,7 @@ a:hover { color: var(--principal-survol); }
 .encart h3 { font-size: 17px; }
 .encart.lilas { background: var(--lilas-fond); color: var(--lilas-texte); }
 .encart.bleu { background: var(--bleu-fond); color: var(--bleu-texte); }
+.encart.orange { background: var(--orange-fond); color: var(--orange-texte); }
 .encart.lilas a, .encart.bleu a { color: inherit; }
 
 /* ---------- Pastilles (feux) ---------- */
@@ -689,6 +690,11 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
   .filtres { margin-inline: 0; padding-inline: 0; flex-wrap: wrap; overflow: visible; }
 }
 
+/* 8 liens dans le menu du haut : plus serrés sur les petits écrans d'ordinateur */
+@media (min-width: 1024px) and (max-width: 1239px) {
+  .nav a { padding: 0 8px !important; font-size: 14px !important; }
+  .barre-int { padding: 10px 20px !important; }
+}
 @media (min-width: 1024px) {
   .page { max-width: 1100px; padding: 0 32px 24px; }
   .barre-int { padding: 10px 32px; }
@@ -702,6 +708,7 @@ dialog.scanner[open] { animation: monte .4s var(--courbe); }
   }
   .nav a:hover { color: var(--texte); background: var(--fond-2); }
   .nav a[aria-current="page"] { color: var(--principal-survol); background: var(--sauge-clair); }
+  .nav a, .marque { white-space: nowrap; }
 
   h2 { margin-top: 112px; font-size: 52px; }
 
@@ -1379,3 +1386,56 @@ html.menu-ouvert, html.menu-ouvert body { overflow: hidden; }
 .eval-extra { margin: 10px 0 0; font-size: 14px; }
 .ligne-repere-s { height: 74px; border-radius: 18px; }
 .champ .facultatif { font-weight: 400; font-size: 12px; color: var(--texte-2); margin-left: 4px; }
+/* Produit qui n'est pas une alternative végétale : message à la place des 6 repères */
+.encart-hors-alternative {
+  margin-top: 16px; padding: 14px 16px; border-radius: 18px;
+  background: var(--pastille); color: var(--pastille-texte); font-size: 15px; line-height: 1.45; font-weight: 500;
+}
+.encart-hors-alternative p { margin: 0; }
+
+/* ============ Créateurs ============ */
+.grille-createurs { display: grid; gap: 14px; margin-top: 24px; }
+.carte-createur h2 { margin: 6px 0 4px; font-size: clamp(22px, 4vw, 28px); }
+.carte-createur p { margin: 0; }
+.carte-ecole { background: var(--sauge-clair); border-color: transparent; }
+@media (min-width: 720px) { .grille-createurs { grid-template-columns: 1fr 1fr; } }
+
+/* ============ Équivalences et complémentarité ============ */
+.calculateur { max-width: 640px; }
+.calculateur > label { display: block; font-weight: 600; margin-bottom: 8px; }
+.calculateur-saisie { display: flex; align-items: center; gap: 10px; }
+.calculateur-saisie .saisie { position: relative; flex: 1; max-width: 180px; }
+.calculateur-saisie input {
+  width: 100%; font: 600 26px/1 var(--police-titre); padding: 12px 40px 12px 16px;
+  border: 1px solid var(--contour); border-radius: var(--r-bouton); background: var(--carte); color: var(--texte);
+}
+.calculateur-saisie .unite { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--texte-2); }
+.calculateur-saisie .bouton-icone { width: 48px; height: 48px; font-size: 24px; flex: none; }
+.eq-exemple { margin: 16px 0 10px; font-size: 18px; }
+.eq-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.eq-liste li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  padding: 12px 14px; border-radius: 16px; background: var(--fond-2);
+}
+.eq-nom { font-weight: 600; }
+.eq-valeur { font-family: var(--police-titre); font-weight: 600; font-size: 18px; color: var(--principal); text-align: right; }
+.comp-phrase {
+  margin: 12px 0; padding: 12px 14px; border-radius: 16px;
+  background: var(--sauge-clair); color: var(--texte); font-weight: 500;
+}
+.grille-assiettes { display: grid; gap: 14px; margin-top: 14px; }
+@media (min-width: 720px) { .grille-assiettes { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .grille-assiettes { grid-template-columns: repeat(3, 1fr); } }
+.assiette h3 { margin: 14px 0 6px; font-size: 18px; }
+.assiette-visuel {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  aspect-ratio: 1; max-width: 150px; margin: 0 auto; padding: 14px; border-radius: 50%;
+  background: radial-gradient(circle, var(--carte) 0 58%, var(--fond-2) 59% 100%);
+  border: 1px solid var(--contour); text-align: center;
+}
+.assiette-part { padding: 6px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; line-height: 1.2; }
+.assiette-part.part-0 { background: var(--vert-fond); color: var(--vert-texte); }
+.assiette-part.part-1 { background: var(--lilas-fond); color: var(--lilas-texte); }
+.assiette-plus { font-weight: 700; color: var(--texte-2); }
+.assiette-exemples { margin: 0; padding-left: 18px; }
+.assiette-pourquoi { margin: 10px 0 0; font-size: 14px; color: var(--texte-2); }

@@ -1,6 +1,6 @@
 /*
  * « Ta fiche PDF » : fabrique un vrai fichier PDF au format téléphone (90 × 160 mm), dans le navigateur.
- * Les seuils viennent des réglages (Pages CMS) et les couleurs du thème du site.
+ * Les seuils viennent des réglages, les textes de donnees/fiche-pdf.json (Pages CMS) et les couleurs du thème du site.
  * jsPDF et les polices ne sont chargés qu'au moment du clic.
  */
 window.FichePDF = (function () {
@@ -44,7 +44,9 @@ window.FichePDF = (function () {
     return /^#[0-9a-fA-F]{6}$/.test(v) ? v : defaut;
   }
 
-  async function generer(C) {
+  const sansGras = (t) => String(t || '').replace(/\*\*([^*]+)\*\*/g, '$1');
+
+  async function generer(C, T) {
     if (!window.jspdf) await chargerScript('js/vendor/jspdf.umd.min.js?v=4.2.1');
     const doc = new window.jspdf.jsPDF({ unit: 'mm', format: [L, H], orientation: 'portrait', compress: true });
 
@@ -136,44 +138,29 @@ window.FichePDF = (function () {
     doc.setFont('Instrument', 'italic'); doc.setFontSize(23); doc.setTextColor(clair);
     doc.text('végétale', M + largeurNuance + 2, 15);
     doc.setFont('DMSans', 'normal'); doc.setFontSize(9); doc.setTextColor('#FDF9F1');
-    doc.text('Ta fiche pour lire une étiquette en magasin.', M, 24);
+    doc.text(T.sousTitre || '', M, 24);
     y = 40;
 
-    titre('Les 6 repères pour 100 g');
-    para('Atteint si :', { taille: 8.5 });
+    titre(T.titreReperes || 'Les 6 repères pour 100 g');
+    if (T.introReperes) para(T.introReperes, { taille: 8.5 });
     const S = Object.assign({}, NuanceEvaluation.CSS, C.css || {});
     NuanceEvaluation.listeReperes(S).forEach(([nom, seuil]) => repere(nom, seuil));
-    para('Pas de note globale : regarde chaque repère et décide.', { taille: 8.5 });
+    if (T.noteReperes) para(T.noteReperes, { taille: 8.5 });
     para('Repères : ' + S.reference + '.', { taille: 7.5 });
 
-    /* ---------- B12, fer, ingrédients, bon réflexe ---------- */
-    nouvellePage();
-    titre('B12 et fer');
-    puce('B12 : cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans les ingrédients.');
-    puce('Fer : cherche « fer » ou un sel de fer (pyrophosphate ferrique, fumarate ferreux).');
-    puce('Si le produit est enrichi, la quantité est aussi dans le tableau nutritionnel.');
-    puce('Le fer des végétaux est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi).');
-    y += 2;
-    titre('Les ingrédients');
-    puce('Le premier ingrédient (après l’eau) est la base : soja, blé, pois, champignon…');
-    puce('Les allergènes sont mis en évidence, le plus souvent en gras.');
-    y += 2;
-    encart('Le bon réflexe', 'Compare le prix pour 20 g de protéines : prix au kilo × 2 ÷ protéines. Exemple : 14 €/kg et 15 g de protéines = 1,87 €.', BLEU);
-
-    /* ---------- Pièges végan et gluten ---------- */
-    nouvellePage();
-    titre('Pièges végan');
-    puce('Ingrédients d’origine animale moins évidents : lactosérum, caséine, gélatine, miel, carmin (E120).');
-    puce('« Peut contenir des traces de lait » = contamination possible en usine, pas un vrai ingrédient laitier.');
-    puce('Le lait et les œufs sont obligatoirement mis en évidence dans les ingrédients (le plus souvent en gras).');
-    y += 2;
-    titre('Gluten caché');
-    para('Le blé est mis en évidence en gras dans la liste d’ingrédients. Attention au gluten caché dans les céréales :', { couleur: texte });
-    encart('Contient du gluten', 'seigle, avoine (si contamination croisée), blé, orge, triticale, épeautre, kamut.', ORANGE);
+    /* ---------- Sections de donnees/fiche-pdf.json (Pages CMS → « Fiche PDF ») ---------- */
+    (T.sections || []).forEach((sec) => {
+      if (sec.nouvellePage) nouvellePage(); else y += 2;
+      if (sec.titre) titre(sec.titre);
+      if (sec.texte) para(sansGras(sec.texte), { couleur: texte });
+      (sec.points || []).filter(Boolean).forEach((p) => puce(sansGras(p)));
+      const e = sec.encadre || {};
+      if (e.texte) { y += 2; encart(e.titre || '', sansGras(e.texte), e.couleur === 'orange' ? ORANGE : BLEU); }
+    });
 
     /* ---------- Logos bio et QR code ---------- */
     nouvellePage();
-    titre('Bio ? Repère ces logos');
+    titre(T.titreBio || 'Bio ? Repère ces logos');
     const logos = [
       ['images/labels/bio-europeen.svg', 'Logo bio européen', 'Obligatoire sur tout produit bio préemballé de l’UE'],
       ['images/labels/biogarantie.svg', 'Biogarantie', 'Label belge'],
@@ -191,27 +178,27 @@ window.FichePDF = (function () {
       doc.text(doc.splitTextToSize(ou, LARGEUR - 28), M + 27, y + 10);
       y += h + 5;
     }
-    para('Le logo européen est accompagné d’un code de l’organisme de contrôle (ex. BE-BIO-01) et de l’origine des ingrédients (Agriculture UE / non UE).', { taille: 8.5 });
+    if (T.noteBio) para(T.noteBio, { taille: 8.5 });
     y += 2;
     const qr = await imageEnPng('images/qr-decodeur.png', 300);
     place(36);
     doc.setFillColor('#FFFFFF'); doc.roundedRect(M, y, LARGEUR, 34, 3, 3, 'F');
     doc.addImage(qr.data, 'JPEG', M + 2, y + 2, 30, 30, undefined, 'FAST');
     doc.setFont('DMSans', 'bold'); doc.setFontSize(10); doc.setTextColor(texte);
-    doc.text(doc.splitTextToSize('Scanne pour ouvrir le décodeur', LARGEUR - 36), M + 35, y + 11);
+    doc.text(doc.splitTextToSize(T.titreQr || 'Scanne pour ouvrir le décodeur', LARGEUR - 36), M + 35, y + 11);
     doc.setFont('DMSans', 'normal'); doc.setFontSize(7); doc.setTextColor(texte2);
     doc.text(doc.splitTextToSize('nuance-vegetal.github.io', LARGEUR - 36), M + 35, y + 22);
     doc.link(M, y, LARGEUR, 34, { url: URL_SITE });
     y += 38;
-    para('Outil réalisé dans le cadre d’un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l’avis d’un·e diététicien·ne.', { taille: 7 });
+    if (T.piedPage) para(T.piedPage, { taille: 7 });
     pied();
 
     doc.setProperties({ title: 'Nuance végétale — ta fiche', subject: 'Lire l’étiquette d’une alternative végétale à la viande', creator: 'Nuance végétale' });
     return doc;
   }
 
-  async function telecharger(C) {
-    const doc = await generer(C);
+  async function telecharger(C, T) {
+    const doc = await generer(C, T);
     doc.save('nuance-vegetale-ta-fiche.pdf');
     return doc;
   }
