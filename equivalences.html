@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261029"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261029">
-  <link rel="stylesheet" href="css/style.css?v=20261029">
+  <script src="js/theme.js?v=20261030"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261030">
+  <link rel="stylesheet" href="css/style.css?v=20261030">
 </head>
 <body class="page-secondaire">
 
@@ -79,34 +79,64 @@
     <span class="surtitre revele" style="margin-top:72px">02 · la complémentarité</span>
     <h2 style="margin-top:0">associer, <em class="serif">sans se prendre la tête</em></h2>
 
-    <!-- 1. Le principe en image : chacun a son point faible, ensemble c'est complet -->
-    <div class="comp-principe revele">
-      <div class="puzzle" role="img" aria-label="Les céréales ont peu de lysine et beaucoup de méthionine. Les légumineuses ont beaucoup de lysine et peu de méthionine. Ensemble, les deux sont bien couvertes.">
-        <div class="pz-tete" aria-hidden="true"><span></span><span>lysine</span><span>méthionine</span></div>
-        <div class="pz-ligne" aria-hidden="true">
-          <span class="pz-nom">céréales</span>
-          <span class="pz-barre faible" style="--v:.38"><i></i></span>
-          <span class="pz-barre" style="--v:.92"><i></i></span>
-        </div>
-        <div class="pz-ligne" aria-hidden="true">
-          <span class="pz-nom">légumineuses</span>
-          <span class="pz-barre" style="--v:.95"><i></i></span>
-          <span class="pz-barre faible" style="--v:.42"><i></i></span>
-        </div>
-        <div class="pz-ligne pz-ensemble" aria-hidden="true">
-          <span class="pz-nom">ensemble</span>
-          <span class="pz-barre" style="--v:1"><i></i><b>✓</b></span>
-          <span class="pz-barre" style="--v:1"><i></i><b>✓</b></span>
-        </div>
-        <p class="pz-legende" aria-hidden="true">Schéma simplifié, sans quantités.</p>
-      </div>
-      <div class="comp-texte" id="comp-principe"></div>
+    <!-- La règle en une phrase -->
+    <div class="regle-or revele">
+      <p class="regle-titre">la règle simple</p>
+      <p class="regle-equation">
+        <span class="eq-bloc cereale">céréales</span>
+        <span class="eq-signe">+</span>
+        <span class="eq-bloc legumineuse">légumineuses</span>
+        <span class="eq-resultat"><span class="eq-signe">=</span> <span class="eq-bloc complet">protéines complètes ✓</span></span>
+      </p>
+      <p class="regle-sous">sur la journée, pas forcément dans la même assiette</p>
     </div>
 
-    <!-- 2. Les assiettes, rangées en deux familles -->
-    <h3 class="comp-groupe revele"><span class="comp-pastille">+</span> à associer dans la journée</h3>
+    <!-- Pourquoi, en 3 images -->
+    <ol class="etapes-puzzle">
+      <li class="etape-pz revele" style="--i:0">
+        <svg class="pz-svg" viewBox="0 0 120 104" aria-hidden="true"><path class="pz-cereale" d="M8 8h92v30a14 14 0 0 0 0 28v30H8Z"/><circle class="pz-manque" cx="100" cy="52" r="15"/></svg>
+        <p class="etape-num">1</p>
+        <h4>les céréales</h4>
+        <p class="etape-ex">pain, riz, pâtes, semoule…</p>
+        <p>Il leur manque un peu d’une « brique » de protéine : la <b>lysine</b>.</p>
+      </li>
+      <li class="etape-pz revele" style="--i:1">
+        <svg class="pz-svg" viewBox="0 0 120 104" aria-hidden="true"><path class="pz-legumineuse" d="M20 8h92v88H20V66a14 14 0 0 1 0-28Z"/></svg>
+        <p class="etape-num">2</p>
+        <h4>les légumineuses</h4>
+        <p class="etape-ex">lentilles, pois chiches, haricots…</p>
+        <p>Elles apportent la <b>lysine</b> qui manque aux céréales. En échange, les céréales leur apportent la <b>méthionine</b>.</p>
+      </li>
+      <li class="etape-pz etape-ensemble revele" style="--i:2">
+        <svg class="pz-svg" viewBox="0 0 204 104" aria-hidden="true"><g class="pz-g"><path class="pz-cereale" d="M8 8h92v30a14 14 0 0 0 0 28v30H8Z"/></g><g class="pz-d"><path class="pz-legumineuse" transform="translate(80 0)" d="M20 8h92v88H20V66a14 14 0 0 1 0-28Z"/></g><g class="pz-ok"><circle cx="186" cy="20" r="14"/><path d="m179 20 5 5 9-10"/></g></svg>
+        <p class="etape-num">3</p>
+        <h4>ensemble</h4>
+        <p class="etape-ex">riz + lentilles, pain + houmous…</p>
+        <p>L’une comble ce qui manque à l’autre : <b>toutes les briques sont là</b>.</p>
+      </li>
+    </ol>
+
+    <!-- Exemple d'une journée -->
+    <div class="journee revele">
+      <p class="journee-titre" id="comp-phrase">Pas besoin de tout mettre dans la même assiette.</p>
+      <div class="journee-repas">
+        <div class="repas"><span class="repas-moment">matin</span><span class="repas-plat"><span class="pastille-mini cereale"></span>tartine de pain complet</span></div>
+        <span class="repas-fleche" aria-hidden="true">→</span>
+        <div class="repas"><span class="repas-moment">midi</span><span class="repas-plat"><span class="pastille-mini legumineuse"></span>salade de lentilles</span></div>
+        <span class="repas-fleche" aria-hidden="true">→</span>
+        <div class="repas repas-bilan"><span class="repas-moment">la journée</span><span class="repas-plat">✓ complète</span></div>
+      </div>
+    </div>
+
+    <details class="comp-detail revele">
+      <summary>le détail, avec la source <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <div class="comp-texte" id="comp-principe"></div>
+    </details>
+
+    <!-- Les duos et les « solos » -->
+    <h3 class="comp-groupe revele"><span class="comp-pastille">+</span> les bons duos</h3>
     <div class="grille-formules" id="comp-associer"></div>
-    <h3 class="comp-groupe revele"><span class="comp-pastille seul">✓</span> complet à lui seul</h3>
+    <h3 class="comp-groupe revele"><span class="comp-pastille seul">✓</span> complets tout seuls</h3>
     <div class="grille-formules" id="comp-seul"></div>
 
     <section class="sources-page revele" aria-labelledby="titre-sources">
@@ -130,10 +160,10 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261029"></script>
-<script src="js/menu.js?v=20261029"></script>
-<script src="js/vendor/lenis.min.js?v=20261029"></script>
-<script src="js/animations.js?v=20261029"></script>
+<script src="js/commun.js?v=20261030"></script>
+<script src="js/menu.js?v=20261030"></script>
+<script src="js/vendor/lenis.min.js?v=20261030"></script>
+<script src="js/animations.js?v=20261030"></script>
 <script>
   /* Contenu : donnees/equivalences.json (Pages CMS → « Équivalences et complémentarité ») */
   (async function () {
@@ -262,8 +292,8 @@
     calculer();
 
     const C = D.complementarite || {};
+    if (C.phrase) $('comp-phrase').innerHTML = enLigne(C.phrase);
     $('comp-principe').innerHTML = texteRiche(C.principe) +
-      (C.phrase ? '<p class="comp-phrase"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>' + enLigne(C.phrase) + '</span></p>' : '') +
       (C.source ? '<p class="petit secondaire" style="margin:0">Source : ' + echapper(C.source) + '.</p>' : '') +
       (C.note ? '<p class="petit secondaire" style="margin:4px 0 0">' + echapper(C.note) + '</p>' : '');
 
@@ -271,9 +301,8 @@
     const carte = (a, i) => {
       const familles = (a.familles || []).filter(Boolean);
       return '<article class="formule revele" style="--i:' + i + '">' +
-        '<div class="formule-tete">' + familles.map((f, j) => '<span class="famille f' + (j % 2) + '">' + echapper(f) + '</span>').join('<span class="formule-op">+</span>') +
-        (familles.length > 1 ? '<span class="formule-op">=</span><span class="famille complet">✓ complet</span>' : '<span class="famille complet">✓ complet</span>') + '</div>' +
-        '<h4>' + echapper(a.titre) + '</h4>' +
+        // Le titre dit déjà le duo : on le colore au lieu de le répéter en pastilles
+        '<h4>' + (familles.length > 1 ? echapper(a.titre).replace(' + ', ' <span class="formule-op">+</span> ') : echapper(a.titre) + ' <span class="famille complet">✓ seul</span>') + '</h4>' +
         '<ul class="formule-exemples">' + (a.exemples || []).filter(Boolean).map((x) => '<li>' + echapper(x) + '</li>').join('') + '</ul>' +
         (a.pourquoi ? '<p class="formule-pourquoi">' + echapper(a.pourquoi) + '</p>' : '') +
         (a.source ? '<p class="formule-source">Source : ' + echapper(a.source) + '</p>' : '') +
