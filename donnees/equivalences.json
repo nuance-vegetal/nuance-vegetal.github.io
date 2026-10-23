@@ -7,9 +7,9 @@
       "nom": "Tofu",
       "quantite": 150,
       "unite": "g",
+      "quantiteMax": 0,
       "quantiteCuite": 0,
       "cuilleres": 0,
-      "quantiteMax": 0,
       "image": "images/tofu.webp",
       "taille": "grande"
     },
@@ -17,9 +17,9 @@
       "nom": "Tempeh",
       "quantite": 100,
       "unite": "g",
+      "quantiteMax": 0,
       "quantiteCuite": 0,
       "cuilleres": 0,
-      "quantiteMax": 0,
       "image": "images/tempeh.webp",
       "taille": "normale"
     },
@@ -27,9 +27,9 @@
       "nom": "Mycoprotéines (Quorn)",
       "quantite": 150,
       "unite": "g",
+      "quantiteMax": 0,
       "quantiteCuite": 0,
       "cuilleres": 0,
-      "quantiteMax": 0,
       "image": "images/quorn.webp",
       "taille": "normale"
     },
@@ -37,9 +37,9 @@
       "nom": "Seitan",
       "quantite": 100,
       "unite": "g",
+      "quantiteMax": 0,
       "quantiteCuite": 0,
       "cuilleres": 0,
-      "quantiteMax": 0,
       "image": "images/seitan.webp",
       "taille": "large"
     },
@@ -47,9 +47,9 @@
       "nom": "Légumineuses",
       "quantite": 100,
       "unite": "g",
+      "quantiteMax": 0,
       "quantiteCuite": 250,
       "cuilleres": 7,
-      "quantiteMax": 0,
       "image": "images/pois.webp",
       "taille": "large"
     },
@@ -57,20 +57,19 @@
       "nom": "Œufs",
       "quantite": 2,
       "unite": "œufs",
+      "quantiteMax": 3,
       "quantiteCuite": 0,
       "cuilleres": 0,
-      "quantiteMax": 3,
-      "image": "",
       "taille": "large"
     }
   ],
   "source": "VVK 2019, p. 24",
   "noteEquivalences": "[Valeurs à valider par Camille]",
   "complementarite": {
-    "principe": "Les céréales manquent surtout de lysine, les légumineuses d’acides aminés soufrés (méthionine). Associées, elles apportent tous les acides aminés essentiels, sur la journée : pas forcément au même repas.",
+    "principe": "Chaque famille d'aliments a un petit point faible dans ses protéines. Les céréales et les légumineuses ont des points faibles différents : mangées dans la même journée, elles se complètent et t'apportent tout ce qu'il faut.\n\nEnfants, ados, femmes enceintes ou allaitantes : essaie plutôt de les associer au même repas.\n\nPour les quantités, utilise le calculateur au-dessus.",
     "phrase": "Pas besoin de peser ni de tout associer au même repas : varie tes sources de protéines au fil de la journée.",
-    "note": "[Texte à valider par Camille]",
     "source": "VVK 2019, p. 23–25",
+    "note": "[Texte à valider par Camille]",
     "associations": [
       {
         "titre": "Céréales + légumineuses",
@@ -156,8 +155,7 @@
   },
   "sources": [
     {
-      "texte": "VVK, VBVD, Vlaamse Pediatrische diëtisten et Kind en Gezin (2019). Alimentation végétarienne — Brochure d’information pour les intervenants dans les soins de santé (trad. de Vegetarische voeding), p. 23–25 (combinaison des protéines végétales) et p. 24 (équivalences).",
-      "url": ""
+      "texte": "VVK, VBVD, Vlaamse Pediatrische diëtisten et Kind en Gezin (2019). Alimentation végétarienne — Brochure d’information pour les intervenants dans les soins de santé (trad. de Vegetarische voeding), p. 23–25 (combinaison des protéines végétales) et p. 24 (équivalences)."
     },
     {
       "texte": "Edwards & Cummings (2010). The protein quality of mycoprotein. Proceedings of the Nutrition Society 69(OCE4):E331.",
