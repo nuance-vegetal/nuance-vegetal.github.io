@@ -9,7 +9,9 @@
       "unite": "g",
       "quantiteCuite": 0,
       "cuilleres": 0,
-      "quantiteMax": 0
+      "quantiteMax": 0,
+      "image": "images/tofu.webp",
+      "taille": "grande"
     },
     {
       "nom": "Tempeh",
@@ -17,7 +19,9 @@
       "unite": "g",
       "quantiteCuite": 0,
       "cuilleres": 0,
-      "quantiteMax": 0
+      "quantiteMax": 0,
+      "image": "images/tempeh.webp",
+      "taille": "normale"
     },
     {
       "nom": "Mycoprotéines (Quorn)",
@@ -25,7 +29,9 @@
       "unite": "g",
       "quantiteCuite": 0,
       "cuilleres": 0,
-      "quantiteMax": 0
+      "quantiteMax": 0,
+      "image": "images/quorn.webp",
+      "taille": "normale"
     },
     {
       "nom": "Seitan",
@@ -33,7 +39,9 @@
       "unite": "g",
       "quantiteCuite": 0,
       "cuilleres": 0,
-      "quantiteMax": 0
+      "quantiteMax": 0,
+      "image": "images/seitan.webp",
+      "taille": "large"
     },
     {
       "nom": "Légumineuses",
@@ -41,7 +49,9 @@
       "unite": "g",
       "quantiteCuite": 250,
       "cuilleres": 7,
-      "quantiteMax": 0
+      "quantiteMax": 0,
+      "image": "images/pois.webp",
+      "taille": "large"
     },
     {
       "nom": "Œufs",
@@ -49,7 +59,9 @@
       "unite": "œufs",
       "quantiteCuite": 0,
       "cuilleres": 0,
-      "quantiteMax": 3
+      "quantiteMax": 3,
+      "image": "",
+      "taille": "large"
     }
   ],
   "source": "VVK 2019, p. 24",

@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261025"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261025">
-  <link rel="stylesheet" href="css/style.css?v=20261025">
+  <script src="js/theme.js?v=20261026"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261026">
+  <link rel="stylesheet" href="css/style.css?v=20261026">
   <link rel="preload" as="image" href="images/hero.webp">
 </head>
 <body>
@@ -218,38 +218,45 @@
 
     <span class="surtitre revele" style="margin-top:72px">04 · la suite</span>
     <h2 style="margin-top:0">va plus <em class="serif">loin</em></h2>
-    <div class="liens">
-      <a class="lien-photo vert large revele" href="a-quoi-ca-sert.html" style="--i:0">
-        <div class="photo zoom"><img src="images/quinoa.webp" width="700" height="490" alt="" loading="lazy"></div>
-        <b>à quoi ça sert ?</b>
-        <span>B12, protéines, fer, additifs : leur rôle, où les trouver, comment les repérer.</span>
-      </a>
-      <a class="lien-photo lilas revele" href="bases.html" style="--i:1">
-        <div class="photo zoom"><img src="images/pois.webp" width="700" height="490" alt="" loading="lazy"></div>
-        <b>c'est fait avec quoi ?</b>
-        <span>Tofu, seitan, Quorn… les bases expliquées.</span>
-      </a>
-      <a class="lien-photo revele" href="equivalences.html" style="--i:2">
-        <div class="photo zoom"><img src="images/tofu.webp" width="800" height="560" alt="" loading="lazy"></div>
-        <b>équivalences</b>
-        <span>Combien de tofu ou de lentilles pour remplacer ta viande, et comment associer.</span>
-      </a>
-      <a class="lien-photo bleu revele" href="etudes.html" style="--i:2">
-        <div class="photo zoom"><img src="images/etudes.webp" width="900" height="560" alt="" loading="lazy"></div>
-        <b>ce que dit la science</b>
-        <span>Soja, ultra-transformation : les réponses sourcées.</span>
-      </a>
-      <a class="lien-photo revele" href="etiquette.html" style="--i:3">
-        <div class="photo zoom"><img src="images/tempeh.webp" width="800" height="560" alt="" loading="lazy"></div>
-        <b>l'étiquette décortiquée</b>
-        <span>Un exemple complet, ligne par ligne.</span>
-      </a>
-      <a class="lien-photo revele" href="ta-fiche-pdf.html" style="--i:4">
-        <div class="photo zoom"><img src="images/decodeur.webp" width="900" height="560" alt="" loading="lazy"></div>
-        <b>ta fiche PDF</b>
-        <span>Les repères à garder sur ton téléphone.</span>
-      </a>
-    </div>
+    <ol class="liste-suite" id="liste-suite">
+      <li class="revele" style="--i:0"><a href="a-quoi-ca-sert.html" data-image="images/quinoa.webp">
+        <span class="suite-num">01</span>
+        <span class="suite-texte"><span class="suite-titre">à quoi ça sert ?</span><span class="suite-desc">B12, protéines, fer, additifs : leur rôle et comment les repérer.</span></span>
+        <img class="suite-vignette" src="images/quinoa.webp" alt="" width="160" height="120" loading="lazy">
+        <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+      </a></li>
+      <li class="revele" style="--i:1"><a href="bases.html" data-image="images/pois.webp">
+        <span class="suite-num">02</span>
+        <span class="suite-texte"><span class="suite-titre">c'est fait avec quoi ?</span><span class="suite-desc">Tofu, seitan, Quorn… les bases expliquées.</span></span>
+        <img class="suite-vignette" src="images/pois.webp" alt="" width="160" height="120" loading="lazy">
+        <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+      </a></li>
+      <li class="revele" style="--i:2"><a href="equivalences.html" data-image="images/tofu.webp">
+        <span class="suite-num">03</span>
+        <span class="suite-texte"><span class="suite-titre">équivalences</span><span class="suite-desc">Combien de tofu ou de lentilles pour remplacer ta viande.</span></span>
+        <img class="suite-vignette" src="images/tofu.webp" alt="" width="160" height="120" loading="lazy">
+        <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+      </a></li>
+      <li class="revele" style="--i:3"><a href="etudes.html" data-image="images/etudes.webp">
+        <span class="suite-num">04</span>
+        <span class="suite-texte"><span class="suite-titre">ce que dit la science</span><span class="suite-desc">Soja, ultra-transformation : les réponses sourcées.</span></span>
+        <img class="suite-vignette" src="images/etudes.webp" alt="" width="160" height="120" loading="lazy">
+        <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+      </a></li>
+      <li class="revele" style="--i:4"><a href="etiquette.html" data-image="images/tempeh.webp">
+        <span class="suite-num">05</span>
+        <span class="suite-texte"><span class="suite-titre">l'étiquette décortiquée</span><span class="suite-desc">Un exemple complet, ligne par ligne.</span></span>
+        <img class="suite-vignette" src="images/tempeh.webp" alt="" width="160" height="120" loading="lazy">
+        <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+      </a></li>
+      <li class="revele" style="--i:5"><a href="ta-fiche-pdf.html" data-image="images/decodeur.webp">
+        <span class="suite-num">06</span>
+        <span class="suite-texte"><span class="suite-titre">ta fiche PDF</span><span class="suite-desc">Les repères à garder sur ton téléphone.</span></span>
+        <img class="suite-vignette" src="images/decodeur.webp" alt="" width="160" height="120" loading="lazy">
+        <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+      </a></li>
+    </ol>
+    <div class="suite-curseur" id="suite-curseur" aria-hidden="true"><div class="suite-curseur-int"></div></div>
 
     <span class="surtitre revele" style="margin-top:72px">05 · l'assiette</span>
     <h2 style="margin-top:0">sa place dans <em class="serif">l'assiette</em></h2>
@@ -277,12 +284,36 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261025"></script>
-<script src="js/menu.js?v=20261025"></script>
-<script src="js/vendor/lenis.min.js?v=20261025"></script>
-<script src="js/avis.js?v=20261025"></script>
-<script src="js/animations.js?v=20261025"></script>
+<script src="js/commun.js?v=20261026"></script>
+<script src="js/menu.js?v=20261026"></script>
+<script src="js/vendor/lenis.min.js?v=20261026"></script>
+<script src="js/avis.js?v=20261026"></script>
+<script src="js/animations.js?v=20261026"></script>
 <script>
+  /* « Va plus loin » : sur ordinateur, la photo du lien survolé suit la souris */
+  (function () {
+    const liste = document.getElementById('liste-suite');
+    const bulle = document.getElementById('suite-curseur');
+    if (!liste || !bulle || MOUVEMENT_REDUIT || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    const int = bulle.firstElementChild;
+    // Toutes les photos sont posées d'avance : on n'a plus qu'à faire glisser la bonne
+    liste.querySelectorAll('a').forEach((a, i) => {
+      const img = new Image(); img.src = a.dataset.image; img.alt = ''; img.dataset.i = i; int.appendChild(img);
+    });
+    let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y, vx = 0, actif = false, boucle = 0;
+    function anime() {
+      const dx = x - cx; cx += dx * 0.16; cy += (y - cy) * 0.16; vx = vx * 0.8 + dx * 0.04;
+      bulle.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0) rotate(' + Math.max(-12, Math.min(12, vx)) + 'deg)';
+      boucle = actif || Math.abs(dx) > 0.5 ? requestAnimationFrame(anime) : 0;
+    }
+    liste.addEventListener('pointermove', (e) => { x = e.clientX; y = e.clientY; if (!boucle) boucle = requestAnimationFrame(anime); });
+    liste.querySelectorAll('a').forEach((a, i) => a.addEventListener('pointerenter', () => {
+      actif = true; bulle.classList.add('visible');
+      int.style.transform = 'translateY(' + (-i * 100) + '%)';
+    }));
+    liste.addEventListener('pointerleave', () => { actif = false; bulle.classList.remove('visible'); });
+  })();
+
   /* « Sa place dans l'assiette » : modifiable dans donnees/assiette.json (Pages CMS) */
   chargerDonnees('donnees/assiette.json').then((A) => {
     if (!A || !A.texte) return;

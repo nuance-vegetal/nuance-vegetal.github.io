@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261025"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261025">
-  <link rel="stylesheet" href="css/style.css?v=20261025">
+  <script src="js/theme.js?v=20261026"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261026">
+  <link rel="stylesheet" href="css/style.css?v=20261026">
 </head>
 <body class="page-secondaire">
 
@@ -48,19 +48,26 @@
 
     <span class="surtitre revele" style="margin-top:40px">01 · les équivalences</span>
     <h2 style="margin-top:0">ta portion, <em class="serif">en végétal</em></h2>
-    <div class="carte calculateur revele">
-      <label for="eq-viande">Viande, poisson ou poulet crus</label>
-      <div class="calculateur-saisie">
-        <button type="button" class="bouton-icone" data-pas="-25" aria-label="25 g de moins">−</button>
-        <div class="saisie"><input type="text" id="eq-viande" inputmode="numeric" value="100" aria-describedby="eq-aide"><span class="unite">g</span></div>
-        <button type="button" class="bouton-icone" data-pas="25" aria-label="25 g de plus">+</button>
+    <section class="portion revele" aria-label="Ta portion">
+      <p class="portion-etiquette"><label for="eq-viande">viande, poisson ou poulet <b>crus</b></label></p>
+      <div class="portion-valeur">
+        <input type="text" id="eq-viande" inputmode="numeric" value="100" maxlength="4" aria-describedby="eq-aide">
+        <span aria-hidden="true">g</span>
       </div>
-      <p class="petit secondaire" id="eq-aide" style="margin:8px 0 0">100 g crus, c’est environ 75 g cuits.</p>
-      <p class="eq-exemple" id="eq-exemple" aria-live="polite"></p>
-      <ul class="eq-liste" id="eq-liste"></ul>
-      <p class="petit secondaire" id="eq-qualite" style="margin:14px 0 0"></p>
-      <p class="petit secondaire" id="eq-source" style="margin:6px 0 0"></p>
-    </div>
+      <p class="portion-aide" id="eq-aide">≈ 75 g une fois cuits</p>
+      <input type="range" class="portion-curseur" id="eq-curseur" min="25" max="400" step="5" value="100" aria-label="Régler la portion en grammes">
+      <div class="portion-rapides" role="group" aria-label="Portions toutes faites">
+        <button type="button" data-portion="75">75 g</button>
+        <button type="button" data-portion="100">100 g</button>
+        <button type="button" data-portion="150">150 g</button>
+        <button type="button" data-portion="200">200 g</button>
+      </div>
+    </section>
+
+    <p class="eq-exemple revele" id="eq-exemple" aria-live="polite"></p>
+    <div class="bento-eq" id="eq-liste"></div>
+    <p class="petit secondaire" id="eq-qualite" style="margin:18px 0 0"></p>
+    <p class="petit secondaire" id="eq-source" style="margin:6px 0 0"></p>
 
     <span class="surtitre revele" style="margin-top:72px">02 · la complémentarité</span>
     <h2 style="margin-top:0">associer, <em class="serif">sans se prendre la tête</em></h2>
@@ -88,16 +95,16 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261025"></script>
-<script src="js/menu.js?v=20261025"></script>
-<script src="js/vendor/lenis.min.js?v=20261025"></script>
-<script src="js/animations.js?v=20261025"></script>
+<script src="js/commun.js?v=20261026"></script>
+<script src="js/menu.js?v=20261026"></script>
+<script src="js/vendor/lenis.min.js?v=20261026"></script>
+<script src="js/animations.js?v=20261026"></script>
 <script>
   /* Contenu : donnees/equivalences.json (Pages CMS → « Équivalences et complémentarité ») */
   (async function () {
     let D;
     try { D = await chargerDonnees('donnees/equivalences.json'); } catch (e) {
-      document.getElementById('eq-liste').innerHTML = '<li class="message-erreur">Les équivalences n’ont pas pu être chargées. Recharge la page.</li>';
+      document.getElementById('eq-liste').innerHTML = '<p class="message-erreur">Les équivalences n’ont pas pu être chargées. Recharge la page.</p>';
       return;
     }
     const $ = (id) => document.getElementById(id);
@@ -112,39 +119,92 @@
     champ.value = D.quantiteParDefaut || 100;
 
     const g = (n) => formatNombre(Math.round(n), 0) + ' g';
+    const ic = (d) => '<svg viewBox="0 0 24 24" aria-hidden="true">' + d + '</svg>';
+    const OEUF = ic('<path d="M12 2.5c-3.9 0-7 6.2-7 11 0 4.4 3.1 8 7 8s7-3.6 7-8c0-4.8-3.1-11-7-11Z"/>');
+    const CUILLERE = ic('<ellipse cx="12" cy="7" rx="6" ry="6.5"/><rect x="10.6" y="12.5" width="2.8" height="10.5" rx="1.4"/>');
+
     /* Règle de trois à partir des valeurs pour 100 g de viande */
-    function quantite(a, viande) {
+    function valeurs(a, viande) {
       const f = viande / 100;
       if (a.unite !== 'g') {
         const min = Math.max(1, Math.round(a.quantite * f));
-        const max = Math.max(min, Math.round((a.quantiteMax || a.quantite) * f));
-        const mot = a.unite || 'œufs';
-        return min === max ? min + ' ' + (min > 1 ? mot : mot.replace(/s$/, '')) : min + ' à ' + max + ' ' + mot;
+        return { min, max: Math.max(min, Math.round((a.quantiteMax || a.quantite) * f)) };
       }
-      let t = g(a.quantite * f) + (a.quantiteCuite ? ' secs' : '');
-      if (a.quantiteCuite) t += ', ou ' + g(a.quantiteCuite * f) + ' cuits' + (a.cuilleres ? ' (environ ' + formatNombre(Math.round(a.cuilleres * f), 0) + ' cuillères à soupe)' : '');
-      return t;
+      return {
+        grammes: Math.round(a.quantite * f),
+        cuits: a.quantiteCuite ? Math.round(a.quantiteCuite * f) : 0,
+        cuilleres: a.cuilleres ? Math.round(a.cuilleres * f) : 0
+      };
     }
+    function texte(a, v) {
+      if (a.unite !== 'g') { const mot = a.unite || 'œufs'; return v.min === v.max ? v.min + ' ' + (v.min > 1 ? mot : mot.replace(/s$/, '')) : v.min + ' à ' + v.max + ' ' + mot; }
+      return g(v.grammes) + (v.cuits ? ' secs, ou ' + g(v.cuits) + ' cuits' : '');
+    }
+
+    /* Grille bento : une carte par alternative, construite une fois, puis seuls les chiffres changent */
+    $('eq-liste').innerHTML = ALT.map((a, i) => {
+      const oeufs = a.unite !== 'g';
+      return '<article class="eq-carte taille-' + (a.taille || 'normale') + (a.image ? ' avec-photo' : ' sans-photo') + (oeufs ? ' carte-oeufs' : '') + ' revele" style="--i:' + i + '" data-i="' + i + '">' +
+        (a.image ? '<div class="eq-photo"><img src="' + echapper(a.image) + '" alt="" loading="lazy" width="800" height="560"></div>' : '') +
+        '<div class="eq-texte"><h3>' + echapper(a.nom) + '</h3>' +
+        (oeufs
+          ? '<p class="eq-chiffre"><span data-n="min">0</span><small> à </small><span data-n="max">0</span><small> ' + echapper(a.unite || 'œufs') + '</small></p><div class="eq-icones oeufs" aria-hidden="true"></div>'
+          : '<p class="eq-chiffre"><span data-n="grammes">0</span><small>g' + (a.quantiteCuite ? ' secs' : '') + '</small></p>' +
+            (a.quantiteCuite ? '<p class="eq-detail">ou <b data-n="cuits">0</b> g cuits' + (a.cuilleres ? ', environ <b data-n="cuilleres">0</b> cuillères à soupe' : '') + '</p>' : '') +
+            (a.cuilleres ? '<div class="eq-icones cuilleres" aria-hidden="true"></div>' : '')) +
+        '<p class="sr-only" data-texte></p></div></article>';
+    }).join('');
+
+    // Les chiffres roulent jusqu'à leur nouvelle valeur
+    function rouler(el, cible) {
+      const depart = Number(el.dataset.v || 0);
+      el.dataset.v = cible;
+      if (MOUVEMENT_REDUIT || depart === cible) { el.textContent = formatNombre(cible, 0); return; }
+      const t0 = performance.now();
+      (function pas(t) {
+        const p = Math.min(1, (t - t0) / 480), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = formatNombre(Math.round(depart + (cible - depart) * e), 0);
+        if (p < 1 && el.dataset.v == cible) requestAnimationFrame(pas);
+      })(t0);
+    }
+    function icones(zone, plein, total, svg) {
+      const max = 24;
+      zone.innerHTML = Array.from({ length: Math.min(total, max) }, (_, k) =>
+        '<span class="' + (k < plein ? 'plein' : 'peut-etre') + '" style="--k:' + k + '">' + svg + '</span>').join('') +
+        (total > max ? '<span class="plus">+' + (total - max) + '</span>' : '');
+    }
+
     function calculer() {
+      champ.style.width = Math.max(1, champ.value.length) + 0.2 + 'ch'; // le « g » colle au chiffre
       const viande = lireNombre(champ.value);
+      document.querySelectorAll('[data-portion]').forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.portion) === viande)));
       if (!viande) {
         $('eq-exemple').textContent = 'Tape une quantité en grammes.';
         $('eq-aide').textContent = '';
-        $('eq-liste').innerHTML = '';
+        $('eq-liste').classList.add('vide');
         return;
       }
+      $('eq-liste').classList.remove('vide');
+      const curseur = $('eq-curseur');
+      if (Number(curseur.value) !== viande) curseur.value = Math.min(400, Math.max(25, viande));
+      curseur.style.setProperty('--p', (Math.min(400, Math.max(25, viande)) - 25) / 375);
+      $('eq-aide').textContent = '≈ ' + g(viande * 0.75) + ' une fois cuits';
       const premier = ALT[0];
-      $('eq-exemple').innerHTML = premier ? '<b>' + g(viande) + ' de viande</b> = ' + echapper(quantite(premier, viande)) + ' de ' + echapper(premier.nom.toLowerCase()) : '';
-      $('eq-aide').textContent = g(viande) + ' crus, c’est environ ' + g(viande * 0.75) + ' cuits.';
-      $('eq-liste').innerHTML = ALT.map((a, i) =>
-        '<li style="--i:' + i + '"><span class="eq-nom">' + echapper(a.nom) + '</span><span class="eq-valeur">' + echapper(quantite(a, viande)) + '</span></li>').join('');
+      $('eq-exemple').innerHTML = premier ? '<b>' + g(viande) + ' de viande</b> = ' + echapper(texte(premier, valeurs(premier, viande))) + ' de ' + echapper(premier.nom.toLowerCase()) : '';
+      ALT.forEach((a, i) => {
+        const carte = document.querySelector('.eq-carte[data-i="' + i + '"]');
+        const v = valeurs(a, viande);
+        carte.querySelectorAll('[data-n]').forEach((el) => rouler(el, v[el.dataset.n]));
+        carte.querySelector('[data-texte]').textContent = texte(a, v);
+        const z = carte.querySelector('.eq-icones');
+        if (z && a.unite !== 'g') icones(z, v.min, v.max, OEUF);
+        else if (z) icones(z, v.cuilleres, v.cuilleres, CUILLERE);
+        carte.classList.toggle('fourchette', a.unite !== 'g' && v.min !== v.max);
+      });
     }
     champ.addEventListener('input', calculer);
-    document.querySelectorAll('[data-pas]').forEach((b) => b.addEventListener('click', () => {
-      const v = Math.max(25, (lireNombre(champ.value) || 0) + Number(b.dataset.pas));
-      champ.value = v;
-      calculer();
-    }));
+    $('eq-curseur').addEventListener('input', (e) => { champ.value = e.target.value; calculer(); });
+    document.querySelectorAll('[data-portion]').forEach((b) => b.addEventListener('click', () => { champ.value = b.dataset.portion; calculer(); }));
     calculer();
 
     const C = D.complementarite || {};

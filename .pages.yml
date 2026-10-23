@@ -282,6 +282,21 @@ content:
         label: Cuillères à soupe pour la quantité cuite
         description: 0 = ne pas afficher.
         type: number
+      - name: image
+        label: Photo de la carte
+        description: Format paysage, léger. Laisse vide pour une carte de couleur (comme les œufs).
+        type: image
+      - name: taille
+        label: Taille de la carte
+        type: select
+        options:
+          values:
+          - name: grande
+            label: Grande (la première)
+          - name: large
+            label: Large
+          - name: normale
+            label: Normale
     - name: source
       label: Source courte des équivalences
       description: Par exemple « VVK 2019, p. 24 ». La référence complète va dans « Sources » en bas.

@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261025"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261025">
-  <link rel="stylesheet" href="css/style.css?v=20261025">
+  <script src="js/theme.js?v=20261026"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261026">
+  <link rel="stylesheet" href="css/style.css?v=20261026">
 </head>
 <body class="page-secondaire">
 
@@ -62,58 +62,93 @@
         <form id="decodeur" class="formulaire-etiquette revele" autocomplete="off" onsubmit="return false" aria-describedby="explication-formulaire">
           <p class="titre-formulaire" id="explication-formulaire">Pas de code-barres ? <span>Remplis toi-même ici :</span></p>
 
-          <div class="champ">
-            <label for="kcal">Énergie</label>
-            <div class="saisie"><input type="text" id="kcal" inputmode="decimal" placeholder="ex. 210"><span class="unite">kcal</span></div>
+          <div class="etiquette-saisie">
+            <div class="es-tete"><span>Valeurs nutritionnelles</span><span>pour 100 g</span></div>
+            <label class="ligne-saisie" for="kcal">
+              <span class="ls-nom">Énergie</span>
+              <span class="ls-pointilles" aria-hidden="true"></span>
+              <input type="text" id="kcal" inputmode="decimal" enterkeyhint="next" placeholder="—" autocomplete="off">
+              <span class="ls-unite">kcal</span>
+              <span class="ls-statut" aria-hidden="true"></span>
+            </label>
+            <label class="ligne-saisie" for="grasses">
+              <span class="ls-nom">Matières grasses</span>
+              <span class="ls-pointilles" aria-hidden="true"></span>
+              <input type="text" id="grasses" inputmode="decimal" enterkeyhint="next" placeholder="—" autocomplete="off">
+              <span class="ls-unite">g</span>
+              <span class="ls-statut" data-statut="grasses" aria-hidden="true"></span>
+            </label>
+            <label class="ligne-saisie sous" for="satures">
+              <span class="ls-nom">dont saturées</span>
+              <span class="ls-pointilles" aria-hidden="true"></span>
+              <input type="text" id="satures" inputmode="decimal" enterkeyhint="next" placeholder="—" autocomplete="off">
+              <span class="ls-unite">g</span>
+              <span class="ls-statut" data-statut="satures" aria-hidden="true"></span>
+            </label>
+            <label class="ligne-saisie" for="proteines">
+              <span class="ls-nom">Protéines</span>
+              <span class="ls-pointilles" aria-hidden="true"></span>
+              <input type="text" id="proteines" inputmode="decimal" enterkeyhint="next" placeholder="—" autocomplete="off">
+              <span class="ls-unite">g</span>
+              <span class="ls-statut" data-statut="proteines" aria-hidden="true"></span>
+            </label>
+            <label class="ligne-saisie" for="sel">
+              <span class="ls-nom">Sel</span>
+              <span class="ls-pointilles" aria-hidden="true"></span>
+              <input type="text" id="sel" inputmode="decimal" enterkeyhint="next" placeholder="—" autocomplete="off">
+              <span class="ls-unite">g</span>
+              <span class="ls-statut" data-statut="sel" aria-hidden="true"></span>
+            </label>
+            <p class="es-intertitre">si indiqué sur l’emballage</p>
+            <label class="ligne-saisie" for="fer">
+              <span class="ls-nom">Fer</span>
+              <span class="ls-pointilles" aria-hidden="true"></span>
+              <input type="text" id="fer" inputmode="decimal" enterkeyhint="next" placeholder="—" autocomplete="off">
+              <span class="ls-unite">mg</span>
+              <span class="ls-statut" data-statut="fer" aria-hidden="true"></span>
+            </label>
+            <label class="ligne-saisie" for="b12">
+              <span class="ls-nom">Vitamine B12</span>
+              <span class="ls-pointilles" aria-hidden="true"></span>
+              <input type="text" id="b12" inputmode="decimal" enterkeyhint="next" placeholder="—" autocomplete="off">
+              <span class="ls-unite">µg</span>
+              <span class="ls-statut" data-statut="b12" aria-hidden="true"></span>
+            </label>
+            <div class="es-pied">
+              <div class="es-progression" aria-hidden="true"><span id="es-barre"></span></div>
+              <span class="es-compte" id="es-compte" aria-live="polite">0 / 7</span>
+              <button type="button" class="lien-discret" id="es-effacer" hidden>effacer</button>
+            </div>
           </div>
-          <div class="champ">
-            <label for="proteines">Protéines</label>
-            <div class="saisie"><input type="text" id="proteines" inputmode="decimal" placeholder="ex. 18"><span class="unite">g</span></div>
-          </div>
-          <div class="champ">
-            <label for="grasses">Matières grasses</label>
-            <div class="saisie"><input type="text" id="grasses" inputmode="decimal" placeholder="ex. 11"><span class="unite">g</span></div>
-          </div>
-          <div class="champ">
-            <label for="satures">dont saturées</label>
-            <div class="saisie"><input type="text" id="satures" inputmode="decimal" placeholder="ex. 1,2"><span class="unite">g</span></div>
-          </div>
-          <div class="champ">
-            <label for="sel">Sel</label>
-            <div class="saisie"><input type="text" id="sel" inputmode="decimal" placeholder="ex. 1,3"><span class="unite">g</span></div>
-          </div>
-          <div class="champ">
-            <label for="fer">Fer <span class="facultatif">si indiqué</span></label>
-            <div class="saisie"><input type="text" id="fer" inputmode="decimal" placeholder="ex. 2,1"><span class="unite">mg</span></div>
-          </div>
-          <div class="champ">
-            <label for="b12">Vitamine B12 <span class="facultatif">si indiquée</span></label>
-            <div class="saisie"><input type="text" id="b12" inputmode="decimal" placeholder="ex. 0,38"><span class="unite">µg</span></div>
-          </div>
+
+          <div class="ingredients-saisie">
+            <p class="es-intertitre">dans la liste d’ingrédients</p>
           <fieldset class="choix">
-            <legend>B12 citée dans les ingrédients ?</legend>
-            <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p></details>
+            <legend>Vitamine B12 citée ?</legend>
             <div class="choix-options">
               <label><input type="radio" name="b12-cite" value="oui"> Oui</label>
               <label><input type="radio" name="b12-cite" value="non"> Non</label>
             </div>
+            <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p></details>
           </fieldset>
           <fieldset class="choix">
-            <legend>Fer cité dans les ingrédients ?</legend>
-            <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p></details>
+            <legend>Fer cité ?</legend>
             <div class="choix-options">
               <label><input type="radio" name="fer-cite" value="oui"> Oui</label>
               <label><input type="radio" name="fer-cite" value="non"> Non</label>
             </div>
+            <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p></details>
           </fieldset>
           <fieldset class="choix">
-            <legend>Présence de gluten ?</legend>
-            <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Les céréales contenant du gluten sont mises en évidence dans la liste d’ingrédients (le plus souvent en gras). Attention au gluten caché dans les céréales : seigle, avoine, blé, orge, triticale, épeautre, khorasan (kamut). Si tu vois ces ingrédients, c’est que le produit contient du gluten.</p></details>
+            <legend>Gluten ?</legend>
             <div class="choix-options">
               <label><input type="radio" name="gluten" value="oui"> Oui</label>
               <label><input type="radio" name="gluten" value="non"> Non</label>
             </div>
+            <details class="aide-depliable"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Les céréales contenant du gluten sont mises en évidence dans la liste d’ingrédients (le plus souvent en gras). Attention au gluten caché dans les céréales : seigle, avoine, blé, orge, triticale, épeautre, khorasan (kamut). Si tu vois ces ingrédients, c’est que le produit contient du gluten.</p></details>
           </fieldset>
+          </div>
+          <a class="bouton voir-reperes" id="voir-reperes" href="#bloc-reperes" hidden>voir mes repères <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
         </form>
       </div>
 
@@ -166,15 +201,15 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261025"></script>
-<script src="js/commun.js?v=20261025"></script>
-<script src="js/menu.js?v=20261025"></script>
-<script src="js/vendor/lenis.min.js?v=20261025"></script>
-<script src="js/animations.js?v=20261025"></script>
-<script src="js/avis.js?v=20261025"></script>
-<script src="js/evaluation.js?v=20261025"></script>
-<script src="js/vegan.js?v=20261025"></script>
-<script src="js/scanner.js?v=20261025"></script>
+<script src="js/config.js?v=20261026"></script>
+<script src="js/commun.js?v=20261026"></script>
+<script src="js/menu.js?v=20261026"></script>
+<script src="js/vendor/lenis.min.js?v=20261026"></script>
+<script src="js/animations.js?v=20261026"></script>
+<script src="js/avis.js?v=20261026"></script>
+<script src="js/evaluation.js?v=20261026"></script>
+<script src="js/vegan.js?v=20261026"></script>
+<script src="js/scanner.js?v=20261026"></script>
 <script>
   (async function () {
     let C;
@@ -208,13 +243,48 @@
       return '<p class="eval-extra"><b>Gluten :</b> ' + (g === 'oui' ? 'contient du gluten.' : g === 'non' ? 'pas de gluten repéré.' : 'non renseigné.') + '</p>';
     }
 
+    /* Étiquette à remplir : pastille au bout de chaque ligne et progression */
+    const CHAMPS = ['kcal', 'grasses', 'satures', 'proteines', 'sel', 'fer', 'b12'];
+    const SYMBOLES = { atteint: '✓', surveiller: '!', inconnu: '' };
+    function majEtiquette(ev) {
+      ev.reperes.forEach((r) => {
+        const slot = document.querySelector('[data-statut="' + r.cle + '"]');
+        if (!slot) return;
+        const statut = r.statut === 'inconnu' ? '' : r.statut;
+        if (slot.dataset.etat === statut) return;
+        slot.dataset.etat = statut;
+        slot.textContent = SYMBOLES[r.statut];
+        slot.title = statut ? r.nom + ' : ' + (statut === 'atteint' ? 'atteint' : 'à surveiller') : '';
+      });
+      const remplis = CHAMPS.filter((id) => lireNombre($(id).value) !== null).length;
+      $('es-compte').textContent = remplis + ' / ' + CHAMPS.length;
+      $('es-barre').style.transform = 'scaleX(' + remplis / CHAMPS.length + ')';
+      $('es-effacer').hidden = !remplis;
+      $('voir-reperes').hidden = !remplis;
+      CHAMPS.forEach((id) => $(id).closest('.ligne-saisie').classList.toggle('remplie', lireNombre($(id).value) !== null));
+    }
+
     function calculer() {
       const ev = evaluer();
+      majEtiquette(ev);
       $('evaluation-manuelle').innerHTML = E.rendre(ev) + ligneGluten();
       const zone = document.querySelector('.fiche-produit [data-evaluation]');
       if (zone) zone.innerHTML = E.rendre(ev, { source: 'Valeurs : Open Food Facts.' });
     }
 
+    $('decodeur').addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' || !e.target.matches('.ligne-saisie input')) return;
+      e.preventDefault();
+      const suivant = $(CHAMPS[CHAMPS.indexOf(e.target.id) + 1]);
+      if (suivant) suivant.focus(); else e.target.blur();
+    });
+    $('es-effacer').addEventListener('click', () => {
+      CHAMPS.forEach((id) => { $(id).value = ''; });
+      document.querySelectorAll('#decodeur input[type="radio"]').forEach((r) => { r.checked = false; });
+      calculer();
+      $(CHAMPS[0]).focus();
+    });
+    $('voir-reperes').addEventListener('click', (e) => { e.preventDefault(); defiler($('bloc-reperes')); });
     $('decodeur').addEventListener('input', calculer);
     $('decodeur').addEventListener('change', calculer);
     calculer();
