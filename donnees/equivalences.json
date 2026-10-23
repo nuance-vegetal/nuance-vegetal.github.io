@@ -68,7 +68,7 @@
   "complementarite": {
     "principe": "Chaque famille d'aliments a un petit point faible dans ses protéines. Les céréales et les légumineuses ont des points faibles différents : mangées dans la même journée, elles se complètent et t'apportent tout ce qu'il faut.\n\nEnfants, ados, femmes enceintes ou allaitantes : essaie plutôt de les associer au même repas.\n\nPour les quantités, utilise le calculateur au-dessus.",
     "phrase": "Pas besoin de peser ni de tout associer au même repas : varie tes sources de protéines au fil de la journée.",
-    "source": "VVK 2019, p. 23–25",
+    "source": "VVK 2019 · CSS 2021, avis n° 9445, p. 28",
     "note": "[Texte à valider par Camille]",
     "associations": [
       {
@@ -164,6 +164,10 @@
     {
       "texte": "Gorissen et al. (2018). Protein content and amino acid composition of commercially available plant-based protein isolates. Amino Acids 50(12):1685–1695.",
       "url": "https://doi.org/10.1007/s00726-018-2640-5"
+    },
+    {
+      "texte": "CSS (2021). Alimentation végétarienne. Avis n° 9445, p. 28.",
+      "url": "https://www.hgr-css.be/fr/avis/9445/alimentation-vegetarienne"
     }
   ]
 }
