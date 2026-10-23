@@ -69,7 +69,6 @@
     "principe": "Chaque famille d'aliments a un petit point faible dans ses protéines. Les céréales et les légumineuses ont des points faibles différents : mangées dans la même journée, elles se complètent et t'apportent tout ce qu'il faut.\n\nEnfants, ados, femmes enceintes ou allaitantes : essaie plutôt de les associer au même repas.\n\nPour les quantités, utilise le calculateur au-dessus.",
     "phrase": "Pas besoin de peser ni de tout associer au même repas : varie tes sources de protéines au fil de la journée.",
     "source": "VVK 2019 · CSS 2021, avis n° 9445, p. 25–26",
-    "note": "[Texte à valider par Camille]",
     "associations": [
       {
         "titre": "Céréales + légumineuses",
@@ -120,8 +119,8 @@
         "exemples": [
           "haché ou morceaux de Quorn"
         ],
-        "pourquoi": "Des protéines de très bonne qualité à lui seul (PDCAAS proche de 1).",
-        "source": "Edwards & Cummings, 2010"
+        "pourquoi": "Des protéines de bonne qualité à lui seul.",
+        "source": "Edwards & Cummings, 2010 · CSS 2021, p. 27"
       },
       {
         "titre": "Seitan + légumineuses ou soja",
@@ -166,7 +165,7 @@
       "url": "https://doi.org/10.1007/s00726-018-2640-5"
     },
     {
-      "texte": "CSS (2021). Alimentation végétarienne. Avis n° 9445, p. 28.",
+      "texte": "CSS (2021). Alimentation végétarienne. Avis n° 9445, p. 25–27.",
       "url": "https://www.hgr-css.be/fr/avis/9445/alimentation-vegetarienne"
     }
   ]
