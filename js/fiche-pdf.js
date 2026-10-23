@@ -159,7 +159,7 @@ window.FichePDF = (function () {
     });
 
     /* ---------- Logos bio et QR code ---------- */
-    nouvellePage();
+    y += 4; // à la suite, une nouvelle page seulement s'il ne reste pas assez de place
     titre(T.titreBio || 'Bio ? Repère ces logos');
     const logos = [
       ['images/labels/bio-europeen.svg', 'Logo bio européen', 'Obligatoire sur tout produit bio préemballé de l’UE'],

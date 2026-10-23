@@ -283,8 +283,9 @@ content:
         description: 0 = ne pas afficher.
         type: number
     - name: source
-      label: Source des équivalences
-      type: text
+      label: Source courte des équivalences
+      description: Par exemple « VVK 2019, p. 24 ». La référence complète va dans « Sources » en bas.
+      type: string
     - name: noteEquivalences
       label: Note
       description: Laisse vide quand les valeurs sont validées.
@@ -301,8 +302,9 @@ content:
         label: Phrase mise en avant
         type: text
       - name: source
-        label: Source du principe
-        type: text
+        label: Source courte du principe
+        description: Par exemple « VVK 2019, p. 23–25 ».
+        type: string
       - name: note
         label: Note
         description: Laisse vide quand le texte est validé.
@@ -332,8 +334,26 @@ content:
           label: Pourquoi ça marche
           type: text
         - name: source
-          label: Source
-          type: text
+          label: Source courte
+          description: Par exemple « Edwards & Cummings, 2010 ». La référence complète va dans « Sources » en bas.
+          type: string
+    - name: sources
+      label: Sources (en bas de la page)
+      description: Les références complètes, avec leur lien.
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{texte}'
+      fields:
+      - name: texte
+        label: Référence complète
+        type: text
+        required: true
+      - name: url
+        label: Lien
+        description: Commence par https://. Laisse vide s'il n'y en a pas.
+        type: string
   - name: nutriments
     label: À quoi ça sert ? – fiches B12, protéines, fer, additifs, allégations
     type: file

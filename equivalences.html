@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261024"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261024">
-  <link rel="stylesheet" href="css/style.css?v=20261024">
+  <script src="js/theme.js?v=20261025"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261025">
+  <link rel="stylesheet" href="css/style.css?v=20261025">
 </head>
 <body class="page-secondaire">
 
@@ -66,6 +66,11 @@
     <h2 style="margin-top:0">associer, <em class="serif">sans se prendre la tête</em></h2>
     <div class="carte revele" id="comp-principe"></div>
     <div class="grille-assiettes" id="comp-associations"></div>
+
+    <section class="sources-page revele" aria-labelledby="titre-sources">
+      <h2 id="titre-sources" style="margin-top:56px">sources</h2>
+      <ul class="sources" id="eq-sources"></ul>
+    </section>
   </main>
 </div>
 
@@ -83,10 +88,10 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261024"></script>
-<script src="js/menu.js?v=20261024"></script>
-<script src="js/vendor/lenis.min.js?v=20261024"></script>
-<script src="js/animations.js?v=20261024"></script>
+<script src="js/commun.js?v=20261025"></script>
+<script src="js/menu.js?v=20261025"></script>
+<script src="js/vendor/lenis.min.js?v=20261025"></script>
+<script src="js/animations.js?v=20261025"></script>
 <script>
   /* Contenu : donnees/equivalences.json (Pages CMS → « Équivalences et complémentarité ») */
   (async function () {
@@ -100,7 +105,10 @@
     const ALT = (D.alternatives || []).filter((a) => a && a.nom && a.quantite);
     $('eq-intro').textContent = D.intro || '';
     $('eq-qualite').textContent = D.phraseQualite || '';
-    $('eq-source').textContent = [D.source ? 'Source : ' + D.source : '', D.noteEquivalences || ''].filter(Boolean).join(' ');
+    $('eq-source').textContent = [D.source ? 'Source : ' + D.source + '.' : '', D.noteEquivalences || ''].filter(Boolean).join(' ');
+    // Références complètes, avec leurs liens, en bas de la page
+    $('eq-sources').innerHTML = (D.sources || []).filter((x) => x && x.texte).map((x) =>
+      '<li>' + echapper(x.texte) + (x.url ? ' <a href="' + echapper(x.url) + '" target="_blank" rel="noopener">Lire la source</a>' : '') + '</li>').join('');
     champ.value = D.quantiteParDefaut || 100;
 
     const g = (n) => formatNombre(Math.round(n), 0) + ' g';
@@ -121,6 +129,7 @@
       const viande = lireNombre(champ.value);
       if (!viande) {
         $('eq-exemple').textContent = 'Tape une quantité en grammes.';
+        $('eq-aide').textContent = '';
         $('eq-liste').innerHTML = '';
         return;
       }
@@ -141,7 +150,7 @@
     const C = D.complementarite || {};
     $('comp-principe').innerHTML = texteRiche(C.principe) +
       (C.phrase ? '<p class="comp-phrase">' + enLigne(C.phrase) + '</p>' : '') +
-      (C.source ? '<p class="petit secondaire" style="margin:0">Source : ' + echapper(C.source) + '</p>' : '') +
+      (C.source ? '<p class="petit secondaire" style="margin:0">Source : ' + echapper(C.source) + '.</p>' : '') +
       (C.note ? '<p class="petit secondaire" style="margin:4px 0 0">' + echapper(C.note) + '</p>' : '');
     $('comp-associations').innerHTML = (C.associations || []).filter((a) => a && a.titre).map((a, i) =>
       '<article class="carte assiette revele" style="--i:' + i + '">' +

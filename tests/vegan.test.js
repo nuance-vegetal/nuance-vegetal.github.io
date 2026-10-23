@@ -37,6 +37,8 @@ const cas = [
   ['« non vegan » : pas classé végan', { noms: ['Burger non vegan'] }, 'non-signale', false],
   ['« not suitable for vegans » : pas classé végan', { noms: ['Not suitable for vegans'] }, 'non-signale', false],
   ['« niet veganistisch » : pas classé végan', { labels: ['Niet veganistisch'] }, 'non-signale', false],
+  ['« Veganistische burger » : végan', { noms: ['Veganistische burger'] }, 'oui', false],
+  ['« niet veganistische » : pas classé végan', { noms: ['Burger, niet veganistische'] }, 'non-signale', false],
   // Ordre de priorité
   ['label vegan avant mots-clés', { labels: ['en:vegan'], ingredients: 'miel' }, 'oui', false],
   ['analyse Open Food Facts avant mots-clés', { analyse: ['en:non-vegan'], ingredients: 'Eau' }, 'non', false],

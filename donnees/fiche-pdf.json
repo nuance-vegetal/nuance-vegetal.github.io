@@ -14,7 +14,11 @@
         "Si le produit est enrichi, la quantité est aussi dans le tableau nutritionnel.",
         "Le fer des végétaux est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi)."
       ],
-      "encadre": { "titre": "", "texte": "", "couleur": "bleu" }
+      "encadre": {
+        "titre": "",
+        "texte": "",
+        "couleur": "bleu"
+      }
     },
     {
       "titre": "Les ingrédients",
@@ -25,21 +29,25 @@
         "Les allergènes sont mis en évidence, le plus souvent en gras."
       ],
       "encadre": {
-        "titre": "Le bon réflexe",
-        "texte": "Compare le prix pour 20 g de protéines : prix au kilo × 2 ÷ protéines. Exemple : 14 €/kg et 15 g de protéines = 1,87 €.",
+        "titre": "",
+        "texte": "",
         "couleur": "bleu"
       }
     },
     {
       "titre": "Pièges végan",
-      "nouvellePage": true,
+      "nouvellePage": false,
       "texte": "",
       "points": [
         "Ingrédients d’origine animale moins évidents : **lactosérum**, **caséine**, **gélatine**, **miel**, **carmin (E120)**.",
         "« Peut contenir des traces de lait » = contamination possible en usine, pas un vrai ingrédient laitier.",
         "Le **lait** et les **œufs** sont obligatoirement mis en évidence dans les ingrédients (le plus souvent en gras)."
       ],
-      "encadre": { "titre": "", "texte": "", "couleur": "bleu" }
+      "encadre": {
+        "titre": "",
+        "texte": "",
+        "couleur": "bleu"
+      }
     },
     {
       "titre": "Gluten caché",

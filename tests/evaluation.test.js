@@ -40,6 +40,7 @@ const cas = [
   ['allégation < 12 % → aucune', evaluate({ proteines: 4, energie: 200 }).allegation.niveau, 'aucune'],
   ['pas d’allégation sans énergie', evaluate({ proteines: 10 }).allegation, null],
   ['fer exactement 0,8 mg → atteint', evaluate({ fer: 0.8 }).reperes[4].statut, 'atteint'],
+  ['fer 0,8 mg → « Assez de fer pour un substitut de viande. »', evaluate({ fer: 0.8 }).reperes[4].message.startsWith('Assez de fer pour un substitut de viande.'), true],
   ['B12 exactement 0,24 µg → atteint', evaluate({ b12: 0.24 }).reperes[5].statut, 'atteint'],
   ['protéines exactement 10 g → à surveiller (> 10 g)', evaluate({ proteines: 10 }).reperes[0].statut, 'surveiller']
 ];

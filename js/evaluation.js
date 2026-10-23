@@ -109,7 +109,7 @@
     if (fer === null) r.push({ cle: 'fer', nom: 'Fer', statut: 'inconnu', valeur: null, detail: p.ferCite ? 'ajouté' : 'absent',
       message: p.ferCite ? 'Du fer est ajouté, mais la quantité n’est pas indiquée.' : 'Pas de quantité indiquée.' });
     else r.push({ cle: 'fer', nom: 'Fer', statut: fer >= S.ferMin ? 'atteint' : 'surveiller',
-      message: fer >= S.ferMin ? 'Bonne source de fer. Associe-le à de la vitamine C.' : 'Peu de fer.', valeur: fr(fer, 2) + ' mg' });
+      message: fer >= S.ferMin ? 'Assez de fer pour un substitut de viande. Associe-le à de la vitamine C.' : 'Peu de fer.', valeur: fr(fer, 2) + ' mg' });
     r[4].repere = 'au moins ' + fr(S.ferMin) + ' mg';
 
     // 6. Vitamine B12 : ≥ 0,24 µg

@@ -67,16 +67,16 @@
   /** Étape 1 : une mention vegan non niée dans le nom, le nom générique ou les labels ? */
   function mentionVegan(textes, L) {
     return textes.some((brut) => {
-      let t = normaliser(brut);
+      // Une négation de plusieurs mots (« niet veganistische ») est effacée d'office
+      let t = retirer(normaliser(brut), L.negations.filter((n) => n.includes(' ')));
       // Les plus longues d'abord ; une mention niée est effacée pour que « vegan » ne la retrouve pas
       // dans « not suitable for vegans »
       return L.mentions.some((m) => {
         const r = motif(m);
         let res;
         while ((res = r.exec(t))) {
-          const avant = t.slice(0, res.index).trim().split(' ');
-          const precedent = avant[avant.length - 1] || '';
-          if (!L.negations.includes(precedent)) return true;
+          const avant = ' ' + t.slice(0, res.index).trim();
+          if (!L.negations.some((n) => avant.endsWith(' ' + n))) return true;
           t = t.slice(0, res.index) + ' '.repeat(res[0].length) + t.slice(res.index + res[0].length);
         }
         return false;

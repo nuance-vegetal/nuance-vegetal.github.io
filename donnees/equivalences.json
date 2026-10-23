@@ -3,63 +3,157 @@
   "quantiteParDefaut": 100,
   "phraseQualite": "L’équivalence porte sur la quantité de protéines, pas sur leur qualité (digestibilité, acides aminés).",
   "alternatives": [
-    { "nom": "Tofu", "quantite": 150, "unite": "g", "quantiteCuite": 0, "cuilleres": 0, "quantiteMax": 0 },
-    { "nom": "Tempeh", "quantite": 100, "unite": "g", "quantiteCuite": 0, "cuilleres": 0, "quantiteMax": 0 },
-    { "nom": "Mycoprotéines (Quorn)", "quantite": 150, "unite": "g", "quantiteCuite": 0, "cuilleres": 0, "quantiteMax": 0 },
-    { "nom": "Seitan", "quantite": 100, "unite": "g", "quantiteCuite": 0, "cuilleres": 0, "quantiteMax": 0 },
-    { "nom": "Légumineuses", "quantite": 100, "unite": "g", "quantiteCuite": 250, "cuilleres": 7, "quantiteMax": 0 },
-    { "nom": "Œufs", "quantite": 2, "unite": "œufs", "quantiteCuite": 0, "cuilleres": 0, "quantiteMax": 3 }
+    {
+      "nom": "Tofu",
+      "quantite": 150,
+      "unite": "g",
+      "quantiteCuite": 0,
+      "cuilleres": 0,
+      "quantiteMax": 0
+    },
+    {
+      "nom": "Tempeh",
+      "quantite": 100,
+      "unite": "g",
+      "quantiteCuite": 0,
+      "cuilleres": 0,
+      "quantiteMax": 0
+    },
+    {
+      "nom": "Mycoprotéines (Quorn)",
+      "quantite": 150,
+      "unite": "g",
+      "quantiteCuite": 0,
+      "cuilleres": 0,
+      "quantiteMax": 0
+    },
+    {
+      "nom": "Seitan",
+      "quantite": 100,
+      "unite": "g",
+      "quantiteCuite": 0,
+      "cuilleres": 0,
+      "quantiteMax": 0
+    },
+    {
+      "nom": "Légumineuses",
+      "quantite": 100,
+      "unite": "g",
+      "quantiteCuite": 250,
+      "cuilleres": 7,
+      "quantiteMax": 0
+    },
+    {
+      "nom": "Œufs",
+      "quantite": 2,
+      "unite": "œufs",
+      "quantiteCuite": 0,
+      "cuilleres": 0,
+      "quantiteMax": 3
+    }
   ],
-  "source": "VVK, VBVD, Vlaamse Pediatrische diëtisten et Kind en Gezin (2019). Alimentation végétarienne — Brochure d’information pour les intervenants dans les soins de santé (trad. de Vegetarische voeding), p. 24.",
+  "source": "VVK 2019, p. 24",
   "noteEquivalences": "[Valeurs à valider par Camille]",
   "complementarite": {
     "principe": "Les céréales manquent surtout de lysine, les légumineuses d’acides aminés soufrés (méthionine). Associées, elles apportent tous les acides aminés essentiels, sur la journée : pas forcément au même repas.",
     "phrase": "Pas besoin de peser ni de tout associer au même repas : varie tes sources de protéines au fil de la journée.",
     "note": "[Texte à valider par Camille]",
-    "source": "VVK 2019, p. 23–25 : combinaison des protéines végétales sur la journée ; céréales et légumineuses compensent l’acide aminé limitant ; le soja apporte seul des protéines de haute qualité.",
+    "source": "VVK 2019, p. 23–25",
     "associations": [
       {
         "titre": "Céréales + légumineuses",
-        "familles": ["céréales", "légumineuses"],
-        "exemples": ["riz + lentilles", "semoule + pois chiches", "pain + houmous", "tortilla + haricots rouges"],
+        "familles": [
+          "céréales",
+          "légumineuses"
+        ],
+        "exemples": [
+          "riz + lentilles",
+          "semoule + pois chiches",
+          "pain + houmous",
+          "tortilla + haricots rouges"
+        ],
         "pourquoi": "Les céréales manquent de lysine, les légumineuses d’acides aminés soufrés : ils se complètent.",
         "source": "VVK 2019, p. 23–25"
       },
       {
         "titre": "Graines ou oléagineux + légumineuses",
-        "familles": ["graines", "légumineuses"],
-        "exemples": ["houmous (pois chiches + sésame)", "salade de lentilles + graines de courge"],
+        "familles": [
+          "graines",
+          "légumineuses"
+        ],
+        "exemples": [
+          "houmous (pois chiches + sésame)",
+          "salade de lentilles + graines de courge"
+        ],
         "pourquoi": "Même principe : les graines complètent les légumineuses.",
         "source": "VVK 2019, p. 23–25"
       },
       {
         "titre": "Soja seul",
-        "familles": ["soja"],
-        "exemples": ["tofu", "tempeh", "boisson ou yaourt de soja"],
+        "familles": [
+          "soja"
+        ],
+        "exemples": [
+          "tofu",
+          "tempeh",
+          "boisson ou yaourt de soja"
+        ],
         "pourquoi": "Des protéines de haute qualité à lui seul.",
         "source": "VVK 2019, p. 23–25"
       },
       {
         "titre": "Quorn seul",
-        "familles": ["mycoprotéines"],
-        "exemples": ["haché ou morceaux de Quorn"],
+        "familles": [
+          "mycoprotéines"
+        ],
+        "exemples": [
+          "haché ou morceaux de Quorn"
+        ],
         "pourquoi": "Des protéines de très bonne qualité à lui seul (PDCAAS proche de 1).",
-        "source": "Edwards & Cummings (2010). The protein quality of mycoprotein. Proceedings of the Nutrition Society 69(OCE4):E331. doi:10.1017/S0029665110001400"
+        "source": "Edwards & Cummings, 2010"
       },
       {
         "titre": "Seitan + légumineuses ou soja",
-        "familles": ["seitan", "légumineuses"],
-        "exemples": ["seitan + pois chiches", "seitan + edamame", "wok seitan + tofu"],
+        "familles": [
+          "seitan",
+          "légumineuses"
+        ],
+        "exemples": [
+          "seitan + pois chiches",
+          "seitan + edamame",
+          "wok seitan + tofu"
+        ],
         "pourquoi": "Le blé est la protéine végétale la plus pauvre en lysine : le seitan a besoin d’être associé.",
-        "source": "Gorissen et al. (2018). Protein content and amino acid composition of commercially available plant-based protein isolates. Amino Acids 50(12):1685–1695. doi:10.1007/s00726-018-2640-5"
+        "source": "Gorissen et al., 2018"
       },
       {
         "titre": "Céréales + produits laitiers ou œufs (végétariens)",
-        "familles": ["céréales", "laitiers ou œufs"],
-        "exemples": ["pâtes + fromage", "pain + œuf", "porridge au lait"],
+        "familles": [
+          "céréales",
+          "laitiers ou œufs"
+        ],
+        "exemples": [
+          "pâtes + fromage",
+          "pain + œuf",
+          "porridge au lait"
+        ],
         "pourquoi": "Les protéines animales apportent la lysine qui manque aux céréales.",
         "source": "[Source à compléter par Camille]"
       }
     ]
-  }
+  },
+  "sources": [
+    {
+      "texte": "VVK, VBVD, Vlaamse Pediatrische diëtisten et Kind en Gezin (2019). Alimentation végétarienne — Brochure d’information pour les intervenants dans les soins de santé (trad. de Vegetarische voeding), p. 23–25 (combinaison des protéines végétales) et p. 24 (équivalences).",
+      "url": ""
+    },
+    {
+      "texte": "Edwards & Cummings (2010). The protein quality of mycoprotein. Proceedings of the Nutrition Society 69(OCE4):E331.",
+      "url": "https://doi.org/10.1017/S0029665110001400"
+    },
+    {
+      "texte": "Gorissen et al. (2018). Protein content and amino acid composition of commercially available plant-based protein isolates. Amino Acids 50(12):1685–1695.",
+      "url": "https://doi.org/10.1007/s00726-018-2640-5"
+    }
+  ]
 }
