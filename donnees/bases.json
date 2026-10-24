@@ -123,7 +123,8 @@
         "Soja"
       ],
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
-      "image_description": "Haché de soja séché dans un bol"
+      "image": "images/pst.webp",
+      "image_description": "Morceaux de soja séchés avec une branche de romarin"
     },
     {
       "nom": "Lupin",
@@ -134,7 +135,8 @@
         "Lupin (réaction croisée possible avec l'arachide)"
       ],
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
-      "image_description": "Graines de lupin jaunes dans un bol"
+      "image": "images/lupin.webp",
+      "image_description": "Lupins jaunes en fleurs dans une prairie"
     }
   ]
 }
