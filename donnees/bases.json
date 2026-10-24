@@ -110,6 +110,28 @@
       ],
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
       "image_description": "Œufs frais dans une boîte en carton"
+    },
+    {
+      "nom": "Protéines de soja texturées (PST)",
+      "base": "Soja",
+      "description": "Farine de soja dégraissée, séchée en morceaux ou en haché, parfois aromatisée. Une fois réhydratées, elles ont une texture proche de la viande.",
+      "proteines": "≈ 50 g pour 100 g (sec), ≈ 15 à 18 g une fois réhydratées",
+      "allergenes": [
+        "Soja"
+      ],
+      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
+      "image_description": "Haché de soja séché dans un bol"
+    },
+    {
+      "nom": "Lupin",
+      "base": "Autre",
+      "description": "Légumineuse cousine de l'arachide, au goût proche du pois chiche. On la mange en graines ou en farine, utilisée dans le pain, les biscuits et certains substituts de viande.",
+      "proteines": "≈ 15 g pour 100 g (graines cuites)",
+      "allergenes": [
+        "Lupin (réaction croisée possible avec l'arachide)"
+      ],
+      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
+      "image_description": "Graines de lupin jaunes dans un bol"
     }
   ]
 }
