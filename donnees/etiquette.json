@@ -2,7 +2,7 @@
   "produit": {
     "nom": "Galettes végétales façon steak",
     "details": "Produit fictif · 2 × 100 g · 3,49 €, soit 17,45 €/kg",
-    "ingredients": "Eau, protéines de pois (18 %), huile de tournesol, protéines de blé, amidon de pomme de terre, arômes naturels, sel, épaississant : méthylcellulose, colorant : jus de betterave, vitamine B12.",
+    "ingredients": "Eau, protéines de pois (18 %), huile de tournesol, protéines de blé, amidon de pomme de terre, arômes naturels, sel, épaississant : méthylcellulose, jus de betterave, vitamine B12.",
     "commentaireIngredients": 1,
     "traces": "Peut contenir des traces de soja.",
     "valeurs": [
@@ -57,32 +57,32 @@
     {
       "titre": "La base : du pois",
       "texte": "Le premier ingrédient après l'eau est la protéine de pois : c'est la base du produit. Les protéines de blé apportent du gluten.",
-      "source": "[Texte à valider par Camille]"
+      "source": "Règlement (UE) n° 1169/2011 (INCO)"
     },
     {
       "titre": "Protéines : atteint",
       "texte": "17 g pour 100 g, plus que le repère de 10 g : [atteint]\n\nEt 17 g × 4 ÷ 230 kcal = 30 % de l'énergie : l'emballage a le droit de dire « riche en protéines » (règle européenne, à partir de 20 %).",
-      "source": "Conseil Supérieur de la Santé, avis n° 9445 (2021) · règlement (CE) n° 1924/2006"
+      "source": "Vlaamse Vereniging voor Kindergeneeskunde (VVK). Informatiebrochure vegetarische voeding, annexe 1 · règlement (CE) n° 1924/2006"
     },
     {
       "titre": "B12 et fer",
-      "texte": "B12 : 0,38 µg pour 100 g, plus que le repère de 0,24 µg : [atteint]\n\nFer : ni dans les ingrédients ni dans le tableau : [non renseigné] Pense à d'autres sources dans la journée (légumineuses, céréales complètes).",
-      "source": "Conseil Supérieur de la Santé, avis n° 9445 (2021)"
+      "texte": "B12 : 0,38 µg pour 100 g, plus que le repère de 0,13 µg : [atteint]\n\nFer : ni dans les ingrédients ni dans le tableau (repère : plus de 0,7 mg) : [non renseigné] Pense à d'autres sources dans la journée (légumineuses, céréales complètes).",
+      "source": "Vlaamse Vereniging voor Kindergeneeskunde (VVK). Informatiebrochure vegetarische voeding, annexe 1"
     },
     {
-      "titre": "Sel : à surveiller",
-      "texte": "1,6 g pour 100 g, au-dessus du repère de 1,1 g : [à surveiller] Pas besoin de resaler.",
-      "source": "Conseil Supérieur de la Santé, avis n° 9445 (2021)"
+      "titre": "Sel : de justesse",
+      "texte": "1,6 g de sel pour 100 g, soit 640 mg de sodium : juste sous le repère de 650 mg de sodium (≈ 1,6 g de sel) : [atteint] C'est de justesse : pas besoin de resaler.",
+      "source": "Vlaamse Vereniging voor Kindergeneeskunde (VVK). Informatiebrochure vegetarische voeding, annexe 1"
     },
     {
       "titre": "Les graisses",
-      "texte": "Matières grasses : 14 g pour 100 g, au-dessus du repère de 10 g : [à surveiller]\n\nDont saturées : 1,6 g, moins de 5 g, soit environ 11 % des graisses : bien en dessous du tiers maximum (33 %) : [atteint] L'huile de tournesol apporte surtout des graisses insaturées.",
-      "source": "Conseil Supérieur de la Santé, avis n° 9445 (2021)"
+      "texte": "Matières grasses : 14 g pour 100 g, au-dessus du repère de 10 g : [à surveiller]\n\nDont saturées : 1,6 g, moins que le repère de 5 g : [atteint] L'huile de tournesol apporte surtout des graisses insaturées.",
+      "source": "Vlaamse Vereniging voor Kindergeneeskunde (VVK). Informatiebrochure vegetarische voeding, annexe 1"
     }
   ],
   "aRetenir": {
     "titre": "à retenir",
-    "texte": "Assez de protéines et enrichie en B12. À surveiller : le sel et les matières grasses. Pas de fer indiqué. Accompagne-la de légumes et de féculents sans sel ajouté."
+    "texte": "Assez de protéines et enrichie en B12. Sel tout juste dans le repère, matières grasses à surveiller. Pas de fer indiqué. Accompagne-la de légumes et de féculents sans sel ajouté."
   },
   "additifs": {
     "titre": "les additifs, on en parle ?",
