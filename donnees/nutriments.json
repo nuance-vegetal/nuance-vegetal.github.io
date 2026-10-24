@@ -60,10 +60,12 @@
         "Légumineuses (lentilles, pois chiches, haricots)",
         "Céréales complètes",
         "Graines oléagineuses",
-        "Fruits à coque"
+        "Fruits à coque",
+        "Produits du soja (tofu, tempeh)",
+        "Germes de blé"
       ],
       "surEtiquette": "Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel. Repère du CSS pour les substituts de viande : au moins 0,8 mg pour 100 g.",
-      "conseil": "Associe ces aliments à une source de vitamine C au même repas (poivron, agrumes, kiwi) : elle aide à mieux absorber le fer.",
+      "conseil": "Associe ces aliments à une source de vitamine C au même repas (poivron, agrumes, kiwi) : elle aide à mieux absorber le fer. Évite le thé et le café pendant les repas : ils freinent son absorption.",
       "sources": [
         {
           "texte": "Règlement (UE) n° 432/2012",
@@ -78,12 +80,15 @@
           "url": "https://www.hgr-css.be/fr/avis/9445/alimentation-vegetarienne"
         },
         {
-          "texte": "Règlement (CE) n° 1925/2006, annexe II",
+          "texte": "Règlement (CE) n° 1925/2006",
           "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32006R1925"
         },
         {
           "texte": "Règlement (UE) n° 1169/2011",
           "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32011R1169"
+        },
+        {
+          "texte": "Vlaamse Vereniging voor Kindergeneeskunde (VVK). Informatiebrochure vegetarische voeding"
         }
       ],
       "brouillon": false,
