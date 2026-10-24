@@ -77,6 +77,39 @@
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/quinoa.webp",
       "image_description": "Graines de quinoa de plusieurs couleurs"
+    },
+    {
+      "nom": "Légumineuses",
+      "base": "Autre",
+      "description": "Pois chiches, lentilles, haricots rouges, blancs ou bruns… Graines sèches de plantes de la famille des pois, riches en fibres, en fer et en protéines.",
+      "proteines": "≈ 7 à 9 g pour 100 g (cuit)",
+      "allergenes": [
+        "Aucun allergène majeur (vérifier l'étiquette)"
+      ],
+      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
+      "image_description": "Lentilles, pois chiches et haricots secs dans des bols"
+    },
+    {
+      "nom": "Fèves de soja (edamame)",
+      "base": "Soja",
+      "description": "Graines de soja entières, fraîches et vertes (edamame) ou sèches. C'est la seule légumineuse qui apporte, à elle seule, des protéines complètes.",
+      "proteines": "≈ 11 g (edamame) à 16 g (fèves sèches cuites) pour 100 g",
+      "allergenes": [
+        "Soja"
+      ],
+      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
+      "image_description": "Bol d'edamame verts dans leurs cosses"
+    },
+    {
+      "nom": "Œufs",
+      "base": "Autre",
+      "description": "Œufs de poule, pour les végétariens qui en mangent (pas les végans). 2 à 3 œufs remplacent 100 g de viande, maximum 6 par semaine.",
+      "proteines": "≈ 12 à 13 g pour 100 g (≈ 6 g par œuf)",
+      "allergenes": [
+        "Œuf"
+      ],
+      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
+      "image_description": "Œufs frais dans une boîte en carton"
     }
   ]
 }
