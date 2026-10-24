@@ -8,7 +8,6 @@
       "allergenes": [
         "Soja"
       ],
-      "enquete": "91 % de bonnes réponses",
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/tofu.webp",
       "image_description": "Bloc de tofu garni d'oignons verts"
@@ -21,7 +20,6 @@
       "allergenes": [
         "Soja"
       ],
-      "enquete": "60 % de bonnes réponses",
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/tempeh.webp",
       "image_description": "Blocs de tempeh sur une planche"
@@ -34,7 +32,6 @@
       "allergenes": [
         "Gluten (blé)"
       ],
-      "enquete": "69 % de bonnes réponses",
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/seitan.webp",
       "image_description": "Épis de blé dorés"
@@ -48,7 +45,6 @@
         "Œuf (selon la recette)",
         "Gluten (selon la recette)"
       ],
-      "enquete": "La moitié des répondants ne sait pas de quoi il est fait.",
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/quorn-champignons.webp",
       "image_description": "Champignons blancs sur une table en bois"
@@ -73,7 +69,6 @@
       "allergenes": [
         "Sans gluten naturellement"
       ],
-      "enquete": "28 % des répondants pensent qu'il contient du blé.",
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/quinoa.webp",
       "image_description": "Graines de quinoa de plusieurs couleurs"
