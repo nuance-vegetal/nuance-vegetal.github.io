@@ -87,7 +87,8 @@
         "Aucun allergène majeur (vérifier l'étiquette)"
       ],
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
-      "image_description": "Lentilles, pois chiches et haricots secs dans des bols"
+      "image": "images/legumineuses.webp",
+      "image_description": "Haricots secs de toutes les couleurs"
     },
     {
       "nom": "Fèves de soja (edamame)",
@@ -98,7 +99,8 @@
         "Soja"
       ],
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
-      "image_description": "Bol d'edamame verts dans leurs cosses"
+      "image": "images/edamame.webp",
+      "image_description": "Assiette d'edamame dans leurs cosses"
     },
     {
       "nom": "Œufs",
@@ -109,7 +111,8 @@
         "Œuf"
       ],
       "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
-      "image_description": "Œufs frais dans une boîte en carton"
+      "image": "images/oeufs.webp",
+      "image_description": "Œufs bruns dans une boîte à œufs"
     },
     {
       "nom": "Protéines de soja texturées (PST)",
