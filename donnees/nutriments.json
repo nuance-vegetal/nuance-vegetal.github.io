@@ -34,7 +34,7 @@
         "Céréales (germes de blé, avoine, orge, riz) et quinoa",
         "Produits du soja (tofu, tempeh, boisson ou yaourt de soja)",
         "Mycoprotéines (Quorn®)",
-        "Fruits à coque et graines",
+        "Fruits à coque et graines (en petite quantité)",
         "Seitan"
       ],
       "surEtiquette": "Regarde la ligne « Protéines » du tableau, pour 100 g. Repère du CSS pour un produit qui remplace la viande : plus de 10 g.",
@@ -143,6 +143,31 @@
       ],
       "brouillon": false,
       "id": "allegations"
+    },
+    {
+      "titre": "Oméga-3",
+      "resume": "Graisses indispensables, que le corps ne sait pas fabriquer.",
+      "aQuoiCaSert": "Les oméga-3 participent au bon fonctionnement du cœur, du cerveau et de la vue. Le corps ne sait pas fabriquer l'oméga-3 de base (ALA) : il doit venir de l'alimentation. Il en transforme ensuite une petite partie en EPA et DHA, les formes que l'on trouve surtout dans le poisson.",
+      "ouLaTrouver": [
+        "Graines de lin, de chia et de chanvre (moulues ou trempées)",
+        "Noix",
+        "Huiles de colza, de lin et de noix",
+        "Germes de blé",
+        "Huile d'algues (EPA et DHA)"
+      ],
+      "surEtiquette": "Sur une huile ou une margarine, regarde la liste des ingrédients : colza, lin ou noix sont de bons choix. Les mentions « source d'oméga-3 » et « riche en oméga-3 » sont encadrées par la loi européenne.",
+      "conseil": "Une poignée par jour suffit (20 à 30 g de noix et de graines). Pas plus de 10 g de graines de chia par jour. Utilise les huiles de lin et de noix à froid uniquement. Les végétaliens peuvent envisager un complément d'huile d'algues.",
+      "sources": [
+        {
+          "texte": "Vlaamse Vereniging voor Kindergeneeskunde (VVK). Informatiebrochure vegetarische voeding"
+        },
+        {
+          "texte": "CSS (2021), avis n° 9445 – L’alimentation végétarienne",
+          "url": "https://www.hgr-css.be/fr/avis/9445/alimentation-vegetarienne"
+        }
+      ],
+      "brouillon": true,
+      "id": "omega3"
     }
   ]
 }
