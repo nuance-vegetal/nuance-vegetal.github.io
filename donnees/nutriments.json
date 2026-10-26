@@ -3,7 +3,7 @@
     {
       "titre": "Vitamine B12",
       "resume": "Vitamine indispensable, absente des végétaux.",
-      "aQuoiCaSert": "Elle est indispensable à la fabrication des cellules sanguines, au tissu nerveux et à la production d’énergie dans les cellules. Seules certaines bactéries la produisent : on la trouve donc uniquement dans les produits animaux et les aliments enrichis. Un manque peut passer inaperçu au début, car il ne provoque pas toujours d’anémie. Il se manifeste souvent par de la fatigue, des troubles de la mémoire ou des fourmillements dans les mains et les pieds.",
+      "aQuoiCaSert": "Elle est indispensable à la fabrication des cellules sanguines et au bon fonctionnement du système nerveux. Seules certaines bactéries la produisent : on la trouve donc uniquement dans les produits animaux et les aliments enrichis. Un manque peut passer inaperçu au début, car il ne provoque pas toujours d’anémie. Il se manifeste souvent par de la fatigue, des troubles de la mémoire ou des fourmillements dans les mains et les pieds.",
       "ouLaTrouver": [
         "Boissons végétales enrichies ",
         "Substituts de viande enrichis",
@@ -11,7 +11,7 @@
         "Produits laitiers, pour les végétariens"
       ],
       "surEtiquette": "Vérifie sur l’emballage que le produit est bien enrichi en vitamine B12. Tous les produits végétaux ne le sont pas, et un produit non enrichi n’est pas une source fiable de B12. Repère du CSS pour les substituts de viande : au moins 0,24 µg pour 100 g.",
-      "conseil": "Les végétaux et les algues (nori, spiruline) ne sont pas des sources fiables. Prends chaque jour un complément de B12, pendant un repas, et choisis des produits enrichis. Si tu ne prends pas de complément depuis 3 à 6 mois, parle-en à ton médecin pour faire une prise de sang.",
+      "conseil": "Les végétaux, les algues (comme la nori) et les produits fermentés ne sont pas des sources fiables. Prends chaque jour un complément de B12, pendant un repas, et choisis des produits enrichis. Si tu ne prends pas de complément depuis 3 à 6 mois, parle-en à ton médecin pour faire une prise de sang.",
       "sources": [
         {
           "texte": "Niklewicz A, Smith AD, Smith A, et al. (2023). The importance of vitamin B12 for individuals choosing plant-based diets. European Journal of Nutrition 62(3):1551–1559. doi:10.1007/s00394-022-03025-4",
@@ -20,6 +20,10 @@
         {
           "texte": "Niklewicz A, Hannibal L, Warren M, Ahmadi KR. (2024). A systematic review and meta-analysis of functional vitamin B12 status among adult vegans. Nutrition Bulletin 49(4):463–479. doi:10.1111/nbu.12712",
           "url": "https://doi.org/10.1111/nbu.12712"
+        },
+        {
+          "texte": "CSS (2021), avis n° 9445 – L’alimentation végétarienne.",
+          "url": "https://www.hgr-css.be/fr/avis/9445/alimentation-vegetarienne"
         }
       ],
       "brouillon": false,
@@ -152,7 +156,7 @@
     {
       "titre": "Oméga-3",
       "resume": "Graisses indispensables, que le corps ne sait pas fabriquer.",
-      "aQuoiCaSert": "Les oméga-3 participent au bon fonctionnement du cœur, du cerveau et de la vue. Le corps ne sait pas fabriquer l'oméga-3 de base (ALA) : il doit venir de l'alimentation. Il en transforme ensuite une petite partie en EPA et DHA, les formes que l'on trouve surtout dans le poisson.",
+      "aQuoiCaSert": "Les oméga-3 interviennent dans le système cardiovasculaire, les fonctions cognitives, l’immunité et la croissance. Le corps ne sait pas fabriquer l’oméga-3 de base (ALA) : il doit venir de l’alimentation. Il en transforme ensuite une toute petite partie en EPA et DHA, les formes que l’on trouve surtout dans le poisson.",
       "ouLaTrouver": [
         "Graines de lin, de chia et de chanvre (moulues ou trempées)",
         "Noix",
@@ -161,14 +165,17 @@
         "Huile d'algues (EPA et DHA)"
       ],
       "surEtiquette": "Sur une huile ou une margarine, regarde la liste des ingrédients : colza, lin ou noix sont de bons choix. Les mentions « source d'oméga-3 » et « riche en oméga-3 » sont encadrées par la loi européenne.",
-      "conseil": "Une poignée par jour suffit (20 à 30 g de noix et de graines). Pas plus de 10 g de graines de chia par jour. Utilise les huiles de lin et de noix à froid uniquement. Les végétaliens peuvent envisager un complément d'huile d'algues.",
+      "conseil": "Une poignée par jour suffit (20 à 30 g de noix et de graines). Pas plus de 10 g de graines de chia par jour. Utilise les huiles de lin et de noix à froid uniquement. Les végétaliens devraient envisager un complément d’huile d’algues.",
       "sources": [
         {
-          "texte": "Vlaamse Vereniging voor Kindergeneeskunde (VVK). Informatiebrochure vegetarische voeding"
+          "texte": "Vlaamse Vereniging voor Kindergeneeskunde (2019). Vegetarische voeding – Informatiebrochure voor hulpverleners in de gezondheidszorg."
         },
         {
           "texte": "CSS (2021), avis n° 9445 – L’alimentation végétarienne",
           "url": "https://www.hgr-css.be/fr/avis/9445/alimentation-vegetarienne"
+        },
+        {
+          "texte": "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé."
         }
       ],
       "brouillon": false,
