@@ -6,7 +6,7 @@
       "points": [
         "Le soja contient des isoflavones, parfois appelées « phyto-œstrogènes », dont la structure ressemble à celle des œstrogènes.",
         "Chez les hommes, une méta-analyse de 41 études ne montre aucun effet du soja ni des isoflavones sur la testostérone ou les œstrogènes, quelles que soient la dose et la durée.",
-        "Chez les femmes, ni le soja ni les compléments d’isoflavones n’ont d’effet important sur les hormones ; selon des données limitées, le soja peut retarder l’ovulation d’environ un jour, sans l’empêcher.",
+        "Chez les femmes, ni le soja ni les compléments d’isoflavones n’ont d’effet important sur les hormones ; le soja peut allonger un peu le cycle en retardant l’ovulation d’environ un jour, sans l’empêcher.",
         "Chez les femmes ménopausées, l’évaluation européenne (EFSA) des compléments d’isoflavones n’a observé aucun effet sur le sein ni de changement important de la fonction thyroïdienne.",
         "Pour l’utérus, aucun effet n’a été observé jusqu’à 150 mg/j pendant 2,5 ans ; après 5 ans, quelques changements non cancéreux ont été rapportés.",
         "Il n’y a pas de données pour les femmes qui ont ou ont eu un cancer hormonodépendant du sein ou de l’utérus.",
@@ -41,7 +41,7 @@
         "Dans les études d’observation, une alimentation riche en ultra-transformés est associée à plus de diabète de type 2, d’obésité, d’anxiété, de dépression et de mortalité, notamment cardiovasculaire ; les liens avec l’hypertension, la dyslipidémie, certains cancers et les troubles digestifs reposent sur des preuves plus faibles.",
         "Une association ne prouve pas que ces aliments en sont la cause.",
         "La transformation en soi n’est pas le problème : les conserves, les fromages ou le pain simple (farine, eau, sel, levure) ne sont pas ultra-transformés.",
-        "En Belgique, la plupart des alternatives végétales ont peu de graisses saturées (93 % sous 5 g pour 100 g), mais seule une minorité est enrichie en fer ou en B12, et les steaks végétaux sont plus salés que les steaks de viande.",
+        "En Belgique, la plupart des alternatives végétales ont peu de graisses saturées (93 % à 5 g ou moins pour 100 g), mais seule une minorité est enrichie en fer ou en B12, et les steaks végétaux sont plus salés que les steaks de viande.",
         "La transformation peut aussi améliorer la digestibilité des protéines végétales : être ultra-transformé ne suffit donc pas à juger une alternative végétale, regarde aussi les 6 repères."
       ],
       "conseil": "Lis la liste d’ingrédients : un seul ingrédient industriel ou additif cosmétique suffit pour qu’un produit soit ultra-transformé.",
@@ -56,7 +56,7 @@
           "url": "https://doi.org/10.3390/nu16111648"
         },
         {
-          "texte": "Lane MM, Gamage E, Du S, et al. (2024). Ultra-processed food exposure and adverse health outcomes: umbrella review of epidemiological meta-analyses. ",
+          "texte": "Lane MM, Gamage E, Du S, et al. (2024). Ultra-processed food exposure and adverse health outcomes: umbrella review of epidemiological meta-analyses. BMJ 384:e077310.",
           "url": "https://www.bmj.com/content/384/bmj-2023-077310"
         }
       ],
@@ -68,11 +68,11 @@
       "points": [
         "Les véganes ont en moyenne un taux de B12 plus bas que les omnivores, et ce sont ceux qui ne prennent pas de complément qui ont les valeurs les plus basses.",
         "Les véganes qui prennent un complément ont un bien meilleur statut en B12 que ceux qui n’en prennent pas.",
-        "Les végétarien·nes sont aussi concerné·es : leur taux est en moyenne plus bas que celui des omnivores, et dans une étude allemande, ils et elles prenaient moins souvent un complément que les véganes (51 % contre 90 %).",
+        "Les végétarien·nes sont aussi concerné·es : leur taux est en moyenne plus bas que celui des omnivores, et dans une étude, ils et elles prenaient moins souvent un complément que les véganes (51 % contre 90 %).",
         "Un manque peut s’installer sans anémie et passer inaperçu : fatigue, troubles de la mémoire, fourmillements dans les mains ou les pieds.",
         "Les femmes enceintes ou qui souhaitent l’être sont plus à risque, et après 60 ans, il est aussi conseillé de demander un avis.",
-        "Certaines alternatives végétales sont enrichies en B12, d’autres non : vérifie l’emballage.",
-        "Pourtant, seuls 13 % des répondant·es à mon questionnaire regardent la B12 et le fer sur l’étiquette."
+        "Pourtant, seuls 13 % des répondant·es à mon questionnaire regardent la B12 et le fer sur l’étiquette.",
+        "Certaines alternatives végétales sont enrichies en B12, d’autres non : vérifie l’emballage."
       ],
       "conseil": "Pas de B12 dans ton assiette ? Pense à une autre source fiable : aliments enrichis ou complément. Demande conseil à un·e professionnel·le de santé, surtout si tu deviens végane, si tu prévois une grossesse ou si tu as plus de 60 ans.",
       "niveau": 3,
@@ -86,7 +86,7 @@
           "url": "https://doi.org/10.1111/nbu.12712"
         },
         {
-          "texte": "Desmet C. (2026). Questionnaire sur la perception des alternatives végétales, Travail de fin d’études, HEPH-Condorcet."
+          "texte": "Desmet C. (2026). Questionnaire sur la perception des alternatives végétales, (355 répondants) Travail de fin d’études, HEPH-Condorcet."
         }
       ],
       "brouillon": false
