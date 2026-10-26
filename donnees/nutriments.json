@@ -175,7 +175,8 @@
           "url": "https://www.hgr-css.be/fr/avis/9445/alimentation-vegetarienne"
         },
         {
-          "texte": "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé."
+          "texte": "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé.",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/ALL/?uri=CELEX:32006R1924"
         }
       ],
       "brouillon": false,
