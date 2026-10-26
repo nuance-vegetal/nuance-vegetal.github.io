@@ -2,16 +2,17 @@
   "fiches": [
     {
       "question": "Le soja est-il mauvais pour les hormones ?",
-      "reponse": "Chez les femmes ménopausées, les études ne montrent pas d’effet néfaste des isoflavones de soja sur le sein, l’utérus ou la thyroïde, même à des doses de compléments.",
+      "reponse": "Chez l’homme comme chez la femme, les études ne montrent pas d’effet néfaste du soja sur les hormones, que ce soit dans l’alimentation ou en compléments.",
       "points": [
         "Le soja contient des isoflavones, parfois appelées « phyto-œstrogènes », dont la structure ressemble à celle des œstrogènes.",
-        "L’évaluation européenne porte sur les compléments d’isoflavones isolées (soja, trèfle rouge, kudzu) chez les femmes péri- et post-ménopausées.",
-        "Aucun effet n’a été observé sur la densité mammaire ni sur les hormones thyroïdiennes.",
+        "Chez les hommes, une méta-analyse de 41 études ne montre aucun effet du soja ni des isoflavones sur la testostérone ou les œstrogènes, quelles que soient la dose et la durée.",
+        "Chez les femmes, ni le soja ni les compléments d’isoflavones n’ont d’effet important sur les hormones ; selon des données limitées, le soja peut retarder l’ovulation d’environ un jour, sans l’empêcher.",
+        "Chez les femmes ménopausées, l’évaluation européenne (EFSA) des compléments d’isoflavones n’a observé aucun effet sur le sein ni de changement important de la fonction thyroïdienne.",
         "Pour l’utérus, aucun effet n’a été observé jusqu’à 150 mg/j pendant 2,5 ans ; après 5 ans, quelques changements non cancéreux ont été rapportés.",
-        "Ces conclusions ne s'appliquent pas aux femmes qui ont ou ont eu un cancer hormonodépendant du sein ou de l'utérus, faute de données.",
-        "Et dans l’alimentation de tous les jours ? Chez les hommes, une méta-analyse de 41 études ne montre aucun effet du soja ni des isoflavones sur la testostérone ou les œstrogènes. Manger du tofu, du tempeh ou une boisson de soja dans une alimentation variée ne pose pas de problème hormonal chez l’adulte en bonne santé. Si tu prends un traitement pour la thyroïde, prends-le à distance du soja et parles-en à ton médecin."
+        "Il n’y a pas de données pour les femmes qui ont ou ont eu un cancer hormonodépendant du sein ou de l’utérus.",
+        "Si tu prends un traitement pour la thyroïde, le soja peut un peu diminuer son absorption : pas besoin d’éviter le soja, mais parles-en à ton médecin, qui peut ajuster la dose."
       ],
-      "conseil": "En cas de cancer hormonodépendant, actuel ou passé, demande l'avis de ton médecin avant de prendre des compléments d'isoflavones.",
+      "conseil": "En cas de cancer hormonodépendant, actuel ou passé, demande l’avis de ton médecin avant de prendre des compléments d’isoflavones.",
       "niveau": 2,
       "sources": [
         {
@@ -31,15 +32,17 @@
     },
     {
       "question": "« Ultra-transformé », ça veut dire mauvais pour la santé ?",
-      "reponse": "« Ultra-transformé » désigne le groupe 4 de la classification NOVA : des produits fabriqués à partir d’ingrédients industriels et d’additifs. Les études associent une alimentation riche en ultra-transformés à une moins bonne qualité nutritionnelle.",
+      "reponse": "« Ultra-transformé » désigne le groupe 4 de la classification NOVA : des produits fabriqués à partir d’ingrédients industriels et d’additifs. Une alimentation riche en ultra-transformés est associée à plusieurs problèmes de santé, mais pour les alternatives végétales, c’est plus nuancé.",
       "points": [
         "La classification NOVA range les aliments en 4 groupes selon l’ampleur et le but de leur transformation industrielle.",
         "Un produit est ultra-transformé si sa liste d’ingrédients contient au moins un ingrédient jamais ou rarement utilisé en cuisine, ou un additif « cosmétique ».",
         "Au début ou au milieu de la liste, repère les ingrédients industriels : isolat de protéine de soja, gluten, protéines hydrolysées, sirop de glucose-fructose, maltodextrine, dextrose, huiles hydrogénées.",
         "À la fin de la liste, repère les additifs cosmétiques : arômes, exhausteurs de goût, colorants, émulsifiants, édulcorants, épaississants.",
-        "Une alimentation riche en ultra-transformés est associée à plus d’obésité, d’hypertension, de maladies cardiovasculaires, de dyslipidémie, de troubles digestifs et de cancers.",
+        "Dans les études d’observation, une alimentation riche en ultra-transformés est associée à plus de diabète de type 2, d’obésité, d’anxiété, de dépression et de mortalité, notamment cardiovasculaire ; les liens avec l’hypertension, la dyslipidémie, certains cancers et les troubles digestifs reposent sur des preuves plus faibles.",
+        "Une association ne prouve pas que ces aliments en sont la cause.",
         "La transformation en soi n’est pas le problème : les conserves, les fromages ou le pain simple (farine, eau, sel, levure) ne sont pas ultra-transformés.",
-        "Pour les alternatives végétales, c’est plus nuancé. Une analyse des simili vendus en Belgique montre que la plupart ont peu de graisses saturées (93 % sous 5 g pour 100 g), mais que seul un tiers environ est enrichi en fer ou en B12, et que certains, comme les steaks végétaux, sont plus salés que la viande qu’ils remplacent. La transformation peut aussi améliorer la digestibilité des protéines végétales. Être ultra-transformé ne suffit donc pas à juger un simili : regarde les 6 repères."
+        "En Belgique, la plupart des alternatives végétales ont peu de graisses saturées (93 % sous 5 g pour 100 g), mais seule une minorité est enrichie en fer ou en B12, et les steaks végétaux sont plus salés que les steaks de viande.",
+        "La transformation peut aussi améliorer la digestibilité des protéines végétales : être ultra-transformé ne suffit donc pas à juger une alternative végétale, regarde aussi les 6 repères."
       ],
       "conseil": "Lis la liste d’ingrédients : un seul ingrédient industriel ou additif cosmétique suffit pour qu’un produit soit ultra-transformé.",
       "niveau": 2,
@@ -51,23 +54,26 @@
         {
           "texte": "Mertens E, Deriemaeker P, Van Beneden K. (2024). Analysis of the Nutritional Composition of Ready-to-Use Meat Alternatives in Belgium. Nutrients 16(11):1648.",
           "url": "https://doi.org/10.3390/nu16111648"
+        },
+        {
+          "texte": "Lane MM, Gamage E, Du S, et al. (2024). Ultra-processed food exposure and adverse health outcomes: umbrella review of epidemiological meta-analyses. ",
+          "url": "https://www.bmj.com/content/384/bmj-2023-077310"
         }
       ],
       "brouillon": false
     },
     {
       "question": "Faut-il vraiment faire attention à la B12 ?",
-      "reponse": "La vitamine B12 ne se trouve pas naturellement dans les végétaux. Si tu manges peu ou pas de produits animaux, il faut une source fiable.",
+      "reponse": "La vitamine B12 ne se trouve pas naturellement dans les végétaux. Si tu manges peu ou pas de produits animaux, il te faut une source fiable.",
       "points": [
-        "Seuls 13 % des répondants regardent la B12 et le fer sur l'étiquette.",
-        "Certains simili sont enrichis en B12, d'autres non : vérifie l’emballage.",
-        "Sans complément, les véganes ont un taux de B12 plus bas et plus de signes de carence que les omnivores.",
-        "Les végétariens sont aussi concernés : leur taux de B12 est plus bas que celui des omnivores, et ils prennent moins souvent un complément que les véganes (51 % contre 90 %).",
+        "Les véganes ont en moyenne un taux de B12 plus bas que les omnivores, et ce sont ceux qui ne prennent pas de complément qui ont les valeurs les plus basses.",
         "Les véganes qui prennent un complément ont un bien meilleur statut en B12 que ceux qui n’en prennent pas.",
-        "Un manque peut s’installer sans anémie et passer inaperçu : fatigue, troubles de la mémoire, fourmillements.",
-        "Les femmes enceintes ou qui veulent l'être sont plus à risque. Après 60 ans, il est aussi conseillé de demander un avis."
+        "Les végétarien·nes sont aussi concerné·es : leur taux est en moyenne plus bas que celui des omnivores, et dans une étude allemande, ils et elles prenaient moins souvent un complément que les véganes (51 % contre 90 %).",
+        "Un manque peut s’installer sans anémie et passer inaperçu : fatigue, troubles de la mémoire, fourmillements dans les mains ou les pieds.",
+        "Les femmes enceintes ou qui souhaitent l’être sont plus à risque, et après 60 ans, il est aussi conseillé de demander un avis.",
+        "Certaines alternatives végétales sont enrichies en B12, d’autres non : vérifie l’emballage."
       ],
-      "conseil": "Pas de B12 dans ton assiette ? Pense à une autre source fiable : aliments enrichis ou complément. Parles-en à un·e diététicien·ne ou à ton médecin, surtout si tu passes au végan, si tu prévois une grossesse ou si tu as plus de 60 ans.",
+      "conseil": "Pas de B12 dans ton assiette ? Pense à une autre source fiable : aliments enrichis ou complément. Demande conseil à un·e professionnel·le de santé, surtout si tu deviens végane, si tu prévois une grossesse ou si tu as plus de 60 ans.",
       "niveau": 3,
       "sources": [
         {
@@ -79,7 +85,7 @@
           "url": "https://doi.org/10.1111/nbu.12712"
         },
         {
-          "texte": "Questionnaire sur la perception des alternatives végétales, Camille Desmet (2026)"
+          "texte": "Desmet C. (2026). Questionnaire sur la perception des alternatives végétales, Travail de fin d’études, HEPH-Condorcet."
         }
       ],
       "brouillon": false
