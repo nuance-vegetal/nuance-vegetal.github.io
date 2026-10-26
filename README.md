@@ -99,7 +99,7 @@ Aucune donnée saisie n'est envoyée ni stockée, pas de cookies. Exception : qu
 
 ## Photos
 
-Photos [Unsplash](https://unsplash.com/license) (licence libre, usage gratuit), recadrées et compressées en WebP dans `images/` :
+Photos [Unsplash](https://unsplash.com/license), [Pexels](https://www.pexels.com/license/) et [Pixabay](https://pixabay.com/service/license-summary/) (licences libres, usage gratuit), recadrées et compressées en WebP dans `images/` :
 
 | Fichier | Auteur·e (Unsplash) |
 |---|---|

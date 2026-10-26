@@ -839,8 +839,18 @@ content:
       type: string
       list: true
     - name: categoriesAlternatives
-      label: Catégories des substituts de viande (exception)
-      description: Un produit dans une de ces catégories garde les 6 repères.
+      label: Catégories des alternatives végétales (exception)
+      description: Un produit dans une de ces catégories garde les 6 repères, même s'il est aussi rangé dans les poissons ou la viande. Un produit qui se dit « vegan » les garde toujours.
+      type: string
+      list: true
+    - name: contexteAvant
+      label: Mots juste avant qui annulent un mot « animal »
+      description: Par exemple « façon » dans « façon thon », « alternative au » dans « alternative au thon », « plantaardige » dans « plantaardige kip ».
+      type: string
+      list: true
+    - name: contexteApres
+      label: Mots juste après qui annulent un mot « animal »
+      description: Par exemple « végétal » dans « thon végétal », « vegan » dans « cheese vegan ».
       type: string
       list: true
   - name: avis

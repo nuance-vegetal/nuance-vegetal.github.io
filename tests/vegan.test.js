@@ -42,6 +42,17 @@ const cas = [
   // Ordre de priorité
   ['label vegan avant mots-clés', { labels: ['en:vegan'], ingredients: 'miel' }, 'oui', false],
   ['analyse Open Food Facts avant mots-clés', { analyse: ['en:non-vegan'], ingredients: 'Eau' }, 'non', false],
+  // Bug du 26 octobre : thon vegan rangé dans les poissons par Open Food Facts
+  ['« Vegan Alternative For tuna » rangé dans les poissons : végan + 6 repères', { noms: ['Vegan Alternative For tuna In water'], categories: ['en:seafood', 'en:fishes', 'en:canned-fishes', 'en:tunas'], labels: ['en:vegan'], ingredients: 'Eau, protéines de soja, huile de tournesol, sel, arôme' }, 'oui', false],
+  ['saumon végétal rangé dans les poissons mais aussi en « fish-analogues »', { noms: ['Plant-Based Salmon Fillet'], categories: ['en:seafood', 'en:fishes', 'en:fish-analogues'] }, 'non-signale', false],
+  ['« alternative au thon » dans les ingrédients : pas non végan', { ingredients: 'Préparation alternative au thon : eau, soja' }, 'non-signale', false],
+  ['« façon thon » : pas non végan', { ingredients: 'Émietté façon thon (soja, eau, sel)' }, 'non-signale', false],
+  ['« thon végétal » : pas non végan', { ingredients: 'Thon végétal (soja, huile)' }, 'non-signale', false],
+  ['néerlandais « plantaardige kip » : pas non végan', { ingredients: 'Plantaardige kip (soja, tarwe)' }, 'non-signale', false],
+  ['anglais « vegan cheese » : pas non végan', { ingredients: 'Vegan cheese (coconut oil, starch)' }, 'non-signale', false],
+  ['vrai thon : non végan', { ingredients: 'Thon albacore, eau, sel' }, 'non', false],
+  ['« arôme de viande » reste non végan', { ingredients: 'Soja, arôme de viande' }, 'non', false],
+  ['jambon sans mention vegan : toujours non végan + message', { noms: ['Superieur Natuur'], categories: ['en:meats-and-their-products', 'en:prepared-meats'], analyse: ['en:vegan'] }, 'non', true],
   ['« maybe-vegan » d’Open Food Facts → mots-clés', { analyse: ['en:maybe-vegan'], ingredients: 'Soja, caséinate de sodium' }, 'non', false]
 ];
 

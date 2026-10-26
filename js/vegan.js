@@ -50,16 +50,39 @@
       fauxPositifs: parLongueur(tout('fauxPositifs')),
       mentions: parLongueur(c.mentionsVegan),
       negations: parLongueur(c.negations),
+      contexteAvant: parLongueur(c.contexteAvant),
+      contexteApres: parLongueur(c.contexteApres),
       nonAlternatives: c.categoriesNonAlternatives || [],
       alternatives: c.categoriesAlternatives || []
     };
+  }
+
+  /**
+   * Un mot « animal » qui imite seulement : « façon thon », « goût poulet », « alternative au thon »,
+   * « thon végétal », « plantaardige kip », « vegan cheese ». Les listes sont dans donnees/scanner.json.
+   */
+  function imitation(texte, debut, fin, L) {
+    const avant = ' ' + texte.slice(0, debut).trim();
+    const apres = texte.slice(fin).trim() + ' ';
+    return L.contexteAvant.some((m) => avant.endsWith(' ' + m)) || L.contexteApres.some((m) => apres.startsWith(m + ' '));
+  }
+  function trouveAnimal(texte, mots, L) {
+    return mots.some((m) => {
+      const r = motif(m);
+      let res;
+      while ((res = r.exec(texte))) {
+        if (!imitation(texte, res.index, res.index + res[0].length, L)) return true;
+        r.lastIndex = res.index + res[0].length - 1; // le mot suivant commence sur l'espace de fin
+      }
+      return false;
+    });
   }
 
   /** Étape 3 : mots-clés dans la liste d'ingrédients → 'non' | 'peut-etre' | null */
   function detecterIngredients(ingredients, L) {
     let t = normaliser(String(ingredients || '').replace(/_/g, ' '));
     t = retirer(t, L.fauxPositifs);
-    if (trouve(t, L.nonVegan)) return 'non';
+    if (trouveAnimal(t, L.nonVegan, L)) return 'non';
     if (trouve(t, L.peutEtre)) return 'peut-etre';
     return null;
   }
@@ -99,12 +122,12 @@
     const L = preparer(config);
     const p = produit || {};
     const analyse = p.analyse || [];
-    const horsAlternative = nonAlternative(p.categories, L);
-
-    // Viande, poisson, laitier, œufs : non végan, quoi que disent les étapes suivantes
-    if (horsAlternative) return { etat: 'non', texte: 'non végan', nonAlternative: true };
-
+    // 1. Une mention ou un label vegan l'emporte : Open Food Facts range parfois un « thon vegan »
+    //    dans les poissons, mais un produit qui se dit vegan est une alternative végétale
     if (mentionVegan([].concat(p.noms || [], p.labels || []), L)) return { etat: 'oui', texte: 'végan (label)', nonAlternative: false };
+
+    // 2. Viande, poisson, laitier, œufs (et pas un substitut) : non végan, repères du CSS non applicables
+    if (nonAlternative(p.categories, L)) return { etat: 'non', texte: 'non végan', nonAlternative: true };
 
     if (analyse.includes('en:vegan')) return { etat: 'oui', texte: 'végan d’après les ingrédients', nonAlternative: false };
     if (analyse.includes('en:non-vegan')) {
