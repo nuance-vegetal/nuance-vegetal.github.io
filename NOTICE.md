@@ -81,6 +81,15 @@ Les couleurs des repères du décodeur (✓ atteint en vert sauge, ! à surveill
 - **Infos du scan** : coche ou décoche les lignes « bon à savoir » à afficher après un scan (gluten, lait, végan…). Le fer et la B12 font partie des 6 repères.
 - **Erreur ?** Tout est gardé dans l'historique : Alex peut revenir à la version d'avant à tout moment.
 
+## Sources modifiables
+
+- **Accueil – chiffres de l'enquête** → « Ligne sous les cartes de chiffres » (n = 355).
+- **Accueil – « Sa place dans l'assiette »** → « Sources ».
+- **Les bases** → « Sources (en bas de la page, communes à toutes les fiches) », avec un lien par source.
+- **À quoi ça sert ?** → « Encadré « Pourquoi ces repères ? » ».
+- **Fiche PDF** → « Ligne de sources (page et PDF) ».
+- **Créateurs** : une personne dont le nom est « ?? » ou entre crochets n'est pas affichée ; une adresse web dans « Précision » devient un lien.
+
 ## Mettre en forme un texte
 
 Dans les grandes cases de texte (étiquette, assiette, créateurs, équivalences) :

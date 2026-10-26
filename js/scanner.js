@@ -194,7 +194,7 @@ const Scanner = (() => {
     };
   }
 
-  /* Noms des allergènes et des additifs fréquents dans les simili */
+  /* Noms des allergènes et des additifs fréquents dans les alternatives végétales */
   const NOMS_ALLERGENES = {
     'en:soybeans': 'soja', 'en:eggs': 'œuf', 'en:celery': 'céleri', 'en:mustard': 'moutarde',
     'en:nuts': 'fruits à coque', 'en:peanuts': 'arachide', 'en:sesame-seeds': 'sésame', 'en:lupin': 'lupin',

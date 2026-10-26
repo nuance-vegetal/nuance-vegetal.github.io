@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ta fiche PDF — Nuance végétale</title>
-  <meta name="description" content="Ta fiche PDF à garder sur ton téléphone pour lire l’étiquette d’un simili en magasin. Elle s’imprime aussi.">
+  <meta name="description" content="Ta fiche PDF à garder sur ton téléphone pour lire l’étiquette d’une alternative végétale en magasin. Elle s’imprime aussi.">
   <meta name="theme-color" content="#F6EFE3">
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261030"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261030">
-  <link rel="stylesheet" href="css/style.css?v=20261030">
+  <script src="js/theme.js?v=20261033"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261033">
+  <link rel="stylesheet" href="css/style.css?v=20261033">
 </head>
 <body class="page-secondaire">
 
@@ -71,9 +71,11 @@
       <div class="labels-bio labels-fiche">
         <figure><img src="images/labels/bio-europeen.svg" alt="Logo bio européen"><figcaption><b>Logo bio européen</b><span>obligatoire sur tout produit bio préemballé de l’UE</span></figcaption></figure>
         <figure><img src="images/labels/biogarantie.svg" alt="Biogarantie"><figcaption><b>Biogarantie</b><span>label belge</span></figcaption></figure>
-        <figure><img src="images/labels/ab-agriculture-biologique.svg" alt="AB (Agriculture Biologique)"><figcaption><b>AB (Agriculture Biologique)</b><span>label français, fréquent en Belgique</span></figcaption></figure>
+        <figure><img src="images/labels/ab-agriculture-biologique.svg" alt="AB (Agriculture Biologique)"><figcaption><b>AB (Agriculture Biologique)</b><span>label français</span></figcaption></figure>
       </div>
       <p class="petit secondaire" style="margin:8px 0 0" id="fiche-note-bio"></p>
+
+      <p class="petit secondaire" id="fiche-sources" style="margin:10px 0 0"></p>
 
       <div class="qr-fiche">
         <img src="images/qr-decodeur.png" alt="QR code vers le décodeur" width="96" height="96">
@@ -97,13 +99,13 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261030"></script>
-<script src="js/commun.js?v=20261030"></script>
-<script src="js/menu.js?v=20261030"></script>
-<script src="js/vendor/lenis.min.js?v=20261030"></script>
-<script src="js/evaluation.js?v=20261030"></script>
-<script src="js/fiche-pdf.js?v=20261030"></script>
-<script src="js/animations.js?v=20261030"></script>
+<script src="js/config.js?v=20261033"></script>
+<script src="js/commun.js?v=20261033"></script>
+<script src="js/menu.js?v=20261033"></script>
+<script src="js/vendor/lenis.min.js?v=20261033"></script>
+<script src="js/evaluation.js?v=20261033"></script>
+<script src="js/fiche-pdf.js?v=20261033"></script>
+<script src="js/animations.js?v=20261033"></script>
 <script>
   (async function () {
     let C, T;
@@ -120,6 +122,7 @@
     remplirTexte('fiche-titre-bio', T.titreBio);
     remplirTexte('fiche-note-bio', T.noteBio);
     remplirTexte('fiche-titre-qr', T.titreQr);
+    remplirTexte('fiche-sources', T.sources);
     $('fiche-sections').innerHTML = (T.sections || []).map((sec) => {
       const e = sec.encadre || {};
       const points = (sec.points || []).filter(Boolean);

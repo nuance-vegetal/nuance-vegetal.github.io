@@ -43,6 +43,10 @@ content:
         label: Grande carte verte
         description: 'Cocher pour une seule carte : la plus importante.'
         type: boolean
+    - name: note
+      label: Ligne sous les cartes de chiffres
+      description: Par exemple « Résultats de mon questionnaire sur les alternatives végétales (n = 355). »
+      type: string
     - name: bandeau
       label: Bandeau qui défile sous le titre
       type: object
@@ -72,6 +76,10 @@ content:
       description: "Mise en forme : **mot** = gras ; [atteint], [à surveiller], [non renseigné] = pastilles de couleur ; une ligne vide = nouveau paragraphe."
       type: text
       required: true
+    - name: sources
+      label: Sources
+      description: 'Par exemple « Sources : VVK (2019) ; CSS (2021), avis n° 9445. »'
+      type: string
     - name: note
       label: Petite note sous le texte
       description: Par exemple « [Texte à compléter par Camille] ». Laisse vide quand le texte est validé.
@@ -222,9 +230,6 @@ content:
         label: Résultat de l'enquête
         description: 'Affiché dans l''encadré bleu, par exemple : 30 % des répondants pensent qu''il contient du blé.'
         type: string
-      - name: sources
-        label: Sources
-        type: string
       - name: image
         label: Photo
         description: Format paysage, la plus légère possible (moins de 200 Ko).
@@ -232,6 +237,22 @@ content:
       - name: image_description
         label: Description de la photo
         description: Ce qu'on voit sur la photo, en quelques mots. Elle est lue aux personnes aveugles.
+        type: string
+    - name: sources
+      label: Sources (en bas de la page, communes à toutes les fiches)
+      type: object
+      list:
+        collapsible:
+          collapsed: true
+          summary: '{texte}'
+      fields:
+      - name: texte
+        label: Référence complète
+        type: text
+        required: true
+      - name: url
+        label: Lien
+        description: Commence par https://. Laisse vide s'il n'y en a pas.
         type: string
   - name: equivalences
     label: Équivalences et complémentarité
@@ -370,11 +391,24 @@ content:
         description: Commence par https://. Laisse vide s'il n'y en a pas.
         type: string
   - name: nutriments
-    label: À quoi ça sert ? – fiches B12, protéines, fer, additifs, allégations
+    label: À quoi ça sert ? – fiches B12, protéines, fer, oméga-3, additifs, allégations
     type: file
     path: donnees/nutriments.json
     format: json
     fields:
+    - name: pourquoi
+      label: Encadré « Pourquoi ces repères ? » (sous l'introduction)
+      type: object
+      fields:
+      - name: titre
+        label: Titre
+        type: string
+      - name: texte
+        label: Texte
+        type: text
+      - name: sources
+        label: Sources
+        type: text
     - name: fiches
       label: Les fiches
       description: Une fiche par nutriment. Clique sur une fiche pour l'ouvrir et remplir les cases. Remplace les « [à compléter
@@ -570,6 +604,9 @@ content:
     - name: titreQr
       label: Texte à côté du QR code
       type: string
+    - name: sources
+      label: Ligne de sources (page et PDF)
+      type: text
     - name: piedPage
       label: Dernière ligne de la fiche
       type: text

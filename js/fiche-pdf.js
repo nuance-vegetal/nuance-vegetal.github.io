@@ -164,7 +164,7 @@ window.FichePDF = (function () {
     const logos = [
       ['images/labels/bio-europeen.svg', 'Logo bio européen', 'Obligatoire sur tout produit bio préemballé de l’UE'],
       ['images/labels/biogarantie.svg', 'Biogarantie', 'Label belge'],
-      ['images/labels/ab-agriculture-biologique.svg', 'AB (Agriculture Biologique)', 'Label français, fréquent en Belgique']
+      ['images/labels/ab-agriculture-biologique.svg', 'AB (Agriculture Biologique)', 'Label français']
     ];
     for (const [src, nom, ou] of logos) {
       const img = await imageEnPng(src, 180);
@@ -179,6 +179,7 @@ window.FichePDF = (function () {
       y += h + 5;
     }
     if (T.noteBio) para(T.noteBio, { taille: 8.5 });
+    if (T.sources) para(T.sources, { taille: 7 });
     y += 2;
     const qr = await imageEnPng('images/qr-decodeur.png', 300);
     place(36);

@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261030"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261030">
-  <link rel="stylesheet" href="css/style.css?v=20261030">
+  <script src="js/theme.js?v=20261033"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261033">
+  <link rel="stylesheet" href="css/style.css?v=20261033">
 </head>
 <body class="page-secondaire">
 
@@ -63,10 +63,10 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261030"></script>
-<script src="js/menu.js?v=20261030"></script>
-<script src="js/vendor/lenis.min.js?v=20261030"></script>
-<script src="js/animations.js?v=20261030"></script>
+<script src="js/commun.js?v=20261033"></script>
+<script src="js/menu.js?v=20261033"></script>
+<script src="js/vendor/lenis.min.js?v=20261033"></script>
+<script src="js/animations.js?v=20261033"></script>
 <script>
   /* Contenu : donnees/createurs.json (Pages CMS → « Créateurs ») */
   (async function () {
@@ -77,13 +77,17 @@
       return;
     }
     document.getElementById('createurs-intro').textContent = D.intro || '';
-    const personnes = (D.personnes || []).filter((p) => p && p.nom);
+    // Un nom pas encore connu (« ?? », « [à compléter] ») n'est pas affiché
+    const rempli = (t) => t && !/^[\s?.\-–]*$/.test(t) && !/^\[.*\]$/.test(t.trim());
+    const personnes = (D.personnes || []).filter((p) => p && rempli(p.nom));
+    // Les adresses web deviennent des liens
+    const avecLiens = (t) => echapper(t).replace(/https?:\/\/[^\s<]+/g, (u) => '<a href="' + u + '" target="_blank" rel="noopener">' + u.replace(/^https?:\/\//, '').replace(/\/$/, '') + '</a>');
     const E = D.ecole || {};
     zone.innerHTML = personnes.map((p, i) =>
       '<article class="carte carte-createur revele" style="--i:' + i + '">' +
       '<span class="surtitre">' + echapper(p.role || '') + '</span>' +
       '<h2>' + echapper(p.nom) + '</h2>' +
-      (p.detail ? '<p class="secondaire">' + echapper(p.detail) + '</p>' : '') + '</article>').join('') +
+      (rempli(p.detail) ? '<p class="secondaire">' + avecLiens(p.detail.trim()) + '</p>' : '') + '</article>').join('') +
       (E.nom ? '<article class="carte carte-createur carte-ecole revele" style="--i:' + personnes.length + '">' +
         '<span class="surtitre">l’école</span><h2>' + echapper(E.nom) + '</h2>' +
         '<p class="secondaire">' + [E.formation, E.lieu].filter(Boolean).map(echapper).join(' · ') + '</p></article>' : '') +

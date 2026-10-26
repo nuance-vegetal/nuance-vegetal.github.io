@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261030"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261030">
-  <link rel="stylesheet" href="css/style.css?v=20261030">
+  <script src="js/theme.js?v=20261033"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261033">
+  <link rel="stylesheet" href="css/style.css?v=20261033">
 </head>
 <body class="page-secondaire">
 
@@ -44,12 +44,13 @@
       <section class="accroche">
         <span class="surtitre">comprendre</span>
         <h1>à quoi <em class="serif">ça sert</em> ?</h1>
-        <p class="intro">B12, protéines, fer, additifs : ce qu’ils font dans ton corps, où les trouver, et comment les repérer sur l’étiquette.</p>
+        <p class="intro">B12, protéines, fer, oméga-3, additifs et allégations : ce qu'ils font dans ton corps, où les trouver, et comment les repérer sur l'étiquette.</p>
       </section>
       <div class="photo revele"><img src="images/decodeur.webp" width="900" height="560" alt="Graines de soja sur fond clair"></div>
     </div>
 
     <div class="colonne-lecture">
+      <div id="pourquoi-reperes"></div>
       <div id="fiches" style="margin-top:32px"><p class="secondaire">Chargement…</p></div>
     </div>
   </main>
@@ -69,10 +70,10 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261030"></script>
-<script src="js/menu.js?v=20261030"></script>
-<script src="js/vendor/lenis.min.js?v=20261030"></script>
-<script src="js/animations.js?v=20261030"></script>
+<script src="js/commun.js?v=20261033"></script>
+<script src="js/menu.js?v=20261033"></script>
+<script src="js/vendor/lenis.min.js?v=20261033"></script>
+<script src="js/animations.js?v=20261033"></script>
 <script>
   (async function () {
     const zone = document.getElementById('fiches');
@@ -92,11 +93,18 @@
       // Badge « certifié » : ce que l'emballage a le droit d'écrire
       allegations: ic('<path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" ' + VOILE + '/><path d="m8.6 12.2 2.3 2.3 4.5-4.6" stroke-width="2.2"/>')
     };
-    const TEINTES = { b12: 'lilas', proteines: 'vert', fer: 'rouge', additifs: 'bleu', allegations: 'orange' };
+    // Goutte d'huile marquée ω-3
+    ICONES.omega3 = ic('<path d="M12 2.5c3.6 4.6 6.5 8.4 6.5 12a6.5 6.5 0 0 1-13 0c0-3.6 2.9-7.4 6.5-12Z" ' + VOILE + '/><text x="12" y="17.6" text-anchor="middle" font-size="7.6" font-weight="700" font-family="Bricolage Grotesque, system-ui, sans-serif" ' + PLEIN + '>ω3</text>');
+    const TEINTES = { b12: 'lilas', proteines: 'vert', fer: 'rouge', additifs: 'bleu', allegations: 'orange', omega3: 'bleu' };
     let fiches;
     try {
       const d = await chargerDonnees('donnees/nutriments.json');
       fiches = Array.isArray(d) ? d : d.fiches || [];
+      // Encadré « Pourquoi ces repères ? » (Pages CMS → À quoi ça sert ? → encadré)
+      const P = d.pourquoi || {};
+      if (P.texte) document.getElementById('pourquoi-reperes').innerHTML =
+        '<aside class="encart-pourquoi"><h2 class="encart-pourquoi-titre">' + echapper(P.titre || 'Pourquoi ces repères ?') + '</h2>' +
+        texteRiche(P.texte) + (P.sources ? '<p class="encart-pourquoi-sources">' + echapper(P.sources) + '</p>' : '') + '</aside>';
     } catch (e) {
       zone.innerHTML = '<p class="message-erreur">Les fiches n’ont pas pu être chargées. Recharge la page.</p>';
       return;

@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261030"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261030">
-  <link rel="stylesheet" href="css/style.css?v=20261030">
+  <script src="js/theme.js?v=20261033"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261033">
+  <link rel="stylesheet" href="css/style.css?v=20261033">
 </head>
 <body class="page-secondaire">
 
@@ -214,15 +214,15 @@
   </div>
 </footer>
 
-<script src="js/config.js?v=20261030"></script>
-<script src="js/commun.js?v=20261030"></script>
-<script src="js/menu.js?v=20261030"></script>
-<script src="js/vendor/lenis.min.js?v=20261030"></script>
-<script src="js/animations.js?v=20261030"></script>
-<script src="js/avis.js?v=20261030"></script>
-<script src="js/evaluation.js?v=20261030"></script>
-<script src="js/vegan.js?v=20261030"></script>
-<script src="js/scanner.js?v=20261030"></script>
+<script src="js/config.js?v=20261033"></script>
+<script src="js/commun.js?v=20261033"></script>
+<script src="js/menu.js?v=20261033"></script>
+<script src="js/vendor/lenis.min.js?v=20261033"></script>
+<script src="js/animations.js?v=20261033"></script>
+<script src="js/avis.js?v=20261033"></script>
+<script src="js/evaluation.js?v=20261033"></script>
+<script src="js/vegan.js?v=20261033"></script>
+<script src="js/scanner.js?v=20261033"></script>
 <script>
   (async function () {
     let C;
@@ -449,7 +449,7 @@
     const LABELS_BIO = [
       ['images/labels/bio-europeen.svg', 'Logo bio européen', 'obligatoire sur tout produit bio préemballé de l’UE'],
       ['images/labels/biogarantie.svg', 'Biogarantie', 'label belge'],
-      ['images/labels/ab-agriculture-biologique.svg', 'AB (Agriculture Biologique)', 'label français, fréquent en Belgique']
+      ['images/labels/ab-agriculture-biologique.svg', 'AB (Agriculture Biologique)', 'label français']
     ];
     function encartBio(info) {
       const connu = info && info.etat === 'oui';
@@ -458,6 +458,7 @@
         '<div class="labels-bio">' + LABELS_BIO.map(([src, nom, ou]) =>
           '<figure><img src="' + src + '" alt="' + nom + '"><figcaption><b>' + nom + '</b><span>' + ou + '</span></figcaption></figure>').join('') + '</div>' +
         '<p>Le logo européen est accompagné d’un code de l’organisme de contrôle (ex. BE-BIO-01) et de l’origine des ingrédients (Agriculture UE / non UE).</p>' +
+        '<p class="encart-source">Source : Règlement (UE) n° 2018/848 relatif à la production biologique. <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32018R0848" target="_blank" rel="noopener">Lire la source</a></p>' +
         '</details>';
     }
 

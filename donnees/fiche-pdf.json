@@ -64,5 +64,6 @@
   "titreBio": "Bio ? Repère ces logos",
   "noteBio": "Le logo européen est accompagné d’un code de l’organisme de contrôle (ex. BE-BIO-01) et de l’origine des ingrédients (Agriculture UE / non UE).",
   "titreQr": "Scanne pour ouvrir le décodeur",
-  "piedPage": "Outil réalisé dans le cadre d’un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l’avis d’un·e diététicien·ne."
+  "piedPage": "Outil réalisé dans le cadre d’un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l’avis d’un·e diététicien·ne.",
+  "sources": "Sources : Règlement (UE) n° 1169/2011 (allergènes, annexe II) ; Règlement (CE) n° 1925/2006 (formes de fer et de B12) ; Règlement (UE) n° 2018/848 (logo bio)."
 }

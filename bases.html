@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>C'est fait avec quoi ? — Nuance végétale</title>
-  <meta name="description" content="Tofu, tempeh, seitan, Quorn, pois, quinoa : de quoi sont faits les simili, leurs protéines et leurs allergènes.">
+  <meta name="description" content="Tofu, tempeh, seitan, Quorn, pois, quinoa : de quoi sont faites les alternatives végétales, leurs protéines et leurs allergènes.">
   <meta name="theme-color" content="#F6EFE3">
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261030"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261030">
-  <link rel="stylesheet" href="css/style.css?v=20261030">
+  <script src="js/theme.js?v=20261033"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261033">
+  <link rel="stylesheet" href="css/style.css?v=20261033">
 </head>
 <body class="page-secondaire">
 
@@ -57,6 +57,11 @@
 
     <p class="sr-only" id="compte" aria-live="polite"></p>
     <div id="fiches" class="grille-fiches"><p class="secondaire">Chargement…</p></div>
+
+    <section class="sources-page" aria-labelledby="titre-sources" id="bloc-sources" hidden>
+      <h2 id="titre-sources" class="titre-sources">sources</h2>
+      <ul class="sources" id="sources-bases"></ul>
+    </section>
   </main>
 </div>
 
@@ -74,10 +79,10 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261030"></script>
-<script src="js/menu.js?v=20261030"></script>
-<script src="js/vendor/lenis.min.js?v=20261030"></script>
-<script src="js/animations.js?v=20261030"></script>
+<script src="js/commun.js?v=20261033"></script>
+<script src="js/menu.js?v=20261033"></script>
+<script src="js/vendor/lenis.min.js?v=20261033"></script>
+<script src="js/animations.js?v=20261033"></script>
 <script>
   (async function () {
     const zone = document.getElementById('fiches');
@@ -85,6 +90,11 @@
     try {
       const d = await chargerDonnees('donnees/bases.json');
       bases = Array.isArray(d) ? d : d.fiches || [];
+      // Sources communes à toutes les fiches, en bas de page
+      const sources = (d.sources || []).filter((x) => x && x.texte);
+      document.getElementById('sources-bases').innerHTML = sources.map((x) =>
+        '<li>' + echapper(x.texte) + (x.url ? ' <a href="' + echapper(x.url) + '" target="_blank" rel="noopener">Lire la source</a>' : '') + '</li>').join('');
+      document.getElementById('bloc-sources').hidden = !sources.length;
     } catch (e) {
       zone.innerHTML = '<p class="message-erreur">Les fiches n\'ont pas pu être chargées. Recharge la page.</p>';
       return;
@@ -103,7 +113,6 @@
               <dt>Allergènes</dt><dd>${(b.allergenes || []).map(echapper).join(', ')}</dd>
             </dl>
             ${b.enquete ? `<div class="encart bleu enquete-note">${echapper(b.enquete)}</div>` : ''}
-            ${b.sources ? `<p class="petit secondaire" style="margin:10px 0 0">Sources : ${echapper(b.sources)}</p>` : ''}
           </div>
         </article>`).join('') || '<p class="secondaire">Aucune fiche pour cette base.</p>';
       document.getElementById('compte').textContent = liste.length + ' fiche' + (liste.length > 1 ? 's' : '') + ' affichée' + (liste.length > 1 ? 's' : '');

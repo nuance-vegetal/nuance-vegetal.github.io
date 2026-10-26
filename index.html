@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261030"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261030">
-  <link rel="stylesheet" href="css/style.css?v=20261030">
+  <script src="js/theme.js?v=20261033"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261033">
+  <link rel="stylesheet" href="css/style.css?v=20261033">
   <link rel="preload" as="image" href="images/hero.webp">
 </head>
 <body>
@@ -221,7 +221,7 @@
     <ol class="liste-suite" id="liste-suite">
       <li class="revele" style="--i:0"><a href="a-quoi-ca-sert.html" data-image="images/quinoa.webp">
         <span class="suite-num">01</span>
-        <span class="suite-texte"><span class="suite-titre">à quoi ça sert ?</span><span class="suite-desc">B12, protéines, fer, additifs : leur rôle et comment les repérer.</span></span>
+        <span class="suite-texte"><span class="suite-titre">à quoi ça sert ?</span><span class="suite-desc">B12, protéines, fer, oméga-3, additifs et allégations : leur rôle et comment les repérer.</span></span>
         <img class="suite-vignette" src="images/quinoa.webp" alt="" width="160" height="120" loading="lazy">
         <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
       </a></li>
@@ -239,7 +239,7 @@
       </a></li>
       <li class="revele" style="--i:3"><a href="etudes.html" data-image="images/etudes.webp">
         <span class="suite-num">04</span>
-        <span class="suite-texte"><span class="suite-titre">ce que dit la science</span><span class="suite-desc">Soja, ultra-transformation : les réponses sourcées.</span></span>
+        <span class="suite-texte"><span class="suite-titre">ce que dit la science</span><span class="suite-desc">Soja, ultra-transformation, B12 : les réponses sourcées.</span></span>
         <img class="suite-vignette" src="images/etudes.webp" alt="" width="160" height="120" loading="lazy">
         <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
       </a></li>
@@ -263,7 +263,7 @@
     <div class="bloc-assiette">
       <div class="photo revele"><img src="images/assiette.webp" width="900" height="560" alt="Assiette de légumes variés et colorés" loading="lazy"></div>
       <div class="carte revele" style="--i:1" id="texte-assiette">
-        <p>Un simili remplace la viande ou le poisson dans le repas. Il ne remplace pas les légumes ni les féculents.</p>
+        <p>Une alternative végétale remplace la viande ou le poisson dans le repas, pas les légumes ni les féculents. Varie les sources de protéines au fil de la journée.</p>
       </div>
     </div>
     <div class="zone-avis revele" data-avis></div>
@@ -284,11 +284,11 @@
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261030"></script>
-<script src="js/menu.js?v=20261030"></script>
-<script src="js/vendor/lenis.min.js?v=20261030"></script>
-<script src="js/avis.js?v=20261030"></script>
-<script src="js/animations.js?v=20261030"></script>
+<script src="js/commun.js?v=20261033"></script>
+<script src="js/menu.js?v=20261033"></script>
+<script src="js/vendor/lenis.min.js?v=20261033"></script>
+<script src="js/avis.js?v=20261033"></script>
+<script src="js/animations.js?v=20261033"></script>
 <script>
   /* « Va plus loin » : sur ordinateur, la photo du lien survolé suit la souris */
   (function () {
@@ -318,7 +318,8 @@
   chargerDonnees('donnees/assiette.json').then((A) => {
     if (!A || !A.texte) return;
     document.getElementById('texte-assiette').innerHTML = texteRiche(A.texte) +
-      (A.note ? '<p class="secondaire petit" style="margin:0">' + echapper(A.note) + '</p>' : '');
+      (A.sources ? '<p class="secondaire petit" style="margin:0">' + echapper(A.sources) + '</p>' : '') +
+      (A.note ? '<p class="secondaire petit" style="margin:4px 0 0">' + echapper(A.note) + '</p>' : '');
   }).catch(() => { /* on garde le texte de la page */ });
 
   /* Chiffres de l'enquête : modifiables dans donnees/enquete.json (Pages CMS) */
@@ -338,6 +339,13 @@
         '<strong data-compteur="' + Number(c.valeur) + '" data-suffixe="' + echapper(c.unite || '') + '">' + echapper(c.valeur) + echapper(c.unite || '') + '</strong>' +
         '<p>' + echapper(c.texte) + '</p></div>').join('');
       animerPage(chiffres);
+    }
+    if (chiffres && E.note) {
+      const note = document.createElement('p');
+      note.className = 'note-enquete revele';
+      note.textContent = E.note;
+      chiffres.after(note);
+      animerPage(note.parentNode);
     }
   })();
 </script>

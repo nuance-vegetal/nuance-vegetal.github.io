@@ -8,7 +8,6 @@
       "allergenes": [
         "Soja"
       ],
-      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/tofu.webp",
       "image_description": "Bloc de tofu garni d'oignons verts"
     },
@@ -20,7 +19,6 @@
       "allergenes": [
         "Soja"
       ],
-      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/tempeh.webp",
       "image_description": "Blocs de tempeh sur une planche"
     },
@@ -32,44 +30,40 @@
       "allergenes": [
         "Gluten (blé)"
       ],
-      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/seitan.webp",
       "image_description": "Épis de blé dorés"
     },
     {
       "nom": "Quorn",
       "base": "Champignon",
-      "description": "Mycoprotéine, obtenue à partir d'un champignon microscopique cultivé. Certaines recettes contiennent du blanc d'œuf.",
+      "description": "Mycoprotéine, obtenue à partir d'un champignon. Certaines recettes contiennent du blanc d'œuf.",
       "proteines": "≈ 11 à 15 g pour 100 g",
       "allergenes": [
         "Œuf (selon la recette)",
         "Gluten (selon la recette)"
       ],
-      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/quorn-champignons.webp",
       "image_description": "Champignons blancs sur une table en bois"
     },
     {
       "nom": "Protéines de pois",
       "base": "Pois",
-      "description": "Ce n'est pas le pois entier : c'est la protéine extraite du pois jaune, souvent texturée pour imiter le haché ou les nuggets.",
+      "description": "Ce n'est pas le pois entier : c'est la protéine extraite du pois.",
       "proteines": "≈ 15 à 20 g pour 100 g (produit prêt à cuire)",
       "allergenes": [
         "Aucun allergène majeur (vérifier l'étiquette)"
       ],
-      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/pois.webp",
       "image_description": "Pois jaunes cassés et pois chiches"
     },
     {
       "nom": "Quinoa",
       "base": "Autre",
-      "description": "Graine d'une plante de la famille des épinards et de la betterave. Ce n'est pas une céréale et il ne contient pas de blé.",
+      "description": "Botaniquement, c'est une graine, mais on l'utilise comme une céréale. Il ne contient pas de blé.",
       "proteines": "≈ 4 g pour 100 g (cuit)",
       "allergenes": [
         "Sans gluten naturellement"
       ],
-      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel].",
       "image": "images/quinoa.webp",
       "image_description": "Graines de quinoa de plusieurs couleurs"
     },
@@ -81,19 +75,17 @@
       "allergenes": [
         "Aucun allergène majeur (vérifier l'étiquette)"
       ],
-      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
       "image": "images/legumineuses-bocaux.webp",
       "image_description": "Bocaux de haricots et de lentilles sur une table en bois"
     },
     {
       "nom": "Fèves de soja (edamame)",
       "base": "Soja",
-      "description": "Graines de soja entières, fraîches et vertes (edamame) ou sèches. C'est la seule légumineuse qui apporte, à elle seule, des protéines complètes.",
+      "description": "Graines de soja entières, fraîches et vertes (edamame) ou sèches. Le soja contient plus de protéines que les autres légumineuses, et des protéines de haute valeur biologique.",
       "proteines": "≈ 11 g (edamame) à 16 g (fèves sèches cuites) pour 100 g",
       "allergenes": [
         "Soja"
       ],
-      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
       "image": "images/edamame-bol.webp",
       "image_description": "Bol d'edamame salés sur une table en bois"
     },
@@ -105,19 +97,17 @@
       "allergenes": [
         "Œuf"
       ],
-      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
       "image": "images/oeufs-bol.webp",
       "image_description": "Œufs bruns dans un bol blanc sur une table en bois"
     },
     {
       "nom": "Protéines de soja texturées (PST)",
       "base": "Soja",
-      "description": "Farine de soja dégraissée, séchée en morceaux ou en haché, parfois aromatisée. Une fois réhydratées, elles ont une texture proche de la viande.",
+      "description": "Soja broyé, séché en morceaux ou en haché, parfois aromatisé. Une fois réhydratées, elles ont une texture proche de la viande.",
       "proteines": "≈ 50 g pour 100 g (sec), ≈ 15 à 18 g une fois réhydratées",
       "allergenes": [
         "Soja"
       ],
-      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
       "image": "images/pst.webp",
       "image_description": "Morceaux de soja séchés avec une branche de romarin"
     },
@@ -127,11 +117,28 @@
       "description": "Légumineuse cousine de l'arachide, au goût proche du pois chiche. On la mange en graines ou en farine, utilisée dans le pain, les biscuits et certains substituts de viande.",
       "proteines": "≈ 15 g pour 100 g (graines cuites)",
       "allergenes": [
-        "Lupin (réaction croisée possible avec l'arachide)"
+        "Lupin"
       ],
-      "sources": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. — Vlaamse Vereniging voor Kindergeneeskunde. Informatiebrochure vegetarische voeding.",
       "image": "images/lupin-fleur.webp",
       "image_description": "Gros plan sur une fleur de lupin jaune"
+    }
+  ],
+  "sources": [
+    {
+      "texte": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. (teneurs en protéines)",
+      "url": ""
+    },
+    {
+      "texte": "Vlaamse Vereniging voor Kindergeneeskunde (2019). Vegetarische voeding – Informatiebrochure voor hulpverleners in de gezondheidszorg. (descriptions des aliments)",
+      "url": ""
+    },
+    {
+      "texte": "Gorissen SHM et al. (2018). Protein content and amino acid composition of commercially available plant-based protein isolates. Amino Acids 50(12):1685–1695. (protéines de pois)",
+      "url": "https://doi.org/10.1007/s00726-018-2640-5"
+    },
+    {
+      "texte": "Règlement (UE) n° 1169/2011, annexe II. (allergènes)",
+      "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32011R1169"
     }
   ]
 }

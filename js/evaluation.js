@@ -1,5 +1,5 @@
 /*
- * Évaluation d'un simili selon le Conseil Supérieur de la Santé (CSS),
+ * Évaluation d'une alternative végétale selon le Conseil Supérieur de la Santé (CSS),
  * avis n° 9445 « Alimentation végétarienne » (avril 2021).
  *
  * 6 repères, chacun « atteint », « à surveiller » ou « non renseigné ».
@@ -91,7 +91,7 @@
       const sousMax = sat < S.saturesMax;
       const partOk = gr === null || gr === 0 || sat <= gr * S.saturesPartMax + 1e-9;
       r.push({ cle: 'satures', nom: 'Graisses saturées', statut: sousMax && partOk ? 'atteint' : 'surveiller',
-        message: sousMax && partOk ? 'Les bonnes graisses dominent.'
+        message: sousMax && partOk ? 'Peu de graisses saturées.'
           : !sousMax ? 'Plus de ' + fr(S.saturesMax) + ' g de graisses saturées.' : 'Plus d’un tiers des graisses sont saturées (souvent huile de coco ou de palme).',
         valeur: fr(sat, 2) + ' g' });
     }
