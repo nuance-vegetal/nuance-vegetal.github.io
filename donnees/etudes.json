@@ -71,17 +71,18 @@
         "Les végétarien·nes sont aussi concerné·es : leur taux est en moyenne plus bas que celui des omnivores, et dans une étude allemande, ils et elles prenaient moins souvent un complément que les véganes (51 % contre 90 %).",
         "Un manque peut s’installer sans anémie et passer inaperçu : fatigue, troubles de la mémoire, fourmillements dans les mains ou les pieds.",
         "Les femmes enceintes ou qui souhaitent l’être sont plus à risque, et après 60 ans, il est aussi conseillé de demander un avis.",
-        "Certaines alternatives végétales sont enrichies en B12, d’autres non : vérifie l’emballage."
+        "Certaines alternatives végétales sont enrichies en B12, d’autres non : vérifie l’emballage.",
+        "Pourtant, seuls 13 % des répondant·es à mon questionnaire regardent la B12 et le fer sur l’étiquette."
       ],
       "conseil": "Pas de B12 dans ton assiette ? Pense à une autre source fiable : aliments enrichis ou complément. Demande conseil à un·e professionnel·le de santé, surtout si tu deviens végane, si tu prévois une grossesse ou si tu as plus de 60 ans.",
       "niveau": 3,
       "sources": [
         {
-          "texte": "Niklewicz A, Smith AD, Smith A, et al. (2023). The importance of vitamin B12 for individuals choosing plant-based diets. European Journal of Nutrition 62(3):1551–1559. doi:10.1007/s00394-022-03025-4",
+          "texte": "Niklewicz A, Smith AD, Smith A, et al. (2023). The importance of vitamin B12 for individuals choosing plant-based diets. European Journal of Nutrition ",
           "url": "https://doi.org/10.1007/s00394-022-03025-4"
         },
         {
-          "texte": "Niklewicz A, Hannibal L, Warren M, Ahmadi KR. (2024). A systematic review and meta-analysis of functional vitamin B12 status among adult vegans. Nutrition Bulletin 49(4):463–479. doi:10.1111/nbu.12712",
+          "texte": "Niklewicz A, Hannibal L, Warren M, Ahmadi KR. (2024). A systematic review and meta-analysis of functional vitamin B12 status among adult vegans. Nutrition Bulletin (Chiffres 51 %/90 % : Storz et al. 2023, cité dans cette revue.)",
           "url": "https://doi.org/10.1111/nbu.12712"
         },
         {
