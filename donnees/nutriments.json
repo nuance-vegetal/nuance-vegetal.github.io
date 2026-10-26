@@ -38,7 +38,7 @@
         "Céréales (germes de blé, avoine, orge, riz) et quinoa",
         "Produits du soja (tofu, tempeh, boisson ou yaourt de soja)",
         "Mycoprotéines (Quorn®)",
-        "Fruits à coque et graines (en petite quantité)",
+        "Fruits à coque et graines",
         "Seitan"
       ],
       "surEtiquette": "Regarde la ligne « Protéines » du tableau, pour 100 g. Repère du CSS pour un produit qui remplace la viande : plus de 10 g.",
@@ -124,6 +124,10 @@
         {
           "texte": "CSS (2025). Recommandations alimentaires pour la population belge, avis n° 9805-9807.",
           "url": "https://www.nubel.be/wp-content/uploads/2025/07/250626_CSS98059807_Recommandationsalimentaires2025_vWeb.pdf"
+        },
+        {
+          "texte": "Règlement (UE) n° 231/2012 établissant les spécifications des additifs alimentaires.",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32012R0231"
         }
       ],
       "brouillon": false,
