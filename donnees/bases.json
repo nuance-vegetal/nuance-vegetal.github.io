@@ -92,11 +92,12 @@
     {
       "nom": "Œufs",
       "base": "Autre",
-      "description": "Œufs de poule, pour les végétariens qui en mangent (pas les végans). 2 à 3 œufs remplacent 100 g de viande, maximum 6 par semaine.",
+      "description": "Œufs de poule, pour les végétariens qui en mangent (pas les végans). ",
       "proteines": "≈ 12 à 13 g pour 100 g (≈ 6 g par œuf)",
       "allergenes": [
         "Œuf"
       ],
+      "enquete": "2 à 3 œufs remplacent 100 g de viande, maximum 6 par semaine.",
       "image": "images/oeufs-bol.webp",
       "image_description": "Œufs bruns dans un bol blanc sur une table en bois"
     },
