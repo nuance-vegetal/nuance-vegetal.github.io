@@ -2,7 +2,7 @@
   "produit": {
     "nom": "Galettes végétales façon steak",
     "details": "Produit fictif · 2 × 100 g · 3,49 €, soit 17,45 €/kg",
-    "ingredients": "Eau, protéines de pois (18 %), huile de tournesol, protéines de blé, amidon de pomme de terre, arômes naturels, sel, épaississant : méthylcellulose, jus de betterave, vitamine B12.",
+    "ingredients": "Eau, protéines de pois (18 %), huile de tournesol, **protéines de blé**, amidon de pomme de terre, arômes naturels, sel, épaississant : méthylcellulose, jus de betterave, vitamine B12.",
     "commentaireIngredients": 1,
     "traces": "Peut contenir des traces de soja.",
     "valeurs": [
@@ -87,6 +87,6 @@
   "additifs": {
     "titre": "les additifs, on en parle ?",
     "texte": "La **méthylcellulose** (E461) est un additif qui lie la préparation : il est autorisé et évalué en Europe. Le **jus de betterave** donne la couleur « viande » : c'est un ingrédient qui colore, pas un additif.",
-    "sources": "  Règlement (CE) n° 1333/2008 · EFSA 2018"
+    "sources": "Règlement (CE) n° 1333/2008 · EFSA 2018"
   }
 }
