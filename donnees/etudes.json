@@ -2,7 +2,7 @@
   "fiches": [
     {
       "question": "Le soja est-il mauvais pour les hormones ?",
-      "reponse": "Chez l’homme comme chez la femme, les études ne montrent pas d’effet néfaste du soja sur les hormones, que ce soit dans l’alimentation ou en compléments. Par précaution, l’ANSES (France) conseille toutefois de ne pas en consommer tous les jours et de varier les sources de protéines.",
+      "reponse": "Chez l’homme comme chez la femme, les études ne montrent pas d’effet néfaste du soja sur les hormones, que ce soit dans l’alimentation ou en compléments. Par précaution, l’ANSES (France) recommande toutefois de varier les sources de protéines végétales : les autres légumineuses contiennent beaucoup moins d’isoflavones.",
       "points": [
         "Le soja contient des isoflavones, parfois appelées « phyto-œstrogènes », dont la structure ressemble à celle des œstrogènes.",
         "Chez les hommes, une méta-analyse de 41 études ne montre aucun effet du soja ni des isoflavones sur la testostérone ou les œstrogènes, quelles que soient la dose et la durée.",
@@ -11,7 +11,7 @@
         "Pour l’utérus, aucun effet n’a été observé jusqu’à 150 mg/j pendant 2,5 ans ; après 5 ans, quelques changements non cancéreux ont été rapportés.",
         "Il n’y a pas de données pour les femmes qui ont ou ont eu un cancer hormonodépendant du sein ou de l’utérus.",
         "Si tu prends un traitement pour la thyroïde, le soja peut un peu diminuer son absorption : pas besoin d’éviter le soja, mais parles-en à ton médecin, qui peut ajuster la dose.",
-        "En 2025, l'ANSES (France) a fixé des seuils très bas pour les isoflavones, à partir d'études chez l'animal : 0,02 mg/kg/j pour la population générale et 0,01 mg/kg/j pour les femmes enceintes, en âge de procréer et les enfants. Elle recommande de diversifier les légumineuses plutôt que de consommer du soja tous les jours."
+        "En 2025, l’ANSES (France) a fixé des seuils très bas pour les isoflavones, à partir d’études chez l’animal : 0,02 mg/kg/j pour la population générale et 0,01 mg/kg/j pour les femmes enceintes, en âge de procréer et les enfants. Elle recommande de ne plus servir de soja en restauration collective et de varier les aliments végétaux."
       ],
       "conseil": "En cas de cancer hormonodépendant, actuel ou passé, demande l’avis de ton médecin avant de prendre des compléments d’isoflavones.",
       "niveau": 2,
