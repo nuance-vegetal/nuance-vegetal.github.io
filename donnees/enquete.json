@@ -13,30 +13,30 @@
       "misEnAvant": false
     },
     {
-      "valeur": 23,
+      "valeur": 22,
       "unite": " %",
       "texte": "pensent que le quinoa contient du blé.",
       "misEnAvant": false
     },
     {
-      "valeur": 75,
+      "valeur": 74,
       "unite": " %",
       "texte": "le trouveraient utile ou peut-être utile (41 % oui, 34 % peut-être).",
       "misEnAvant": false
     }
   ],
-  "note": "Résultats de mon questionnaire auprès des végétariens, vegans et végétaliens (n = 240).",
+  "note": "Résultats de mon questionnaire auprès des végétariens, vegans et végétaliens (n = 241).",
   "bandeau": [
     {
       "chiffre": "8 sur 10",
       "texte": "aiment le goût"
     },
     {
-      "chiffre": "13 %",
+      "chiffre": "12 %",
       "texte": "les trouvent « naturels »"
     },
     {
-      "chiffre": "43 %",
+      "chiffre": "42 %",
       "texte": "se méfient des industriels"
     },
     {
