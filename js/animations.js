@@ -83,8 +83,7 @@
   /* ---------- Manifeste ---------- */
   const manifestes = $$('[data-manifeste]').map((section) => {
     const texte = section.querySelector('.manifeste-texte');
-    const n = decouperMots(texte, 'mot-m');
-    return { section, mots: $$('.mot-m', texte), n };
+    return { section, texte, mots: [], n: 0 };
   });
 
   /* ---------- Observateur : déclenche les apparitions ---------- */
@@ -139,7 +138,10 @@
     });
 
     // manifeste
-    manifestes.forEach(({ section, mots, n }) => {
+    manifestes.forEach((m) => {
+      // Le texte peut être remplacé après coup par js/textes.js (Pages CMS) : on redécoupe alors les mots
+      if (!m.texte.querySelector('.mot-m')) { m.n = decouperMots(m.texte, 'mot-m'); m.mots = $$('.mot-m', m.texte); }
+      const { section, mots, n } = m;
       const r = section.getBoundingClientRect();
       const p = borne((h * 0.6 - r.top) / (r.height - h * 0.4), 0, 1);
       const actifs = Math.round(p * n);
