@@ -101,6 +101,36 @@
       "id": "fer"
     },
     {
+      "titre": "Oméga-3",
+      "resume": "Graisses indispensables, que le corps ne sait pas fabriquer.",
+      "aQuoiCaSert": "Les oméga-3 interviennent dans le système cardiovasculaire, les fonctions cognitives, l’immunité et la croissance. Le corps ne sait pas fabriquer l’oméga-3 de base (ALA) : il doit venir de l’alimentation. Il en transforme ensuite une toute petite partie en EPA et DHA, les formes que l’on trouve surtout dans le poisson.",
+      "ouLaTrouver": [
+        "Graines de lin, de chia et de chanvre (moulues ou trempées)",
+        "Noix",
+        "Huiles de colza, de lin et de noix",
+        "Germes de blé",
+        "Huile d'algues (EPA et DHA)"
+      ],
+      "surEtiquette": "Sur une huile ou une margarine, regarde la liste des ingrédients : colza, lin ou noix sont de bons choix. Les mentions « source d'oméga-3 » et « riche en oméga-3 » sont encadrées par la loi européenne.",
+      "conseil": "Une poignée par jour suffit (20 à 30 g de noix et de graines). Pas plus de 10 g de graines de chia par jour. Utilise les huiles de lin et de noix à froid uniquement. Les végétaliens devraient envisager un complément d’huile d’algues.",
+      "sources": [
+        {
+          "texte": "Vlaamse Vereniging voor Kindergeneeskunde (2019). Vegetarische voeding – Informatiebrochure voor hulpverleners in de gezondheidszorg.",
+          "url": "https://www.kindengezin.be/sites/default/files/2021-05/Vegetarische%20voeding%2C%20informatiebrochure%20%28VVK%29.pdf"
+        },
+        {
+          "texte": "CSS (2021), avis n° 9445 – L’alimentation végétarienne",
+          "url": "https://www.hgr-css.be/fr/avis/9445/alimentation-vegetarienne"
+        },
+        {
+          "texte": "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé.",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/ALL/?uri=CELEX:32006R1924"
+        }
+      ],
+      "brouillon": false,
+      "id": "omega3"
+    },
+    {
       "titre": "Additifs",
       "resume": "Ajoutés pour la texture, le goût ou la conservation.",
       "aQuoiCaSert": "Ce sont des substances qu’on ne mange pas seules, mais qu’on ajoute aux aliments pour un rôle technique, par exemple les conserver, épaissir ou colorer. ",
@@ -158,36 +188,6 @@
       ],
       "brouillon": false,
       "id": "allegations"
-    },
-    {
-      "titre": "Oméga-3",
-      "resume": "Graisses indispensables, que le corps ne sait pas fabriquer.",
-      "aQuoiCaSert": "Les oméga-3 interviennent dans le système cardiovasculaire, les fonctions cognitives, l’immunité et la croissance. Le corps ne sait pas fabriquer l’oméga-3 de base (ALA) : il doit venir de l’alimentation. Il en transforme ensuite une toute petite partie en EPA et DHA, les formes que l’on trouve surtout dans le poisson.",
-      "ouLaTrouver": [
-        "Graines de lin, de chia et de chanvre (moulues ou trempées)",
-        "Noix",
-        "Huiles de colza, de lin et de noix",
-        "Germes de blé",
-        "Huile d'algues (EPA et DHA)"
-      ],
-      "surEtiquette": "Sur une huile ou une margarine, regarde la liste des ingrédients : colza, lin ou noix sont de bons choix. Les mentions « source d'oméga-3 » et « riche en oméga-3 » sont encadrées par la loi européenne.",
-      "conseil": "Une poignée par jour suffit (20 à 30 g de noix et de graines). Pas plus de 10 g de graines de chia par jour. Utilise les huiles de lin et de noix à froid uniquement. Les végétaliens devraient envisager un complément d’huile d’algues.",
-      "sources": [
-        {
-          "texte": "Vlaamse Vereniging voor Kindergeneeskunde (2019). Vegetarische voeding – Informatiebrochure voor hulpverleners in de gezondheidszorg.",
-          "url": "https://www.kindengezin.be/sites/default/files/2021-05/Vegetarische%20voeding%2C%20informatiebrochure%20%28VVK%29.pdf"
-        },
-        {
-          "texte": "CSS (2021), avis n° 9445 – L’alimentation végétarienne",
-          "url": "https://www.hgr-css.be/fr/avis/9445/alimentation-vegetarienne"
-        },
-        {
-          "texte": "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé.",
-          "url": "https://eur-lex.europa.eu/legal-content/FR/ALL/?uri=CELEX:32006R1924"
-        }
-      ],
-      "brouillon": false,
-      "id": "omega3"
     }
   ]
 }
