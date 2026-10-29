@@ -36,7 +36,7 @@
     {
       "nom": "Quorn",
       "base": "Champignon",
-      "description": "Mycoprotéine, obtenue à partir d'un champignon. Certaines recettes contiennent du blanc d'œuf.",
+      "description": "Mycoprotéine issue d'un champignon. Contient parfois du blanc d'œuf.",
       "proteines": "≈ 11 à 15 g pour 100 g",
       "allergenes": [
         "Œuf (selon la recette)",
@@ -70,7 +70,7 @@
     {
       "nom": "Légumineuses",
       "base": "Autre",
-      "description": "Pois chiches, lentilles, haricots rouges, blancs ou bruns… Graines sèches de plantes de la famille des pois, riches en fibres, en fer et en protéines.",
+      "description": "Pois chiches, lentilles, haricots… Des graines riches en protéines, en fibres et en fer.",
       "proteines": "≈ 7 à 9 g pour 100 g (cuit)",
       "allergenes": [
         "Aucun allergène majeur (vérifier l'étiquette)"
@@ -81,7 +81,7 @@
     {
       "nom": "Fèves de soja (edamame)",
       "base": "Soja",
-      "description": "Graines de soja entières, fraîches et vertes (edamame) ou sèches. Le soja contient plus de protéines que les autres légumineuses, et des protéines de haute valeur biologique.",
+      "description": "Graines de soja entières, fraîches (edamame) ou sèches. Plus riches en protéines que les autres légumineuses.",
       "proteines": "≈ 11 g (edamame) à 16 g (fèves sèches cuites) pour 100 g",
       "allergenes": [
         "Soja"
@@ -104,7 +104,7 @@
     {
       "nom": "Protéines de soja texturées (PST)",
       "base": "Soja",
-      "description": "Soja broyé, séché en morceaux ou en haché, parfois aromatisé. Une fois réhydratées, elles ont une texture proche de la viande.",
+      "description": "Soja broyé et séché, en morceaux ou en haché. Réhydraté, il a une texture proche de la viande.",
       "proteines": "≈ 50 g pour 100 g (sec), ≈ 15 à 18 g une fois réhydratées",
       "allergenes": [
         "Soja"
@@ -115,7 +115,7 @@
     {
       "nom": "Lupin",
       "base": "Autre",
-      "description": "Légumineuse cousine de l'arachide, au goût proche du pois chiche. On la mange en graines ou en farine, utilisée dans le pain, les biscuits et certains substituts de viande.",
+      "description": "Légumineuse proche de l'arachide (attention aux allergies), en graines ou en farine : pain, biscuits, substituts de viande.",
       "proteines": "≈ 15 g pour 100 g (graines cuites)",
       "allergenes": [
         "Lupin"
@@ -126,7 +126,7 @@
     {
       "nom": "Halloumi",
       "base": "Autre",
-      "description": "Fromage chypriote au lait de brebis, de chèvre et/ou de vache, qui ne fond pas et se grille comme une viande. Pour les végétariens qui en mangent (pas les véganes), en portion modérée car il est très salé et riche en graisses saturées.",
+      "description": "Fromage chypriote qui se grille sans fondre. Très salé et riche en graisses saturées : en petite portion.",
       "proteines": "≈ 20 à 22 g pour 100 g",
       "allergenes": [
         "Lait"
