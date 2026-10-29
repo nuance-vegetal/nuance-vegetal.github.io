@@ -7,7 +7,6 @@
     {
       "titre": "B12 et fer",
       "nouvellePage": true,
-      "texte": "",
       "points": [
         "B12 : cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans les ingrédients.",
         "Fer : cherche « fer » ou un sel de fer (pyrophosphate ferrique, fumarate ferreux).",
@@ -15,37 +14,29 @@
         "Le fer des végétaux est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi)."
       ],
       "encadre": {
-        "titre": "",
-        "texte": "",
         "couleur": "bleu"
       }
     },
     {
       "titre": "Les ingrédients",
       "nouvellePage": false,
-      "texte": "",
       "points": [
         "Le premier ingrédient (après l’eau) est la base : soja, blé, pois, champignon…",
         "Les allergènes sont mis en évidence, le plus souvent en gras."
       ],
       "encadre": {
-        "titre": "",
-        "texte": "",
         "couleur": "bleu"
       }
     },
     {
-      "titre": "Pièges végan",
+      "titre": "Pièges pour les véganes",
       "nouvellePage": false,
-      "texte": "",
       "points": [
         "Ingrédients d’origine animale moins évidents : **lactosérum**, **caséine**, **gélatine**, **miel**, **carmin (E120)**.",
         "« Peut contenir des traces de lait » = contamination possible en usine, pas un vrai ingrédient laitier.",
         "Le **lait** et les **œufs** sont obligatoirement mis en évidence dans les ingrédients (le plus souvent en gras)."
       ],
       "encadre": {
-        "titre": "",
-        "texte": "",
         "couleur": "bleu"
       }
     },
@@ -53,7 +44,6 @@
       "titre": "Gluten caché",
       "nouvellePage": false,
       "texte": "Les céréales contenant du gluten sont mises en évidence dans la liste d’ingrédients (le plus souvent en gras). Attention au gluten caché dans les céréales :",
-      "points": [],
       "encadre": {
         "titre": "Contient du gluten",
         "texte": "seigle, avoine, blé, orge, triticale, épeautre, khorasan (kamut).",
@@ -64,6 +54,6 @@
   "titreBio": "Bio ? Repère ces logos",
   "noteBio": "Le logo européen est accompagné d’un code de l’organisme de contrôle (ex. BE-BIO-01) et de l’origine des ingrédients (Agriculture UE / non UE).",
   "titreQr": "Scanne pour ouvrir le décodeur",
-  "piedPage": "Outil réalisé dans le cadre d’un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l’avis d’un·e diététicien·ne.",
-  "sources": "Sources : Règlement (UE) n° 1169/2011 (allergènes, annexe II) ; Règlement (CE) n° 1925/2006 (formes de fer et de B12) ; Règlement (UE) n° 2018/848 (logo bio)."
+  "sources": "Sources : Règlement (UE) n° 1169/2011 (allergènes, annexe II) ; Règlement (CE) n° 1925/2006 (formes de fer et de B12) ; Règlement (UE) n° 2018/848 (logo bio).",
+  "piedPage": "Outil réalisé dans le cadre d’un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l’avis d’un·e diététicien·ne."
 }
