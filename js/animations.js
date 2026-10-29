@@ -38,6 +38,9 @@
     return i;
   }
 
+  // Pour js/textes.js : un titre dont le texte vient de Pages CMS est redécoupé mot par mot
+  window.decouperTitre = (h) => decouperMots(h, 'mot', 'mot-int');
+
   if (MOUVEMENT_REDUIT) return;
 
   /* ---------- Défilement doux (ordinateur seulement) ---------- */

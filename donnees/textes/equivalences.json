@@ -1,0 +1,40 @@
+{
+  "s0": {
+    "e1": "équivalences"
+  },
+  "s1": {
+    "e1": "combien pour *remplacer* ?",
+    "e2": "01 · les équivalences"
+  },
+  "s2": {
+    "e1": "ta portion, *en végétal*",
+    "e2": "viande, poisson ou poulet **crus**",
+    "e3": "02 · la complémentarité"
+  },
+  "s3": {
+    "e1": "associer, *sans se prendre la tête*",
+    "e2": "la règle simple",
+    "e3": "céréales",
+    "e4": "légumineuses",
+    "e5": "protéines complètes ✓",
+    "e6": "sur la journée, pas forcément dans la même assiette",
+    "e7": "les céréales",
+    "e8": "pain, riz, pâtes, semoule…",
+    "e9": "Il leur manque un peu d’une « brique » de protéine : la **lysine**.",
+    "e10": "les légumineuses",
+    "e11": "lentilles, pois chiches, haricots…",
+    "e12": "Elles apportent la **lysine** qui manque aux céréales. En échange, les céréales leur apportent la **méthionine**.",
+    "e13": "ensemble",
+    "e14": "riz + lentilles, pain + houmous…",
+    "e15": "L’une comble ce qui manque à l’autre : **toutes les briques sont là**.",
+    "e16": "matin",
+    "e17": "tartine de pain complet",
+    "e18": "midi",
+    "e19": "salade de lentilles",
+    "e20": "la journée",
+    "e21": "✓ complète"
+  },
+  "s4": {
+    "e1": "sources"
+  }
+}

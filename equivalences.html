@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261034"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261034">
-  <link rel="stylesheet" href="css/style.css?v=20261034">
+  <script src="js/theme.js?v=20261035"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261035">
+  <link rel="stylesheet" href="css/style.css?v=20261035">
 </head>
 <body class="page-secondaire">
 
@@ -41,15 +41,15 @@
 <div class="page">
   <main>
     <section class="accroche" style="max-width:760px">
-      <span class="surtitre">équivalences</span>
-      <h1>combien pour <em class="serif">remplacer</em> ?</h1>
+      <span class="surtitre" data-texte="s0.e1">équivalences</span>
+      <h1 data-texte="s1.e1">combien pour <em class="serif">remplacer</em> ?</h1>
       <p class="intro" id="eq-intro"></p>
     </section>
 
-    <span class="surtitre revele" style="margin-top:40px">01 · les équivalences</span>
-    <h2 style="margin-top:0">ta portion, <em class="serif">en végétal</em></h2>
+    <span class="surtitre revele" style="margin-top:40px" data-texte="s1.e2">01 · les équivalences</span>
+    <h2 style="margin-top:0" data-texte="s2.e1">ta portion, <em class="serif">en végétal</em></h2>
     <section class="portion revele" aria-label="Ta portion">
-      <p class="portion-etiquette"><label for="eq-viande">viande, poisson ou poulet <b>crus</b></label></p>
+      <p class="portion-etiquette"><label for="eq-viande" data-texte="s2.e2">viande, poisson ou poulet <b>crus</b></label></p>
       <div class="portion-valeur">
         <input type="text" id="eq-viande" inputmode="numeric" value="100" maxlength="4" aria-describedby="eq-aide">
         <span aria-hidden="true">g</span>
@@ -76,19 +76,19 @@
     <p class="petit secondaire" id="eq-qualite" style="margin:18px 0 0"></p>
     <p class="petit secondaire" id="eq-source" style="margin:6px 0 0"></p>
 
-    <span class="surtitre revele" style="margin-top:72px">02 · la complémentarité</span>
-    <h2 style="margin-top:0">associer, <em class="serif">sans se prendre la tête</em></h2>
+    <span class="surtitre revele" style="margin-top:72px" data-texte="s2.e3">02 · la complémentarité</span>
+    <h2 style="margin-top:0" data-texte="s3.e1">associer, <em class="serif">sans se prendre la tête</em></h2>
 
     <!-- La règle en une phrase -->
     <div class="regle-or revele">
-      <p class="regle-titre">la règle simple</p>
+      <p class="regle-titre" data-texte="s3.e2">la règle simple</p>
       <p class="regle-equation">
-        <span class="eq-bloc cereale">céréales</span>
+        <span class="eq-bloc cereale" data-texte="s3.e3">céréales</span>
         <span class="eq-signe">+</span>
-        <span class="eq-bloc legumineuse">légumineuses</span>
-        <span class="eq-resultat"><span class="eq-signe">=</span> <span class="eq-bloc complet">protéines complètes ✓</span></span>
+        <span class="eq-bloc legumineuse" data-texte="s3.e4">légumineuses</span>
+        <span class="eq-resultat"><span class="eq-signe">=</span> <span class="eq-bloc complet" data-texte="s3.e5">protéines complètes ✓</span></span>
       </p>
-      <p class="regle-sous">sur la journée, pas forcément dans la même assiette</p>
+      <p class="regle-sous" data-texte="s3.e6">sur la journée, pas forcément dans la même assiette</p>
     </div>
 
     <!-- Pourquoi, en 3 images -->
@@ -96,23 +96,23 @@
       <li class="etape-pz revele" style="--i:0">
         <svg class="pz-svg" viewBox="0 0 120 104" aria-hidden="true"><path class="pz-cereale" d="M8 8h92v30a14 14 0 0 0 0 28v30H8Z"/><circle class="pz-manque" cx="100" cy="52" r="15"/></svg>
         <p class="etape-num">1</p>
-        <h4>les céréales</h4>
-        <p class="etape-ex">pain, riz, pâtes, semoule…</p>
-        <p>Il leur manque un peu d’une « brique » de protéine : la <b>lysine</b>.</p>
+        <h4 data-texte="s3.e7">les céréales</h4>
+        <p class="etape-ex" data-texte="s3.e8">pain, riz, pâtes, semoule…</p>
+        <p data-texte="s3.e9">Il leur manque un peu d’une « brique » de protéine : la <b>lysine</b>.</p>
       </li>
       <li class="etape-pz revele" style="--i:1">
         <svg class="pz-svg" viewBox="0 0 120 104" aria-hidden="true"><path class="pz-legumineuse" d="M20 8h92v88H20V66a14 14 0 0 1 0-28Z"/></svg>
         <p class="etape-num">2</p>
-        <h4>les légumineuses</h4>
-        <p class="etape-ex">lentilles, pois chiches, haricots…</p>
-        <p>Elles apportent la <b>lysine</b> qui manque aux céréales. En échange, les céréales leur apportent la <b>méthionine</b>.</p>
+        <h4 data-texte="s3.e10">les légumineuses</h4>
+        <p class="etape-ex" data-texte="s3.e11">lentilles, pois chiches, haricots…</p>
+        <p data-texte="s3.e12">Elles apportent la <b>lysine</b> qui manque aux céréales. En échange, les céréales leur apportent la <b>méthionine</b>.</p>
       </li>
       <li class="etape-pz etape-ensemble revele" style="--i:2">
         <svg class="pz-svg" viewBox="0 0 204 104" aria-hidden="true"><g class="pz-g"><path class="pz-cereale" d="M8 8h92v30a14 14 0 0 0 0 28v30H8Z"/></g><g class="pz-d"><path class="pz-legumineuse" transform="translate(80 0)" d="M20 8h92v88H20V66a14 14 0 0 1 0-28Z"/></g><g class="pz-ok"><circle cx="186" cy="20" r="14"/><path d="m179 20 5 5 9-10"/></g></svg>
         <p class="etape-num">3</p>
-        <h4>ensemble</h4>
-        <p class="etape-ex">riz + lentilles, pain + houmous…</p>
-        <p>L’une comble ce qui manque à l’autre : <b>toutes les briques sont là</b>.</p>
+        <h4 data-texte="s3.e13">ensemble</h4>
+        <p class="etape-ex" data-texte="s3.e14">riz + lentilles, pain + houmous…</p>
+        <p data-texte="s3.e15">L’une comble ce qui manque à l’autre : <b>toutes les briques sont là</b>.</p>
       </li>
     </ol>
 
@@ -120,11 +120,11 @@
     <div class="journee revele">
       <p class="journee-titre" id="comp-phrase">Pas besoin de tout mettre dans la même assiette.</p>
       <div class="journee-repas">
-        <div class="repas"><span class="repas-moment">matin</span><span class="repas-plat"><span class="pastille-mini cereale"></span>tartine de pain complet</span></div>
+        <div class="repas"><span class="repas-moment" data-texte="s3.e16">matin</span><span class="repas-plat"><span class="pastille-mini cereale"></span><span class="repas-texte" data-texte="s3.e17">tartine de pain complet</span></span></div>
         <span class="repas-fleche" aria-hidden="true">→</span>
-        <div class="repas"><span class="repas-moment">midi</span><span class="repas-plat"><span class="pastille-mini legumineuse"></span>salade de lentilles</span></div>
+        <div class="repas"><span class="repas-moment" data-texte="s3.e18">midi</span><span class="repas-plat"><span class="pastille-mini legumineuse"></span><span class="repas-texte" data-texte="s3.e19">salade de lentilles</span></span></div>
         <span class="repas-fleche" aria-hidden="true">→</span>
-        <div class="repas repas-bilan"><span class="repas-moment">la journée</span><span class="repas-plat">✓ complète</span></div>
+        <div class="repas repas-bilan"><span class="repas-moment" data-texte="s3.e20">la journée</span><span class="repas-plat"><span class="repas-texte" data-texte="s3.e21">✓ complète</span></span></div>
       </div>
     </div>
 
@@ -140,7 +140,7 @@
     <div class="grille-formules" id="comp-seul"></div>
 
     <section class="sources-page revele" aria-labelledby="titre-sources">
-      <h2 id="titre-sources" style="margin-top:56px">sources</h2>
+      <h2 id="titre-sources" style="margin-top:56px" data-texte="s4.e1">sources</h2>
       <ul class="sources" id="eq-sources"></ul>
     </section>
   </main>
@@ -153,17 +153,18 @@
         <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
       <span class="nom-marque">nuance <em>végétale</em></span>
       </a>
-      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
-      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
+      <p data-texte="commun:pied.e1">Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p data-texte="commun:pied.e2"><a href="createurs.html">Les créatrices et créateurs du site</a></p>
     </div>
-    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>, <a href="https://www.pexels.com">Pexels</a> et <a href="https://pixabay.com">Pixabay</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+    <p class="credits" data-texte="commun:pied.e3">Photos : <a href="https://unsplash.com">Unsplash</a>, <a href="https://www.pexels.com">Pexels</a> et <a href="https://pixabay.com">Pixabay</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261034"></script>
-<script src="js/menu.js?v=20261034"></script>
-<script src="js/vendor/lenis.min.js?v=20261034"></script>
-<script src="js/animations.js?v=20261034"></script>
+<script src="js/commun.js?v=20261035"></script>
+<script src="js/textes.js?v=20261035"></script>
+<script src="js/menu.js?v=20261035"></script>
+<script src="js/vendor/lenis.min.js?v=20261035"></script>
+<script src="js/animations.js?v=20261035"></script>
 <script>
   /* Contenu : donnees/equivalences.json (Pages CMS → « Équivalences et complémentarité ») */
   (async function () {
@@ -217,7 +218,7 @@
           : '<p class="eq-chiffre"><span data-n="grammes">0</span><small>g' + (a.quantiteCuite ? ' secs' : '') + '</small></p>' +
             (a.quantiteCuite ? '<p class="eq-detail">ou <b data-n="cuits">0</b> g cuits' + (a.cuilleres ? ', environ <b data-n="cuilleres">0</b> cuillères à soupe' : '') + '</p>' : '') +
             (a.cuilleres ? '<div class="eq-icones cuilleres" aria-hidden="true"></div>' : '')) +
-        '<p class="sr-only" data-texte></p></div></article>';
+        '<p class="sr-only" data-lecture></p></div></article>';
     }).join('');
 
     // Les chiffres roulent jusqu'à leur nouvelle valeur
@@ -261,7 +262,7 @@
         const carte = document.querySelector('.eq-carte[data-i="' + i + '"]');
         const v = valeurs(a, viande);
         carte.querySelectorAll('[data-n]').forEach((el) => rouler(el, v[el.dataset.n]));
-        carte.querySelector('[data-texte]').textContent = texte(a, v);
+        carte.querySelector('[data-lecture]').textContent = texte(a, v);
         const z = carte.querySelector('.eq-icones');
         if (z && a.unite !== 'g') icones(z, v.min, v.max, OEUF);
         else if (z) icones(z, v.cuilleres, v.cuilleres, CUILLERE);

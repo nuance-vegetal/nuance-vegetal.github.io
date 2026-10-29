@@ -81,6 +81,16 @@ Les couleurs des repères du décodeur (✓ atteint en vert sauge, ! à surveill
 - **Infos du scan** : coche ou décoche les lignes « bon à savoir » à afficher après un scan (gluten, lait, végan…). Le fer et la B12 font partie des 6 repères.
 - **Erreur ?** Tout est gardé dans l'historique : Alex peut revenir à la version d'avant à tout moment.
 
+## Tous les autres textes (titres, sous-titres, explications…)
+
+À gauche dans Pages CMS : **Tous les textes des pages**, puis la page voulue (**Textes – Accueil**, **Textes – Décodeur**…).
+
+- Les textes sont rangés **par section**, dans l'ordre de la page. Chaque case montre le début du texte actuel pour le retrouver vite.
+- Exemple : les explications qui s'ouvrent quand on touche un mot de l'étiquette « à toi de jouer » sont dans **Textes – Accueil** → **Section « à toi de jouer »**.
+- Le pied de page (commun à toutes les pages) est dans **Textes – Pied de page**.
+- Mise en forme : `*mot*` = italique élégant (dans les titres), `**mot**` = gras, `[texte](https://…)` = lien.
+- Une case vidée remet le texte d'origine.
+
 ## Sources modifiables
 
 - **Accueil – chiffres de l'enquête** → « Ligne sous les cartes de chiffres » (n = 355).

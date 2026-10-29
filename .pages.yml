@@ -655,6 +655,714 @@ content:
       label: Autres infos
       description: "Mise en forme : **mot** = gras ; [atteint], [à surveiller], [non renseigné] = pastilles de couleur ; une ligne vide = nouveau paragraphe."
       type: text
+- name: textes
+  label: Tous les textes des pages (titres, sous-titres, explications…)
+  type: group
+  items:
+  - name: textes-accueil
+    label: Textes – Accueil
+    type: file
+    path: donnees/textes/accueil.json
+    format: json
+    fields:
+    - name: s1
+      label: Section « lis ton étiquette en 30 secondes »
+      type: object
+      fields:
+      - name: e1
+        label: Grand titre — « lis ton étiquette en 30 secondes »
+        type: string
+      - name: e2
+        label: Texte sous le titre — « 5 coups d'œil, 6 repères, zéro prise de tête. Pas de note… »
+        type: text
+      - name: e3
+        label: Pastille — « Atteint »
+        type: string
+      - name: e4
+        label: Pastille — « Atteint »
+        type: string
+      - name: e5
+        label: Pastille — « À surveiller »
+        type: string
+      - name: e6
+        label: Surtitre — « ( notre parti pris ) »
+        type: string
+      - name: e7
+        label: Texte — « pas de note toute faite. pas de jugement. juste les bons… »
+        type: text
+      - name: e8
+        label: Texte — « Un outil né d'un TFE en diététique, pensé pour les débuta… »
+        type: string
+      - name: e9
+        label: Surtitre — « 01 · l'enquête »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s2
+      label: Section « ce que l'enquête a révélé »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « ce que l'enquête a révélé »
+        type: string
+      - name: e2
+        label: Surtitre — « 02 · la méthode »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s3
+      label: Section « 5 coups d'œil, 6 repères »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « 5 coups d'œil, 6 repères »
+        type: string
+      - name: e2
+        label: Texte — « Garde-les en tête au rayon frais. Après ça, n'importe que… »
+        type: text
+      - name: e3
+        label: Titre en gras — « les ingrédients »
+        type: string
+      - name: e4
+        label: Texte — « Le premier ingrédient te dit de quoi est fait le produit… »
+        type: text
+      - name: e5
+        label: Titre en gras — « les protéines »
+        type: string
+      - name: e6
+        label: Texte — « Plus de 10 g pour 100 g, pour bien remplacer la viande. »
+        type: string
+      - name: e7
+        label: Titre en gras — « la B12 et le fer »
+        type: string
+      - name: e8
+        label: Texte — « Au moins 0,24 µg de B12 et 0,8 mg de fer pour 100 g. Pas… »
+        type: text
+      - name: e9
+        label: Titre en gras — « le sel »
+        type: string
+      - name: e10
+        label: Texte — « 1,1 g pour 100 g au maximum. »
+        type: string
+      - name: e11
+        label: Titre en gras — « les graisses »
+        type: string
+      - name: e12
+        label: Texte — « Moins de 10 g et moins que les protéines. Dont saturées :… »
+        type: text
+      - name: e13
+        label: Texte — « Repères du Conseil Supérieur de la Santé (avis n° 9445, 2… »
+        type: string
+      - name: e14
+        label: Surtitre — « 03 · à toi »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s4
+      label: Section « à toi de jouer »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « à toi de jouer »
+        type: string
+      - name: e2
+        label: 'Texte — « Touche un mot souligné sur l''étiquette : on t''explique tout. »'
+        type: string
+      - name: e3
+        label: Mot cliquable — « protéines de soja (22 %) »
+        type: string
+      - name: e4
+        label: Mot cliquable — « protéines de blé »
+        type: string
+      - name: e5
+        label: 'Mot cliquable — « épaississant : méthylcellulose »'
+        type: string
+      - name: e6
+        label: Mot cliquable — « vitamine B12 »
+        type: string
+      - name: e7
+        label: Mot cliquable — « fer »
+        type: string
+      - name: e8
+        label: Case du tableau — « Énergie »
+        type: string
+      - name: e9
+        label: Case du tableau — « 210 kcal »
+        type: string
+      - name: e10
+        label: Mot cliquable — « Matières grasses »
+        type: string
+      - name: e11
+        label: Mot cliquable — « dont saturées »
+        type: string
+      - name: e12
+        label: Case du tableau — « Glucides »
+        type: string
+      - name: e13
+        label: Case du tableau — « Fibres »
+        type: string
+      - name: e14
+        label: Mot cliquable — « Protéines »
+        type: string
+      - name: e15
+        label: Mot cliquable — « Sel »
+        type: string
+      - name: e16
+        label: Surtitre — « Explication »
+        type: string
+      - name: e17
+        label: 'Texte — « Touche une zone soulignée de l''étiquette : l''explication… »'
+        type: text
+      - name: e18
+        label: Pastille — « Ingrédient principal »
+        type: string
+      - name: e19
+        label: Texte — « Le soja est la base de ce produit. C'est une légumineuse… »
+        type: text
+      - name: e20
+        label: Texte — « [Texte à valider par Camille] »
+        type: string
+      - name: e21
+        label: Pastille — « Gluten »
+        type: string
+      - name: e22
+        label: Texte — « Les protéines de blé apportent du gluten. À éviter en cas… »
+        type: text
+      - name: e23
+        label: Texte — « [Texte à valider par Camille] »
+        type: string
+      - name: e24
+        label: Pastille — « Additif »
+        type: string
+      - name: e25
+        label: Texte — « La méthylcellulose sert à lier le produit, comme l'œuf da… »
+        type: text
+      - name: e26
+        label: Texte — « [Texte et source à valider par Camille] »
+        type: string
+      - name: e27
+        label: Pastille — « ? non renseigné »
+        type: string
+      - name: e28
+        label: Texte — « De la B12 est ajoutée, mais la quantité n'est pas indiqué… »
+        type: text
+      - name: e29
+        label: Texte — « Conseil Supérieur de la Santé, avis n° 9445 (2021) »
+        type: string
+      - name: e30
+        label: Pastille — « ? non renseigné »
+        type: string
+      - name: e31
+        label: Texte — « Du fer est ajouté, mais la quantité n'est pas indiquée. R… »
+        type: text
+      - name: e32
+        label: Texte — « Conseil Supérieur de la Santé, avis n° 9445 (2021) »
+        type: string
+      - name: e33
+        label: Pastille — « ✓ atteint »
+        type: string
+      - name: e34
+        label: 'Texte — « 18 g pour 100 g : plus que le repère de 10 g. Bonus : 34… »'
+        type: text
+      - name: e35
+        label: Texte — « Conseil Supérieur de la Santé, avis n° 9445 (2021) · règl… »
+        type: text
+      - name: e36
+        label: Pastille — « ! à surveiller »
+        type: string
+      - name: e37
+        label: 'Texte — « 1,3 g pour 100 g : au-dessus du repère de 1,1 g. Pas beso… »'
+        type: text
+      - name: e38
+        label: Texte — « Conseil Supérieur de la Santé, avis n° 9445 (2021) »
+        type: string
+      - name: e39
+        label: Pastille — « ✓ atteint »
+        type: string
+      - name: e40
+        label: 'Texte — « 1,2 g pour 100 g : moins de 5 g, soit environ 11 % des gr… »'
+        type: text
+      - name: e41
+        label: Texte — « Conseil Supérieur de la Santé, avis n° 9445 (2021) »
+        type: string
+      - name: e42
+        label: Pastille — « ! à surveiller »
+        type: string
+      - name: e43
+        label: 'Texte — « 11 g pour 100 g : un peu plus que le repère de 10 g. Les… »'
+        type: text
+      - name: e44
+        label: Texte — « Conseil Supérieur de la Santé, avis n° 9445 (2021) »
+        type: string
+      - name: e45
+        label: Surtitre — « 04 · la suite »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s5
+      label: Section « va plus loin »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « va plus loin »
+        type: string
+      - name: e2
+        label: Petit texte — « à quoi ça sert ? »
+        type: string
+      - name: e3
+        label: 'Petit texte — « B12, protéines, fer, oméga-3, additifs et allégations : l… »'
+        type: text
+      - name: e4
+        label: Petit texte — « c'est fait avec quoi ? »
+        type: string
+      - name: e5
+        label: Petit texte — « Tofu, seitan, Quorn… les bases expliquées. »
+        type: string
+      - name: e6
+        label: Petit texte — « équivalences »
+        type: string
+      - name: e7
+        label: Petit texte — « Combien de tofu ou de lentilles pour remplacer ta viande. »
+        type: string
+      - name: e8
+        label: Petit texte — « ce que dit la science »
+        type: string
+      - name: e9
+        label: 'Petit texte — « Soja, ultra-transformation, B12 : les réponses sourcées. »'
+        type: string
+      - name: e10
+        label: Petit texte — « l'étiquette décortiquée »
+        type: string
+      - name: e11
+        label: Petit texte — « Un exemple complet, ligne par ligne. »
+        type: string
+      - name: e12
+        label: Petit texte — « ta fiche PDF »
+        type: string
+      - name: e13
+        label: Petit texte — « Les repères à garder sur ton téléphone. »
+        type: string
+      - name: e14
+        label: Surtitre — « 05 · l'assiette »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s6
+      label: Section « sa place dans l'assiette »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « sa place dans l'assiette »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+  - name: textes-decodeur
+    label: Textes – Décodeur
+    type: file
+    path: donnees/textes/decodeur.json
+    format: json
+    fields:
+    - name: s0
+      label: Haut de page
+      type: object
+      fields:
+      - name: e1
+        label: Surtitre — « décodeur »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s1
+      label: Section « ton produit, décodé »
+      type: object
+      fields:
+      - name: e1
+        label: Grand titre — « ton produit, décodé »
+        type: string
+      - name: e2
+        label: Texte sous le titre — « Scanne le code-barres ou remplis toi-même. Les repères s’… »
+        type: text
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s2
+      label: Section « scanne, on remplit »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « scanne, on remplit »
+        type: string
+      - name: e2
+        label: Texte — « dans la liste d’ingrédients »
+        type: string
+      - name: e3
+        label: Question — « B12 citée ? »
+        type: string
+      - name: e4
+        label: Question — « Fer cité ? »
+        type: string
+      - name: e5
+        label: Question — « Gluten ? »
+        type: string
+      - name: e6
+        label: 'Texte — « B12 : Cherche « vitamine B12 », « cobalamine » ou « cyano… »'
+        type: text
+      - name: e7
+        label: 'Texte — « Fer : Cherche « fer » ou un sel de fer (ex. pyrophosphate… »'
+        type: text
+      - name: e8
+        label: 'Texte — « Gluten : Les céréales contenant du gluten sont mises en é… »'
+        type: text
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s3
+      label: Section « tes repères »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « tes repères »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: scanner
+      label: Section « Fenêtre du scanner »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « Scanner »
+        type: string
+      - name: e2
+        label: Texte — « Place le code-barres dans le cadre. La caméra reste sur t… »
+        type: text
+      - name: e3
+        label: Libellé — « Numéro du code-barres »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+  - name: textes-etiquette
+    label: Textes – Étiquette décortiquée
+    type: file
+    path: donnees/textes/etiquette.json
+    format: json
+    fields:
+    - name: s0
+      label: Haut de page
+      type: object
+      fields:
+      - name: e1
+        label: Surtitre — « exemple complet »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s1
+      label: Section « une étiquette, ligne par ligne »
+      type: object
+      fields:
+      - name: e1
+        label: Grand titre — « une étiquette, ligne par ligne »
+        type: string
+      - name: e2
+        label: Texte sous le titre — « Touche un numéro sur l'étiquette pour ouvrir son commenta… »
+        type: text
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s2
+      label: Section « les 5 commentaires »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « les 5 commentaires »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+  - name: textes-bases
+    label: Textes – Les bases (C'est fait avec quoi ?)
+    type: file
+    path: donnees/textes/bases.json
+    format: json
+    fields:
+    - name: s0
+      label: Haut de page
+      type: object
+      fields:
+      - name: e1
+        label: Surtitre — « les bases »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s1
+      label: Section « c'est fait avec quoi ? »
+      type: object
+      fields:
+      - name: e1
+        label: Grand titre — « c'est fait avec quoi ? »
+        type: string
+      - name: e2
+        label: Texte sous le titre — « La moitié des répondants ne sait pas de quoi est fait le… »
+        type: text
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s2
+      label: Section « sources »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « sources »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+  - name: textes-equivalences
+    label: Textes – Équivalences
+    type: file
+    path: donnees/textes/equivalences.json
+    format: json
+    fields:
+    - name: s0
+      label: Haut de page
+      type: object
+      fields:
+      - name: e1
+        label: Surtitre — « équivalences »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s1
+      label: Section « combien pour remplacer ? »
+      type: object
+      fields:
+      - name: e1
+        label: Grand titre — « combien pour remplacer ? »
+        type: string
+      - name: e2
+        label: Surtitre — « 01 · les équivalences »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s2
+      label: Section « ta portion, en végétal »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « ta portion, en végétal »
+        type: string
+      - name: e2
+        label: Libellé — « viande, poisson ou poulet crus »
+        type: string
+      - name: e3
+        label: Surtitre — « 02 · la complémentarité »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s3
+      label: Section « associer, sans se prendre la tête »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « associer, sans se prendre la tête »
+        type: string
+      - name: e2
+        label: Texte — « la règle simple »
+        type: string
+      - name: e3
+        label: Petit texte — « céréales »
+        type: string
+      - name: e4
+        label: Petit texte — « légumineuses »
+        type: string
+      - name: e5
+        label: Petit texte — « protéines complètes ✓ »
+        type: string
+      - name: e6
+        label: Texte — « sur la journée, pas forcément dans la même assiette »
+        type: string
+      - name: e7
+        label: Petit titre — « les céréales »
+        type: string
+      - name: e8
+        label: Texte — « pain, riz, pâtes, semoule… »
+        type: string
+      - name: e9
+        label: 'Texte — « Il leur manque un peu d’une « brique » de protéine : la l… »'
+        type: string
+      - name: e10
+        label: Petit titre — « les légumineuses »
+        type: string
+      - name: e11
+        label: Texte — « lentilles, pois chiches, haricots… »
+        type: string
+      - name: e12
+        label: Texte — « Elles apportent la lysine qui manque aux céréales. En éch… »
+        type: text
+      - name: e13
+        label: Petit titre — « ensemble »
+        type: string
+      - name: e14
+        label: Texte — « riz + lentilles, pain + houmous… »
+        type: string
+      - name: e15
+        label: 'Texte — « L’une comble ce qui manque à l’autre : toutes les briques… »'
+        type: string
+      - name: e16
+        label: Petit texte — « matin »
+        type: string
+      - name: e17
+        label: Petit texte — « tartine de pain complet »
+        type: string
+      - name: e18
+        label: Petit texte — « midi »
+        type: string
+      - name: e19
+        label: Petit texte — « salade de lentilles »
+        type: string
+      - name: e20
+        label: Petit texte — « la journée »
+        type: string
+      - name: e21
+        label: Petit texte — « ✓ complète »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s4
+      label: Section « sources »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « sources »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+  - name: textes-a-quoi-ca-sert
+    label: Textes – À quoi ça sert ?
+    type: file
+    path: donnees/textes/a-quoi-ca-sert.json
+    format: json
+    fields:
+    - name: s0
+      label: Haut de page
+      type: object
+      fields:
+      - name: e1
+        label: Surtitre — « comprendre »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s1
+      label: Section « à quoi ça sert ? »
+      type: object
+      fields:
+      - name: e1
+        label: Grand titre — « à quoi ça sert ? »
+        type: string
+      - name: e2
+        label: 'Texte sous le titre — « B12, protéines, fer, oméga-3, additifs et allégations : c… »'
+        type: text
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+  - name: textes-etudes
+    label: Textes – Études (ce que dit la science)
+    type: file
+    path: donnees/textes/etudes.json
+    format: json
+    fields:
+    - name: s0
+      label: Haut de page
+      type: object
+      fields:
+      - name: e1
+        label: Surtitre — « idées reçues »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s1
+      label: Section « ce que dit la science »
+      type: object
+      fields:
+      - name: e1
+        label: Grand titre — « ce que dit la science »
+        type: string
+      - name: e2
+        label: Texte sous le titre — « Parmi les 355 personnes qui ont répondu à mon questionnai… »
+        type: text
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+  - name: textes-ta-fiche-pdf
+    label: Textes – Ta fiche PDF (page web)
+    type: file
+    path: donnees/textes/ta-fiche-pdf.json
+    format: json
+    fields:
+    - name: s0
+      label: Haut de page
+      type: object
+      fields:
+      - name: e1
+        label: Surtitre — « à garder sur toi »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s1
+      label: Section « ta fiche PDF »
+      type: object
+      fields:
+      - name: e1
+        label: Grand titre — « ta fiche PDF »
+        type: string
+      - name: e2
+        label: Texte sous le titre — « Télécharge-la sur ton téléphone pour l’avoir sous les yeu… »
+        type: text
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s2
+      label: Section « nuance végétale »
+      type: object
+      fields:
+      - name: e1
+        label: Titre — « nuance végétale »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s3
+      label: Section « Les 6 repères pour 100 g »
+      type: object
+      fields:
+      - name: e1
+        label: Case du tableau — « Repère »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s4
+      label: Section « Bio ? Repère ces logos »
+      type: object
+      fields:
+      - name: e1
+        label: Nom — « Logo bio européen »
+        type: string
+      - name: e2
+        label: Petit texte — « obligatoire sur tout produit bio préemballé de l’UE »
+        type: string
+      - name: e3
+        label: Nom — « Biogarantie »
+        type: string
+      - name: e4
+        label: Petit texte — « label belge »
+        type: string
+      - name: e5
+        label: Nom — « AB (Agriculture Biologique) »
+        type: string
+      - name: e6
+        label: Petit texte — « label français »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+  - name: textes-createurs
+    label: Textes – Créateurs
+    type: file
+    path: donnees/textes/createurs.json
+    format: json
+    fields:
+    - name: s0
+      label: Haut de page
+      type: object
+      fields:
+      - name: e1
+        label: Surtitre — « les créateurs »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+    - name: s1
+      label: Section « qui est derrière ? »
+      type: object
+      fields:
+      - name: e1
+        label: Grand titre — « qui est derrière ? »
+        type: string
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
+  - name: textes-commun
+    label: Textes – Pied de page (toutes les pages)
+    type: file
+    path: donnees/textes/commun.json
+    format: json
+    fields:
+    - name: pied
+      label: Pied de page (toutes les pages)
+      type: object
+      fields:
+      - name: e1
+        label: Texte — « Outil réalisé dans le cadre d'un TFE en diététique, HEPH-… »
+        type: text
+      - name: e2
+        label: Texte — « [Les créatrices et créateurs du site](createurs.html) »
+        type: string
+      - name: e3
+        label: 'Texte — « Photos : [Unsplash](https://unsplash.com), [Pexels](https… »'
+        type: text
+      description: Change le texte puis Save. *mot* = italique (dans les titres), **mot** = gras, [texte](https://…) = lien. Une case vidée garde le texte d'origine.
 - name: parametres
   label: Réglages
   type: group

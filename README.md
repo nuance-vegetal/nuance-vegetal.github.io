@@ -123,3 +123,10 @@ Affichés à titre d'information, pour aider à reconnaître les labels sur l'em
 | bio-europeen.svg | Logo bio de l'Union européenne — version vectorielle du fichier officiel de la Commission européenne ([Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Organic-Logo.svg), domaine public). La Commission autorise son usage pour informer le public sur le bio. |
 | biogarantie.svg | Logo Biogarantie — fichier publié sur le site officiel [biogarantie.be](https://biogarantie.be) |
 | ab-agriculture-biologique.svg | Logo AB — [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Agriculture-biologique.svg) (domaine public) |
+
+## Textes des pages modifiables
+
+Chaque texte simple des pages porte `data-texte="section.cle"` (ou `commun:pied.cle`) ; sa valeur est dans `donnees/textes/<page>.json`, appliquée par `js/textes.js` (le texte écrit dans le HTML sert de secours). Formulaires : groupe « Tous les textes des pages » de `.pages.yml`.
+
+Pour un nouveau texte : ajouter `data-texte="sX.eN"` à la main (clé libre dans la section), la valeur dans le JSON de la page et le champ dans `.pages.yml`. Ne pas renuméroter les clés existantes : elles sont liées aux textes déjà modifiés par Camille.
+

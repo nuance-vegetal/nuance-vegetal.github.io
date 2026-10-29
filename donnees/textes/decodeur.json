@@ -1,0 +1,27 @@
+{
+  "s0": {
+    "e1": "décodeur"
+  },
+  "s1": {
+    "e1": "ton produit, *décodé*",
+    "e2": "Scanne le code-barres ou remplis toi-même. Les repères s’allument en direct."
+  },
+  "s2": {
+    "e1": "scanne, on *remplit*",
+    "e2": "dans la liste d’ingrédients",
+    "e3": "B12 citée ?",
+    "e4": "Fer cité ?",
+    "e5": "Gluten ?",
+    "e6": "**B12 :** Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.",
+    "e7": "**Fer :** Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.",
+    "e8": "**Gluten :** Les céréales contenant du gluten sont mises en évidence dans la liste d’ingrédients (le plus souvent en gras). Attention au gluten caché dans les céréales : seigle, avoine, blé, orge, triticale, épeautre, khorasan (kamut). Si tu vois ces ingrédients, c’est que le produit contient du gluten."
+  },
+  "s3": {
+    "e1": "tes *repères*"
+  },
+  "scanner": {
+    "e1": "Scanner",
+    "e2": "Place le code-barres dans le cadre. La caméra reste sur ton appareil : seul le numéro du code est envoyé à Open Food Facts.",
+    "e3": "Numéro du code-barres"
+  }
+}

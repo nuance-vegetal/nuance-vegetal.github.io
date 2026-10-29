@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261034"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261034">
-  <link rel="stylesheet" href="css/style.css?v=20261034">
+  <script src="js/theme.js?v=20261035"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261035">
+  <link rel="stylesheet" href="css/style.css?v=20261035">
 </head>
 <body class="page-secondaire">
 
@@ -42,9 +42,9 @@
 
   <main>
     <section class="accroche ne-pas-imprimer" style="max-width:780px;margin-inline:auto">
-      <span class="surtitre">à garder sur toi</span>
-      <h1>ta fiche <em class="serif">PDF</em></h1>
-      <p class="intro">Télécharge-la sur ton téléphone pour l’avoir sous les yeux en magasin. Elle s’imprime aussi.</p>
+      <span class="surtitre" data-texte="s0.e1">à garder sur toi</span>
+      <h1 data-texte="s1.e1">ta fiche <em class="serif">PDF</em></h1>
+      <p class="intro" data-texte="s1.e2">Télécharge-la sur ton téléphone pour l’avoir sous les yeux en magasin. Elle s’imprime aussi.</p>
       <div class="boutons-fiche">
         <button type="button" class="bouton entre" id="telecharger">Télécharger ma fiche PDF <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg></button>
         <button type="button" class="bouton entre secondaire-btn" id="imprimer">imprimer <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg></button>
@@ -53,13 +53,13 @@
     </section>
 
     <article class="carte fiche-pdf revele" style="margin-top:28px">
-      <h2 class="titre-fiche">nuance <em class="serif">végétale</em></h2>
+      <h2 class="titre-fiche" data-texte="s2.e1">nuance <em class="serif">végétale</em></h2>
       <p class="secondaire" style="margin:0" id="fiche-sous-titre"></p>
 
       <h2 id="fiche-titre-reperes">Les 6 repères pour 100 g</h2>
       <table class="tableau-seuils">
         <thead>
-          <tr><th scope="col">Repère</th><th scope="col" id="fiche-intro-reperes">Atteint si…</th></tr>
+          <tr><th scope="col" data-texte="s3.e1">Repère</th><th scope="col" id="fiche-intro-reperes">Atteint si…</th></tr>
         </thead>
         <tbody id="seuils"></tbody>
       </table>
@@ -69,9 +69,9 @@
 
       <h2 id="fiche-titre-bio">Bio ? Repère ces logos</h2>
       <div class="labels-bio labels-fiche">
-        <figure><img src="images/labels/bio-europeen.svg" alt="Logo bio européen"><figcaption><b>Logo bio européen</b><span>obligatoire sur tout produit bio préemballé de l’UE</span></figcaption></figure>
-        <figure><img src="images/labels/biogarantie.svg" alt="Biogarantie"><figcaption><b>Biogarantie</b><span>label belge</span></figcaption></figure>
-        <figure><img src="images/labels/ab-agriculture-biologique.svg" alt="AB (Agriculture Biologique)"><figcaption><b>AB (Agriculture Biologique)</b><span>label français</span></figcaption></figure>
+        <figure><img src="images/labels/bio-europeen.svg" alt="Logo bio européen"><figcaption><b data-texte="s4.e1">Logo bio européen</b><span data-texte="s4.e2">obligatoire sur tout produit bio préemballé de l’UE</span></figcaption></figure>
+        <figure><img src="images/labels/biogarantie.svg" alt="Biogarantie"><figcaption><b data-texte="s4.e3">Biogarantie</b><span data-texte="s4.e4">label belge</span></figcaption></figure>
+        <figure><img src="images/labels/ab-agriculture-biologique.svg" alt="AB (Agriculture Biologique)"><figcaption><b data-texte="s4.e5">AB (Agriculture Biologique)</b><span data-texte="s4.e6">label français</span></figcaption></figure>
       </div>
       <p class="petit secondaire" style="margin:8px 0 0" id="fiche-note-bio"></p>
 
@@ -92,20 +92,21 @@
         <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
       <span class="nom-marque">nuance <em>végétale</em></span>
       </a>
-      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
-      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
+      <p data-texte="commun:pied.e1">Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p data-texte="commun:pied.e2"><a href="createurs.html">Les créatrices et créateurs du site</a></p>
     </div>
-    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>, <a href="https://www.pexels.com">Pexels</a> et <a href="https://pixabay.com">Pixabay</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+    <p class="credits" data-texte="commun:pied.e3">Photos : <a href="https://unsplash.com">Unsplash</a>, <a href="https://www.pexels.com">Pexels</a> et <a href="https://pixabay.com">Pixabay</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
   </div>
 </footer>
 
-<script src="js/config.js?v=20261034"></script>
-<script src="js/commun.js?v=20261034"></script>
-<script src="js/menu.js?v=20261034"></script>
-<script src="js/vendor/lenis.min.js?v=20261034"></script>
-<script src="js/evaluation.js?v=20261034"></script>
-<script src="js/fiche-pdf.js?v=20261034"></script>
-<script src="js/animations.js?v=20261034"></script>
+<script src="js/config.js?v=20261035"></script>
+<script src="js/commun.js?v=20261035"></script>
+<script src="js/textes.js?v=20261035"></script>
+<script src="js/menu.js?v=20261035"></script>
+<script src="js/vendor/lenis.min.js?v=20261035"></script>
+<script src="js/evaluation.js?v=20261035"></script>
+<script src="js/fiche-pdf.js?v=20261035"></script>
+<script src="js/animations.js?v=20261035"></script>
 <script>
   (async function () {
     let C, T;

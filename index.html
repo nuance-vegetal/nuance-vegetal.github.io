@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261034"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261034">
-  <link rel="stylesheet" href="css/style.css?v=20261034">
+  <script src="js/theme.js?v=20261035"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261035">
+  <link rel="stylesheet" href="css/style.css?v=20261035">
   <link rel="preload" as="image" href="images/hero.webp">
 </head>
 <body>
@@ -39,8 +39,8 @@
   <main>
     <div class="accueil-haut">
       <section class="accroche">
-        <h1>lis ton étiquette en <em class="serif">30 secondes</em></h1>
-        <p class="intro">5 coups d'œil, 6 repères, zéro prise de tête. Pas de note toute faite : c'est toi qui décides.</p>
+        <h1 data-texte="s1.e1">lis ton étiquette en <em class="serif">30 secondes</em></h1>
+        <p class="intro" data-texte="s1.e2">5 coups d'œil, 6 repères, zéro prise de tête. Pas de note toute faite : c'est toi qui décides.</p>
         <div class="boutons boutons-ordi">
           <a class="bouton entre" href="decodeur.html#scanner">
             Scanner un produit
@@ -61,9 +61,9 @@
         <div class="photo">
           <img src="images/hero.webp" width="1000" height="1150" alt="Cubes de tofu posés sur une planche en bois">
         </div>
-        <div class="flottant f2" aria-hidden="true">Protéines <span class="pastille vert">Atteint</span></div>
-        <div class="flottant f1" aria-hidden="true">B12 <span class="pastille vert">Atteint</span></div>
-        <div class="flottant f3" aria-hidden="true">Sel <span class="pastille rose">À surveiller</span></div>
+        <div class="flottant f2" aria-hidden="true">Protéines <span class="pastille vert" data-texte="s1.e3">Atteint</span></div>
+        <div class="flottant f1" aria-hidden="true">B12 <span class="pastille vert" data-texte="s1.e4">Atteint</span></div>
+        <div class="flottant f3" aria-hidden="true">Sel <span class="pastille rose" data-texte="s1.e5">À surveiller</span></div>
       </div>
     </div>
 
@@ -84,15 +84,15 @@
 
     <section class="manifeste pleine-largeur" data-manifeste>
       <div class="manifeste-int">
-        <span class="surtitre surtitre-trait">( notre parti pris )</span>
-        <p class="manifeste-texte">pas de note toute faite. pas de jugement. juste les bons repères pour lire une étiquette <em class="serif">toi-même</em>, en 30 secondes chrono.</p>
-        <p class="manifeste-signature">Un outil né d'un TFE en diététique, pensé pour les débutant·es.</p>
+        <span class="surtitre surtitre-trait" data-texte="s1.e6">( notre parti pris )</span>
+        <p class="manifeste-texte" data-texte="s1.e7">pas de note toute faite. pas de jugement. juste les bons repères pour lire une étiquette <em class="serif">toi-même</em>, en 30 secondes chrono.</p>
+        <p class="manifeste-signature" data-texte="s1.e8">Un outil né d'un TFE en diététique, pensé pour les débutant·es.</p>
         <svg class="plante" viewBox="0 0 640 820" aria-hidden="true" focusable="false" preserveAspectRatio="xMaxYMax meet"><path class="tige" stroke-width="3.4" d="M600 830C520 630 430 380 230 40"/><g transform="translate(580.6 781.0) rotate(-73.5)"><path class="f1" d="M0 0C27.8 -45.4 90.9 -43.2 126.2 0C90.9 36.3 27.8 40.9 0 0Z"/><path class="nervure" d="M7.6 0Q63.1 -5.5 113.6 0"/></g><g transform="translate(567.1 747.0) rotate(-163.4)"><path class="f2" d="M0 0C26.9 -44.0 88.0 -41.8 122.3 0C88.0 35.2 26.9 39.6 0 0Z"/><path class="nervure" d="M7.3 0Q61.1 -5.3 110.1 0"/></g><g transform="translate(553.3 712.0) rotate(-77.2)"><path class="f3" d="M0 0C26.0 -42.6 85.2 -40.5 118.4 0C85.2 34.1 26.0 38.4 0 0Z"/><path class="nervure" d="M7.1 0Q59.2 -5.1 106.5 0"/></g><g transform="translate(538.9 676.0) rotate(-136.9)"><path class="f1" d="M0 0C25.2 -41.2 82.4 -39.2 114.5 0C82.4 33.0 25.2 37.1 0 0Z"/><path class="nervure" d="M6.9 0Q57.2 -4.9 103.0 0"/></g><g transform="translate(524.0 638.9) rotate(-67.2)"><path class="f2" d="M0 0C24.3 -39.8 79.6 -37.8 110.6 0C79.6 31.8 24.3 35.8 0 0Z"/><path class="nervure" d="M6.6 0Q55.3 -4.8 99.5 0"/></g><g transform="translate(508.4 600.8) rotate(-161.6)"><path class="f3" d="M0 0C23.5 -38.4 76.8 -36.5 106.7 0C76.8 30.7 23.5 34.6 0 0Z"/><path class="nervure" d="M6.4 0Q53.3 -4.6 96.0 0"/></g><g transform="translate(492.0 561.6) rotate(-84.7)"><path class="f1" d="M0 0C22.6 -37.0 74.0 -35.2 102.8 0C74.0 29.6 22.6 33.3 0 0Z"/><path class="nervure" d="M6.2 0Q51.4 -4.4 92.5 0"/></g><g transform="translate(474.8 521.2) rotate(-142.8)"><path class="f2" d="M0 0C21.8 -35.6 71.2 -33.8 98.9 0C71.2 28.5 21.8 32.0 0 0Z"/><path class="nervure" d="M5.9 0Q49.4 -4.3 89.0 0"/></g><g transform="translate(456.5 479.7) rotate(-63.9)"><path class="f3" d="M0 0C20.9 -34.2 68.4 -32.5 95.0 0C68.4 27.4 20.9 30.8 0 0Z"/><path class="nervure" d="M5.7 0Q47.5 -4.1 85.5 0"/></g><g transform="translate(437.2 436.9) rotate(-158.1)"><path class="f1" d="M0 0C20.0 -32.8 65.6 -31.1 91.1 0C65.6 26.2 20.0 29.5 0 0Z"/><path class="nervure" d="M5.5 0Q45.5 -3.9 82.0 0"/></g><g transform="translate(416.8 392.9) rotate(-90.7)"><path class="f2" d="M0 0C19.2 -31.4 62.8 -29.8 87.2 0C62.8 25.1 19.2 28.2 0 0Z"/><path class="nervure" d="M5.2 0Q43.6 -3.8 78.5 0"/></g><g transform="translate(395.1 347.6) rotate(-151.8)"><path class="f3" d="M0 0C18.3 -30.0 60.0 -28.5 83.3 0C60.0 24.0 18.3 27.0 0 0Z"/><path class="nervure" d="M5.0 0Q41.6 -3.6 74.9 0"/></g><g transform="translate(372.1 300.9) rotate(-64.6)"><path class="f1" d="M0 0C17.5 -28.6 57.1 -27.1 79.4 0C57.1 22.9 17.5 25.7 0 0Z"/><path class="nervure" d="M4.8 0Q39.7 -3.4 71.4 0"/></g><g transform="translate(347.7 252.9) rotate(-153.8)"><path class="f2" d="M0 0C16.6 -27.2 54.3 -25.8 75.5 0C54.3 21.7 16.6 24.4 0 0Z"/><path class="nervure" d="M4.5 0Q37.7 -3.3 67.9 0"/></g><g transform="translate(321.7 203.5) rotate(-93.7)"><path class="f3" d="M0 0C15.7 -25.8 51.5 -24.5 71.6 0C51.5 20.6 15.7 23.2 0 0Z"/><path class="nervure" d="M4.3 0Q35.8 -3.1 64.4 0"/></g><g transform="translate(294.1 152.6) rotate(-161.9)"><path class="f1" d="M0 0C14.9 -24.4 48.7 -23.1 67.7 0C48.7 19.5 14.9 21.9 0 0Z"/><path class="nervure" d="M4.1 0Q33.8 -2.9 60.9 0"/></g><g transform="translate(264.8 100.2) rotate(-69.3)"><path class="f2" d="M0 0C14.0 -23.0 45.9 -21.8 63.8 0C45.9 18.4 14.0 20.7 0 0Z"/><path class="nervure" d="M3.8 0Q31.9 -2.8 57.4 0"/></g><g transform="translate(230.0 40.0) rotate(-120.5)"><path class="f1" d="M0 0C12.2 -19.8 39.9 -18.8 55.4 0C39.9 15.8 12.2 17.8 0 0Z"/><path class="nervure" d="M3.3 0Q27.7 -2.4 49.9 0"/></g><path class="tige" stroke-width="2.4" d="M508 600C430 560 330 500 150 480"/><g transform="translate(488.8 590.0) rotate(-190.4)"><path class="f1" d="M0 0C19.8 -32.4 64.7 -30.7 89.9 0C64.7 25.9 19.8 29.1 0 0Z"/><path class="nervure" d="M5.4 0Q44.9 -3.9 80.9 0"/></g><g transform="translate(461.4 575.8) rotate(-100.9)"><path class="f2" d="M0 0C18.5 -30.4 60.7 -28.8 84.3 0C60.7 24.3 18.5 27.3 0 0Z"/><path class="nervure" d="M5.1 0Q42.2 -3.6 75.9 0"/></g><g transform="translate(431.7 560.9) rotate(-188.5)"><path class="f3" d="M0 0C17.3 -28.3 56.7 -26.9 78.7 0C56.7 22.7 17.3 25.5 0 0Z"/><path class="nervure" d="M4.7 0Q39.4 -3.4 70.9 0"/></g><g transform="translate(399.3 545.9) rotate(-131.2)"><path class="f1" d="M0 0C16.1 -26.3 52.7 -25.0 73.2 0C52.7 21.1 16.1 23.7 0 0Z"/><path class="nervure" d="M4.4 0Q36.6 -3.2 65.9 0"/></g><g transform="translate(363.8 531.2) rotate(-203.7)"><path class="f2" d="M0 0C14.9 -24.3 48.7 -23.1 67.6 0C48.7 19.5 14.9 21.9 0 0Z"/><path class="nervure" d="M4.1 0Q33.8 -2.9 60.9 0"/></g><g transform="translate(324.7 517.1) rotate(-112.6)"><path class="f3" d="M0 0C13.7 -22.3 44.7 -21.2 62.1 0C44.7 17.9 13.7 20.1 0 0Z"/><path class="nervure" d="M3.7 0Q31.0 -2.7 55.9 0"/></g><g transform="translate(281.6 504.3) rotate(-193.3)"><path class="f1" d="M0 0C12.4 -20.3 40.7 -19.3 56.5 0C40.7 16.3 12.4 18.3 0 0Z"/><path class="nervure" d="M3.4 0Q28.3 -2.4 50.9 0"/></g><g transform="translate(234.0 493.1) rotate(-139.1)"><path class="f2" d="M0 0C11.2 -18.3 36.7 -17.4 51.0 0C36.7 14.7 11.2 16.5 0 0Z"/><path class="nervure" d="M3.1 0Q25.5 -2.2 45.9 0"/></g><g transform="translate(181.5 484.0) rotate(-221.8)"><path class="f3" d="M0 0C10.0 -16.3 32.7 -15.5 45.4 0C32.7 13.1 10.0 14.7 0 0Z"/><path class="nervure" d="M2.7 0Q22.7 -2.0 40.9 0"/></g><g transform="translate(150.0 480.0) rotate(-173.7)"><path class="f1" d="M0 0C8.7 -14.1 28.4 -13.4 39.5 0C28.4 11.3 8.7 12.7 0 0Z"/><path class="nervure" d="M2.4 0Q19.7 -1.7 35.5 0"/></g><path class="tige" stroke-width="1.9" d="M388 280C356 230 334 170 350 70"/><g transform="translate(380.5 267.8) rotate(-158.3)"><path class="f1" d="M0 0C14.7 -24.1 48.2 -22.9 66.9 0C48.2 19.3 14.7 21.7 0 0Z"/><path class="nervure" d="M4.0 0Q33.5 -2.9 60.2 0"/></g><g transform="translate(366.2 239.8) rotate(-62.0)"><path class="f2" d="M0 0C13.3 -21.7 43.4 -20.6 60.3 0C43.4 17.4 13.3 19.5 0 0Z"/><path class="nervure" d="M3.6 0Q30.1 -2.6 54.3 0"/></g><g transform="translate(354.8 208.7) rotate(-140.6)"><path class="f3" d="M0 0C11.8 -19.3 38.6 -18.4 53.7 0C38.6 15.5 11.8 17.4 0 0Z"/><path class="nervure" d="M3.2 0Q26.8 -2.3 48.3 0"/></g><g transform="translate(347.4 173.6) rotate(-72.9)"><path class="f1" d="M0 0C10.4 -16.9 33.9 -16.1 47.1 0C33.9 13.6 10.4 15.2 0 0Z"/><path class="nervure" d="M2.8 0Q23.5 -2.0 42.3 0"/></g><g transform="translate(344.7 133.5) rotate(-135.0)"><path class="f2" d="M0 0C8.9 -14.6 29.1 -13.8 40.4 0C29.1 11.6 8.9 13.1 0 0Z"/><path class="nervure" d="M2.4 0Q20.2 -1.7 36.4 0"/></g><g transform="translate(347.5 87.6) rotate(-33.9)"><path class="f3" d="M0 0C7.4 -12.2 24.3 -11.6 33.8 0C24.3 9.7 7.4 11.0 0 0Z"/><path class="nervure" d="M2.0 0Q16.9 -1.5 30.4 0"/></g><g transform="translate(350.0 70.0) rotate(-80.9)"><path class="f1" d="M0 0C6.5 -10.5 21.2 -10.0 29.4 0C21.2 8.4 6.5 9.5 0 0Z"/><path class="nervure" d="M1.8 0Q14.7 -1.3 26.5 0"/></g></svg>
       </div>
     </section>
 
-    <span class="surtitre revele" style="margin-top:72px">01 · l'enquête</span>
-    <h2 style="margin-top:0">ce que l'enquête <em class="serif">a révélé</em></h2>
+    <span class="surtitre revele" style="margin-top:72px" data-texte="s1.e9">01 · l'enquête</span>
+    <h2 style="margin-top:0" data-texte="s2.e1">ce que l'enquête <em class="serif">a révélé</em></h2>
     <div class="chiffres" id="chiffres-enquete">
       <div class="chiffre-carte mis-en-avant revele">
         <strong data-compteur="13" data-suffixe=" %">13 %</strong>
@@ -114,23 +114,23 @@
 
     <section class="coups-section">
       <div class="coups-intro">
-        <span class="surtitre" style="margin-top:72px">02 · la méthode</span>
-        <h2 style="margin-top:0">5 coups d'œil, <em class="serif">6 repères</em></h2>
-        <p class="revele">Garde-les en tête au rayon frais. Après ça, n'importe quelle étiquette devient lisible.</p>
+        <span class="surtitre" style="margin-top:72px" data-texte="s2.e2">02 · la méthode</span>
+        <h2 style="margin-top:0" data-texte="s3.e1">5 coups d'œil, <em class="serif">6 repères</em></h2>
+        <p class="revele" data-texte="s3.e2">Garde-les en tête au rayon frais. Après ça, n'importe quelle étiquette devient lisible.</p>
       </div>
     <ol class="coups pile">
-      <li class="revele"><strong>les ingrédients</strong><p>Le premier ingrédient te dit de quoi est fait le produit : soja, blé, pois, champignon…</p></li>
-      <li class="revele" style="--i:1"><strong>les protéines</strong><p>Plus de 10 g pour 100 g, pour bien remplacer la viande.</p></li>
-      <li class="revele" style="--i:2"><strong>la B12 et le fer</strong><p>Au moins 0,24 µg de B12 et 0,8 mg de fer pour 100 g. Pas de chiffre ? Cherche-les dans les ingrédients.</p></li>
-      <li class="revele" style="--i:3"><strong>le sel</strong><p>1,1 g pour 100 g au maximum.</p></li>
-      <li class="revele" style="--i:4"><strong>les graisses</strong><p>Moins de 10 g et moins que les protéines. Dont saturées : moins de 5 g, et au plus un tiers.</p></li>
+      <li class="revele"><strong data-texte="s3.e3">les ingrédients</strong><p data-texte="s3.e4">Le premier ingrédient te dit de quoi est fait le produit : soja, blé, pois, champignon…</p></li>
+      <li class="revele" style="--i:1"><strong data-texte="s3.e5">les protéines</strong><p data-texte="s3.e6">Plus de 10 g pour 100 g, pour bien remplacer la viande.</p></li>
+      <li class="revele" style="--i:2"><strong data-texte="s3.e7">la B12 et le fer</strong><p data-texte="s3.e8">Au moins 0,24 µg de B12 et 0,8 mg de fer pour 100 g. Pas de chiffre ? Cherche-les dans les ingrédients.</p></li>
+      <li class="revele" style="--i:3"><strong data-texte="s3.e9">le sel</strong><p data-texte="s3.e10">1,1 g pour 100 g au maximum.</p></li>
+      <li class="revele" style="--i:4"><strong data-texte="s3.e11">les graisses</strong><p data-texte="s3.e12">Moins de 10 g et moins que les protéines. Dont saturées : moins de 5 g, et au plus un tiers.</p></li>
     </ol>
-    <p class="petit secondaire revele">Repères du Conseil Supérieur de la Santé (avis n° 9445, 2021).</p>
+    <p class="petit secondaire revele" data-texte="s3.e13">Repères du Conseil Supérieur de la Santé (avis n° 9445, 2021).</p>
     </section>
 
-    <span class="surtitre revele" style="margin-top:72px">03 · à toi</span>
-    <h2 style="margin-top:0">à toi de <em class="serif">jouer</em></h2>
-    <p class="secondaire revele">Touche un mot souligné sur l'étiquette : on t'explique tout.</p>
+    <span class="surtitre revele" style="margin-top:72px" data-texte="s3.e14">03 · à toi</span>
+    <h2 style="margin-top:0" data-texte="s4.e1">à toi de <em class="serif">jouer</em></h2>
+    <p class="secondaire revele" data-texte="s4.e2">Touche un mot souligné sur l'étiquette : on t'explique tout.</p>
 
     <div class="duo">
       <div class="etiquette revele" id="etiquette-interactive">
@@ -140,126 +140,126 @@
         <div class="titre-bloc">Ingrédients</div>
         <p class="ingredients">
           Eau,
-          <button type="button" class="zone" data-info="soja" aria-pressed="false">protéines de soja (22 %)</button>,
+          <button type="button" class="zone" data-info="soja" aria-pressed="false" data-texte="s4.e3">protéines de soja (22 %)</button>,
           huile de colza,
-          <button type="button" class="zone" data-info="ble" aria-pressed="false">protéines de blé</button>,
+          <button type="button" class="zone" data-info="ble" aria-pressed="false" data-texte="s4.e4">protéines de blé</button>,
           arômes, sel, fibres de pois,
-          <button type="button" class="zone" data-info="additif" aria-pressed="false">épaississant : méthylcellulose</button>,
-          <button type="button" class="zone" data-info="b12" aria-pressed="false">vitamine B12</button>,
-          <button type="button" class="zone" data-info="fer" aria-pressed="false">fer</button>.
+          <button type="button" class="zone" data-info="additif" aria-pressed="false" data-texte="s4.e5">épaississant : méthylcellulose</button>,
+          <button type="button" class="zone" data-info="b12" aria-pressed="false" data-texte="s4.e6">vitamine B12</button>,
+          <button type="button" class="zone" data-info="fer" aria-pressed="false" data-texte="s4.e7">fer</button>.
         </p>
 
         <div class="titre-bloc">Valeurs nutritionnelles pour 100 g</div>
         <table class="tableau-nutri">
           <tbody>
-            <tr><td>Énergie</td><td class="valeur">210 kcal</td></tr>
-            <tr><td><button type="button" class="zone" data-info="grasses" aria-pressed="false"><span>Matières grasses</span></button></td><td class="valeur">11 g</td></tr>
-            <tr class="sous"><td><button type="button" class="zone" data-info="satures" aria-pressed="false"><span>dont saturées</span></button></td><td class="valeur">1,2 g</td></tr>
-            <tr><td>Glucides</td><td class="valeur">4 g</td></tr>
-            <tr><td>Fibres</td><td class="valeur">4 g</td></tr>
-            <tr><td><button type="button" class="zone" data-info="proteines" aria-pressed="false"><span>Protéines</span></button></td><td class="valeur">18 g</td></tr>
-            <tr><td><button type="button" class="zone" data-info="sel" aria-pressed="false"><span>Sel</span></button></td><td class="valeur">1,3 g</td></tr>
+            <tr><td data-texte="s4.e8">Énergie</td><td class="valeur" data-texte="s4.e9">210 kcal</td></tr>
+            <tr><td><button type="button" class="zone" data-info="grasses" aria-pressed="false"><span data-texte="s4.e10">Matières grasses</span></button></td><td class="valeur">11 g</td></tr>
+            <tr class="sous"><td><button type="button" class="zone" data-info="satures" aria-pressed="false"><span data-texte="s4.e11">dont saturées</span></button></td><td class="valeur">1,2 g</td></tr>
+            <tr><td data-texte="s4.e12">Glucides</td><td class="valeur">4 g</td></tr>
+            <tr><td data-texte="s4.e13">Fibres</td><td class="valeur">4 g</td></tr>
+            <tr><td><button type="button" class="zone" data-info="proteines" aria-pressed="false"><span data-texte="s4.e14">Protéines</span></button></td><td class="valeur">18 g</td></tr>
+            <tr><td><button type="button" class="zone" data-info="sel" aria-pressed="false"><span data-texte="s4.e15">Sel</span></button></td><td class="valeur">1,3 g</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="collant revele" id="explications" aria-live="polite" style="--i:1">
         <div class="carte explication" id="info-defaut">
-          <span class="surtitre">Explication</span>
-          <p class="secondaire" style="margin:0">Touche une zone soulignée de l'étiquette : l'explication s'affiche ici.</p>
+          <span class="surtitre" data-texte="s4.e16">Explication</span>
+          <p class="secondaire" style="margin:0" data-texte="s4.e17">Touche une zone soulignée de l'étiquette : l'explication s'affiche ici.</p>
         </div>
         <div class="carte explication" id="info-soja" hidden>
-          <span class="pastille lilas">Ingrédient principal</span>
-          <p>Le soja est la base de ce produit. C'est une légumineuse riche en protéines. Allergène à signaler sur l'étiquette.</p>
-          <p class="source">[Texte à valider par Camille]</p>
+          <span class="pastille lilas" data-texte="s4.e18">Ingrédient principal</span>
+          <p data-texte="s4.e19">Le soja est la base de ce produit. C'est une légumineuse riche en protéines. Allergène à signaler sur l'étiquette.</p>
+          <p class="source" data-texte="s4.e20">[Texte à valider par Camille]</p>
         </div>
         <div class="carte explication" id="info-ble" hidden>
-          <span class="pastille lilas">Gluten</span>
-          <p>Les protéines de blé apportent du gluten. À éviter en cas de maladie cœliaque ou d'allergie au blé.</p>
-          <p class="source">[Texte à valider par Camille]</p>
+          <span class="pastille lilas" data-texte="s4.e21">Gluten</span>
+          <p data-texte="s4.e22">Les protéines de blé apportent du gluten. À éviter en cas de maladie cœliaque ou d'allergie au blé.</p>
+          <p class="source" data-texte="s4.e23">[Texte à valider par Camille]</p>
         </div>
         <div class="carte explication" id="info-additif" hidden>
-          <span class="pastille lilas">Additif</span>
-          <p>La méthylcellulose sert à lier le produit, comme l'œuf dans un hachis. Elle est autorisée en Europe (E461).</p>
-          <p class="source">[Texte et source à valider par Camille]</p>
+          <span class="pastille lilas" data-texte="s4.e24">Additif</span>
+          <p data-texte="s4.e25">La méthylcellulose sert à lier le produit, comme l'œuf dans un hachis. Elle est autorisée en Europe (E461).</p>
+          <p class="source" data-texte="s4.e26">[Texte et source à valider par Camille]</p>
         </div>
         <div class="carte explication" id="info-b12" hidden>
-          <span class="pastille gris sans-point">? non renseigné</span>
-          <p>De la B12 est ajoutée, mais la quantité n'est pas indiquée dans le tableau. Repère : au moins 0,24 µg pour 100 g. Elle ne se trouve pas naturellement dans les végétaux.</p>
-          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
+          <span class="pastille gris sans-point" data-texte="s4.e27">? non renseigné</span>
+          <p data-texte="s4.e28">De la B12 est ajoutée, mais la quantité n'est pas indiquée dans le tableau. Repère : au moins 0,24 µg pour 100 g. Elle ne se trouve pas naturellement dans les végétaux.</p>
+          <p class="source" data-texte="s4.e29">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
         <div class="carte explication" id="info-fer" hidden>
-          <span class="pastille gris sans-point">? non renseigné</span>
-          <p>Du fer est ajouté, mais la quantité n'est pas indiquée. Repère : au moins 0,8 mg pour 100 g. Il est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi).</p>
-          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
+          <span class="pastille gris sans-point" data-texte="s4.e30">? non renseigné</span>
+          <p data-texte="s4.e31">Du fer est ajouté, mais la quantité n'est pas indiquée. Repère : au moins 0,8 mg pour 100 g. Il est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi).</p>
+          <p class="source" data-texte="s4.e32">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
         <div class="carte explication" id="info-proteines" hidden>
-          <span class="pastille vert sans-point">✓ atteint</span>
-          <p>18 g pour 100 g : plus que le repère de 10 g. Bonus : 34 % de l'énergie vient des protéines, donc le fabricant peut écrire « riche en protéines » (règle européenne).</p>
-          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021) · règlement (CE) n° 1924/2006</p>
+          <span class="pastille vert sans-point" data-texte="s4.e33">✓ atteint</span>
+          <p data-texte="s4.e34">18 g pour 100 g : plus que le repère de 10 g. Bonus : 34 % de l'énergie vient des protéines, donc le fabricant peut écrire « riche en protéines » (règle européenne).</p>
+          <p class="source" data-texte="s4.e35">Conseil Supérieur de la Santé, avis n° 9445 (2021) · règlement (CE) n° 1924/2006</p>
         </div>
         <div class="carte explication" id="info-sel" hidden>
-          <span class="pastille rose sans-point">! à surveiller</span>
-          <p>1,3 g pour 100 g : au-dessus du repère de 1,1 g. Pas besoin de resaler le plat.</p>
-          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
+          <span class="pastille rose sans-point" data-texte="s4.e36">! à surveiller</span>
+          <p data-texte="s4.e37">1,3 g pour 100 g : au-dessus du repère de 1,1 g. Pas besoin de resaler le plat.</p>
+          <p class="source" data-texte="s4.e38">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
         <div class="carte explication" id="info-satures" hidden>
-          <span class="pastille vert sans-point">✓ atteint</span>
-          <p>1,2 g pour 100 g : moins de 5 g, soit environ 11 % des graisses : bien en dessous du tiers maximum (33 %). L'huile de colza apporte surtout de bonnes graisses.</p>
-          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
+          <span class="pastille vert sans-point" data-texte="s4.e39">✓ atteint</span>
+          <p data-texte="s4.e40">1,2 g pour 100 g : moins de 5 g, soit environ 11 % des graisses : bien en dessous du tiers maximum (33 %). L'huile de colza apporte surtout de bonnes graisses.</p>
+          <p class="source" data-texte="s4.e41">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
         <div class="carte explication" id="info-grasses" hidden>
-          <span class="pastille rose sans-point">! à surveiller</span>
-          <p>11 g pour 100 g : un peu plus que le repère de 10 g. Les protéines (18 g) restent au-dessus, c'est déjà ça.</p>
-          <p class="source">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
+          <span class="pastille rose sans-point" data-texte="s4.e42">! à surveiller</span>
+          <p data-texte="s4.e43">11 g pour 100 g : un peu plus que le repère de 10 g. Les protéines (18 g) restent au-dessus, c'est déjà ça.</p>
+          <p class="source" data-texte="s4.e44">Conseil Supérieur de la Santé, avis n° 9445 (2021)</p>
         </div>
       </div>
     </div>
 
-    <span class="surtitre revele" style="margin-top:72px">04 · la suite</span>
-    <h2 style="margin-top:0">va plus <em class="serif">loin</em></h2>
+    <span class="surtitre revele" style="margin-top:72px" data-texte="s4.e45">04 · la suite</span>
+    <h2 style="margin-top:0" data-texte="s5.e1">va plus <em class="serif">loin</em></h2>
     <ol class="liste-suite" id="liste-suite">
       <li class="revele" style="--i:0"><a href="a-quoi-ca-sert.html" data-image="images/quinoa.webp">
         <span class="suite-num">01</span>
-        <span class="suite-texte"><span class="suite-titre">à quoi ça sert ?</span><span class="suite-desc">B12, protéines, fer, oméga-3, additifs et allégations : leur rôle et comment les repérer.</span></span>
+        <span class="suite-texte"><span class="suite-titre" data-texte="s5.e2">à quoi ça sert ?</span><span class="suite-desc" data-texte="s5.e3">B12, protéines, fer, oméga-3, additifs et allégations : leur rôle et comment les repérer.</span></span>
         <img class="suite-vignette" src="images/quinoa.webp" alt="" width="160" height="120" loading="lazy">
         <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
       </a></li>
       <li class="revele" style="--i:1"><a href="bases.html" data-image="images/pois.webp">
         <span class="suite-num">02</span>
-        <span class="suite-texte"><span class="suite-titre">c'est fait avec quoi ?</span><span class="suite-desc">Tofu, seitan, Quorn… les bases expliquées.</span></span>
+        <span class="suite-texte"><span class="suite-titre" data-texte="s5.e4">c'est fait avec quoi ?</span><span class="suite-desc" data-texte="s5.e5">Tofu, seitan, Quorn… les bases expliquées.</span></span>
         <img class="suite-vignette" src="images/pois.webp" alt="" width="160" height="120" loading="lazy">
         <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
       </a></li>
       <li class="revele" style="--i:2"><a href="equivalences.html" data-image="images/tofu.webp">
         <span class="suite-num">03</span>
-        <span class="suite-texte"><span class="suite-titre">équivalences</span><span class="suite-desc">Combien de tofu ou de lentilles pour remplacer ta viande.</span></span>
+        <span class="suite-texte"><span class="suite-titre" data-texte="s5.e6">équivalences</span><span class="suite-desc" data-texte="s5.e7">Combien de tofu ou de lentilles pour remplacer ta viande.</span></span>
         <img class="suite-vignette" src="images/tofu.webp" alt="" width="160" height="120" loading="lazy">
         <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
       </a></li>
       <li class="revele" style="--i:3"><a href="etudes.html" data-image="images/etudes.webp">
         <span class="suite-num">04</span>
-        <span class="suite-texte"><span class="suite-titre">ce que dit la science</span><span class="suite-desc">Soja, ultra-transformation, B12 : les réponses sourcées.</span></span>
+        <span class="suite-texte"><span class="suite-titre" data-texte="s5.e8">ce que dit la science</span><span class="suite-desc" data-texte="s5.e9">Soja, ultra-transformation, B12 : les réponses sourcées.</span></span>
         <img class="suite-vignette" src="images/etudes.webp" alt="" width="160" height="120" loading="lazy">
         <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
       </a></li>
       <li class="revele" style="--i:4"><a href="etiquette.html" data-image="images/tempeh.webp">
         <span class="suite-num">05</span>
-        <span class="suite-texte"><span class="suite-titre">l'étiquette décortiquée</span><span class="suite-desc">Un exemple complet, ligne par ligne.</span></span>
+        <span class="suite-texte"><span class="suite-titre" data-texte="s5.e10">l'étiquette décortiquée</span><span class="suite-desc" data-texte="s5.e11">Un exemple complet, ligne par ligne.</span></span>
         <img class="suite-vignette" src="images/tempeh.webp" alt="" width="160" height="120" loading="lazy">
         <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
       </a></li>
       <li class="revele" style="--i:5"><a href="ta-fiche-pdf.html" data-image="images/decodeur.webp">
         <span class="suite-num">06</span>
-        <span class="suite-texte"><span class="suite-titre">ta fiche PDF</span><span class="suite-desc">Les repères à garder sur ton téléphone.</span></span>
+        <span class="suite-texte"><span class="suite-titre" data-texte="s5.e12">ta fiche PDF</span><span class="suite-desc" data-texte="s5.e13">Les repères à garder sur ton téléphone.</span></span>
         <img class="suite-vignette" src="images/decodeur.webp" alt="" width="160" height="120" loading="lazy">
         <span class="suite-fleche"><svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
       </a></li>
     </ol>
     <div class="suite-curseur" id="suite-curseur" aria-hidden="true"><div class="suite-curseur-int"></div></div>
 
-    <span class="surtitre revele" style="margin-top:72px">05 · l'assiette</span>
-    <h2 style="margin-top:0">sa place dans <em class="serif">l'assiette</em></h2>
+    <span class="surtitre revele" style="margin-top:72px" data-texte="s5.e14">05 · l'assiette</span>
+    <h2 style="margin-top:0" data-texte="s6.e1">sa place dans <em class="serif">l'assiette</em></h2>
     <div class="bloc-assiette">
       <div class="photo revele"><img src="images/assiette.webp" width="900" height="560" alt="Assiette de légumes variés et colorés" loading="lazy"></div>
       <div class="carte revele" style="--i:1" id="texte-assiette">
@@ -277,18 +277,19 @@
         <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
       <span class="nom-marque">nuance <em>végétale</em></span>
       </a>
-      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
-      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
+      <p data-texte="commun:pied.e1">Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p data-texte="commun:pied.e2"><a href="createurs.html">Les créatrices et créateurs du site</a></p>
     </div>
-    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>, <a href="https://www.pexels.com">Pexels</a> et <a href="https://pixabay.com">Pixabay</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+    <p class="credits" data-texte="commun:pied.e3">Photos : <a href="https://unsplash.com">Unsplash</a>, <a href="https://www.pexels.com">Pexels</a> et <a href="https://pixabay.com">Pixabay</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261034"></script>
-<script src="js/menu.js?v=20261034"></script>
-<script src="js/vendor/lenis.min.js?v=20261034"></script>
-<script src="js/avis.js?v=20261034"></script>
-<script src="js/animations.js?v=20261034"></script>
+<script src="js/commun.js?v=20261035"></script>
+<script src="js/textes.js?v=20261035"></script>
+<script src="js/menu.js?v=20261035"></script>
+<script src="js/vendor/lenis.min.js?v=20261035"></script>
+<script src="js/avis.js?v=20261035"></script>
+<script src="js/animations.js?v=20261035"></script>
 <script>
   /* « Va plus loin » : sur ordinateur, la photo du lien survolé suit la souris */
   (function () {

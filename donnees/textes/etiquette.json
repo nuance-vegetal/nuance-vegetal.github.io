@@ -1,0 +1,12 @@
+{
+  "s0": {
+    "e1": "exemple complet"
+  },
+  "s1": {
+    "e1": "une étiquette, *ligne par ligne*",
+    "e2": "Touche un numéro sur l'étiquette pour ouvrir son commentaire. Le produit est fictif."
+  },
+  "s2": {
+    "e1": "les 5 *commentaires*"
+  }
+}

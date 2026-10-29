@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261034"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261034">
-  <link rel="stylesheet" href="css/style.css?v=20261034">
+  <script src="js/theme.js?v=20261035"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261035">
+  <link rel="stylesheet" href="css/style.css?v=20261035">
 </head>
 <body class="page-secondaire">
 
@@ -43,9 +43,9 @@
     <div class="decodeur-grille">
       <div>
         <section class="accroche">
-          <span class="surtitre">décodeur</span>
-          <h1>ton produit, <em class="serif">décodé</em></h1>
-          <p class="intro">Scanne le code-barres ou remplis toi-même. Les repères s’allument en direct.</p>
+          <span class="surtitre" data-texte="s0.e1">décodeur</span>
+          <h1 data-texte="s1.e1">ton produit, <em class="serif">décodé</em></h1>
+          <p class="intro" data-texte="s1.e2">Scanne le code-barres ou remplis toi-même. Les repères s’allument en direct.</p>
         </section>
 
         <div class="mode-saisie" role="group" aria-label="Comment décoder ton produit">
@@ -55,7 +55,7 @@
 
         <div class="scan-carte revele">
           <svg class="motif" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 7v10"/><path d="M12 7v10"/><path d="M17 7v10"/></svg>
-          <h2>scanne, on <em class="serif">remplit</em></h2>
+          <h2 data-texte="s2.e1">scanne, on <em class="serif">remplit</em></h2>
           <button type="button" class="bouton large entre" id="ouvrir-scanner">
             Scanner un code-barres
             <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 7v10"/><path d="M12 7v10"/><path d="M17 7v10"/></svg>
@@ -126,32 +126,32 @@
           </div>
 
           <div class="ingredients-saisie">
-            <p class="es-intertitre">dans la liste d’ingrédients</p>
+            <p class="es-intertitre" data-texte="s2.e2">dans la liste d’ingrédients</p>
           <fieldset class="choix">
-            <legend>B12 citée ?</legend>
+            <legend data-texte="s2.e3">B12 citée ?</legend>
             <div class="choix-options">
               <label><input type="radio" name="b12-cite" value="oui"> Oui</label>
               <label><input type="radio" name="b12-cite" value="non"> Non</label>
             </div>
           </fieldset>
           <fieldset class="choix">
-            <legend>Fer cité ?</legend>
+            <legend data-texte="s2.e4">Fer cité ?</legend>
             <div class="choix-options">
               <label><input type="radio" name="fer-cite" value="oui"> Oui</label>
               <label><input type="radio" name="fer-cite" value="non"> Non</label>
             </div>
           </fieldset>
           <fieldset class="choix">
-            <legend>Gluten ?</legend>
+            <legend data-texte="s2.e5">Gluten ?</legend>
             <div class="choix-options">
               <label><input type="radio" name="gluten" value="oui"> Oui</label>
               <label><input type="radio" name="gluten" value="non"> Non</label>
             </div>
           </fieldset>
             <details class="aide-depliable aide-ingredients"><summary>comment vérifier ? <svg class="icone chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
-              <p><b>B12 :</b> Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p>
-              <p><b>Fer :</b> Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p>
-              <p><b>Gluten :</b> Les céréales contenant du gluten sont mises en évidence dans la liste d’ingrédients (le plus souvent en gras). Attention au gluten caché dans les céréales : seigle, avoine, blé, orge, triticale, épeautre, khorasan (kamut). Si tu vois ces ingrédients, c’est que le produit contient du gluten.</p>
+              <p data-texte="s2.e6"><b>B12 :</b> Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p>
+              <p data-texte="s2.e7"><b>Fer :</b> Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.</p>
+              <p data-texte="s2.e8"><b>Gluten :</b> Les céréales contenant du gluten sont mises en évidence dans la liste d’ingrédients (le plus souvent en gras). Attention au gluten caché dans les céréales : seigle, avoine, blé, orge, triticale, épeautre, khorasan (kamut). Si tu vois ces ingrédients, c’est que le produit contient du gluten.</p>
             </details>
           </div>
 
@@ -168,7 +168,7 @@
       <div class="collant revele" style="--i:1">
         <div id="fiche-droite"></div>
         <div id="bloc-reperes">
-        <h2>tes <em class="serif">repères</em></h2>
+        <h2 data-texte="s3.e1">tes <em class="serif">repères</em></h2>
         <div class="carte resultats" id="evaluation-manuelle" aria-live="polite"></div>
         </div>
       </div>
@@ -178,7 +178,7 @@
 
 <dialog class="scanner" id="scanner" aria-labelledby="titre-scanner">
   <div class="scanner-tete">
-    <h2 id="titre-scanner">Scanner</h2>
+    <h2 id="titre-scanner" data-texte="scanner.e1">Scanner</h2>
     <button type="button" class="bouton-icone" id="fermer-scanner" aria-label="Fermer le scanner">
       <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
     </button>
@@ -190,9 +190,9 @@
       <div class="laser" aria-hidden="true"></div>
       <div class="message-viseur" id="message-viseur">Démarrage de la caméra…</div>
     </div>
-    <p class="petit secondaire" style="margin:12px 0 0">Place le code-barres dans le cadre. La caméra reste sur ton appareil : seul le numéro du code est envoyé à Open Food Facts.</p>
+    <p class="petit secondaire" style="margin:12px 0 0" data-texte="scanner.e2">Place le code-barres dans le cadre. La caméra reste sur ton appareil : seul le numéro du code est envoyé à Open Food Facts.</p>
     <form class="saisie-code" id="form-code" novalidate>
-      <label for="code" class="sr-only">Numéro du code-barres</label>
+      <label for="code" class="sr-only" data-texte="scanner.e3">Numéro du code-barres</label>
       <input type="text" id="code" inputmode="numeric" placeholder="Ou tape les chiffres du code" autocomplete="off" aria-describedby="erreur-code">
       <button type="submit" class="bouton">Chercher</button>
     </form>
@@ -207,22 +207,23 @@
         <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
       <span class="nom-marque">nuance <em>végétale</em></span>
       </a>
-      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
-      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
+      <p data-texte="commun:pied.e1">Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p data-texte="commun:pied.e2"><a href="createurs.html">Les créatrices et créateurs du site</a></p>
     </div>
-    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>, <a href="https://www.pexels.com">Pexels</a> et <a href="https://pixabay.com">Pixabay</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+    <p class="credits" data-texte="commun:pied.e3">Photos : <a href="https://unsplash.com">Unsplash</a>, <a href="https://www.pexels.com">Pexels</a> et <a href="https://pixabay.com">Pixabay</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
   </div>
 </footer>
 
-<script src="js/config.js?v=20261034"></script>
-<script src="js/commun.js?v=20261034"></script>
-<script src="js/menu.js?v=20261034"></script>
-<script src="js/vendor/lenis.min.js?v=20261034"></script>
-<script src="js/animations.js?v=20261034"></script>
-<script src="js/avis.js?v=20261034"></script>
-<script src="js/evaluation.js?v=20261034"></script>
-<script src="js/vegan.js?v=20261034"></script>
-<script src="js/scanner.js?v=20261034"></script>
+<script src="js/config.js?v=20261035"></script>
+<script src="js/commun.js?v=20261035"></script>
+<script src="js/textes.js?v=20261035"></script>
+<script src="js/menu.js?v=20261035"></script>
+<script src="js/vendor/lenis.min.js?v=20261035"></script>
+<script src="js/animations.js?v=20261035"></script>
+<script src="js/avis.js?v=20261035"></script>
+<script src="js/evaluation.js?v=20261035"></script>
+<script src="js/vegan.js?v=20261035"></script>
+<script src="js/scanner.js?v=20261035"></script>
 <script>
   (async function () {
     let C;

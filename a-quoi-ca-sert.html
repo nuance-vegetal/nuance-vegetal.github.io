@@ -9,9 +9,9 @@
   <meta name="color-scheme" content="only light">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add('js');setTimeout(function(){if(!document.querySelector('.titre-anime'))document.documentElement.classList.remove('js')},3000)</script>
-  <script src="js/theme.js?v=20261034"></script>
-  <link rel="stylesheet" href="css/polices.css?v=20261034">
-  <link rel="stylesheet" href="css/style.css?v=20261034">
+  <script src="js/theme.js?v=20261035"></script>
+  <link rel="stylesheet" href="css/polices.css?v=20261035">
+  <link rel="stylesheet" href="css/style.css?v=20261035">
 </head>
 <body class="page-secondaire">
 
@@ -42,9 +42,9 @@
   <main>
     <div class="bandeau">
       <section class="accroche">
-        <span class="surtitre">comprendre</span>
-        <h1>à quoi <em class="serif">ça sert</em> ?</h1>
-        <p class="intro">B12, protéines, fer, oméga-3, additifs et allégations : ce qu'ils font dans ton corps, où les trouver, et comment les repérer sur l'étiquette.</p>
+        <span class="surtitre" data-texte="s0.e1">comprendre</span>
+        <h1 data-texte="s1.e1">à quoi <em class="serif">ça sert</em> ?</h1>
+        <p class="intro" data-texte="s1.e2">B12, protéines, fer, oméga-3, additifs et allégations : ce qu'ils font dans ton corps, où les trouver, et comment les repérer sur l'étiquette.</p>
       </section>
       <div class="photo revele"><img src="images/decodeur.webp" width="900" height="560" alt="Graines de soja sur fond clair"></div>
     </div>
@@ -63,17 +63,18 @@
         <span class="logo"><svg class="logo-feuilles" viewBox="0 0 40 40" aria-hidden="true"><g transform="rotate(-38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#9CC5A8"/></g><g transform="rotate(38 20 33)"><path d="M20 33C13.5 27.5 13.5 16 20 8c6.5 8 6.5 19.5 0 25Z" fill="#CFE3D3"/></g><path d="M20 34C12.5 27.5 12.5 14 20 5c7.5 9 7.5 22.5 0 29Z" fill="#FDF9F1"/><path d="M20 31V12" stroke="#2F6B4F" stroke-width="1.6" stroke-linecap="round"/></svg></span>
       <span class="nom-marque">nuance <em>végétale</em></span>
       </a>
-      <p>Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
-      <p><a href="createurs.html">Les créatrices et créateurs du site</a></p>
+      <p data-texte="commun:pied.e1">Outil réalisé dans le cadre d'un TFE en diététique, HEPH-Condorcet (Tournai). Il ne remplace pas l'avis d'un·e diététicien·ne.</p>
+      <p data-texte="commun:pied.e2"><a href="createurs.html">Les créatrices et créateurs du site</a></p>
     </div>
-    <p class="credits">Photos : <a href="https://unsplash.com">Unsplash</a>, <a href="https://www.pexels.com">Pexels</a> et <a href="https://pixabay.com">Pixabay</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
+    <p class="credits" data-texte="commun:pied.e3">Photos : <a href="https://unsplash.com">Unsplash</a>, <a href="https://www.pexels.com">Pexels</a> et <a href="https://pixabay.com">Pixabay</a>. Données produits : <a href="https://world.openfoodfacts.org">Open Food Facts</a> (licence ODbL). Aucune donnée personnelle n'est collectée.</p>
   </div>
 </footer>
 
-<script src="js/commun.js?v=20261034"></script>
-<script src="js/menu.js?v=20261034"></script>
-<script src="js/vendor/lenis.min.js?v=20261034"></script>
-<script src="js/animations.js?v=20261034"></script>
+<script src="js/commun.js?v=20261035"></script>
+<script src="js/textes.js?v=20261035"></script>
+<script src="js/menu.js?v=20261035"></script>
+<script src="js/vendor/lenis.min.js?v=20261035"></script>
+<script src="js/animations.js?v=20261035"></script>
 <script>
   (async function () {
     const zone = document.getElementById('fiches');
