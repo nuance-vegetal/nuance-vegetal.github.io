@@ -10,7 +10,8 @@
         "Chez les femmes ménopausées, l’évaluation européenne (EFSA) des compléments d’isoflavones n’a observé aucun effet sur le sein ni de changement important de la fonction thyroïdienne.",
         "Pour l’utérus, aucun effet n’a été observé jusqu’à 150 mg/j pendant 2,5 ans ; après 5 ans, quelques changements non cancéreux ont été rapportés.",
         "Il n’y a pas de données pour les femmes qui ont ou ont eu un cancer hormonodépendant du sein ou de l’utérus.",
-        "Si tu prends un traitement pour la thyroïde, le soja peut un peu diminuer son absorption : pas besoin d’éviter le soja, mais parles-en à ton médecin, qui peut ajuster la dose."
+        "Si tu prends un traitement pour la thyroïde, le soja peut un peu diminuer son absorption : pas besoin d’éviter le soja, mais parles-en à ton médecin, qui peut ajuster la dose.",
+        "En 2025, l'ANSES (France) a fixé un seuil très bas pour les isoflavones (0,02 mg/kg/j, soit 50 fois moins que son estimation de 2005), à partir d'études chez l'animal, et recommande de diversifier les légumineuses plutôt que de consommer du soja tous les jours."
       ],
       "conseil": "En cas de cancer hormonodépendant, actuel ou passé, demande l’avis de ton médecin avant de prendre des compléments d’isoflavones.",
       "niveau": 2,
@@ -26,6 +27,10 @@
         {
           "texte": "Messina M. (2016). Soy and Health Update: Evaluation of the Clinical and Epidemiologic Literature. Nutrients 8(12):754.",
           "url": "https://doi.org/10.3390/nu8120754"
+        },
+        {
+          "texte": "ANSES (2025). Avis relatif à l'évaluation du risque sanitaire lié à la consommation d'aliments contenant des isoflavones. Saisine n° 2022-SA-0221.",
+          "url": "https://www.anses.fr/sites/default/files/NUT2022SA0221.pdf"
         }
       ],
       "brouillon": false
