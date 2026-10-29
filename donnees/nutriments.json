@@ -1,4 +1,9 @@
 {
+  "pourquoi": {
+    "titre": "Pourquoi ces repères ?",
+    "texte": "Le Conseil Supérieur de la Santé cite les protéines, les oméga-3, la B12 et le fer parmi les nutriments à surveiller dans une alimentation végétarienne. S'y ajoutent les additifs et les allégations, deux informations de l'emballage qui posent souvent question. Dans mon questionnaire (n = 241), seuls 14 % des répondant·es regardent la B12 et le fer sur l'étiquette.",
+    "sources": "Sources : CSS (2021), avis n° 9445 – L'alimentation végétarienne ; Desmet C. (2026), questionnaire sur la perception des alternatives végétales (n = 241 végétariens, vegans et végétaliens)."
+  },
   "fiches": [
     {
       "titre": "Vitamine B12",
@@ -182,10 +187,5 @@
       "brouillon": false,
       "id": "omega3"
     }
-  ],
-  "pourquoi": {
-    "titre": "Pourquoi ces repères ?",
-    "texte": "Le Conseil Supérieur de la Santé cite les protéines, les oméga-3, la B12 et le fer parmi les nutriments à surveiller dans une alimentation végétarienne. S'y ajoutent les additifs et les allégations, deux informations de l'emballage qui posent souvent question. Dans mon questionnaire (n = 355), seuls 13 % des répondant·es regardent la B12 et le fer sur l'étiquette.",
-    "sources": "Sources : CSS (2021), avis n° 9445 – L'alimentation végétarienne ; Desmet C. (2026), questionnaire sur la perception des alternatives végétales (n = 355)."
-  }
+  ]
 }
