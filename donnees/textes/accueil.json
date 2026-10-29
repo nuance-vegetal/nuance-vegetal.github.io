@@ -1,17 +1,17 @@
 {
   "s1": {
-    "e1": "lis ton étiquette en *30 secondes*",
+    "e1": "Lis ton étiquette en *30 secondes*",
     "e2": "5 coups d'œil, 6 repères, zéro prise de tête. Pas de note toute faite : c'est toi qui décides.",
     "e3": "Atteint",
     "e4": "Atteint",
     "e5": "À surveiller",
     "e6": "( notre parti pris )",
-    "e7": "pas de note toute faite. pas de jugement. juste les bons repères pour lire une étiquette *toi-même*, en 30 secondes chrono.",
+    "e7": "Pas de note toute faite, pas de jugement. Juste les bons repères pour lire une étiquette *toi-même*, en 30 secondes chrono.",
     "e8": "Un outil né d'un TFE en diététique, pensé pour les débutant·es.",
     "e9": "01 · l'enquête"
   },
   "s2": {
-    "e1": "ce que l'enquête *a révélé*",
+    "e1": "Ce que l'enquête *a révélé*",
     "e2": "02 · la méthode"
   },
   "s3": {
@@ -31,7 +31,7 @@
     "e14": "03 · à toi"
   },
   "s4": {
-    "e1": "à toi de *jouer*",
+    "e1": "À toi de *jouer*",
     "e2": "Touche un mot souligné sur l'étiquette : on t'explique tout.",
     "e3": "protéines de soja (22 %)",
     "e4": "protéines de blé",
@@ -78,7 +78,7 @@
     "e45": "04 · la suite"
   },
   "s5": {
-    "e1": "va plus *loin*",
+    "e1": "Va plus *loin*",
     "e2": "à quoi ça sert ?",
     "e3": "B12, protéines, fer, oméga-3, additifs et allégations : leur rôle et comment les repérer.",
     "e4": "c'est fait avec quoi ?",
@@ -94,6 +94,6 @@
     "e14": "05 · l'assiette"
   },
   "s6": {
-    "e1": "sa place dans *l'assiette*"
+    "e1": "Sa place dans *l'assiette*"
   }
 }
