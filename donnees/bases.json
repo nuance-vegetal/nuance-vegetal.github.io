@@ -121,16 +121,23 @@
       ],
       "image": "images/lupin-fleur.webp",
       "image_description": "Gros plan sur une fleur de lupin jaune"
+    },
+    {
+      "nom": "Halloumi",
+      "base": "Autre",
+      "description": "Fromage chypriote au lait de brebis, de chèvre et/ou de vache, qui ne fond pas et se grille comme une viande. Pour les végétariens qui en mangent (pas les végans), en portion modérée car il est très salé et riche en graisses saturées ; vérifie la présure sur l'étiquette, elle est parfois d'origine animale.",
+      "proteines": "≈ 20 à 22 g pour 100 g",
+      "allergenes": [
+        "Lait"
+      ]
     }
   ],
   "sources": [
     {
-      "texte": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. (teneurs en protéines)",
-      "url": ""
+      "texte": "NUBEL (2026). Table belge de composition des aliments [en ligne, accès professionnel]. (teneurs en protéines)"
     },
     {
-      "texte": "Vlaamse Vereniging voor Kindergeneeskunde (2019). Vegetarische voeding – Informatiebrochure voor hulpverleners in de gezondheidszorg. (descriptions des aliments)",
-      "url": ""
+      "texte": "Vlaamse Vereniging voor Kindergeneeskunde (2019). Vegetarische voeding – Informatiebrochure voor hulpverleners in de gezondheidszorg. (descriptions des aliments)"
     },
     {
       "texte": "Gorissen SHM et al. (2018). Protein content and amino acid composition of commercially available plant-based protein isolates. Amino Acids 50(12):1685–1695. (protéines de pois)",
