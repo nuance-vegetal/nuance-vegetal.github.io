@@ -11,7 +11,7 @@
     "e9": "01 · l'enquête"
   },
   "s2": {
-    "e1": "Ce que l'enquête *a révélé*",
+    "e1": "ce que l'enquête *a révélé*",
     "e2": "02 · la méthode"
   },
   "s3": {
@@ -31,7 +31,7 @@
     "e14": "03 · à toi"
   },
   "s4": {
-    "e1": "À toi de *jouer*",
+    "e1": "à toi de *jouer*",
     "e2": "Touche un mot souligné sur l'étiquette : on t'explique tout.",
     "e3": "protéines de soja (22 %)",
     "e4": "protéines de blé",
@@ -78,7 +78,7 @@
     "e45": "04 · la suite"
   },
   "s5": {
-    "e1": "Va plus *loin*",
+    "e1": "va plus *loin*",
     "e2": "à quoi ça sert ?",
     "e3": "B12, protéines, fer, oméga-3, additifs et allégations : leur rôle et comment les repérer.",
     "e4": "c'est fait avec quoi ?",
@@ -94,6 +94,6 @@
     "e14": "05 · l'assiette"
   },
   "s6": {
-    "e1": "Sa place dans *l'assiette*"
+    "e1": "sa place dans *l'assiette*"
   }
 }
