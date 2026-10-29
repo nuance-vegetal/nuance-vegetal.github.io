@@ -92,7 +92,7 @@
     {
       "nom": "Œufs",
       "base": "Autre",
-      "description": "Œufs de poule, pour les végétariens qui en mangent (pas les végans). ",
+      "description": "Œufs de poule, pour les végétariens qui en mangent (pas les véganes).",
       "proteines": "≈ 12 à 13 g pour 100 g (≈ 6 g par œuf)",
       "allergenes": [
         "Œuf"
@@ -126,7 +126,7 @@
     {
       "nom": "Halloumi",
       "base": "Autre",
-      "description": "Fromage chypriote au lait de brebis, de chèvre et/ou de vache, qui ne fond pas et se grille comme une viande. Pour les végétariens qui en mangent (pas les végans), en portion modérée car il est très salé et riche en graisses saturées.",
+      "description": "Fromage chypriote au lait de brebis, de chèvre et/ou de vache, qui ne fond pas et se grille comme une viande. Pour les végétariens qui en mangent (pas les véganes), en portion modérée car il est très salé et riche en graisses saturées.",
       "proteines": "≈ 20 à 22 g pour 100 g",
       "allergenes": [
         "Lait"
