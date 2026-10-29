@@ -1,30 +1,31 @@
 {
   "chiffres": [
     {
-      "valeur": 13,
+      "valeur": 14,
       "unite": " %",
       "texte": "regardent la B12 et le fer sur l'étiquette. C'est pourtant un enjeu clé d'une alimentation végétarienne.",
       "misEnAvant": true
     },
     {
-      "valeur": 58,
+      "valeur": 66,
       "unite": " %",
       "texte": "le prix est le frein le plus cité (plusieurs réponses étaient possibles).",
       "misEnAvant": false
     },
     {
-      "valeur": 28,
+      "valeur": 23,
       "unite": " %",
       "texte": "pensent que le quinoa contient du blé.",
       "misEnAvant": false
     },
     {
-      "valeur": 77,
+      "valeur": 75,
       "unite": " %",
-      "texte": "le trouveraient utile ou peut-être utile (44 % oui, 33 % peut-être).",
+      "texte": "le trouveraient utile ou peut-être utile (41 % oui, 34 % peut-être).",
       "misEnAvant": false
     }
   ],
+  "note": "Résultats de mon questionnaire auprès des végétariens, vegans et végétaliens (n = 240).",
   "bandeau": [
     {
       "chiffre": "8 sur 10",
@@ -35,17 +36,16 @@
       "texte": "les trouvent « naturels »"
     },
     {
-      "chiffre": "49 %",
+      "chiffre": "43 %",
       "texte": "se méfient des industriels"
     },
     {
-      "chiffre": "58 %",
+      "chiffre": "66 %",
       "texte": "citent le prix comme frein"
     },
     {
-      "chiffre": "13 %",
+      "chiffre": "14 %",
       "texte": "regardent la B12 et le fer"
     }
-  ],
-  "note": "Résultats de mon questionnaire sur les alternatives végétales (n = 355)."
+  ]
 }
