@@ -6,7 +6,7 @@
       "points": [
         "Le soja contient des isoflavones, parfois appelées « phyto-œstrogènes », dont la structure ressemble à celle des œstrogènes.",
         "Chez les hommes, une méta-analyse de 41 études ne montre aucun effet du soja ni des isoflavones sur la testostérone ou les œstrogènes, quelles que soient la dose et la durée.",
-        "Chez les femmes, ni le soja ni les compléments d’isoflavones n’ont d’effet important sur les hormones ; le soja peut allonger un peu le cycle en retardant l’ovulation d’environ un jour, sans l’empêcher.",
+        "Chez les femmes, une méta-analyse ne montre pas d’effet sur les œstrogènes ; un léger allongement du cycle (environ 1 jour) a été observé, mais il n’est pas confirmé dans les études les plus fiables.",
         "Chez les femmes ménopausées, l’évaluation européenne (EFSA) des compléments d’isoflavones n’a observé aucun effet sur le sein ni de changement important de la fonction thyroïdienne.",
         "Pour l’utérus, aucun effet n’a été observé jusqu’à 150 mg/j pendant 2,5 ans ; après 5 ans, quelques changements non cancéreux ont été rapportés.",
         "Il n’y a pas de données pour les femmes qui ont ou ont eu un cancer hormonodépendant du sein ou de l’utérus.",
@@ -25,16 +25,20 @@
           "url": "https://doi.org/10.1016/j.reprotox.2020.12.019"
         },
         {
-          "texte": "Messina M. (2016). Soy and Health Update: Evaluation of the Clinical and Epidemiologic Literature. Nutrients 8(12):754.",
-          "url": "https://doi.org/10.3390/nu8120754"
-        },
-        {
           "texte": "ANSES (2025). Avis relatif à l'évaluation du risque sanitaire lié à la consommation d'aliments contenant des isoflavones. Saisine n° 2022-SA-0221.",
           "url": "https://www.anses.fr/sites/default/files/NUT2022SA0221.pdf"
         },
         {
           "texte": "ANSES (2025). Avoid isoflavones on menus in mass catering. Actualité publiée sur le site de l’ANSES, 24 mars 2025.",
           "url": "https://www.anses.fr/en/news/avoid-isoflavones-menus-mass-catering"
+        },
+        {
+          "texte": "Hooper L, Ryder JJ, Kurzer MS, Lampe JW, Messina MJ, Phipps WR, Cassidy A. (2009). Effects of soy protein and isoflavones on circulating hormone concentrations in pre- and post-menopausal women: a systematic review and meta-analysis. Human Reproduction Update 15(4):423–440.",
+          "url": "https://doi.org/10.1093/humupd/dmp010"
+        },
+        {
+          "texte": "Mestman JH. (2011). High doses of soy phytoestrogen are a risk factor in the progression of subclinical to clinical hypothyroidism. Clinical Thyroidology 23(5):14–16.",
+          "url": "https://thyroid.org/wp-content/uploads/2012/07/clinthy_v235_14_16.pdf"
         }
       ],
       "brouillon": false
