@@ -46,7 +46,7 @@
       "texte": "Les céréales contenant du gluten sont mises en évidence dans la liste d’ingrédients (le plus souvent en gras). Attention au gluten caché dans les céréales :",
       "encadre": {
         "titre": "Contient du gluten",
-        "texte": "seigle, avoine, blé, orge, triticale, épeautre, khorasan (kamut).",
+        "texte": "seigle, avoine (sauf si étiquetée « sans gluten »), blé, orge, triticale, épeautre, khorasan (kamut). ",
         "couleur": "orange"
       }
     }
