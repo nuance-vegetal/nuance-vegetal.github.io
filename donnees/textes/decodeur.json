@@ -3,7 +3,7 @@
     "e1": "décodeur"
   },
   "s1": {
-    "e1": "Ton produit, *décodé*",
+    "e1": "ton produit, *décodé*",
     "e2": "Scanne le code-barres ou remplis toi-même. Les repères s’allument en direct."
   },
   "s2": {
@@ -17,7 +17,7 @@
     "e8": "**Gluten :** Les céréales contenant du gluten sont mises en évidence dans la liste d’ingrédients (le plus souvent en gras). Attention au gluten caché dans les céréales : seigle, avoine, blé, orge, triticale, épeautre, khorasan (kamut). Si tu vois ces ingrédients, le produit contient en principe du gluten. Exceptions : le sirop de glucose et la maltodextrine à base de blé (très purifiés), et l’avoine étiquetée « sans gluten »."
   },
   "s3": {
-    "e1": "Tes *repères*"
+    "e1": "tes *repères*"
   },
   "scanner": {
     "e1": "Scanner",
