@@ -14,7 +14,7 @@
     "e5": "Gluten ?",
     "e6": "**B12 :** Cherche « vitamine B12 », « cobalamine » ou « cyanocobalamine » dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.",
     "e7": "**Fer :** Cherche « fer » ou un sel de fer (ex. pyrophosphate ferrique, fumarate ferreux) dans la liste d’ingrédients. Si le produit est enrichi, la quantité apparaît aussi dans le tableau nutritionnel.",
-    "e8": "**Gluten :** Les céréales contenant du gluten sont mises en évidence dans la liste d’ingrédients (le plus souvent en gras). Attention au gluten caché dans les céréales : seigle, avoine, blé, orge, triticale, épeautre, khorasan (kamut). Si tu vois ces ingrédients, c’est que le produit contient du gluten."
+    "e8": "**Gluten :** Les céréales contenant du gluten sont mises en évidence dans la liste d’ingrédients (le plus souvent en gras). Attention au gluten caché dans les céréales : seigle, avoine, blé, orge, triticale, épeautre, khorasan (kamut). Si tu vois ces ingrédients, le produit contient en principe du gluten. Exceptions : le sirop de glucose et la maltodextrine à base de blé (très purifiés), et l’avoine étiquetée « sans gluten »."
   },
   "s3": {
     "e1": "tes *repères*"
