@@ -16,7 +16,7 @@
         "Produits laitiers, pour les végétariens"
       ],
       "surEtiquette": "Vérifie sur l’emballage que le produit est bien enrichi en vitamine B12. Tous les produits végétaux ne le sont pas, et un produit non enrichi n’est pas une source fiable de B12. Repère du CSS pour les substituts de viande : au moins 0,24 µg pour 100 g.",
-      "conseil": "Les végétaux, les algues (comme la nori) et les produits fermentés ne sont pas des sources fiables. Prends chaque jour un complément de B12, pendant un repas, et choisis des produits enrichis. Si tu ne prends pas de complément depuis 3 à 6 mois, parle-en à ton médecin pour faire une prise de sang.",
+      "conseil": "Les végétaux, les algues (comme la nori) et les produits fermentés ne sont pas des sources fiables. Si tu es végane, un complément de B12 ou des produits enrichis sont indispensables. Si tu manges des produits laitiers et des œufs, ils en apportent, mais vérifie que tu en consommes assez ; sinon, complète avec des produits enrichis ou un complément. En cas de doute, parle-en à ton médecin pour faire une prise de sang.",
       "sources": [
         {
           "texte": "Niklewicz A, Smith AD, Smith A, et al. (2023). The importance of vitamin B12 for individuals choosing plant-based diets. European Journal of Nutrition 62(3):1551–1559. doi:10.1007/s00394-022-03025-4",
@@ -93,7 +93,8 @@
           "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32011R1169"
         },
         {
-          "texte": "Vlaamse Vereniging voor Kindergeneeskunde (2019). Vegetarische voeding – Informatiebrochure voor hulpverleners in de gezondheidszorg."
+          "texte": "Vlaamse Vereniging voor Kindergeneeskunde (2019). Vegetarische voeding – Informatiebrochure voor hulpverleners in de gezondheidszorg.",
+          "url": "https://www.kindengezin.be/sites/default/files/2021-05/Vegetarische%20voeding%2C%20informatiebrochure%20%28VVK%29.pdf"
         }
       ],
       "brouillon": false,
@@ -104,7 +105,7 @@
       "resume": "Ajoutés pour la texture, le goût ou la conservation.",
       "aQuoiCaSert": "Ce sont des substances qu’on ne mange pas seules, mais qu’on ajoute aux aliments pour un rôle technique, par exemple les conserver, épaissir ou colorer. ",
       "surEtiquette": "Dans la liste d’ingrédients, un additif apparaît après le nom de sa catégorie, suivi de son nom ou de son numéro E, par exemple « épaississant (E461) » ou « épaississant : méthylcellulose ».",
-      "conseil": "Ils sont autorisés et réévalués au niveau européen. Dans les alternatives végétales, on en trouve en moyenne 1 à 5 par produit selon le type (certains n’en contiennent aucun), surtout des épaississants comme la méthylcellulose (E461). Ces produits sont souvent classés parmi les aliments ultra-transformés : le CSS conseille de les limiter et de privilégier les aliments peu ou pas transformés.",
+      "conseil": "Ils sont autorisés et réévalués au niveau européen. Dans une étude sur les alternatives végétales vendues en Allemagne, on en trouvait en moyenne 1 à 5 par produit selon le type (certains n’en contenaient aucun), surtout des épaississants comme la méthylcellulose (E461). Ces produits sont souvent classés parmi les aliments ultra-transformés : le CSS conseille de les limiter et de privilégier les aliments peu ou pas transformés.",
       "sources": [
         {
           "texte": "Règlement (CE) n° 1333/2008 sur les additifs alimentaires.",
@@ -173,7 +174,8 @@
       "conseil": "Une poignée par jour suffit (20 à 30 g de noix et de graines). Pas plus de 10 g de graines de chia par jour. Utilise les huiles de lin et de noix à froid uniquement. Les végétaliens devraient envisager un complément d’huile d’algues.",
       "sources": [
         {
-          "texte": "Vlaamse Vereniging voor Kindergeneeskunde (2019). Vegetarische voeding – Informatiebrochure voor hulpverleners in de gezondheidszorg."
+          "texte": "Vlaamse Vereniging voor Kindergeneeskunde (2019). Vegetarische voeding – Informatiebrochure voor hulpverleners in de gezondheidszorg.",
+          "url": "https://www.kindengezin.be/sites/default/files/2021-05/Vegetarische%20voeding%2C%20informatiebrochure%20%28VVK%29.pdf"
         },
         {
           "texte": "CSS (2021), avis n° 9445 – L’alimentation végétarienne",
