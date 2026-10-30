@@ -48,7 +48,7 @@
       "reponse": "« Ultra-transformé » désigne le groupe 4 de la classification NOVA : des produits fabriqués à partir d’ingrédients industriels et d’additifs. Une alimentation riche en ultra-transformés est associée à plusieurs problèmes de santé, mais pour les alternatives végétales, c’est plus nuancé.",
       "points": [
         "La classification NOVA range les aliments en 4 groupes selon l’ampleur et le but de leur transformation industrielle.",
-        "Un produit est ultra-transformé si sa liste d’ingrédients contient au moins un ingrédient jamais ou rarement utilisé en cuisine, ou un additif « cosmétique ».",
+        "Un produit est ultra-transformé si sa liste d’ingrédients contient au moins un ingrédient jamais ou rarement utilisé en cuisine, ou un additif « cosmétique » (définition NOVA, Monteiro et al., 2019).",
         "Au début ou au milieu de la liste, repère les ingrédients industriels : isolat de protéine de soja, gluten, protéines hydrolysées, sirop de glucose-fructose, maltodextrine, dextrose, huiles hydrogénées.",
         "À la fin de la liste, repère les additifs cosmétiques : arômes, exhausteurs de goût, colorants, émulsifiants, édulcorants, épaississants.",
         "Dans les études d’observation, une alimentation riche en ultra-transformés est associée à plus de diabète de type 2, d’obésité, d’anxiété, de dépression et de mortalité, notamment cardiovasculaire ; les liens avec l’hypertension, la dyslipidémie, certains cancers et les troubles digestifs reposent sur des preuves plus faibles.",
@@ -95,11 +95,15 @@
           "url": "https://doi.org/10.1007/s00394-022-03025-4"
         },
         {
-          "texte": "Niklewicz A, Hannibal L, Warren M, Ahmadi KR. (2024). A systematic review and meta-analysis of functional vitamin B12 status among adult vegans. Nutrition Bulletin 49(4):463–479. doi:10.1111/nbu.12712 (Chiffres 51 %/92 % : Storz et al. 2023, Annals of Medicine.)",
+          "texte": "Niklewicz A, Hannibal L, Warren M, Ahmadi KR. (2024). A systematic review and meta-analysis of functional vitamin B12 status among adult vegans. Nutrition Bulletin 49(4):463–479. doi:10.1111/nbu.12712",
           "url": "https://doi.org/10.1111/nbu.12712"
         },
         {
           "texte": "Desmet C. (2026). Questionnaire sur la perception des alternatives végétales (n = 241 végétariens, véganes et végétaliens). Travail de fin d’études, HEPH-Condorcet."
+        },
+        {
+          "texte": "Storz MA, Müller A, Niederreiter L, et al. (2023). A cross-sectional study of nutritional status in healthy, young, physically-active German omnivores, vegetarians and vegans reveals adequate vitamin B12 status in supplemented vegans. Annals of Medicine 55:2269969. doi:10.1080/07853890.2023.2269969",
+          "url": "https://doi.org/10.1080/07853890.2023.2269969"
         }
       ],
       "brouillon": false
