@@ -86,6 +86,10 @@
         {
           "texte": "Règlement (CE) n° 1924/2006 concernant les allégations nutritionnelles et de santé.",
           "url": "https://eur-lex.europa.eu/legal-content/FR/ALL/?uri=CELEX:32006R1924"
+        },
+        {
+          "texte": "Burdge GC, Calder PC. (2005). Conversion of alpha-linolenic acid to longer-chain polyunsaturated fatty acids in human adults. Reproduction Nutrition Development 45(5):581–597.",
+          "url": "https://doi.org/10.1051/rnd:2005047"
         }
       ],
       "brouillon": false,
