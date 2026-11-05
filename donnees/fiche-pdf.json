@@ -9,7 +9,7 @@
       "nouvellePage": true,
       "points": [
         "B12 : vérifie sur l’étiquette que le produit est enrichi en B12. Dans les ingrédients, elle peut apparaître sous le nom « vitamine B12 », « cobalamine », « cyanocobalamine » ou « hydroxocobalamine ».",
-        "Fer : cherche « fer » ou un sel de fer (pyrophosphate ferrique, fumarate ferreux).",
+        "Fer : cherche « fer » ou un sel de fer (par exemple pyrophosphate ferrique, fumarate ferreux, sulfate ferreux ou gluconate ferreux).",
         "Si le produit est enrichi, la quantité est aussi dans le tableau nutritionnel.",
         "Le fer des végétaux est mieux absorbé avec de la vitamine C (poivron, agrumes, kiwi)."
       ],
