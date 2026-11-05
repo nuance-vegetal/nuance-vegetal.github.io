@@ -45,9 +45,8 @@
         "Un produit est ultra-transformé si sa liste d’ingrédients contient au moins un ingrédient jamais ou rarement utilisé en cuisine, ou un additif « cosmétique » (définition NOVA, Monteiro et al., 2019).",
         "Au début ou au milieu de la liste, repère les ingrédients industriels : isolat de protéine de soja, gluten, protéines hydrolysées, sirop de glucose-fructose, maltodextrine, dextrose, huiles hydrogénées.",
         "À la fin de la liste, repère les additifs cosmétiques : arômes, exhausteurs de goût, colorants, émulsifiants, édulcorants, épaississants.",
+        "Les substituts de viande végétaux prêts à consommer contiennent en général moins de graisses saturées et plus de fibres que la viande, mais certains, comme les galettes de légumineuses ou les falafels, sont pauvres en protéines. Le Nutri-Score seul ne suffit donc pas à guider le choix.",
         "Dans les études d’observation, une alimentation riche en ultra-transformés est associée à plus de diabète de type 2, d’obésité, d’anxiété, de dépression et de mortalité, notamment cardiovasculaire ; les liens avec l’hypertension, la dyslipidémie, certains cancers et les troubles digestifs reposent sur des preuves plus faibles.",
-        "La transformation en soi n’est pas le problème : les conserves, les fromages ou le pain simple (farine, eau, sel, levure) ne sont pas ultra-transformés.",
-        "En Belgique, la plupart des alternatives végétales ont peu de graisses saturées (93 % à 5 g ou moins pour 100 g), mais seule une minorité est enrichie en fer ou en B12, et les steaks végétaux sont plus salés que les steaks de viande.",
         "La transformation peut aussi améliorer la digestibilité des protéines végétales : être ultra-transformé ne suffit donc pas à juger une alternative végétale, regarde aussi les 6 repères."
       ],
       "conseil": "Lis la liste d’ingrédients : un seul ingrédient industriel ou additif cosmétique suffit pour qu’un produit soit ultra-transformé.",
